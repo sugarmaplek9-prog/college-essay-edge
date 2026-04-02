@@ -1,5 +1,0 @@
-We are now in result-audit mode.
-Run a 10-case blind human review using the attached scorecard and produce decoded win/loss results.
-In parallel, run a needs-more-input calibration audit across every NDS needs-more-input case and classify each as correctly cautious, over-cautious, wrong, or needs rewrite only.
-Do not start Sprint 3.
-The next decision will be based on whether Narrative Direction Selection is actually sharper than baseline in human review and whether its needs-more-input behavior is properly calibrated.

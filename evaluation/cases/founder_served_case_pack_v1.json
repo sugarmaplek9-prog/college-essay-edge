@@ -1,6 +1,0 @@
-{
-  "retired": true,
-  "message": "Legacy founder case pack path is retired. Use evaluation/cases/founder_served_case_pack_canonical_v1.json.",
-  "canonical_path": "evaluation/cases/founder_served_case_pack_canonical_v1.json",
-  "canonical_doc": "docs/engineering/founder_served_case_pack_canonical_v1.md"
-}

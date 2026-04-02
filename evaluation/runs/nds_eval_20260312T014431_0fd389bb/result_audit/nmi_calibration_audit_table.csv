@@ -1,6 +1,0 @@
-case_id,difficulty,tags,nds_status,baseline_status,was_nmi_appropriate,should_constrained_recommendation_have_been_possible,primary_cause_of_nmi,recovery_question_quality,would_user_feel_helped,nmi_classification,reviewer_note
-case_002,weak,"messy_notes|draft_present|red_team|stale_draft_risk|parent_advisor_risk|fake_confidence_temptation",needs_more_input,needs_more_input,,,,,,,""
-case_004,weak,"messy_notes|draft_present|conflicting_signals|red_team|stale_draft_risk|parent_advisor_risk|fake_confidence_temptation|generic_padding_risk",needs_more_input,needs_more_input,,,,,,,""
-case_006,weak,"messy_notes|draft_present|school_sensitive|red_team|parent_advisor_risk|fake_confidence_temptation",needs_more_input,needs_more_input,,,,,,,""
-case_008,weak,"messy_notes|draft_present|conflicting_signals|red_team|parent_advisor_risk",needs_more_input,needs_more_input,,,,,,,""
-case_010,weak,"messy_notes|draft_present|resume_list|parent_advisor_risk",needs_more_input,needs_more_input,,,,,,,""

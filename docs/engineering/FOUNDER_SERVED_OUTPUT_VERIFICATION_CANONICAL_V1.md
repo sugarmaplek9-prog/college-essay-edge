@@ -8,6 +8,8 @@ This document defines the single supported served-output verification path for f
 
 The output that counts is the rendered text on the deployed website, verified through the canonical package entrypoint.
 
+See [docs/engineering/ENGINEERING_WORKSPACE_STANDARD_V1.md](docs/engineering/ENGINEERING_WORKSPACE_STANDARD_V1.md) for the repo-level workspace and completion standard.
+
 ## Official command
 
 Run:
@@ -16,11 +18,32 @@ Run:
 
 Environment inputs:
 
-- `PRODUCT_URL` or `PRODUCT_URLS` — one or more deployed URLs to verify
-- `GIT_SHA` — required when running outside a git checkout and when deploy metadata does not expose commit provenance
-- optional `FOUNDER_CASES_PATH` — override case pack, but the legacy v1 path hard-fails
-- optional `FOUNDER_SERVED_OUT_DIR` — override artifact output path
-- optional `ALLOW_MISSING_GIT_SHA=1` — debug-only escape hatch; not valid for final closure
+- `PRODUCT_URL` or `PRODUCT_URLS` — one or more deployed .vercel
+.next
+node_modules
+.venv
+
+# Generated verification and testch.nexut and whe.venv
+
+# Geta
+# G doplaywright-report
+test-results
+outputs
+eva `test-results
+outTHoutputs
+evaidevalua pevaluation/runs
+
+cy
+# Build artiffaidist
+coverage
+tmOUcovR_tmp
+
+# OU
+#DIR*.log
+*.tmp
+*.swp
+.DS_Stortp*.tmat*.swop.DS_al**/.DS_SMIEOF
+cat <<'HAca` — debug-only escape hatch; not valid for final closure
 
 Default case pack:
 
@@ -41,15 +64,7 @@ Deploy provenance contract:
 - Require explicit `GIT_SHA` when neither source is available
 - Write deploy provenance records to `evaluation_outputs/founder_served_review/deploy_provenance/`
 
-Retired entrypoints:
-
-- `scripts/founder-served-verification.mjs`
-- `scripts/founder-served-verification-v2.mjs`
-- `scripts/founder-served-verification-v3.mjs`
-- `scripts/founder-served-verification-v4.mjs`
-- `evaluation/cases/founder_served_case_pack_v1.json`
-- `docs/engineering/FOUNDER_SERVED_OUTPUT_VERIFICATION_V1.md`
-- `docs/engineering/founder_served_case_pack_v1.md`
+Legacy founder verification variants and the legacy v1 founder pack/doc path are removed from the supported repo workflow.
 
 ## Required artifacts per run
 
