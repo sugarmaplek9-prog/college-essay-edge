@@ -1,0 +1,95 @@
+{
+  "run_id": "eval_nds_case_013_1773279871515",
+  "case_id": "case_013",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "ready",
+  "execution_mode": "standard",
+  "validator_decision": "accept",
+  "artifact_status": "success",
+  "artifact_payload": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+      "core_claim": "The essay should center on Case 13: restaurant operations. I initially handled this situation poorly, then adapted my approach after feedback. I ca as proof of self-revision, not just activity output.",
+      "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+      "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+      "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+      "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+      "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+    },
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Execution quality and accomplishment evidence in the same experience.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "id": "direction_3",
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "How your actions affected other people and community outcomes.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      {
+        "label": "Primary story evidence",
+        "source_type": "story_entry",
+        "source_id": "story_13_1"
+      }
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between external performance and internal revision.",
+      "detected_shift": "A visible shift appears in how you responded after feedback.",
+      "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+      "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+    },
+    "recovery_question": null
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "eval_case_013"
+      },
+      "student_core": {
+        "name": "Eval case_013",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "community",
+          "learning",
+          "growth"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "story_13_1",
+          "source_type": "story_entry",
+          "event_summary": "Case 13: restaurant operations. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others.",
+          "change_signal": "Clear reflection and change signal present.",
+          "evidence_strength": "medium",
+          "recency_rank": 1
+        }
+      ],
+      "draft_signals": [],
+      "school_signals": [],
+      "context_gaps": [
+        "No draft signal available."
+      ],
+      "assembler_meta": {
+        "story_signal_count": 1,
+        "draft_signal_count": 0,
+        "school_signal_count": 0,
+        "used_current_draft": false
+      }
+    },
+    "warnings": []
+  }
+}

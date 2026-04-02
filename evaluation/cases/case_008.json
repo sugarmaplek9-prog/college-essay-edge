@@ -1,0 +1,56 @@
+{
+  "case_id": "case_008",
+  "label": "weak-signal music ensemble accountability",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "conflicting_signals",
+    "red_team",
+    "parent_advisor_risk"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "public policy"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_008",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_8_1",
+      "text": "Orchestra rehearsal notes. At first I covered missed entrances by playing louder and trying to pull everyone in. After the director told me I was hiding the problem, I changed my approach. Next rehearsal I stopped the run, pointed out where our section was late, and we fixed it together."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_8",
+    "text": "This essay can highlight music as a story of accountability, maturity, and collaborative values. I am trying to connect the rehearsal experience to broader themes of leadership and future direction."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Parent/advisor contamination case: polished ensemble framing competes with a rough rehearsal correction scene.",
+    "reviewer_warning": "Check whether the system follows the rehearsal moment instead of the abstract accountability framing."
+  }
+}

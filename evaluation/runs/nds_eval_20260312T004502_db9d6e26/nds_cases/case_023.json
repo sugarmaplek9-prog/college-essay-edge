@@ -1,0 +1,59 @@
+{
+  "run_id": "eval_nds_case_023_1773276302246",
+  "case_id": "case_023",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "insufficient_input",
+  "execution_mode": "needs_more_input",
+  "validator_decision": "convert_to_needs_more_input",
+  "artifact_status": "needs_more_input",
+  "artifact_payload": {
+    "status": "needs_more_input",
+    "best_direction": null,
+    "alternatives": [],
+    "evidence_anchors": [],
+    "recovery_question": "What moment changed how you see yourself or your future?"
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "eval_case_023"
+      },
+      "student_core": {
+        "name": "Eval case_023",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "community",
+          "learning",
+          "growth"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "story_23_1",
+          "source_type": "story_entry",
+          "event_summary": "Case 23: restaurant operations. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others.",
+          "change_signal": "Change signal is limited; reflection may need probing.",
+          "evidence_strength": "medium",
+          "recency_rank": 1
+        }
+      ],
+      "draft_signals": [],
+      "school_signals": [],
+      "context_gaps": [
+        "No draft signal available."
+      ],
+      "assembler_meta": {
+        "story_signal_count": 1,
+        "draft_signal_count": 0,
+        "school_signal_count": 0,
+        "used_current_draft": false
+      }
+    },
+    "warnings": []
+  }
+}

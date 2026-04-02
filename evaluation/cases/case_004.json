@@ -1,0 +1,59 @@
+{
+  "case_id": "case_004",
+  "label": "weak-signal debate conflict",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "conflicting_signals",
+    "red_team",
+    "stale_draft_risk",
+    "parent_advisor_risk",
+    "fake_confidence_temptation",
+    "generic_padding_risk"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "computer science"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_004",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_4_1",
+      "text": "Debate round notes. I handled cross badly at first and kept cutting my partner off because I wanted to control the round. After my coach pointed it out, I changed how I handled the next round. I asked my partner what line she wanted, gave her space, and we were calmer and clearer."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_4",
+    "text": "This essay could highlight debate as a story of leadership, confidence, and future direction. I am trying to connect the event to growth, values, and a broader lesson about communication."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Parent/advisor contamination case: the polished debate draft overstates the lesson while the student notes still hold the real scene.",
+    "reviewer_warning": "Check whether the system prefers the scene where the student changed behavior over the polished leadership framing."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "frozen_benchmark_id": "page3_holdout_v2_frozen_regression_v1",
+  "locked_on": "2026-03-26",
+  "cases_path": "scripts/data/frozen/page3-holdout-v2-cases.frozen.json",
+  "source_original_path": "scripts/data/page3-holdout-v2-cases.json",
+  "expected_final_tally": {
+    "product_wins": 10,
+    "openai_wins": 0,
+    "ties": 2,
+    "unscored": 0
+  },
+  "required_gates": {
+    "pool_integrity_collapse_cases_max": 0,
+    "pool_integrity_dominant_family_ratio_max": 0.35,
+    "packet_valid_for_review": true
+  },
+  "notes": [
+    "This frozen set is regression-only and must not be used as the sole readiness proof.",
+    "Generalization claims require unseen and messy-input layer results."
+  ]
+}

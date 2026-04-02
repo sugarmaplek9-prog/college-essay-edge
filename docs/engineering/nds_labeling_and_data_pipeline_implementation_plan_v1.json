@@ -1,0 +1,431 @@
+{
+  "artifact_id": "nds_labeling_and_data_pipeline_implementation_plan_v1",
+  "title": "NDS Labeling and Data Pipeline Implementation Plan V1",
+  "product": "College Essay Edge",
+  "status": "immediate_build_plan",
+  "date": "2026-03-17",
+  "purpose": "Build the minimum complete ML substrate required to determine whether a learned reranker can beat heuristic winner selection offline without violating trust standards.",
+  "objective_question": "Can a learned reranker trained on reviewed candidate sets beat heuristic winner selection offline without breaking trust standards?",
+  "scope": {
+    "included": [
+      "database schema creation",
+      "run and candidate persistence",
+      "review labeling workflow foundation",
+      "adjudication-ready review structure",
+      "immutable dataset snapshots",
+      "first 500-case labeled corpus",
+      "first reranker-ready feature export",
+      "first offline reranker benchmark"
+    ],
+    "excluded": [
+      "route model production influence",
+      "trust/helpfulness model production influence",
+      "shadow-mode rollout",
+      "online learning",
+      "unapproved automated label inference",
+      "end-to-end black-box training"
+    ]
+  },
+  "implementation_principle": {
+    "build_order": [
+      "schema",
+      "logging",
+      "review",
+      "snapshots",
+      "reranker_dataset",
+      "offline_training"
+    ],
+    "non_negotiable": true
+  },
+  "phases": [
+    {
+      "phase": 0,
+      "name": "schema_and_event_contract_freeze",
+      "goal": "Lock database schema and ingestion contract before scale logging.",
+      "deliverables": {
+        "tables": [
+          "nds_runs",
+          "nds_candidates",
+          "nds_human_labels",
+          "nds_product_outcomes",
+          "nds_training_snapshots"
+        ],
+        "ids": [
+          "run_id",
+          "candidate_id",
+          "label_id",
+          "snapshot_id"
+        ],
+        "run_required_fields": [
+          "raw_input",
+          "normalized_context_summary",
+          "selected_route",
+          "selected_candidate_id",
+          "selected_output_payload",
+          "debug_packet_version",
+          "module_versions"
+        ],
+        "candidate_required_fields": [
+          "candidate_id",
+          "run_id",
+          "position_in_set",
+          "axis_family",
+          "direction_line",
+          "direction_summary",
+          "evidence_payload",
+          "heuristic_scores",
+          "validator_flags",
+          "selected_boolean"
+        ]
+      },
+      "acceptance": [
+        "schema reviewed and locked",
+        "stable field names",
+        "versioning approach defined",
+        "ingestion contract approved"
+      ]
+    },
+    {
+      "phase": 1,
+      "name": "runtime_logging_implementation",
+      "goal": "Capture every run and candidate in structured, reproducible form.",
+      "requirements": {
+        "idempotent_writes": true,
+        "dedupe_candidates_on_retry": true,
+        "partial_write_detection": true,
+        "explicit_debug_payload_version": true,
+        "silent_failure_disallowed": true
+      },
+      "acceptance": [
+        "sample live runs reconstruct exact candidate sets",
+        "selected route and winner reproducible",
+        "required fields complete in audit sample"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "review_labeling_workbench",
+      "goal": "Enable reliable reviewer labeling of cases and candidate sets.",
+      "minimum_workbench": [
+        "reviewer_identity",
+        "saved_progress",
+        "label_persistence",
+        "adjudication_state",
+        "label_versioning",
+        "disagreement_tracking"
+      ],
+      "required_reviewer_actions": [
+        "choose_best_candidate",
+        "mark_no_good_candidate",
+        "mark_correct_route",
+        "mark_line_fit",
+        "mark_grounding_strength",
+        "mark_false_premium_risk",
+        "mark_flattening_risk",
+        "mark_usefulness",
+        "mark_student_feels_understood",
+        "mark_benchmark_borderline"
+      ],
+      "tiers": {
+        "tier_1": "primary_reviewer_labels_all_selected_cases",
+        "tier_2": "second_reviewer_audits_targeted_subset",
+        "tier_3": "adjudication_resolves_conflicts_to_gold"
+      },
+      "acceptance": [
+        "at least one reviewer can fully label a run and candidate set",
+        "labels persisted in nds_human_labels",
+        "disagreements trackable",
+        "adjudicated gold state supported"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "snapshot_pipeline",
+      "goal": "Create immutable, reproducible training snapshots.",
+      "snapshot_required_fields": [
+        "snapshot_id",
+        "created_at",
+        "included_run_ids",
+        "included_candidate_ids",
+        "label_coverage_stats",
+        "split_definition",
+        "feature_extraction_version",
+        "excluded_case_rules",
+        "dataset_purpose"
+      ],
+      "splits": [
+        "train",
+        "validation",
+        "test",
+        "distribution_shift_holdout_optional",
+        "time_based_holdout_optional"
+      ],
+      "filters": [
+        "exclude_incomplete_labels",
+        "exclude_unresolved_conflicts",
+        "exclude_corrupted_runs",
+        "exclude_incompatible_schema_versions",
+        "exclude_disallowed_cases_for_purpose"
+      ],
+      "acceptance": [
+        "reproducible snapshot creation",
+        "queryable snapshot metadata",
+        "exact data regeneration from snapshot_id"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "first_labeled_corpus_creation",
+      "goal": "Assemble first serious reranker corpus.",
+      "target_cases": 500,
+      "required_slices": [
+        {
+          "name": "slice_a_core_stable",
+          "count": 150
+        },
+        {
+          "name": "slice_b_difficult_residual",
+          "count": 150
+        },
+        {
+          "name": "slice_c_clarification_block_weak_signal",
+          "count": 100
+        },
+        {
+          "name": "slice_d_edge_borderline_disagreement",
+          "count": 100
+        }
+      ],
+      "label_completeness_required": [
+        "case_level_labels",
+        "candidate_level_labels_for_all_non_rejected_candidates",
+        "route_level_label",
+        "output_level_label",
+        "adjudication_ready_or_explicit_single_review_policy"
+      ],
+      "acceptance": [
+        "at least 500 label-complete adjudication-ready cases",
+        "intentional balanced corpus mix",
+        "sufficient high-risk and shifted representation"
+      ]
+    },
+    {
+      "phase": 5,
+      "name": "reranker_export_and_baseline_benchmark",
+      "goal": "Export training-ready rows and compute heuristic baseline.",
+      "export": {
+        "per_run_fields": [
+          "run_id",
+          "class_risk_flags",
+          "route_chosen",
+          "no_good_candidate_label",
+          "heuristic_winner_candidate_id",
+          "gold_best_candidate_label"
+        ],
+        "per_candidate_fields": [
+          "candidate_id",
+          "run_id",
+          "axis_family",
+          "candidate_features",
+          "heuristic_scores",
+          "gold_labels",
+          "selected_by_heuristic",
+          "best_candidate"
+        ]
+      },
+      "baseline_metrics": [
+        "heuristic_top1_agreement_with_gold_best_candidate",
+        "heuristic_no_good_candidate_miss_rate",
+        "false_premium_winner_rate",
+        "indirect_hinge_miss_rate",
+        "line_fit_miss_rate",
+        "flattening_risk_rate"
+      ],
+      "acceptance": [
+        "export generated from immutable snapshot",
+        "baseline metrics computed and recorded",
+        "explicit reranker_v1 target metrics defined"
+      ]
+    },
+    {
+      "phase": 6,
+      "name": "go_no_go_reranker_v1",
+      "goal": "Decide whether first model training is justified.",
+      "go_conditions": [
+        "sufficient_dataset_size",
+        "sufficient_label_coverage",
+        "acceptable_disagreement_rate",
+        "trustworthy_baseline_benchmark",
+        "no_catastrophic_schema_or_logging_issues",
+        "realism_gate_passed"
+      ],
+      "no_go_conditions": [
+        "labels_noisy_or_shallow",
+        "inconsistent_candidate_logging",
+        "too_many_unresolved_cases",
+        "benchmark_corrupted_by_data_quality_issues",
+        "realism_gate_failed"
+      ]
+    }
+  ],
+  "real_input_corpus_sourcing_policy": {
+    "status": "hard_rule",
+    "core_rule": "Primary learned-judgment training/evaluation corpora must originate from public internet real-style inputs or anonymized real product inputs with explicit provenance.",
+    "allowed_source_types": [
+      "public_essay_help_posts",
+      "public_student_forum_posts",
+      "public_admissions_discussion_threads",
+      "public_what_should_i_write_about_posts",
+      "public_rough_note_style_posts"
+    ],
+    "disallowed_as_primary_gold": [
+      "internally_fabricated_cases",
+      "model_generated_cases",
+      "heavily_rewritten_synthetic_composites",
+      "engineering_invented_representative_inputs"
+    ],
+    "required_provenance_fields": [
+      "source_type",
+      "source_origin",
+      "source_url_or_reference",
+      "capture_date",
+      "collection_method",
+      "transformation_level",
+      "eligible_for_gold_training"
+    ],
+    "gold_training_eligibility": {
+      "allowed_source_type": [
+        "public_internet",
+        "anonymized_product_input"
+      ],
+      "requires_provenance": true,
+      "requires_redaction_complete": true,
+      "requires_shape_preservation": true
+    },
+    "legacy_internal_policy": {
+      "allowed_for": [
+        "regression",
+        "adversarial_testing",
+        "protocol_scaffolding",
+        "stress_testing"
+      ],
+      "required_tags": [
+        "legacy_internal_case",
+        "not_primary_gold"
+      ],
+      "must_not_dominate_gold": true
+    },
+    "first_500_corpus_mix": {
+      "min_real_or_anonymized_product_percent": 70,
+      "max_legacy_internal_percent": 30
+    },
+    "transformation_rules": {
+      "allowed": [
+        "identifier_redaction",
+        "light_format_normalization",
+        "institution_location_masking",
+        "relevant_excerpting"
+      ],
+      "not_allowed": [
+        "rewrite_to_clean_benchmark_english",
+        "artificial_hinge_strengthening",
+        "add_information_not_in_source",
+        "convert_weak_real_input_to_strong_synthetic"
+      ]
+    },
+    "snapshot_realism_gate": {
+      "required_checks": [
+        "real_source_percentage",
+        "synthetic_percentage",
+        "transformation_level_distribution",
+        "duplication_rate",
+        "source_diversity",
+        "class_diversity"
+      ],
+      "blocking": true
+    }
+  },
+  "ownership": {
+    "engineering": [
+      "schema_creation",
+      "runtime_logging",
+      "review_tool_scaffolding",
+      "snapshot_tooling",
+      "export_tooling"
+    ],
+    "product_research_review_leads": [
+      "label_taxonomy_enforcement",
+      "review_qa",
+      "adjudication_standards",
+      "corpus_composition"
+    ],
+    "ml_lead": [
+      "feature_spec_enforcement",
+      "baseline_benchmark_definition",
+      "snapshot_acceptance",
+      "training_readiness_decision"
+    ]
+  },
+  "deliverable_packages": {
+    "migration_schema_package": [
+      "db_migrations",
+      "schema_docs",
+      "index_docs"
+    ],
+    "logging_implementation_package": [
+      "runtime_write_path",
+      "logging_validation_checks",
+      "replay_audit_utilities"
+    ],
+    "review_tooling_package": [
+      "reviewer_workbench_ui",
+      "label_persistence",
+      "disagreement_handling",
+      "adjudication_support"
+    ],
+    "snapshot_pipeline_package": [
+      "snapshot_creation_tool",
+      "metadata_registry",
+      "export_builder"
+    ],
+    "benchmark_package": [
+      "heuristic_baseline_evaluator",
+      "reranker_ready_export_generator"
+    ]
+  },
+  "risks_and_mitigations": [
+    {
+      "risk": "reviewer_inconsistency_corrupts_labels",
+      "mitigation": "calibration_set_disagreement_audit_adjudication_rules"
+    },
+    {
+      "risk": "schema_drifts_before_corpus_stabilizes",
+      "mitigation": "phase_0_freeze_and_version_discipline"
+    },
+    {
+      "risk": "logging_incompleteness_ruins_training_set",
+      "mitigation": "audit_sampling_and_required_field_validation"
+    },
+    {
+      "risk": "dataset_overrepresents_easy_clean_cases",
+      "mitigation": "intentional_corpus_mix_requirements"
+    },
+    {
+      "risk": "model_learns_polish_preference_not_narrative_quality",
+      "mitigation": "explicit_false_premium_and_flattening_labels_plus_difficult_slices"
+    },
+    {
+      "risk": "synthetic_cases_dominate_gold_training",
+      "mitigation": "hard_real_input_policy_with_70_30_mix_gate"
+    }
+  ],
+  "completion_thresholds": [
+    "schema_frozen_and_deployed",
+    "runtime_logging_live_and_audited",
+    "review_workbench_usable",
+    "immutable_snapshot_pipeline_operational",
+    "first_500_case_corpus_assembled",
+    "heuristic_baseline_benchmark_computed",
+    "reranker_training_readiness_decision_made"
+  ]
+}

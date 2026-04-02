@@ -1,0 +1,67 @@
+{
+  "run_id": "eval_baseline_case_012_1773279871516",
+  "case_id": "case_012",
+  "system": "baseline_free_ai",
+  "baseline_mode": "deterministic_prompt_harness",
+  "raw_output": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null
+  },
+  "normalized_output": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null
+  },
+  "warnings": []
+}

@@ -1,0 +1,15 @@
+.vercel
+.next
+node_modules
+.venv
+playwright-report
+test-results
+outputs
+evaluation_outputs
+dist
+coverage
+tmp
+*.log
+*.tmp
+*.swp
+.DS_Store

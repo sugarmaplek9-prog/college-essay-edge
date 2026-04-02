@@ -1,0 +1,50 @@
+{
+  "case_id": "case_019",
+  "label": "medium-signal cross-country recovery",
+  "difficulty": "medium",
+  "tags": [],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "computer science"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_019",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_19_1",
+      "text": "Case 19: cross-country recovery. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers medium difficulty behavior and cross-country recovery signal pattern.",
+    "reviewer_warning": ""
+  }
+}

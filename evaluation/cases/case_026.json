@@ -1,0 +1,56 @@
+{
+  "case_id": "case_026",
+  "label": "strong-signal translation advocacy",
+  "difficulty": "strong",
+  "tags": [
+    "draft_present"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "biology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_026",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_26_1",
+      "text": "Case 26: translation advocacy. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    },
+    {
+      "id": "story_26_2",
+      "text": "Case 26: translation advocacy. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_26",
+    "text": "Draft for translation advocacy. I am trying to connect event-level details with values and future direction."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers strong difficulty behavior and translation advocacy signal pattern.",
+    "reviewer_warning": ""
+  }
+}

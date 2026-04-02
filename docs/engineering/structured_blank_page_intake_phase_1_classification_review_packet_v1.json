@@ -1,0 +1,678 @@
+{
+  "document_control": {
+    "artifact_id": "structured_blank_page_intake_phase_1_classification_review_packet_v1",
+    "title": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_1_CLASSIFICATION_REVIEW_PACKET_V1",
+    "product": "College Essay Edge",
+    "system_area": "Structured Blank Page Intake",
+    "phase": "Phase 1",
+    "artifact_type": "classification_review_packet_json_companion",
+    "status": "draft_for_execution",
+    "intended_consumers": [
+      "founder",
+      "product_lead",
+      "ml_review_lead",
+      "prompt_engineer",
+      "implementation_engineer",
+      "qa",
+      "annotation_reviewers"
+    ],
+    "primary_objective": "Establish the exact human review, adjudication, calibration, and release-gating protocol for Phase 1 intake classification in machine-readable form so the system can be tested, corrected, and trusted before broader rollout.",
+    "source_markdown_artifact": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_1_CLASSIFICATION_REVIEW_PACKET_V1.md",
+    "version": "v1"
+  },
+  "purpose": {
+    "description": "Phase 1 of Structured Blank Page Intake is a decision surface that converts messy student inputs into a stable, reviewable classification state trusted by downstream systems.",
+    "failure_risks": [
+      "wrong narrative mode selection",
+      "wrong prompt routing",
+      "brittle personalization",
+      "hallucinated certainty in ambiguous cases",
+      "loss of student trust at the first meaningful interaction"
+    ],
+    "questions_this_packet_must_answer": [
+      "What exactly is the classifier being judged on?",
+      "How should humans label difficult or ambiguous cases?",
+      "How do we distinguish acceptable uncertainty from system weakness?",
+      "What error patterns are tolerable in Phase 1 and which are release blockers?",
+      "What evidence is required before this layer is allowed to ship?"
+    ],
+    "packet_type": "quality_control_instrument"
+  },
+  "relationships": {
+    "subordinate_to": [
+      "STRUCTURED_BLANK_PAGE_INTAKE_IMPLEMENTATION_PLAN_V1",
+      "STRUCTURED_BLANK_PAGE_INTAKE_BUILD_BACKLOG_V1",
+      "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_1_IMPLEMENTATION_SPEC_V1",
+      "structured_blank_page_intake_phase_1_implementation_spec_v1.json",
+      "ML_LABELING_SPEC_V1",
+      "CASE_ANNOTATION_GUIDE_V1",
+      "RELEASE_QUALITY_GATE_CHECKLIST_V1",
+      "INTELLIGENCE_ROUTING_POLICY_V1"
+    ],
+    "conflict_rule": "If any rule in this packet conflicts with a frozen upstream architecture or release-quality artifact, the conflict must be resolved explicitly and versioned. Silent drift is prohibited."
+  },
+  "review_objective": {
+    "must_demonstrate": [
+      "identify the correct intake state or mode from user-provided inputs",
+      "extract and classify the correct signal family profile from a structured blank page interaction",
+      "distinguish between clear, weak, ambiguous, and insufficient-evidence cases",
+      "avoid overclaiming confidence where evidence is thin",
+      "produce deterministic, reviewable outputs under equivalent inputs",
+      "expose failure patterns in a way that can be corrected systematically"
+    ],
+    "success_standard": "The intake classifier behaves like a disciplined, uncertainty-aware system rather than a persuasive but unstable AI layer."
+  },
+  "classification_unit_under_review": {
+    "review_target": "Classification behavior mapping structured blank page intake inputs into a normalized Phase 1 interpretation object.",
+    "inputs_under_review": [
+      "free_text_student_responses",
+      "structured_selections",
+      "prior_prompt_context_defined_by_phase_1_spec",
+      "metadata_permitted_by_policy",
+      "missing_field_patterns",
+      "contradiction_patterns_across_responses",
+      "low_effort_or_evasive_responses"
+    ],
+    "outputs_under_review": [
+      "primary_intake_mode",
+      "secondary_or_supporting_mode_tags",
+      "signal_family_presence_or_absence",
+      "ambiguity_flags",
+      "insufficiency_flags",
+      "contradiction_flags",
+      "recommended_next_step_route",
+      "confidence_band_or_confidence_surrogate",
+      "review_notes_or_rationale_object"
+    ],
+    "non_goals": [
+      "final_essay_generation_quality",
+      "long_form_essay_feedback_quality",
+      "premium_ux_polish",
+      "billing_or_entitlement_logic",
+      "non_phase_1_downstream_recommendation_layers_except_where_routing_dependence_creates_a_gating_concern"
+    ]
+  },
+  "core_review_principles": [
+    {
+      "id": "P1",
+      "name": "truth_over_fluency",
+      "rule": "A terse correct classification is better than a fluent but wrong interpretation."
+    },
+    {
+      "id": "P2",
+      "name": "evidence_over_intuition",
+      "rule": "Labels must be assigned based on observable evidence in the case, not reviewer projection or what the student probably meant."
+    },
+    {
+      "id": "P3",
+      "name": "uncertainty_must_be_explicit",
+      "rule": "Where evidence is mixed, thin, contradictory, or low-signal, the correct behavior is to surface ambiguity or insufficiency, not to force precision."
+    },
+    {
+      "id": "P4",
+      "name": "determinism_matters",
+      "rule": "Equivalent inputs should yield materially equivalent classification outputs. Variation that changes routing or mode assignment without evidence change is a defect."
+    },
+    {
+      "id": "P5",
+      "name": "reviewability_is_mandatory",
+      "rule": "Every judged case must be auditable by another reviewer after the fact."
+    },
+    {
+      "id": "P6",
+      "name": "error_asymmetry_matters",
+      "rule": "Errors that misdirect the student early, create false certainty, or corrupt downstream narrative work are prioritized as more severe."
+    }
+  ],
+  "packet_deliverables": [
+    {
+      "id": "D1",
+      "name": "packet_index",
+      "requirement": "Top-level index listing all included materials, version numbers, owners, and last-updated timestamps."
+    },
+    {
+      "id": "D2",
+      "name": "label_schema_reference",
+      "requirement": "Authoritative reference for primary intake modes, allowed secondary tags, signal families, ambiguity classes, insufficiency classes, contradiction classes, and escalation triggers aligned with implementation and labeling specs."
+    },
+    {
+      "id": "D3",
+      "name": "gold_set_case_pack",
+      "requirement": "Curated set representing the real decision surface, including easy, medium, hard, ambiguous, insufficient-evidence, contradictory, deceptive/low-effort, and route-breaking edge cases."
+    },
+    {
+      "id": "D4",
+      "name": "adjudication_notes",
+      "requirement": "Per-gold-case record of final label, winning rationale, alternatives considered, alternatives rejected, and taxonomy weakness exposure."
+    },
+    {
+      "id": "D5",
+      "name": "calibration_set",
+      "requirement": "Reviewer calibration subset used before broader evaluation begins."
+    },
+    {
+      "id": "D6",
+      "name": "blind_evaluation_set",
+      "requirement": "Held-out set for actual measurement not repeatedly tuned against by reviewers or prompt engineers."
+    },
+    {
+      "id": "D7",
+      "name": "error_taxonomy",
+      "requirement": "Normalized taxonomy of model failure patterns."
+    },
+    {
+      "id": "D8",
+      "name": "scoring_and_acceptance_sheet",
+      "requirement": "Standardized scoring template for per-case judgment and release readiness."
+    },
+    {
+      "id": "D9",
+      "name": "change_log",
+      "requirement": "Every meaningful packet change must be versioned, dated, and reason-coded."
+    }
+  ],
+  "label_system_review_axes": {
+    "primary_mode_label": {
+      "cardinality": "exactly_one_unless_upstream_spec_permits_no_primary_state",
+      "rule": "Reflect the dominant actionable state of the student input, not merely the most emotionally salient phrase."
+    },
+    "secondary_tag_set": {
+      "rule": "Capture meaningful but non-dominant attributes that affect routing or interpretation.",
+      "prohibition": "Must not be used as a crutch for avoiding a hard primary classification decision."
+    },
+    "signal_family_profile": {
+      "rule": "Evaluate whether the classifier correctly detects the relevant Phase 1 signal families.",
+      "example_signal_families": [
+        "autobiographical_specificity",
+        "thematic_directionality",
+        "value_or_identity_signal",
+        "conflict_or_tension_signal",
+        "reflection_depth",
+        "agency_signal",
+        "concreteness_vs_abstraction",
+        "emotional_salience",
+        "contradiction_or_instability_markers"
+      ]
+    },
+    "ambiguity_status": {
+      "rule": "Reward correct identification of genuinely ambiguous cases."
+    },
+    "insufficiency_status": {
+      "rule": "Reward correct identification of cases with inadequate evidence rather than fabricated structure."
+    },
+    "review_or_escalation_flag": {
+      "rule": "Judge whether the flag was correctly raised when the defined threshold for human intervention was met."
+    }
+  },
+  "gold_set_construction_rules": {
+    "purpose": "Truth anchor benchmark capturing the actual operating environment.",
+    "recommended_minimum_sizes": {
+      "calibration_set": {
+        "min": 20,
+        "max": 30
+      },
+      "gold_adjudicated_development_set": {
+        "min": 75,
+        "max": 150
+      },
+      "blind_evaluation_set": {
+        "min": 50,
+        "max": 100
+      }
+    },
+    "small_set_rule": "Smaller sets may be used temporarily, but release decisions based on extremely small sets are provisional.",
+    "target_composition_percentages": {
+      "clean_high_signal_cases": "20-30%",
+      "moderate_cases_with_partial_clarity": "25-35%",
+      "hard_but_resolvable_cases": "20-25%",
+      "ambiguous_cases": "10-20%",
+      "insufficient_evidence_cases": "10-20%",
+      "contradiction_or_instability_cases": "5-15%"
+    },
+    "source_diversity_axes": [
+      "essay_maturity_level",
+      "writing_ability_level",
+      "emotional_directness",
+      "topic_specificity",
+      "response_effort_quality",
+      "student_certainty_level",
+      "presence_of_cliche_language",
+      "fragmented_vs_polished_expression"
+    ],
+    "anti_contamination_rule": "Cases used for major prompt iteration should not be over-recycled as the sole evidence of success. Hold-out data is mandatory."
+  },
+  "case_format_standard": {
+    "required_case_fields": [
+      "case_id",
+      "source_group",
+      "difficulty_band",
+      "case_type",
+      "input_payload",
+      "expected_primary_mode",
+      "expected_secondary_tags",
+      "expected_signal_family_profile",
+      "expected_ambiguity_status",
+      "expected_insufficiency_status",
+      "expected_escalation_flag",
+      "adjudication_summary",
+      "adjudication_rationale",
+      "known_risks",
+      "notes_for_reviewers"
+    ],
+    "input_payload_rule": "Preserve the exact text and structured selections relevant to classification. Reviewers should never label from a paraphrase when the original is available.",
+    "difficulty_bands": {
+      "A": "Clear: dominant signal is obvious, low ambiguity.",
+      "B": "Moderate: one likely answer, but non-trivial competing interpretations exist.",
+      "C": "Hard: requires close reading and disciplined taxonomy application.",
+      "D": "Ambiguous: multiple interpretations remain materially plausible even after close reading.",
+      "E": "Insufficient: evidence too weak to support a trustworthy primary interpretation."
+    },
+    "recommended_case_type_tags": [
+      "clean_high_signal",
+      "mixed_signal",
+      "ambiguous",
+      "insufficient",
+      "contradictory",
+      "low_effort",
+      "emotionally_loaded",
+      "overwritten",
+      "cliche_heavy",
+      "fragmented",
+      "route_breaker_candidate"
+    ]
+  },
+  "adjudication_protocol": {
+    "why_necessary": "Raw reviewer disagreement is diagnostic information and must be used to determine whether the issue lies in the model, taxonomy, instructions, case, or reviewer inconsistency.",
+    "participants": [
+      "primary_reviewer",
+      "secondary_reviewer",
+      "adjudicator_or_review_lead"
+    ],
+    "allowed_terminal_states": [
+      "resolved_with_stable_label",
+      "resolved_with_ambiguity_accepted_as_ground_truth",
+      "resolved_with_insufficiency_accepted_as_ground_truth",
+      "taxonomy_issue_identified",
+      "case_removed_from_benchmark"
+    ],
+    "decision_standard": "The winning label is the one best supported by actual evidence and frozen label definitions, not seniority.",
+    "taxonomy_change_rule": "Changes should be rare and justified only when repeated cases reveal a structural mismatch between reality and the current label framework."
+  },
+  "reviewer_instructions": {
+    "job_definition": "Classify the intake artifact in front of you using the allowed taxonomy and evidence only.",
+    "review_sequence": [
+      "Read the raw payload fully.",
+      "Identify the strongest observable signals.",
+      "Identify competing plausible interpretations.",
+      "Determine whether the evidence supports a single dominant primary mode.",
+      "Assign secondary tags only if independently justified.",
+      "Judge ambiguity and insufficiency explicitly.",
+      "Mark escalation if the defined trigger is met.",
+      "Record a brief rationale."
+    ],
+    "prohibited_behaviors": [
+      "rewarding_eloquence_over_evidence",
+      "inferring_hidden_backstory_not_present_in_input",
+      "forcing_a_dominant_label_when_ambiguity_is_real",
+      "overusing_ambiguity_to_avoid_hard_calls_in_resolvable_cases",
+      "using_secondary_tags_to_hide_uncertainty",
+      "reinterpreting_labels_ad_hoc_on_a_per_case_basis"
+    ],
+    "rationale_requirements": {
+      "unacceptable": [
+        "felt like mode X",
+        "seems strongest",
+        "overall vibe fits"
+      ],
+      "acceptable_style": [
+        "cites explicit evidence",
+        "names the competing interpretation",
+        "explains why ambiguity is or is not warranted"
+      ]
+    }
+  },
+  "error_taxonomy": {
+    "errors": [
+      {
+        "code": "E1",
+        "name": "wrong_primary_mode",
+        "definition": "The dominant mode assignment is incorrect and would materially alter routing or downstream interpretation."
+      },
+      {
+        "code": "E2",
+        "name": "missing_dominant_signal",
+        "definition": "The model failed to detect the strongest relevant signal family present in the case."
+      },
+      {
+        "code": "E3",
+        "name": "false_dominant_signal",
+        "definition": "The model elevated a weak or absent signal into a decisive classification factor."
+      },
+      {
+        "code": "E4",
+        "name": "overconfidence_under_ambiguity",
+        "definition": "The case should have been marked ambiguous or low-confidence, but the system presented a decisive answer."
+      },
+      {
+        "code": "E5",
+        "name": "false_ambiguity",
+        "definition": "The case was sufficiently clear, but the system avoided a valid decision by over-flagging ambiguity."
+      },
+      {
+        "code": "E6",
+        "name": "failure_to_detect_insufficiency",
+        "definition": "The input lacked enough evidence, but the system fabricated structure or certainty."
+      },
+      {
+        "code": "E7",
+        "name": "false_insufficiency",
+        "definition": "The case contained enough evidence for a stable call, but the system incorrectly labeled it as insufficient."
+      },
+      {
+        "code": "E8",
+        "name": "contradiction_handling_failure",
+        "definition": "The system failed to detect or properly respond to materially contradictory inputs."
+      },
+      {
+        "code": "E9",
+        "name": "secondary_tag_distortion",
+        "definition": "Secondary labels were wrong in a way that meaningfully changes interpretation or route behavior."
+      },
+      {
+        "code": "E10",
+        "name": "escalation_failure",
+        "definition": "The system missed a case that required review or unnecessarily escalated a normal case."
+      },
+      {
+        "code": "E11",
+        "name": "non_deterministic_output_drift",
+        "definition": "Equivalent or near-equivalent inputs produced materially different classifications without justified cause."
+      },
+      {
+        "code": "E12",
+        "name": "rationale_or_observability_defect",
+        "definition": "The system output could not be meaningfully reviewed because rationale or structured explanation was inadequate, inconsistent, or missing."
+      }
+    ],
+    "severity_bands": [
+      {
+        "code": "S1",
+        "name": "critical",
+        "definition": "Release blocker; materially misroutes or misleads the student."
+      },
+      {
+        "code": "S2",
+        "name": "major",
+        "definition": "Serious quality issue; weakens trust or downstream quality."
+      },
+      {
+        "code": "S3",
+        "name": "moderate",
+        "definition": "Noticeable but recoverable issue."
+      },
+      {
+        "code": "S4",
+        "name": "minor",
+        "definition": "Low-risk issue; does not materially change route or interpretation."
+      }
+    ],
+    "repeated_pattern_escalation_rule": "A single S2 error may be tolerable depending on frequency. Repeated S2 patterns across the same slice are a gating concern."
+  },
+  "scoring_framework": {
+    "purpose": "Support release judgment without creating a false impression of mathematical precision.",
+    "per_case_axes": [
+      "primary_mode_correctness",
+      "secondary_tag_correctness",
+      "signal_family_correctness",
+      "ambiguity_handling_correctness",
+      "insufficiency_handling_correctness",
+      "escalation_correctness",
+      "rationale_or_reviewability_quality",
+      "determinism_status_where_applicable"
+    ],
+    "recommended_rubric": {
+      "2": "correct_or_acceptable",
+      "1": "partially_correct_or_borderline",
+      "0": "incorrect_or_unacceptable"
+    },
+    "critical_axes": [
+      "primary_mode_correctness",
+      "ambiguity_handling_correctness",
+      "insufficiency_handling_correctness",
+      "escalation_correctness"
+    ],
+    "critical_axis_rule": "A case may not receive an overall pass if a critical axis fails in a way that would materially harm routing.",
+    "aggregate_metrics": [
+      "overall_case_pass_rate",
+      "critical_axis_pass_rate",
+      "pass_rate_by_difficulty_band",
+      "pass_rate_by_case_type",
+      "ambiguity_precision_recall_surrogate",
+      "insufficiency_precision_recall_surrogate",
+      "escalation_precision_recall_surrogate",
+      "severe_error_count_by_error_class",
+      "instability_count"
+    ]
+  },
+  "acceptance_and_release_thresholds": {
+    "minimum_qualitative_standard": "The classifier behaves like a disciplined educational product layer that knows when it knows, knows when it does not know, and can be corrected by humans without forensic guesswork.",
+    "minimum_quantitative_release_posture": {
+      "overall_blind_eval_pass_rate": {
+        "operator": ">=",
+        "value": 0.85
+      },
+      "critical_axis_pass_rate": {
+        "operator": ">=",
+        "value": 0.92
+      },
+      "band_a_b_primary_mode_correctness": {
+        "operator": ">=",
+        "value": 0.95
+      },
+      "band_d_e_overconfidence_error_rate": {
+        "operator": "track_and_keep_very_low",
+        "value": null
+      },
+      "s1_critical_errors_unresolved": {
+        "operator": "=",
+        "value": 0
+      },
+      "e11_non_determinism_defects_unresolved_on_frozen_inputs": {
+        "operator": "=",
+        "value": 0
+      }
+    },
+    "threshold_rule": "These are starting thresholds. If actual user risk suggests a stricter bar, the stricter bar wins.",
+    "mandatory_no_ship_conditions": [
+      "repeated_wrong_primary_mode_failures_on_common_case_types",
+      "frequent_overconfidence_in_ambiguous_or_insufficient_cases",
+      "inability_to_explain_why_a_classification_was_made",
+      "prompt_or_build_instability_causing_materially_different_outcomes_on_equivalent_inputs",
+      "escalation_logic_failing_on_defined_high_risk_cases",
+      "gold_set_disagreement_so_severe_that_the_taxonomy_itself_remains_unclear"
+    ]
+  },
+  "calibration_protocol": {
+    "purpose": "Ensure reviewers are applying the taxonomy consistently before evaluation results are trusted.",
+    "process": [
+      "Reviewers independently label the calibration subset.",
+      "Disagreement is analyzed.",
+      "Confusion clusters are documented.",
+      "Instructions are refined only if necessary.",
+      "A second pass is run if the first pass reveals major inconsistency."
+    ],
+    "success_standard": "Calibration is sufficient when disagreements are explainable, bounded, and not driven by basic taxonomy confusion.",
+    "pause_condition": "If reviewers cannot reliably separate resolvable cases from ambiguous or insufficient cases, evaluation should pause until the framework is corrected."
+  },
+  "determinism_and_stability_checks": {
+    "same_condition_rerun_checks": [
+      "same_primary_mode",
+      "same_ambiguity_or_insufficiency_status",
+      "same_escalation_behavior",
+      "materially_similar_rationale_structure"
+    ],
+    "near_equivalent_perturbation_tests": [
+      "punctuation_changes",
+      "whitespace_changes",
+      "harmless_wording_changes",
+      "ordering_shifts_that_do_not_change_substance"
+    ],
+    "failure_rule": "If minor perturbations materially change routing or dominant classification without real semantic change, log an E11 defect."
+  },
+  "slicing_strategy": {
+    "required_slices": [
+      "difficulty_band",
+      "case_type",
+      "primary_mode",
+      "ambiguity_status",
+      "insufficiency_status",
+      "contradiction_presence",
+      "response_quality_level",
+      "reviewer_disagreement_history"
+    ],
+    "optional_recommended_slices": [
+      "prompt_version",
+      "model_version",
+      "route_family",
+      "user_demographic_proxies_only_if_policy_safe_and_genuinely_useful"
+    ]
+  },
+  "human_review_escalation_rules": {
+    "recommended_triggers": [
+      "unresolved_contradiction_across_inputs",
+      "ambiguity_that_materially_affects_route_selection",
+      "insufficient_evidence_for_trustworthy_route_assignment",
+      "emotionally_intense_or_atypical_content_where_misclassification_risk_is_unusually_high",
+      "model_rationale_inconsistency",
+      "repeated_instability_on_the_same_case"
+    ],
+    "usage_rule": "Human review should be used to preserve trust and learning quality, not as a blanket crutch for weak system design."
+  },
+  "review_packet_operating_workflow": {
+    "before_evaluation": [
+      "freeze_implementation_inputs_for_the_review_cycle",
+      "freeze_packet_version",
+      "confirm_label_definitions",
+      "run_reviewer_calibration",
+      "confirm_blind_set_separation"
+    ],
+    "during_evaluation": [
+      "run_blind_cases",
+      "capture_structured_outputs",
+      "score_against_adjudicated_truth",
+      "assign_error_codes",
+      "record_severity",
+      "flag_unstable_cases"
+    ],
+    "after_evaluation": [
+      "produce_packet_summary",
+      "identify_top_failure_clusters",
+      "distinguish_model_issues_from_taxonomy_issues",
+      "propose_corrective_actions",
+      "decide_ship_fix_and_rerun_or_expand_review_set"
+    ]
+  },
+  "required_review_cycle_output_artifacts": {
+    "artifacts": [
+      "evaluation_summary_memo",
+      "per_case_scored_sheet",
+      "error_cluster_report",
+      "determinism_stability_report",
+      "open_issues_list_with_owners",
+      "release_recommendation_state"
+    ],
+    "release_recommendation_states": [
+      "PASS_FOR_PHASE_1_SCOPE",
+      "PASS_WITH_RESTRICTIONS",
+      "FIX_AND_RERUN_REQUIRED",
+      "BLOCKED_BY_TAXONOMY",
+      "BLOCKED_BY_DETERMINISM"
+    ]
+  },
+  "packet_governance": {
+    "ownership_requirements": {
+      "packet_integrity_owner_required": true,
+      "adjudication_quality_owner_required": true,
+      "implementation_follow_through_owner_required": true,
+      "owners_may_be_distinct_people": true
+    },
+    "versioning_rule": "Every material change to labels, adjudication logic, scoring rules, thresholds, blind-set composition, or reviewer instructions must increment the packet version or recorded revision stamp.",
+    "freeze_discipline": "Do not change packet rules mid-evaluation unless the run is explicitly invalidated and restarted."
+  },
+  "template_structures": {
+    "per_case_review_template": {
+      "case_id": "",
+      "source_group": "",
+      "difficulty_band": "",
+      "case_type_tags": [],
+      "input_payload": {},
+      "expected_primary_mode": "",
+      "expected_secondary_tags": [],
+      "expected_signal_families": [],
+      "expected_ambiguity_status": "",
+      "expected_insufficiency_status": "",
+      "expected_escalation_flag": false,
+      "model_output_summary": {},
+      "score_primary_mode": null,
+      "score_secondary_tags": null,
+      "score_signal_families": null,
+      "score_ambiguity": null,
+      "score_insufficiency": null,
+      "score_escalation": null,
+      "score_reviewability": null,
+      "score_determinism": null,
+      "overall_case_result": "",
+      "error_codes": [],
+      "severity": "",
+      "reviewer_notes": "",
+      "adjudication_notes": ""
+    },
+    "evaluation_summary_template": {
+      "review_cycle_id": "",
+      "packet_version": "v1",
+      "implementation_version": "",
+      "prompt_version": "",
+      "model_version": "",
+      "cases_evaluated": 0,
+      "overall_pass_rate": 0.0,
+      "critical_axis_pass_rate": 0.0,
+      "pass_rate_by_difficulty": {},
+      "pass_rate_by_case_type": {},
+      "critical_errors_open": 0,
+      "major_errors_open": 0,
+      "instability_cases": 0,
+      "top_failure_clusters": [],
+      "release_recommendation": "",
+      "required_actions_before_next_cycle": [],
+      "owner_assignments": []
+    }
+  },
+  "execution_standard": {
+    "must_enable": [
+      "build_a_gold_benchmark",
+      "train_reviewers_to_consistency",
+      "measure_classification_quality_honestly",
+      "detect_instability_instead_of_hiding_it",
+      "separate_model_failures_from_taxonomy_failures",
+      "make_a_real_ship_or_no_ship_decision",
+      "improve_the_system_through_disciplined_iteration"
+    ],
+    "failure_conditions": [
+      "eloquent_but_not_executable",
+      "high_scores_on_easy_cases_while_missing_uncertainty_failures",
+      "cannot_survive_adversarial_review_from_strong_engineer_pm_or_evaluator"
+    ]
+  },
+  "final_release_posture": {
+    "ship_only_when": [
+      "structurally_understandable",
+      "operationally_testable",
+      "reviewable_by_humans",
+      "stable_enough_to_trust",
+      "honest_about_uncertainty",
+      "strong_enough_on_common_cases",
+      "bounded_enough_on_edge_cases"
+    ],
+    "bar_for_release": "disciplined_trustworthiness"
+  }
+}

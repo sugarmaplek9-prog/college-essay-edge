@@ -1,0 +1,53 @@
+{
+  "case_id": "case_018",
+  "label": "medium-signal music ensemble accountability",
+  "difficulty": "medium",
+  "tags": [
+    "draft_present",
+    "school_sensitive"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "public policy"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_018",
+    "project_type": "personal_statement",
+    "target_school": "School 6"
+  },
+  "story_entries": [
+    {
+      "id": "story_18_1",
+      "text": "Case 18: music ensemble accountability. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_18",
+    "text": "Draft for music ensemble accountability. I am trying to connect event-level details with values and future direction."
+  },
+  "school_context": {
+    "target_school": "School 6",
+    "notes": "Student is considering fit with School 6."
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers medium difficulty behavior and music ensemble accountability signal pattern.",
+    "reviewer_warning": ""
+  }
+}

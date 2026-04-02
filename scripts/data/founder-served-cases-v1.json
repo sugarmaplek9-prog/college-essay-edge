@@ -1,0 +1,61 @@
+[
+  {
+    "case_id": "HV2_01",
+    "title": "Chem lab checklist — live founder regression",
+    "raw_input": "I was the fastest student in our AP chem lab section at finishing titration setups. During one lab, a classmate copied my setup and contaminated her sample because I had skipped labeling one transfer step I always did in my head. My teacher said speed was not the same thing as reliability. The next week I built a one-page checklist and made everyone use it before touching the burette. Our failed trials dropped a lot, and I stopped being proud of finishing first.",
+    "tags": ["locked_strong", "founder_regression", "production_smoke"],
+    "expected_product_modes": ["direction_light", "direction_full"],
+    "direction_must_include_any": ["reliability", "checklist", "failed trials"],
+    "direction_must_not_include": ["and the response in", "while the", "blur the"],
+    "opening_must_include_any": ["Build from the evidence", "Choose the exact line", "What to prove next"],
+    "opening_must_not_include": ["Build the hinge", "while the", "blur the"]
+  },
+  {
+    "case_id": "HV2_10",
+    "title": "Robotics pit decision under pressure",
+    "raw_input": "During regionals our robot failed inspection twice, and I told the team to remove an autonomous feature to pass on time. Another programmer argued we should keep it and risk a late match. I overruled him. We qualified but lost our quarterfinal because of manual control mistakes. After the event he said my call protected schedule but ignored our actual strength. I now frame emergency decisions as tradeoffs out loud before choosing.",
+    "tags": ["locked_strong"],
+    "expected_product_modes": ["direction_light", "direction_full"],
+    "direction_must_include_any": ["tradeoffs", "actual strength", "schedule"],
+    "direction_must_not_include": ["while the", "blur the"],
+    "opening_must_include_any": ["Build from the evidence", "What to prove next"],
+    "opening_must_not_include": ["Build the hinge", "while the", "blur the"]
+  },
+  {
+    "case_id": "WK1_06",
+    "title": "One moment but no interpretation",
+    "raw_input": "One student nodded like she understood my explanation and then turned in the problem blank. I changed how I asked questions after that. That's the only part that feels real.",
+    "tags": ["weak_rescue"],
+    "expected_product_modes": ["direction_light", "direction_full", "clarification", "blank_page_intake"],
+    "direction_must_include_any": ["changed how I asked questions", "turned in the problem blank", "one student"],
+    "direction_must_not_include": ["while the", "blur the"],
+    "opening_must_include_any": ["Build from the evidence", "What to prove next"],
+    "opening_must_not_include": ["Build the hinge", "while the", "blur the"],
+    "follow_up_answers": [
+      "I stopped asking if students understood and started making them show me the first step back in their own words.",
+      "The moment that matters is seeing her nod, then seeing the blank page, and realizing my explanation had only sounded clear to me."
+    ]
+  },
+  {
+    "case_id": "HV2_11",
+    "title": "Split focus — art portfolio and cross-country",
+    "raw_input": "I paint portraits and I also run cross-country. Both matter to me and I am unsure which one is better for my college essay.",
+    "tags": ["ambiguous"],
+    "expected_product_modes": ["direction_light", "direction_full"],
+    "direction_must_include_any": ["Angle A", "Angle B", "Compare both"],
+    "direction_must_not_include": ["while the", "blur the"],
+    "opening_must_include_any": [],
+    "opening_must_not_include": []
+  },
+  {
+    "case_id": "CT1_01",
+    "title": "Robotics reliability vs restaurant leadership",
+    "raw_input": "I keep circling between two things. One is robotics where I stopped chasing speed and started building checklists after our test runs kept failing. The other is helping at my family's restaurant where I started training younger cousins because I realized me doing everything fast was creating more confusion. Both feel true and I do not know which one is stronger for my essay yet.",
+    "tags": ["mixed_ambiguous"],
+    "expected_product_modes": ["direction_light", "direction_full"],
+    "direction_must_include_any": ["robotics", "restaurant", "stronger"],
+    "direction_must_not_include": ["while the", "blur the"],
+    "opening_must_include_any": [],
+    "opening_must_not_include": []
+  }
+]

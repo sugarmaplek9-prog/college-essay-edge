@@ -1,0 +1,56 @@
+{
+  "case_id": "case_001",
+  "label": "weak-signal family caregiving",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "red_team",
+    "stale_draft_risk",
+    "generic_padding_risk",
+    "fake_confidence_temptation"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "biology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_001",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_1_1",
+      "text": "Short notes: family caregiving. Did a lot. Learned something."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": false,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers weak difficulty behavior and family caregiving signal pattern.",
+    "reviewer_warning": "Watch for fake confidence under thin context."
+  }
+}

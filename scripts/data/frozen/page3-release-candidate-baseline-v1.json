@@ -1,0 +1,134 @@
+{
+  "baseline_id": "page3_release_candidate_baseline_v1",
+  "accepted_on": "2026-03-26T22:45:11.865Z",
+  "release_candidate_id": "page3_rc_v1",
+  "source_contract_path": "scripts/data/frozen/page3-release-candidate-contract-v1.json",
+  "rc_status_path": "evaluation_outputs/page3_release_candidate_v1/PAGE3_RC_STATUS_V1.json",
+  "multilayer_report_path": "evaluation_outputs/page3_layers/MULTILAYER_VALIDATION_REPORT_V1.json",
+  "accepted_state": {
+    "rc_pass": true,
+    "all_layers_packet_valid": true,
+    "all_layers_no_collapse": true,
+    "frozen_regression_ok": true,
+    "layer_results": [
+      {
+        "id": "layer_a_frozen_regression",
+        "label": "Layer A — Frozen Regression Benchmark",
+        "final_tally": {
+          "product_wins": 10,
+          "openai_wins": 0,
+          "ties": 2,
+          "unscored": 0
+        },
+        "collapse_cases": 0,
+        "dominant_family_ratio": 0.273,
+        "packet_valid_for_review": true,
+        "failed_gates": []
+      },
+      {
+        "id": "layer_b_unseen_validation",
+        "label": "Layer B — Unseen Validation Set",
+        "final_tally": {
+          "product_wins": 0,
+          "openai_wins": 0,
+          "ties": 0,
+          "unscored": 12
+        },
+        "collapse_cases": 0,
+        "dominant_family_ratio": 0.333,
+        "packet_valid_for_review": true,
+        "failed_gates": []
+      },
+      {
+        "id": "layer_c_messy_realworld",
+        "label": "Layer C — Messy Input Set",
+        "final_tally": {
+          "product_wins": 0,
+          "openai_wins": 0,
+          "ties": 0,
+          "unscored": 8
+        },
+        "collapse_cases": 0,
+        "dominant_family_ratio": 0.25,
+        "packet_valid_for_review": true,
+        "failed_gates": []
+      }
+    ],
+    "why_contract_alignment_ok": true,
+    "residual_comprehension_fail_total_layer_b": 2,
+    "recovered_unseen_cases": [
+      {
+        "case_id": "UV1_07",
+        "zero_candidate_failure_closed": true
+      },
+      {
+        "case_id": "UV1_09",
+        "zero_candidate_failure_closed": true
+      }
+    ]
+  },
+  "frozen_assets": {
+    "contract": {
+      "path": "scripts/data/frozen/page3-release-candidate-contract-v1.json",
+      "sha256": "efba41d36509046bd9c8cbcf6478c5a28d29b73f55ba330d2dcfb8490b706202"
+    },
+    "layer_a_cases": {
+      "path": "scripts/data/frozen/page3-holdout-v2-cases.frozen.json",
+      "sha256": "66d678f92b94857b3fefa783c075786006b36b14d3c3e6e00a521c47df08b91d"
+    },
+    "layer_b_cases": {
+      "path": "scripts/data/page3-unseen-v1-cases.json",
+      "sha256": "ceafbb237d0208079e7b11074df51ee735ba43a8bbdca4149c8926a005d6f22a"
+    },
+    "layer_c_cases": {
+      "path": "scripts/data/page3-messy-v1-cases.json",
+      "sha256": "fd5276218cd287a0de7c5f41a4d4206876d7db6828bdd9f5e4c982a93eac7185"
+    },
+    "layer_runner": {
+      "path": "scripts/page3-multilayer-validation-v3.mjs",
+      "sha256": "9ff195e429339706e15fe7ac4f1c47384513ff642321692ae0f2e232d6bfb173"
+    },
+    "holdout_runner": {
+      "path": "scripts/page3-holdout-v2.mjs",
+      "sha256": "c7c563558732e6ae82c950000f4b6bad90baf4f01059bb9776ebaf550f1a2976"
+    },
+    "pool_integrity_audit": {
+      "path": "scripts/page3-pool-integrity-audit-v1.mjs",
+      "sha256": "a77b0c578770bac3d2dc5355406f071546ab519d57c8b432f512a7c06c367878"
+    },
+    "packet_validation_gate": {
+      "path": "scripts/page3-packet-validation-gate-v3.mjs",
+      "sha256": "9b9053b20357a9c9d3a2de4cb37c8a9e436e89be6dea32e71c2fbd66057f7c20"
+    },
+    "why_contract_audit": {
+      "path": "scripts/page3-why-contract-audit-v2.mjs",
+      "sha256": "527c9371e44cf69b865c12df733a085ba69707716c2c0f756413b605b9b9eed5"
+    },
+    "frozen_regression_standard": {
+      "path": "scripts/data/frozen/page3-frozen-regression-standard-v1.json",
+      "sha256": "45b7d22a939a1215b5baa3e95d6c467cff27710d8345b5e582e2a4920dd949a9"
+    },
+    "runtime_direction": {
+      "path": "src/lib/fm/direction.ts",
+      "sha256": "5b1d034830c7428503666d447beba91d688af788e1630c6aa1bfbfbf09a9746c"
+    },
+    "runtime_canonical_payload": {
+      "path": "src/lib/fm/canonicalPage3Payload.ts",
+      "sha256": "b4e029976b54f111b0d4a2044496243a9b30618bbd3db7e09eb0810d10fcf965"
+    }
+  },
+  "accepted_residuals": [
+    "Residual candidate-level comprehension_fail rejections still exist in Layer B diagnostics, but no longer produce collapse or packet invalidation.",
+    "Layers B and C remain product-only decision layers in the RC suite because their OpenAI baseline cache is intentionally incomplete."
+  ],
+  "known_limitations": [
+    "The frozen evaluator is heuristic and remains a guardrail, not the final human authority for product quality.",
+    "The RC suite is strong for remediation protection but does not yet replace broader controlled product testing on real student notes.",
+    "Controlled testing still needs operator review to judge landing quality, not just structural validity."
+  ],
+  "open_questions_for_controlled_testing": [
+    "How often do real messy notes trigger fallback candidates without reducing trust in the surfaced recommendation?",
+    "Do recommendation openings stay diverse in broader real-case batches beyond the current three layers?",
+    "Are there new failure classes in long, partially drafted, or highly comparative inputs that the frozen layers do not cover?"
+  ]
+}

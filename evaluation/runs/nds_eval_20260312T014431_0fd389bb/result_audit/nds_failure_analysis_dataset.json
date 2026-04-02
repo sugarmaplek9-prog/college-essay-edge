@@ -1,0 +1,628 @@
+{
+  "run_id": "nds_eval_20260312T014431_0fd389bb",
+  "generated_at": "2026-03-12T01:45:45.249Z",
+  "source_sets": {
+    "blind_review_slice_case_ids": [
+      "case_024",
+      "case_025",
+      "case_027",
+      "case_012",
+      "case_015",
+      "case_020",
+      "case_009",
+      "case_010",
+      "case_002",
+      "case_003"
+    ],
+    "weakest_10_case_ids": [
+      "case_002",
+      "case_004",
+      "case_006",
+      "case_008",
+      "case_010",
+      "case_001",
+      "case_005",
+      "case_007",
+      "case_011",
+      "case_013"
+    ],
+    "final_union_case_ids": [
+      "case_024",
+      "case_025",
+      "case_027",
+      "case_012",
+      "case_015",
+      "case_020",
+      "case_009",
+      "case_010",
+      "case_002",
+      "case_003",
+      "case_004",
+      "case_006",
+      "case_008",
+      "case_001",
+      "case_005",
+      "case_007",
+      "case_011",
+      "case_013"
+    ]
+  },
+  "records": [
+    {
+      "case_id": "case_024",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 24: debate conflict. I initially handled this situation poorly, then adapted my approach after feedback. I can poin as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_025",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 25: science fair failure. I initially handled this situation poorly, then adapted my approach after feedback. I can as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_027",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 27: community clinic volunteer. I initially handled this situation poorly, then adapted my approach after feedback. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_012",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 12: robotics leadership. I initially handled this situation poorly, then adapted my approach after feedback. I can  as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "F4_too_generic"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_015",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 15: science fair failure. I initially handled this situation poorly, then adapted my approach after feedback. I can as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_020",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 20: peer tutoring growth. I initially handled this situation poorly, then adapted my approach after feedback. I can as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "F4_too_generic"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_009",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Constrained bet: foreground the turning-point shift, not the achievement list",
+          "core_claim": "The essay should center on Short notes: cross-country recovery. Did a lot. Learned something. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 1,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_010",
+      "from_blind_slice": true,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "needs_more_input",
+        "baseline_status": "needs_more_input",
+        "nds_best_direction": {
+          "angle_title": "",
+          "core_claim": "",
+          "why_this_is_the_real_story": "",
+          "what_it_reveals_about_the_student": "",
+          "why_it_beats_the_obvious_angle": "",
+          "main_risk_if_written_poorly": "",
+          "next_move": ""
+        },
+        "nds_alternative_count": 0,
+        "nds_depth_signals": {
+          "detected_tension": null,
+          "detected_shift": null,
+          "obvious_but_weaker_angle": null,
+          "essay_opportunity": null
+        },
+        "nds_recovery_question": "What is one specific moment where your role or self-understanding changed in front of other people?"
+      },
+      "failure_categories": [
+        "F1_too_vague"
+      ],
+      "constrained_recommendation_should_have_been_possible": false,
+      "premium_output_should_have_done_differently": "Deliver a reduced-scope winner with explicit uncertainty and one strategic next move instead of default NMI.",
+      "likely_primary_failure_layer": "validator"
+    },
+    {
+      "case_id": "case_002",
+      "from_blind_slice": true,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "needs_more_input",
+        "baseline_status": "needs_more_input",
+        "nds_best_direction": {
+          "angle_title": "",
+          "core_claim": "",
+          "why_this_is_the_real_story": "",
+          "what_it_reveals_about_the_student": "",
+          "why_it_beats_the_obvious_angle": "",
+          "main_risk_if_written_poorly": "",
+          "next_move": ""
+        },
+        "nds_alternative_count": 0,
+        "nds_depth_signals": {
+          "detected_tension": null,
+          "detected_shift": null,
+          "obvious_but_weaker_angle": null,
+          "essay_opportunity": null
+        },
+        "nds_recovery_question": "What is one specific moment where your role or self-understanding changed in front of other people?"
+      },
+      "failure_categories": [
+        "F1_too_vague"
+      ],
+      "constrained_recommendation_should_have_been_possible": false,
+      "premium_output_should_have_done_differently": "Deliver a reduced-scope winner with explicit uncertainty and one strategic next move instead of default NMI.",
+      "likely_primary_failure_layer": "validator"
+    },
+    {
+      "case_id": "case_003",
+      "from_blind_slice": true,
+      "from_weakest10": false,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Constrained bet: foreground the turning-point shift, not the achievement list",
+          "core_claim": "The essay should center on Short notes: restaurant operations. Did a lot. Learned something. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 1,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_004",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "needs_more_input",
+        "baseline_status": "needs_more_input",
+        "nds_best_direction": {
+          "angle_title": "",
+          "core_claim": "",
+          "why_this_is_the_real_story": "",
+          "what_it_reveals_about_the_student": "",
+          "why_it_beats_the_obvious_angle": "",
+          "main_risk_if_written_poorly": "",
+          "next_move": ""
+        },
+        "nds_alternative_count": 0,
+        "nds_depth_signals": {
+          "detected_tension": null,
+          "detected_shift": null,
+          "obvious_but_weaker_angle": null,
+          "essay_opportunity": null
+        },
+        "nds_recovery_question": "What is one specific moment where your role or self-understanding changed in front of other people?"
+      },
+      "failure_categories": [
+        "F1_too_vague"
+      ],
+      "constrained_recommendation_should_have_been_possible": false,
+      "premium_output_should_have_done_differently": "Deliver a reduced-scope winner with explicit uncertainty and one strategic next move instead of default NMI.",
+      "likely_primary_failure_layer": "validator"
+    },
+    {
+      "case_id": "case_006",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "needs_more_input",
+        "baseline_status": "needs_more_input",
+        "nds_best_direction": {
+          "angle_title": "",
+          "core_claim": "",
+          "why_this_is_the_real_story": "",
+          "what_it_reveals_about_the_student": "",
+          "why_it_beats_the_obvious_angle": "",
+          "main_risk_if_written_poorly": "",
+          "next_move": ""
+        },
+        "nds_alternative_count": 0,
+        "nds_depth_signals": {
+          "detected_tension": null,
+          "detected_shift": null,
+          "obvious_but_weaker_angle": null,
+          "essay_opportunity": null
+        },
+        "nds_recovery_question": "What is one specific moment where your role or self-understanding changed in front of other people?"
+      },
+      "failure_categories": [
+        "F1_too_vague"
+      ],
+      "constrained_recommendation_should_have_been_possible": false,
+      "premium_output_should_have_done_differently": "Deliver a reduced-scope winner with explicit uncertainty and one strategic next move instead of default NMI.",
+      "likely_primary_failure_layer": "validator"
+    },
+    {
+      "case_id": "case_008",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "needs_more_input",
+        "baseline_status": "needs_more_input",
+        "nds_best_direction": {
+          "angle_title": "",
+          "core_claim": "",
+          "why_this_is_the_real_story": "",
+          "what_it_reveals_about_the_student": "",
+          "why_it_beats_the_obvious_angle": "",
+          "main_risk_if_written_poorly": "",
+          "next_move": ""
+        },
+        "nds_alternative_count": 0,
+        "nds_depth_signals": {
+          "detected_tension": null,
+          "detected_shift": null,
+          "obvious_but_weaker_angle": null,
+          "essay_opportunity": null
+        },
+        "nds_recovery_question": "What is one specific moment where your role or self-understanding changed in front of other people?"
+      },
+      "failure_categories": [
+        "F1_too_vague"
+      ],
+      "constrained_recommendation_should_have_been_possible": false,
+      "premium_output_should_have_done_differently": "Deliver a reduced-scope winner with explicit uncertainty and one strategic next move instead of default NMI.",
+      "likely_primary_failure_layer": "validator"
+    },
+    {
+      "case_id": "case_001",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Constrained bet: foreground the turning-point shift, not the achievement list",
+          "core_claim": "The essay should center on Short notes: family caregiving. Did a lot. Learned something. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 1,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_005",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Constrained bet: foreground the turning-point shift, not the achievement list",
+          "core_claim": "The essay should center on Short notes: science fair failure. Did a lot. Learned something. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 1,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_007",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Constrained bet: foreground the turning-point shift, not the achievement list",
+          "core_claim": "The essay should center on Short notes: community clinic volunteer. Did a lot. Learned something. as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 1,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_011",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 11: family caregiving. I initially handled this situation poorly, then adapted my approach after feedback. I can po as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    },
+    {
+      "case_id": "case_013",
+      "from_blind_slice": false,
+      "from_weakest10": true,
+      "current_output": {
+        "nds_status": "success",
+        "baseline_status": "success",
+        "nds_best_direction": {
+          "angle_title": "Best angle: the moment your role changed from performer to interpreter of responsibility",
+          "core_claim": "The essay should center on Case 13: restaurant operations. I initially handled this situation poorly, then adapted my approach after feedback. I ca as proof of self-revision, not just activity output.",
+          "why_this_is_the_real_story": "The strongest signal is the internal pivot after friction or feedback; that pivot creates narrative stakes and interpretive depth.",
+          "what_it_reveals_about_the_student": "It reveals a student who can update their judgment publicly and carry responsibility with more nuance over time.",
+          "why_it_beats_the_obvious_angle": "The obvious angle is accomplishment recap. This angle is stronger because it captures transformation, not résumé inventory.",
+          "main_risk_if_written_poorly": "If written broadly, it will flatten into generic growth language; it only works when the exact decision-point is shown concretely.",
+          "next_move": "Write the exact scene where your stance changed. Then add two observable details that prove the shift happened publicly. Finally, test whether each sentence advances the transformation claim rather than listing tasks."
+        },
+        "nds_alternative_count": 2,
+        "nds_depth_signals": {
+          "detected_tension": "The tension is between external performance and internal revision.",
+          "detected_shift": "A visible shift appears in how you responded after feedback.",
+          "obvious_but_weaker_angle": "Achievement-first framing that emphasizes output over inner revision.",
+          "essay_opportunity": "Use one concrete turning moment to prove identity movement and avoid résumé-style compression."
+        },
+        "nds_recovery_question": null
+      },
+      "failure_categories": [
+        "none_detected"
+      ],
+      "constrained_recommendation_should_have_been_possible": true,
+      "premium_output_should_have_done_differently": "Sharpen interpretive claim, increase narrative-function differentiation in alternatives, and make next move more strategic.",
+      "likely_primary_failure_layer": "prompt"
+    }
+  ]
+}

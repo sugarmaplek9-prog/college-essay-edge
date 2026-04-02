@@ -1,0 +1,402 @@
+[
+  {
+    "case_id": "NDS-001",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-002",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-003",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-004",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-005",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-006",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-007",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-008",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-009",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-010",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-011",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-012",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-013",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-014",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-015",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-016",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-017",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-018",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-019",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-020",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-021",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-022",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-023",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "show_strongest_direction",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-024",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  },
+  {
+    "case_id": "NDS-025",
+    "system_prediction": {
+      "predicted_action": "",
+      "predicted_best_action": "",
+      "predicted_best_direction": ""
+    },
+    "baseline_prediction": null,
+    "expected_best_action": "ask_question_before_showing",
+    "better_candidate_existed": "no",
+    "clarify_should_have_happened": "no",
+    "failure_owner": "candidate_generation",
+    "trust_risk": "high",
+    "likely_student_reaction": "flattened",
+    "adjudication_status": "needs_adjudication"
+  }
+]

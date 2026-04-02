@@ -1,0 +1,401 @@
+{
+  "artifact_id": "structured_blank_page_intake_phase_2_implementation_spec_v1",
+  "title": "Structured Blank Page Intake Phase 2 Implementation Spec V1",
+  "product": "College Essay Edge",
+  "phase": {
+    "number": 2,
+    "name": "structured_recovery_question_engine"
+  },
+  "status": "build_ready_implementation_spec",
+  "derived_from": [
+    "STRUCTURED_BLANK_PAGE_INTAKE_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_IMPLEMENTATION_PLAN_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_BUILD_BACKLOG_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_1_IMPLEMENTATION_SPEC_V1",
+    "completed_backlog_phase_1_implementation_results"
+  ],
+  "purpose": {
+    "summary": "For cases already classified into blank-page modes, emit typed recovery questions and missing-signal contracts instead of generic clarification behavior.",
+    "must_be": [
+      "typed",
+      "bounded",
+      "mode_specific",
+      "deterministic",
+      "inspectable",
+      "testable"
+    ],
+    "not": "copywriting_exercise"
+  },
+  "objective": {
+    "entry_precondition": "top_level_blank_page_route == needs_structured_blank_page_intake with exactly one blank_page_mode",
+    "must_emit": [
+      "primary_recovery_question",
+      "optional_secondary_recovery_question",
+      "missing_signal_type",
+      "why_not_ready_for_direction",
+      "optional_scaffolding_fields",
+      "bounded_fallback_for_too_thin_to_recover"
+    ],
+    "quality_requirements": [
+      "mode_specific",
+      "strategically_purposeful",
+      "non_generic",
+      "non_repetitive",
+      "non_fake",
+      "state_appropriate"
+    ]
+  },
+  "out_of_scope": [
+    "final_major_ui_redesign",
+    "full_screen_rendering_implementation",
+    "post_answer_routing_logic",
+    "telemetry_suite_completion",
+    "broad_reranker_changes",
+    "learned_judgment_model_work",
+    "generalized_essay_coaching",
+    "multi_turn_loop_orchestration_beyond_current_prompt_selection"
+  ],
+  "required_functional_outcome": [
+    "topic_probe_maps_to_moment_or_hinge_finding",
+    "theme_probe_maps_to_lived_evidence_extraction",
+    "activity_probe_maps_to_personal_center_extraction",
+    "scope_reframe_maps_to_worthiness_to_signal_reframing",
+    "blank_page_discovery_maps_to_bounded_story_zone_discovery",
+    "too_thin_to_recover_maps_to_graceful_recovery_stop"
+  ],
+  "system_behavior_contract": {
+    "entry_condition": {
+      "requires_top_level_route": "needs_structured_blank_page_intake",
+      "allowed_modes": [
+        "topic_probe",
+        "theme_probe",
+        "activity_probe",
+        "scope_reframe",
+        "blank_page_discovery",
+        "too_thin_to_recover"
+      ],
+      "must_not_run_on": [
+        "ready_for_nds",
+        "true_block_outside_blank_page_lane"
+      ]
+    },
+    "output_contract": {
+      "required": {
+        "recovery_question_primary": "string",
+        "recovery_question_secondary": "string_or_null",
+        "missing_signal_type": "string",
+        "why_not_ready_for_direction": "string",
+        "next_step_type": "string",
+        "reassurance_copy": "string_or_null",
+        "example_answer_shape": "string_or_null",
+        "what_good_signal_would_look_like": "string_or_null"
+      },
+      "optional": {
+        "topic_candidate": "string_or_null",
+        "question_family_primary": "string",
+        "question_family_secondary": "string_or_null"
+      },
+      "determinism": "same_input_plus_mode_plus_versioned_templates_must_yield_same_questions"
+    }
+  },
+  "required_question_family_model": {
+    "families": [
+      "moment_question",
+      "hinge_question",
+      "responsibility_question",
+      "person_over_task_question",
+      "conflict_question",
+      "change_question",
+      "scope_reframe_question",
+      "blank_page_discovery_question"
+    ]
+  },
+  "mode_to_question_contract": {
+    "topic_probe": {
+      "missing_signal": [
+        "moment",
+        "hinge",
+        "human_stake",
+        "lived_evidence"
+      ],
+      "primary_family": ["moment_question", "hinge_question"],
+      "secondary_family": ["change_question", "conflict_question"],
+      "must_do": "move_from_topic_noun_to_lived_center",
+      "must_not": [
+        "topic_worthiness_validation",
+        "generic_tell_me_more",
+        "premature_direction"
+      ]
+    },
+    "theme_probe": {
+      "missing_signal": ["event_anchor", "concrete_evidence"],
+      "primary_family": ["change_question", "hinge_question"],
+      "secondary_family": ["conflict_question", "moment_question"],
+      "must_do": "convert_abstract_trait_language_to_lived_experience",
+      "must_not": ["reward_abstraction", "trait_mirroring_as_sufficient"]
+    },
+    "activity_probe": {
+      "missing_signal": ["central_moment", "real_tension", "identity_signal"],
+      "primary_family": ["person_over_task_question", "moment_question"],
+      "secondary_family": ["responsibility_question", "conflict_question", "change_question"],
+      "must_do": "move_from_activity_summary_to_personal_center",
+      "must_not": ["resume_level_prompting", "broad_activity_explanation"]
+    },
+    "scope_reframe": {
+      "missing_signal": ["signal_extraction", "framed_center"],
+      "primary_family": ["scope_reframe_question"],
+      "secondary_family": ["change_question", "moment_question"],
+      "must_do": "reframe_from_worthiness_anxiety_to_signal_search",
+      "must_not": ["direct_worthiness_answer", "false_topic_validation"]
+    },
+    "blank_page_discovery": {
+      "missing_signal": ["topic_candidate", "event_candidate", "narrative_zone"],
+      "primary_family": ["blank_page_discovery_question"],
+      "secondary_family": ["responsibility_question", "conflict_question", "change_question"],
+      "must_do": "bounded_discovery",
+      "must_not": ["open_ended_brainstorming", "life_story_prompting"]
+    },
+    "too_thin_to_recover": {
+      "missing_signal": ["recoverable_signal"],
+      "primary_family": [],
+      "must_do": "graceful_recovery_stop",
+      "must_not": ["hallucinated_specificity", "fake_recovery"]
+    }
+  },
+  "banned_prompt_patterns": [
+    "Tell me more.",
+    "Can you elaborate?",
+    "What do you mean?",
+    "Why is this important to you? (generic fallback)",
+    "What are you passionate about?",
+    "What do you want colleges to know about you?",
+    "What makes you unique?",
+    "Can you say more about that topic?",
+    "What did you learn? (generic primary)",
+    "What are some moments in your life?",
+    "What are 3–5 topics you could write about?",
+    "That sounds like a great topic (without evidence basis)"
+  ],
+  "missing_signal_typing_contract": {
+    "allowed_values": [
+      "missing_moment",
+      "missing_hinge",
+      "missing_lived_evidence",
+      "missing_personal_center",
+      "missing_scope_frame",
+      "missing_topic_candidate",
+      "missing_recoverable_signal"
+    ],
+    "default_mapping": {
+      "topic_probe": ["missing_moment", "missing_hinge"],
+      "theme_probe": ["missing_lived_evidence"],
+      "activity_probe": ["missing_personal_center"],
+      "scope_reframe": ["missing_scope_frame"],
+      "blank_page_discovery": ["missing_topic_candidate"],
+      "too_thin_to_recover": ["missing_recoverable_signal"]
+    }
+  },
+  "why_not_ready_contract": {
+    "field": "why_not_ready_for_direction",
+    "purpose": [
+      "system_interpretability",
+      "engineering_debugging",
+      "admin_review_surface",
+      "future_error_analysis"
+    ],
+    "not_primary_user_copy": true
+  },
+  "question_composition_requirements": {
+    "determinism": true,
+    "template_inventory_minimum": {
+      "primary_family_templates_per_slot": "3_to_5",
+      "secondary_family_templates_per_slot": "2_to_3"
+    },
+    "template_requirements": ["named", "reviewed", "versioned", "stable_for_regression"],
+    "personalization_boundary": {
+      "allowed": "light_reflection_of_user_terms_grounded_in_input",
+      "not_allowed": ["invented_details", "fake_scene_assumptions", "over_personalization_without_evidence"]
+    },
+    "tone": {
+      "must_be": ["calm", "precise", "strategically_intelligent", "non_performative"],
+      "must_not_be": ["worksheet_like", "generic_bot_like", "syrupy_or_vague_coaching"]
+    }
+  },
+  "payload_contract_requirements": {
+    "files_in_scope": {
+      "required": ["src/lib/fm/buildClarificationPayload.ts"],
+      "recommended_new_helper": ["src/lib/fm/buildBlankPagePayload.ts"],
+      "likely_supporting": [
+        "first_minute_response_assembly_layer",
+        "route_response_builder",
+        "prompt_or_template_registry",
+        "state_contract_files",
+        "src/types/intake.ts"
+      ]
+    },
+    "required_outputs": [
+      "product_mode_blank_page_intake",
+      "blank_page_mode",
+      "recovery_question_primary",
+      "recovery_question_secondary",
+      "recovery_confidence",
+      "missing_signal_type",
+      "why_not_ready_for_direction",
+      "next_step_type",
+      "reassurance_copy",
+      "example_answer_shape",
+      "what_good_signal_would_look_like"
+    ],
+    "optional_outputs": [
+      "topic_candidate",
+      "question_family_primary",
+      "question_family_secondary"
+    ],
+    "next_step_type_allowed_values": [
+      "answer_primary_question",
+      "answer_primary_or_secondary_question",
+      "provide_more_concrete_starting_point",
+      "recovery_stop"
+    ]
+  },
+  "implementation_requirements": {
+    "architecture": "phase_2_selection_layer_must_be_separate_from_phase_1_classification",
+    "recommended_helpers": [
+      "buildBlankPagePayload",
+      "selectPrimaryQuestionFamily",
+      "selectSecondaryQuestionFamily",
+      "resolveMissingSignalType",
+      "buildWhyNotReadyForDirection",
+      "selectRecoveryQuestionTemplate"
+    ],
+    "versioning_requirement": "template_inventory_must_be_reviewable_diffable_versionable"
+  },
+  "debug_and_observability_requirements": {
+    "required_debug_fields": [
+      "blank_page_mode",
+      "question_family_primary",
+      "question_family_secondary",
+      "missing_signal_type",
+      "why_not_ready_for_direction",
+      "selected_template_id_or_equivalent",
+      "recovery_confidence"
+    ],
+    "visibility": ["local_inspection", "route_audit_logs"]
+  },
+  "test_plan": {
+    "unit_tests": [
+      "topic_probe_primary_is_moment_or_hinge",
+      "theme_probe_primary_demands_lived_evidence",
+      "activity_probe_primary_pulls_personal_center",
+      "scope_reframe_reframes_worthiness_anxiety",
+      "blank_page_discovery_is_bounded_not_broad",
+      "too_thin_to_recover_is_graceful_and_non_hallucinatory"
+    ],
+    "template_quality_tests": [
+      "banned_phrase_absence",
+      "no_generic_tell_me_more",
+      "no_unapproved_mode_collapse_duplicates",
+      "bounded_question_length",
+      "tone_guardrails"
+    ],
+    "integration_tests": [
+      "phase_1_mode_feeds_phase_2_selection",
+      "payload_fields_propagate",
+      "product_mode_blank_page_intake_when_appropriate",
+      "too_thin_path_is_distinct",
+      "downstream_consumers_do_not_crash"
+    ],
+    "product_regressions": [
+      "npm run test:product:screen-trust",
+      "npm run test:product:flow-break",
+      "npm run test:product:session-state",
+      "npm run test:product:real-user-sim"
+    ],
+    "nds_regressions": [
+      "npm run test:nds:evidence-grounding",
+      "npm run test:nds:direction-line-fit",
+      "npm run test:nds:direction-stability"
+    ],
+    "full_regression": ["npm test"]
+  },
+  "acceptance_criteria": {
+    "functional": [
+      "every_blank_page_mode_emits_specific_primary_question",
+      "questions_are_mode_appropriate",
+      "missing_signal_typing_is_correct_and_visible",
+      "too_thin_to_recover_path_is_distinct_and_safe"
+    ],
+    "quality": [
+      "banned_generic_prompts_absent",
+      "dignified_and_precise_tone",
+      "strategically_purposeful_non_commodity_outputs"
+    ],
+    "contract_integrity": [
+      "payload_fields_compile",
+      "downstream_consumers_stable",
+      "debug_visibility_sufficient"
+    ],
+    "product_safety": [
+      "no_premature_direction_inflation",
+      "no_fake_specificity",
+      "no_generic_clarification_regression",
+      "real_user_sim_pass"
+    ],
+    "regression": [
+      "required_suite_green"
+    ]
+  },
+  "failure_conditions": [
+    "generic_clarification_collapse",
+    "cross_mode_same_question_collapse",
+    "missing_signal_typing_wrong_or_invisible",
+    "scope_anxiety_answered_instead_of_reframed",
+    "blank_page_discovery_becomes_vague_brainstorming",
+    "activity_probe_stays_resume_level",
+    "theme_probe_rewards_abstraction_without_evidence",
+    "too_thin_to_recover_pretends_recoverability",
+    "product_or_real_user_sim_regressions",
+    "question_selection_not_explainable"
+  ],
+  "review_gate_for_phase_2": {
+    "required_before_phase_3": [
+      "3_to_5_reviewed_samples_per_mode",
+      "question_family_selection_per_sample",
+      "missing_signal_type_per_sample",
+      "why_not_ready_reason_per_sample",
+      "template_identifier_trace",
+      "banned_pattern_absence_evidence",
+      "unit_and_regression_results",
+      "clear_mode_distinction_examples"
+    ],
+    "rule": "phase_3_may_begin_only_after_gate_pass"
+  },
+  "required_artifacts": {
+    "markdown": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_2_IMPLEMENTATION_SPEC_V1.md",
+    "json": "structured_blank_page_intake_phase_2_implementation_spec_v1.json",
+    "optional": {
+      "name": "phase_2_question_review_packet",
+      "includes": [
+        "3_to_5_sample_inputs_per_mode",
+        "assigned_blank_page_mode",
+        "selected_question_family",
+        "primary_question",
+        "secondary_question_if_any",
+        "missing_signal_type",
+        "reviewer_note",
+        "banned_pattern_check_result"
+      ]
+    }
+  },
+  "build_summary": {
+    "if_weak": ["generic", "repetitive", "trust_eroding", "commodity_ai_like"],
+    "if_strong": [
+      "safe_ui_rendering_foundation",
+      "answer_submission_flow_foundation",
+      "post_answer_conversion_foundation",
+      "telemetry_and_eval_foundation",
+      "measurable_first_minute_recovery"
+    ],
+    "standard": "ask_the_right_next_question_for_the_right_weak_start_case_with_inspectable_testable_trustworthy_behavior"
+  }
+}

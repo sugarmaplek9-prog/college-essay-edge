@@ -1,0 +1,28 @@
+{
+  "selection_policy": {
+    "strong": 3,
+    "medium": 3,
+    "weak": 2,
+    "red_team": 2,
+    "required_inclusions": [
+      "parent_advisor_risk",
+      "stale_draft_risk",
+      "conflicting_signals",
+      "resume_list",
+      "school_sensitive"
+    ],
+    "note": "In this dataset, red_team cases are weak-difficulty. The selected 2 red_team cases therefore overlap weak-input coverage."
+  },
+  "selected_case_ids": [
+    "case_024",
+    "case_025",
+    "case_027",
+    "case_012",
+    "case_015",
+    "case_020",
+    "case_009",
+    "case_010",
+    "case_002",
+    "case_003"
+  ]
+}

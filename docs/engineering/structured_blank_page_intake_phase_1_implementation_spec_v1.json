@@ -1,0 +1,387 @@
+{
+  "artifact_id": "structured_blank_page_intake_phase_1_implementation_spec_v1",
+  "title": "Structured Blank Page Intake Phase 1 Implementation Spec V1",
+  "product": "College Essay Edge",
+  "phase": {
+    "number": 1,
+    "name": "detection_and_mode_assignment"
+  },
+  "status": "build_ready_implementation_spec",
+  "derived_from": [
+    "STRUCTURED_BLANK_PAGE_INTAKE_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_IMPLEMENTATION_PLAN_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_BUILD_BACKLOG_V1"
+  ],
+  "purpose": {
+    "summary": "Implement the first production-critical layer of structured blank-page intake by detecting when a user is not ready for normal NDS and assigning the correct blank-page intake mode before downstream direction logic runs.",
+    "does_not_include": [
+      "full_question_engine",
+      "final_ui_lane"
+    ],
+    "why_it_matters": [
+      "creates_the_classification_substrate_for_later_phases",
+      "must_be_narrow_typed_testable_and_reviewable",
+      "if_phase_1_is_wrong_downstream_recovery_behavior_will_be_wrong"
+    ]
+  },
+  "objective": {
+    "top_level_route_states": [
+      "ready_for_nds",
+      "needs_structured_blank_page_intake",
+      "true_block"
+    ],
+    "blank_page_modes": [
+      "topic_probe",
+      "theme_probe",
+      "activity_probe",
+      "scope_reframe",
+      "blank_page_discovery",
+      "too_thin_to_recover"
+    ],
+    "must_avoid": [
+      "broad_over_classification",
+      "broad_route_regressions",
+      "fake_direction_inflation",
+      "reintroducing_blunt_hard_blocking"
+    ]
+  },
+  "out_of_scope": [
+    "full_blank_page_response_copy",
+    "final_primary_secondary_recovery_questions",
+    "ui_redesign",
+    "post_answer_conversion_logic",
+    "broad_reranking_changes",
+    "broad_candidate_generation_changes",
+    "learned_judgment_model_work"
+  ],
+  "phase_coverage": [
+    "signal_detection",
+    "mode_assignment",
+    "route_eligibility",
+    "payload_debug_contract_for_downstream_phases"
+  ],
+  "required_functional_outcome": [
+    "is_this_input_ready_for_standard_nds",
+    "is_this_a_recoverable_blank_page_topic_only_theme_only_activity_only_input",
+    "is_this_truly_too_thin_or_malformed_to_recover",
+    "if_recoverable_which_blank_page_mode_best_matches_it"
+  ],
+  "system_behavior_contract": {
+    "top_level_route_contract": {
+      "ready_for_nds": {
+        "use_when": [
+          "enough_scene_or_directional_signal_exists",
+          "user_is_beyond_blank_page_discovery",
+          "normal_direction_logic_should_run"
+        ]
+      },
+      "needs_structured_blank_page_intake": {
+        "use_when": [
+          "user_has_real_topic_intent",
+          "not_enough_story_center_signal_for_normal_nds",
+          "typed_recovery_question_is_likely_to_help"
+        ]
+      },
+      "true_block": {
+        "use_only_when": [
+          "input_is_too_thin_empty_malformed_or_irrelevant",
+          "no_meaningful_structured_recovery_question_is_justified"
+        ]
+      }
+    },
+    "blank_page_mode_contract": {
+      "constraint": "exactly_one_mode_if_top_level_route_is_needs_structured_blank_page_intake",
+      "modes": {
+        "topic_probe": "user_has_a_topic_but_not_a_story",
+        "theme_probe": "user_has_a_trait_or_theme_but_not_lived_evidence",
+        "activity_probe": "user_has_an_activity_or_domain_but_not_the_real_center",
+        "scope_reframe": "user_is_explicitly_unsure_whether_the_topic_says_enough_or_is_essay_worthy",
+        "blank_page_discovery": "user_has_no_topic_and_needs_story_zone_discovery",
+        "too_thin_to_recover": "graceful_recovery_stop_inside_blank_page_framework"
+      },
+      "multi_mode_output_allowed": false
+    }
+  },
+  "required_detection_signals": {
+    "topic_only": {
+      "examples": [
+        "Can I write about gardening?",
+        "I want to write about coding.",
+        "Would volunteering work?"
+      ],
+      "indicators": [
+        "topic_noun_present",
+        "no_scene_signal",
+        "no_hinge_signal",
+        "no_meaningful_event_detail",
+        "often_phrased_as_topic_eligibility_question"
+      ],
+      "expected_mode": "topic_probe"
+    },
+    "theme_only": {
+      "examples": [
+        "I want to show resilience.",
+        "I want to write about leadership.",
+        "I want the essay to show growth."
+      ],
+      "indicators": [
+        "abstract_trait_or_theme_language",
+        "no_event_anchor",
+        "no_real_narrative_material",
+        "often_framed_around_what_the_essay_should_show"
+      ],
+      "expected_mode": "theme_probe"
+    },
+    "activity_only": {
+      "examples": [
+        "I want to write about robotics.",
+        "I'm between robotics and debate.",
+        "Maybe soccer?"
+      ],
+      "indicators": [
+        "activity_or_domain_names_present",
+        "no_actual_moment",
+        "no_shift_or_conflict_yet",
+        "user_is_evaluating_the_domain_itself_rather_than_the_center_inside_it"
+      ],
+      "expected_mode": "activity_probe"
+    },
+    "scope_uncertain": {
+      "examples": [
+        "I'm not sure this says enough about me.",
+        "I like this topic, but I don't know if it's deep enough.",
+        "I'm not sure this is really an essay."
+      ],
+      "indicators": [
+        "explicit_meta_uncertainty_about_adequacy",
+        "self_aware_but_not_yet_centered",
+        "may_include_a_topic_but_user_is_asking_the_wrong_question"
+      ],
+      "expected_mode": "scope_reframe"
+    },
+    "blank_page_discovery": {
+      "examples": [
+        "I have no idea what to write about.",
+        "Nothing feels special enough.",
+        "I don't know where to start."
+      ],
+      "indicators": [
+        "no_usable_topic_yet",
+        "explicit_blank_page_language",
+        "no_center_candidate",
+        "discovery_need_is_obvious"
+      ],
+      "expected_mode": "blank_page_discovery"
+    },
+    "too_thin_to_recover": {
+      "examples": [
+        "empty_input",
+        "near_empty_input",
+        "incoherent_fragments_with_no_recoverable_topic_intent",
+        "off_domain_request"
+      ],
+      "indicators": [
+        "no_usable_topic_intent",
+        "no_recoverable_discovery_path",
+        "no_structured_question_would_plausibly_help"
+      ],
+      "expected_mode": "too_thin_to_recover_or_true_block"
+    }
+  },
+  "implementation_requirements": {
+    "files_in_scope": {
+      "required_core_files": [
+        "src/lib/ml/evidenceStrength/features.ts",
+        "src/lib/ml/evidenceStrength/model.ts"
+      ],
+      "likely_supporting_files": [
+        "first_minute_routing_or_orchestration_layer",
+        "intake_payload_builder_or_response_assembler",
+        "state_contract_file_carrying_route_or_mode_metadata"
+      ],
+      "type_files": [
+        "src/types/intake.ts",
+        "debug_packet_or_first_minute_state_types_touched_by_new_fields"
+      ]
+    },
+    "required_outputs": {
+      "blank_page_intake_detected": "boolean",
+      "blank_page_mode": "string_or_null",
+      "blank_page_trigger_signals": "string_array",
+      "blank_page_recovery_reason": "string_or_null",
+      "blank_page_confidence": ["low", "medium", "high", null],
+      "top_level_blank_page_route": [
+        "ready_for_nds",
+        "needs_structured_blank_page_intake",
+        "true_block"
+      ]
+    },
+    "determinism_requirement": "mode_assignment_must_be_deterministic_for_the_same_input_under_the_same_code_version_state"
+  },
+  "feature_level_design_requirements": {
+    "detection_approach": [
+      "typed_feature_signals",
+      "explicit_route_logic",
+      "explainable_thresholds",
+      "debuggable_trigger_sets"
+    ],
+    "do_not": [
+      "hide_classification_inside_opaque_prompt_text"
+    ],
+    "signal_weighting_rules": {
+      "prioritize": [
+        "explicit_user_intent",
+        "absence_or_presence_of_scene_evidence",
+        "absence_or_presence_of_hinge_change_language",
+        "presence_of_topic_theme_activity_language",
+        "presence_of_uncertainty_about_worthiness_language",
+        "presence_of_blank_page_language"
+      ],
+      "must_not_over_index_on": [
+        "polish",
+        "verbosity",
+        "rhetorical_quality"
+      ]
+    },
+    "priority_conflict_resolution": [
+      "blank_page_discovery",
+      "scope_reframe",
+      "theme_probe",
+      "activity_probe",
+      "topic_probe"
+    ]
+  },
+  "route_decision_requirements": {
+    "ready_for_nds": [
+      "real_story_signal_exists",
+      "or_existing_intake_logic_already_justifies_direction_work",
+      "blank_page_detection_should_not_override_it"
+    ],
+    "needs_structured_blank_page_intake": [
+      "topic_intent_exists_or_discovery_need_is_real",
+      "story_center_signal_is_not_strong_enough_for_normal_direction_generation",
+      "structured_question_is_likely_helpful"
+    ],
+    "true_block": [
+      "no_meaningful_route_to_recovery",
+      "request_is_outside_supported_use"
+    ]
+  },
+  "debug_and_observability_requirements": {
+    "must_answer": [
+      "why_was_this_case_classified_as_blank_page",
+      "which_signals_fired",
+      "why_was_this_specific_mode_chosen",
+      "why_was_the_case_not_allowed_into_normal_nds"
+    ],
+    "required_debug_fields": [
+      "blank_page_trigger_signals",
+      "blank_page_mode",
+      "blank_page_recovery_reason",
+      "top_level_blank_page_route",
+      "blank_page_confidence",
+      "route_override_source"
+    ],
+    "visibility": [
+      "local_inspection",
+      "prod_debugging_paths"
+    ]
+  },
+  "test_plan": {
+    "unit_tests": [
+      "topic_only_input_with_topic_and_no_scene_routes_to_needs_structured_blank_page_intake_and_topic_probe",
+      "theme_only_trait_language_without_event_routes_to_needs_structured_blank_page_intake_and_theme_probe",
+      "activity_only_activity_mention_without_center_routes_to_needs_structured_blank_page_intake_and_activity_probe",
+      "scope_uncertain_topic_plus_does_this_say_enough_about_me_routes_to_needs_structured_blank_page_intake_and_scope_reframe",
+      "blank_page_no_idea_what_to_write_about_routes_to_needs_structured_blank_page_intake_and_blank_page_discovery",
+      "too_thin_empty_off_domain_or_unrecoverable_routes_to_true_block_or_too_thin_to_recover",
+      "non_regression_clearly_directional_case_still_routes_to_ready_for_nds"
+    ],
+    "integration_tests": [
+      "top_level_route_and_mode_propagate_into_response_contract",
+      "downstream_payload_builder_receives_correct_mode",
+      "ui_state_layer_can_consume_mode_fields_without_breaking"
+    ],
+    "product_tests": [
+      "npm run test:product:screen-trust",
+      "npm run test:product:flow-break",
+      "npm run test:product:session-state",
+      "npm run test:product:real-user-sim"
+    ],
+    "nds_regressions": [
+      "npm run test:nds:evidence-grounding",
+      "npm run test:nds:direction-line-fit",
+      "npm run test:nds:direction-stability"
+    ],
+    "full_regression": [
+      "npm test"
+    ]
+  },
+  "acceptance_criteria": {
+    "functional": [
+      "supported_blank_page_classes_classify_correctly",
+      "non_blank_page_directional_cases_do_not_regress_into_blank_page_mode",
+      "true_unrecoverable_cases_can_still_block"
+    ],
+    "debuggability": [
+      "trigger_signals_are_visible",
+      "mode_assignment_is_visible",
+      "route_choice_is_explainable"
+    ],
+    "stability": [
+      "no_material_regressions_in_core_routing_behavior",
+      "full_regression_suite_remains_green"
+    ],
+    "product_safety": [
+      "no_broad_expansion_of_fake_direction_behavior",
+      "no_broad_overblocking_regression"
+    ]
+  },
+  "failure_conditions": [
+    "blank_page_detection_overfires_on_strong_directional_inputs",
+    "multiple_input_classes_collapse_into_the_wrong_mode",
+    "trigger_reasons_are_not_visible",
+    "true_block_expands_too_broadly",
+    "product_tests_regress",
+    "real_user_sim_regresses",
+    "engineering_cannot_explain_why_a_case_got_a_given_mode"
+  ],
+  "review_gate_for_phase_1": {
+    "before_phase_2": [
+      "classification_examples_for_each_input_class",
+      "debug_output_showing_trigger_signals",
+      "unit_and_regression_test_results",
+      "at_least_one_reviewed_sample_for_each_blank_page_mode",
+      "evidence_that_normal_nds_cases_still_route_correctly"
+    ],
+    "rule": "phase_2_may_begin_only_after_this_review_passes"
+  },
+  "required_artifacts": {
+    "markdown": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_1_IMPLEMENTATION_SPEC_V1.md",
+    "json": "structured_blank_page_intake_phase_1_implementation_spec_v1.json",
+    "optional_supporting_artifact": {
+      "name": "classification_review_packet",
+      "includes": [
+        "3_to_5_sample_inputs_per_mode",
+        "route_result",
+        "trigger_signals",
+        "reviewer_comment"
+      ]
+    }
+  },
+  "build_summary": {
+    "if_weak": [
+      "generic",
+      "misrouted",
+      "hard_to_debug",
+      "unsafe_to_scale"
+    ],
+    "if_strong": [
+      "typed_question_generation",
+      "ui_rendering",
+      "post_answer_conversion",
+      "blank_page_recovery_metrics"
+    ],
+    "standard": "detect_the_right_users_assign_the_right_mode_and_do_it_in_a_way_engineering_can_inspect_and_trust"
+  }
+}

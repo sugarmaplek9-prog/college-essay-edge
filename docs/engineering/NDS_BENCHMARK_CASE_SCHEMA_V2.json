@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NDS Benchmark Case Schema V2",
+  "type": "object",
+  "required": [
+    "case_id",
+    "request_text",
+    "expected_nds_action",
+    "best_direction",
+    "source_type",
+    "source_origin",
+    "source_reference",
+    "capture_date",
+    "transformation_level",
+    "adjudication_status"
+  ],
+  "properties": {
+    "case_id": { "type": "string" },
+    "request_text": { "type": "string" },
+    "request_type": { "type": "string" },
+    "essay_type": { "type": "string" },
+    "proposed_topics": { "type": "string" },
+    "expected_nds_action": { "type": "string" },
+    "best_direction": { "type": "string" },
+    "rejected_directions": { "type": "string" },
+    "clarification_needed": { "type": "string", "enum": ["yes", "no", ""] },
+    "difficulty_tier": { "type": "string" },
+
+    "source_type": {
+      "type": "string",
+      "enum": ["public_internet", "anonymized_product_input", "legacy_internal_case"]
+    },
+    "source_origin": { "type": "string" },
+    "source_reference": { "type": "string" },
+    "capture_date": { "type": "string" },
+    "transformation_level": {
+      "type": "string",
+      "enum": ["raw", "lightly_normalized", "redacted", "composite_augmented"]
+    },
+    "adjudication_status": {
+      "type": "string",
+      "enum": ["benchmark_only", "needs_adjudication", "gold_ready"]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "case_id": "case_020",
+  "label": "medium-signal peer tutoring growth",
+  "difficulty": "medium",
+  "tags": [
+    "draft_present",
+    "conflicting_signals",
+    "resume_list"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "psychology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_020",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_20_1",
+      "text": "Case 20: peer tutoring growth. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_20",
+    "text": "Draft for peer tutoring growth. I am trying to connect event-level details with values and future direction."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers medium difficulty behavior and peer tutoring growth signal pattern.",
+    "reviewer_warning": ""
+  }
+}

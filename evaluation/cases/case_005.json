@@ -1,0 +1,57 @@
+{
+  "case_id": "case_005",
+  "label": "weak-signal science fair failure",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "resume_list",
+    "red_team",
+    "stale_draft_risk",
+    "generic_padding_risk",
+    "fake_confidence_temptation"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "psychology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_005",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_5_1",
+      "text": "Short notes: science fair failure. Did a lot. Learned something."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": false,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers weak difficulty behavior and science fair failure signal pattern.",
+    "reviewer_warning": "Watch for fake confidence under thin context."
+  }
+}

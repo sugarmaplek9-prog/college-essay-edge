@@ -1,0 +1,55 @@
+{
+  "case_id": "case_010",
+  "label": "weak-signal peer tutoring growth",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "resume_list",
+    "parent_advisor_risk"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "psychology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_010",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_10_1",
+      "text": "Tutoring notes. I first kept explaining the same way because I thought repeating it would help. After my teacher said I was doing the work for him, I changed my approach. I started asking one question at a time and waited, and he finally started working out the problem himself."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_10",
+    "text": "This essay should frame peer tutoring as a story of growth, leadership, and future direction. I am trying to connect the experience to values, maturity, and a broader lesson about helping others learn."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Parent/advisor contamination case: polished tutoring framing competes with a specific student-owned before/after teaching moment.",
+    "reviewer_warning": "Check whether the system follows the student scene rather than the abstract growth framing."
+  }
+}

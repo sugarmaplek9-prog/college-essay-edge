@@ -1,0 +1,34 @@
+[
+  {
+    "case_id": "CT1_01",
+    "title": "Robotics reliability vs restaurant leadership",
+    "tags": ["messy", "compare", "real-case-lane"],
+    "operator_notes": "Check whether the system chooses one lane cleanly instead of splitting the difference.",
+    "review_notes": "",
+    "raw_notes": "I keep circling between two things. One is robotics where I stopped chasing speed and started building checklists after our test runs kept failing. The other is helping at my family's restaurant where I started training younger cousins because I realized me doing everything fast was creating more confusion. Both feel true and I do not know which one is stronger for my essay yet."
+  },
+  {
+    "case_id": "CT1_02",
+    "title": "Translation responsibility in a clinic volunteer role",
+    "tags": ["messy", "relationship", "real-case-lane"],
+    "operator_notes": "Watch for relationship or realization framing and whether fallback is needed.",
+    "review_notes": "",
+    "raw_notes": "I volunteer at a clinic and sometimes translate for families, but the part that stays with me is when I realized nodding did not mean understanding. After that I stopped explaining things the fast way and started checking what people actually meant back to me. I have some rough lines written already but they sound too generic right now."
+  },
+  {
+    "case_id": "CT1_03",
+    "title": "Injury, tutoring, and changing what leadership meant",
+    "tags": ["messy", "partial-draft", "real-case-lane"],
+    "operator_notes": "Check whether the surfaced recommendation names a real angle instead of flattening into resilience language.",
+    "review_notes": "",
+    "raw_notes": "Part of me thinks my essay is about getting injured and not being able to run, but honestly the more important shift may have been tutoring the freshmen after that because I stopped measuring myself by times and started paying attention to whether someone else could use what I knew. I have scenes from both and I am still figuring out the hinge."
+  },
+  {
+    "case_id": "CT1_04",
+    "title": "Research setback with uncertain essay center",
+    "tags": ["messy", "uncertain", "real-case-lane"],
+    "operator_notes": "Check for thin coverage and suppression signals if the input stays diffuse.",
+    "review_notes": "",
+    "raw_notes": "My summer research did not go how I expected. I thought I would write about the result, but the more honest story may be about realizing my first method was making me read the data the way I wanted instead of the way it was. I rebuilt the process halfway through. I am not sure if the essay should center on the failure itself, the redesign, or what it changed in how I judge my own work."
+  }
+]

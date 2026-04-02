@@ -1,0 +1,21 @@
+{
+  "run_id": "eval_baseline_case_004_1773276607906",
+  "case_id": "case_004",
+  "system": "baseline_free_ai",
+  "baseline_mode": "deterministic_prompt_harness",
+  "raw_output": {
+    "status": "needs_more_input",
+    "best_direction": null,
+    "alternatives": [],
+    "evidence_anchors": [],
+    "recovery_question": "Can you share a meaningful personal experience?"
+  },
+  "normalized_output": {
+    "status": "needs_more_input",
+    "best_direction": null,
+    "alternatives": [],
+    "evidence_anchors": [],
+    "recovery_question": "Can you share a meaningful personal experience?"
+  },
+  "warnings": []
+}

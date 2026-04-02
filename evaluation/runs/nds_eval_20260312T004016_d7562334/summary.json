@@ -1,0 +1,103 @@
+{
+  "totals": {
+    "total_cases_run": 30,
+    "total_scored_cases": 30,
+    "nds_better_percent": 17
+  },
+  "overall_dimension_summary": [
+    {
+      "dimension": "divergence_quality",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "conviction_quality",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "evidence_grounding",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "next_step_usefulness",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "substitution_risk",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "student_dignity_tone",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    },
+    {
+      "dimension": "product_sharpness",
+      "nds_avg": 3.17,
+      "baseline_avg": 2.83,
+      "delta": 0.34
+    }
+  ],
+  "difficulty_segment_summary": [
+    {
+      "difficulty": "weak",
+      "case_count": 10,
+      "nds_better_percent": 50
+    },
+    {
+      "difficulty": "medium",
+      "case_count": 10,
+      "nds_better_percent": 0
+    },
+    {
+      "difficulty": "strong",
+      "case_count": 10,
+      "nds_better_percent": 0
+    }
+  ],
+  "red_team_summary": [
+    {
+      "bucket": "stale_context",
+      "case_count": 1,
+      "nds_better_percent": 100
+    },
+    {
+      "bucket": "conflicting_signals",
+      "case_count": 3,
+      "nds_better_percent": 33
+    },
+    {
+      "bucket": "thin_input",
+      "case_count": 1,
+      "nds_better_percent": 0
+    },
+    {
+      "bucket": "parent_advisor_contamination",
+      "case_count": 1,
+      "nds_better_percent": 0
+    },
+    {
+      "bucket": "generic_padding_temptation",
+      "case_count": 1,
+      "nds_better_percent": 0
+    }
+  ],
+  "failure_summary": {
+    "nds_needs_more_input_cases": 25,
+    "baseline_needs_more_input_cases": 25,
+    "structural_normalization_failures": 0,
+    "scoring_missingness": 0,
+    "ambiguous_reviewer_outcomes": 25
+  },
+  "generated_at": "2026-03-12T00:40:34.058Z"
+}

@@ -1,0 +1,580 @@
+[
+  {
+    "case_id": "bench_001",
+    "label": "strong self-correction arc — debate feedback moment",
+    "slice": "positive",
+    "story_entries": [
+      {
+        "id": "bench_001_s1",
+        "title": "The round where I argued myself into a corner",
+        "text": "I was cross-examining my opponent and I just kept pushing harder because I thought if I was more aggressive I would win. My partner kept giving me signals to stop but I ignored them. After the round our coach pulled me aside and said I had won the argument but lost the room. The other team started agreeing with the judge who said I came across as dismissive. At the next practice I completely changed how I cross-examine. I started listening to what they were actually saying instead of just waiting to respond. The next tournament the judge commented that I seemed genuinely curious about the opposing arguments."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "positive",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "high",
+        "signal_types": ["self_correction_arc"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "self_correction_arc",
+        "secondary_patterns": ["conflict_reframe"]
+      },
+      "nmi_correctness": "not_applicable",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Canonical strong positive. Clear before/after, external feedback, behavior change, peer impact all present.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_002",
+    "label": "strong identity shift — tutoring session reveals assumption",
+    "slice": "positive",
+    "story_entries": [
+      {
+        "id": "bench_002_s1",
+        "title": "When my tutoring method stopped working",
+        "text": "I had been tutoring middle schoolers in math for two years and I thought I was pretty good at it. Then I started working with Marcus and nothing was landing. I kept explaining the same way I always had and he kept getting it wrong. I started to think he just wasn't trying. Then one session he said 'I get what you want me to do but not why it works.' That sentence completely changed how I saw my job. I had been teaching steps not understanding. I redesigned everything I did with him. By the end of the semester he was teaching the concept to other students in the group."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "positive",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "high",
+        "signal_types": ["identity_shift", "self_correction_arc"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "identity_shift",
+        "secondary_patterns": ["self_correction_arc"]
+      },
+      "nmi_correctness": "not_applicable",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Identity shift (I thought I was the teacher; learned I was delivering steps not understanding). Strong scene detail.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_003",
+    "label": "strong failure reinterpretation — science fair method revision",
+    "slice": "positive",
+    "story_entries": [
+      {
+        "id": "bench_003_s1",
+        "title": "When my hypothesis was wrong and I had to figure out why",
+        "text": "My science fair project was supposed to prove that soil composition determined plant growth rate in my backyard. Six weeks in, the data was completely flat. I had been so focused on proving the hypothesis right that I hadn't considered that I was measuring the wrong variable. My mentor asked me one question: what if you're measuring the effect and not the cause? I realized I had been chasing the outcome metric instead of the control variable. I redesigned the experiment entirely. The revised version revealed a relationship I never would have found if the first attempt had worked. I submitted the revised version and won the regional category."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "positive",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "high",
+        "signal_types": ["failure_reinterpretation", "self_correction_arc"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "failure_reinterpretation",
+        "secondary_patterns": ["self_correction_arc"]
+      },
+      "nmi_correctness": "not_applicable",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Failure reinterpretation: the first failure was the condition that enabled the finding. Strong scene, mentor cue, method revision.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_004",
+    "label": "strong responsibility shift — robotics solo-to-team",
+    "slice": "positive",
+    "story_entries": [
+      {
+        "id": "bench_004_s1",
+        "title": "When solving it alone started hurting the team",
+        "text": "Regionals was three weeks away and our drivetrain kept failing. I had spent two nights alone in the lab trying to fix it because I thought I was the fastest. Our captain finally sat me down and said the whole team had noticed I was solving problems without telling anyone and it was making them feel useless. I had thought I was being efficient but I had been removing everyone else's ability to contribute. The next failure I brought the whole team in. It took longer to fix but three people caught a secondary wiring issue I would have missed. We made it to regionals."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "positive",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "high",
+        "signal_types": ["responsibility_shift"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "responsibility_shift",
+        "secondary_patterns": ["self_correction_arc"]
+      },
+      "nmi_correctness": "not_applicable",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Responsibility shift: student moved from solving alone (removing agency from others) to inviting team in.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_005",
+    "label": "ambiguous — caregiving notes without pivot",
+    "slice": "ambiguous",
+    "story_entries": [
+      {
+        "id": "bench_005_s1",
+        "title": "Caring for my grandmother",
+        "text": "I helped take care of my grandmother when she was sick. I learned a lot about patience and being there for family. It was hard sometimes but I always showed up. I think it made me more responsible."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "ambiguous",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "low",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": false,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Typical thin caregiving entry. Emotional weight signaled but no scene, pivot, or behavior change. System should ask a turning-point question.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_006",
+    "label": "ambiguous — conflict story without resolution",
+    "slice": "ambiguous",
+    "story_entries": [
+      {
+        "id": "bench_006_s1",
+        "title": "Disagreement with my lab partner",
+        "text": "During our AP Bio project my lab partner and I disagreed about how to set up the experiment. I thought my way was better. We ended up doing it my way. The project went okay. I learned that sometimes you have to stand your ground."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "ambiguous",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "low",
+        "signal_types": ["conflict_reframe"],
+        "label_confidence": "medium"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": false,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "conflict_reframe",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Conflict is present but the student won and 'learned to stand ground' — no revision, no feedback landing. Pattern is there; scene is not.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_007",
+    "label": "ambiguous — service with usefulness/intention gap, no resolution",
+    "slice": "ambiguous",
+    "story_entries": [
+      {
+        "id": "bench_007_s1",
+        "title": "Volunteering at the food bank",
+        "text": "I sorted food every Saturday for a year. At one point I realized that the way we were organizing things was not actually helping the families who came in because things were hard to find. I mentioned it to the coordinator but I don't think it went anywhere. I kept showing up though."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "ambiguous",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "medium",
+        "signal_types": ["usefulness_vs_intention"],
+        "label_confidence": "medium"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "usefulness_vs_intention",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Usefulness/intention gap detected. The student noticed the problem but the story ends without a resolution or behavior change. Ask what happened after.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_008",
+    "label": "negative — résumé-list / activity dump, no narrative",
+    "slice": "negative_resume",
+    "story_entries": [
+      {
+        "id": "bench_008_s1",
+        "title": "My activities",
+        "text": "Varsity soccer captain, debate team, student council treasurer, hospital volunteer, AP CS, honor roll. Leadership roles in multiple organizations. Strong communicator."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "negative_resume",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "none",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": false,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Pure résumé list. No scene, no pivot, no signal. System must not produce a direction from this.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_009",
+    "label": "negative — vague notes that read as résumé padding",
+    "slice": "negative_resume",
+    "story_entries": [
+      {
+        "id": "bench_009_s1",
+        "title": "Community service",
+        "text": "Did a lot of community service. Helped many people. Very rewarding. Learned about giving back."
+      },
+      {
+        "id": "bench_009_s2",
+        "title": "Leadership",
+        "text": "Led several groups. Was responsible for making decisions. People respected my input."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "negative_resume",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "none",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": false,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Vague generalizations across two entries. No scene in either. Both read as post-hoc summarization.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_010",
+    "label": "contamination-heavy — polished adult draft, no student scene notes",
+    "slice": "contamination_heavy",
+    "story_entries": [],
+    "draft_text": "Through my years of extracurricular involvement I have developed a deep understanding of what it means to be a leader. This essay seeks to demonstrate the values I have cultivated and how they connect to my future direction as a student and citizen. I believe that leadership is not just about making decisions but about inspiring others to achieve their potential. My experiences have consistently highlighted my growth, maturity, and resilience in the face of challenges.",
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "contamination_heavy",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "none",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "high",
+        "student_scene_present": false,
+        "adult_framing_present": true
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_escalate",
+      "labeler_notes": "Canonical adult-framed polished draft. No story entries. Contamination risk is high. Should escalate because we have no student evidence at all.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_011",
+    "label": "contamination-heavy — polished draft contradicts thin story notes",
+    "slice": "contamination_heavy",
+    "story_entries": [
+      {
+        "id": "bench_011_s1",
+        "title": "Orchestra",
+        "text": "Played violin in orchestra for four years. Section leader junior year."
+      }
+    ],
+    "draft_text": "Music has always been a vehicle for my personal growth and leadership development. As section leader I have learned to balance individual excellence with collective harmony. This experience demonstrates my ability to motivate peers and cultivate an environment of mutual respect and shared purpose. I am committed to bringing this collaborative spirit to university life.",
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "contamination_heavy",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "low",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "high",
+        "student_scene_present": false,
+        "adult_framing_present": true
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Story entry is a title card; draft is polished advisor framing. Mismatch between thin notes and abstract draft is the contamination signal.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_012",
+    "label": "contamination-heavy — mixed: real student scene + polished overlay",
+    "slice": "contamination_heavy",
+    "story_entries": [
+      {
+        "id": "bench_012_s1",
+        "title": "Debate cross-ex moment",
+        "text": "There was a round where I kept pushing my opponent aggressively in cross-examination and my partner was trying to get me to stop. After the round my coach told me I had won the argument but lost the room."
+      }
+    ],
+    "draft_text": "This experience taught me the true meaning of leadership and communication. I have grown tremendously as a leader and I now understand that effective leadership requires listening as much as speaking. This essay will demonstrate my values and how they align with my future direction.",
+    "school_context_notes": null,
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "contamination_heavy",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "medium",
+        "signal_types": ["self_correction_arc"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "high",
+        "student_scene_present": true,
+        "adult_framing_present": true
+      },
+      "pattern": {
+        "primary_pattern": "self_correction_arc",
+        "secondary_patterns": ["conflict_reframe"]
+      },
+      "nmi_correctness": "not_applicable",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "Story note has a real scene with signal. Draft is polished adult framing. System must prefer story note over draft. Signal is usable but strength is medium, not high.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_013",
+    "label": "red-team: repeated NMI loop — strong signal but 2 prior attempts",
+    "slice": "ambiguous",
+    "story_entries": [
+      {
+        "id": "bench_013_s1",
+        "title": "The shift that changed things",
+        "text": "When the patient in room 4 started crying because no one had explained her diagnosis to her in Spanish I realized I had been translating words but not meaning. I stayed an extra hour that day and walked her through everything slowly. The next week she came back and asked for me by name."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": null,
+    "prior_attempt_count": 2,
+    "questions_asked": ["turning_point", "stakes"],
+    "ground_truth": {
+      "slice": "ambiguous",
+      "signal_quality": {
+        "usable_signal": true,
+        "signal_strength": "high",
+        "signal_types": ["usefulness_vs_intention", "identity_shift"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": true,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "usefulness_vs_intention",
+        "secondary_patterns": ["identity_shift"]
+      },
+      "nmi_correctness": "nmi_incorrect",
+      "question_usefulness": "not_applicable",
+      "escalation_correctness": "incorrect_escalate",
+      "labeler_notes": "Red-team: strong signal is clearly present but system received two prior NMI loops. System must proceed to reduced_scope or success — not loop again. Escalation here would be incorrect.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_014",
+    "label": "red-team: fake-confidence temptation — school context padding risk",
+    "slice": "negative_resume",
+    "story_entries": [
+      {
+        "id": "bench_014_s1",
+        "title": "Why I want to attend Stanford",
+        "text": "I want to study computer science at Stanford because of the amazing research opportunities and collaborative environment. The faculty are world-class and the culture of innovation aligns with my goals."
+      }
+    ],
+    "draft_text": null,
+    "school_context_notes": "Stanford: research university, d.school, entrepreneurship culture",
+    "prior_attempt_count": 0,
+    "questions_asked": [],
+    "ground_truth": {
+      "slice": "negative_resume",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "none",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "low",
+        "student_scene_present": false,
+        "adult_framing_present": false
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "high",
+      "escalation_correctness": "correct_no_escalate",
+      "labeler_notes": "No personal story. What exists is a why-this-school statement. School context notes present but school context must not contaminate intake when there is no personal narrative to sharpen.",
+      "label_schema_version": "label_v1"
+    }
+  },
+  {
+    "case_id": "bench_015",
+    "label": "red-team: high contamination + no student signal — should escalate",
+    "slice": "contamination_heavy",
+    "story_entries": [],
+    "draft_text": "I have always been passionate about making a difference in my community. Throughout my high school career I have demonstrated consistent leadership, empathy, and resilience. My goal is to connect these values to my future direction and to show admissions committees who I am as a person. I am proud of everything I have accomplished and I am excited to continue growing.",
+    "school_context_notes": null,
+    "prior_attempt_count": 1,
+    "questions_asked": ["turning_point"],
+    "ground_truth": {
+      "slice": "contamination_heavy",
+      "signal_quality": {
+        "usable_signal": false,
+        "signal_strength": "none",
+        "signal_types": ["unknown"],
+        "label_confidence": "high"
+      },
+      "contamination": {
+        "contamination_risk": "high",
+        "student_scene_present": false,
+        "adult_framing_present": true
+      },
+      "pattern": {
+        "primary_pattern": "unknown",
+        "secondary_patterns": []
+      },
+      "nmi_correctness": "nmi_correct",
+      "question_usefulness": "medium",
+      "escalation_correctness": "correct_escalate",
+      "labeler_notes": "Canonical escalation case. High contamination, zero student signal, one prior attempt with turning-point question already asked. Escalate.",
+      "label_schema_version": "label_v1"
+    }
+  }
+]

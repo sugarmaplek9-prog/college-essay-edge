@@ -1,0 +1,55 @@
+{
+  "case_id": "case_007",
+  "label": "weak-signal community clinic volunteer",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "red_team",
+    "generic_padding_risk",
+    "school_sensitive"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "mechanical engineering"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_007",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_7_1",
+      "text": "Short notes: community clinic volunteer. Did a lot. Learned something."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": false,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers weak difficulty behavior and community clinic volunteer signal pattern.",
+    "reviewer_warning": "Watch for fake confidence under thin context."
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "UV1_01",
+    "title": "Yearbook deadline reset",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I was photo editor for yearbook and kept blaming late submissions when our pages missed proofing windows. When I checked timestamps, most delays came from me waiting to batch edits at night. I switched to a 20-minute same-day review rule and shared a visible backlog with section leads. We hit the next two deadlines early. I stopped calling myself efficient when I was actually creating bottlenecks."
+  },
+  {
+    "case_id": "UV1_02",
+    "title": "Debate prep ownership",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "strong",
+    "raw_notes": "Before tournaments I wrote everyone's rebuttal blocks because I wanted us to sound polished. At regionals my partner froze when a judge asked an angle we had not rehearsed exactly. On the bus home she said she sounded like my script, not her own argument. I rebuilt prep so each speaker authored their own first response and we peer-tested it. Our rounds became less perfect but much more adaptable."
+  },
+  {
+    "case_id": "UV1_03",
+    "title": "Community garden water conflict",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "medium",
+    "raw_notes": "Two neighborhood teams shared our community garden faucet and kept accusing each other of overwatering. I first tried making a strict schedule, but nobody trusted it and people kept changing slots. Then I set up a simple log card by the spigot and asked each group to write start and stop times. Seeing the actual pattern changed the argument from blame to coordination, and crop losses dropped."
+  },
+  {
+    "case_id": "UV1_04",
+    "title": "Library volunteer triage",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "medium",
+    "raw_notes": "I volunteered at the library homework desk and always started with the hardest questions because I wanted to be helpful. But that left three younger students waiting until closing with basic problems unfinished. I changed to a triage board: ten-minute starts for everyone, then deep dives. Fewer students left frustrated. I learned that fairness in support is a design choice, not just a good intention."
+  },
+  {
+    "case_id": "UV1_05",
+    "title": "Lab safety near-miss escalation",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "In biotech club, a classmate almost heated a closed test tube during setup. I corrected it quietly and moved on because I did not want to embarrass him. Two days later another student repeated the same step. I realized private fixes were not protecting the group. I asked our advisor to add a two-minute pre-lab hazard check and rotate who leads it. We have not repeated the near-miss since."
+  },
+  {
+    "case_id": "UV1_06",
+    "title": "Crosswalk petition strategy",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "Students kept asking for a painted crosswalk near our apartment entrance, and I organized a petition with signatures. The city replied that signatures alone were not enough for review. Instead of sending another petition, I mapped traffic at dismissal for one week and attached near-miss times. The transportation office approved an interim crossing guard while the paint request moved forward. I learned that urgency without evidence rarely changes policy."
+  },
+  {
+    "case_id": "UV1_07",
+    "title": "Orchestra section communication",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "medium",
+    "raw_notes": "As first violin, I thought leading meant fixing wrong notes in rehearsal by playing louder and cleaner. Our section still entered late in the same passage at the concert run-through. I recorded rehearsal and noticed my bow cues were too subtle for players behind me. I switched to clear count-ins plus eye contact before entrances. The section locked in, and I redefined leadership as making my signal usable for others."
+  },
+  {
+    "case_id": "UV1_08",
+    "title": "Clinic forms language mismatch",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "strong",
+    "raw_notes": "At a weekend health fair I helped families fill intake forms in Spanish and thought translation speed was the priority. A parent returned because she had checked the wrong insurance box after my rushed explanation. I slowed down and added a one-sentence recap in plain language before each signature line. Check-in took longer, but error corrections dropped. I stopped measuring success by throughput alone."
+  },
+  {
+    "case_id": "UV1_09",
+    "title": "Split option: coding camp or dance leadership",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "I mentor middle school coding workshops, but I also captain my dance team. Both shaped me and I cannot tell which one should be my essay focus."
+  },
+  {
+    "case_id": "UV1_10",
+    "title": "Podcast interview correction",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "medium",
+    "raw_notes": "I host a student podcast and once edited a guest quote to sound cleaner without changing what I thought was the meaning. When the guest heard it, she said the tone made her sound more certain than she felt. I had treated polish as harmless. I now send the final cut timestamp for approval on sensitive sections. That changed how I define accuracy in storytelling."
+  },
+  {
+    "case_id": "UV1_11",
+    "title": "Math team practice redesign",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "Our math team practiced by racing through old tests, and I was proud we finished fast. At invitational finals we lost most points on proof questions we had skipped in practice. I replaced one speed round each week with a proof clinic where we explain reasoning out loud. Scores improved less dramatically but became consistent across sections. I stopped confusing pace with preparation quality."
+  },
+  {
+    "case_id": "UV1_12",
+    "title": "Family business inventory trust",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "medium",
+    "raw_notes": "At my family's store I used to reorder snacks by memory because I knew what sold quickly. My uncle asked why we kept running out of low-margin essentials while extra premium items sat untouched. I built a shelf-level tally for two weeks and found my guesses were skewed by what I noticed first. We shifted orders and reduced stockouts. I learned that helping without shared visibility can still undermine trust."
+  }
+]

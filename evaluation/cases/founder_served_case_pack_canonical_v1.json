@@ -1,0 +1,168 @@
+[
+  {
+    "case_id": "HV2_01",
+    "category": "locked_strong",
+    "title": "Chem lab checklist — live founder regression",
+    "raw_input": "I was the fastest student in our AP chem lab section at finishing titration setups. During one lab, a classmate copied my setup and contaminated her sample because I had skipped labeling one transfer step I always did in my head. My teacher said speed was not the same thing as reliability. The next week I built a one-page checklist and made everyone use it before touching the burette. Our failed trials dropped a lot, and I stopped being proud of finishing first.",
+    "expected_founder_acceptance": [
+      "Page 3 title is decisive and not stitched from raw fragments.",
+      "Page 3 explanation is evidence-led and not truncated.",
+      "Page 4 is evidence-first and does not leak internal framework language."
+    ],
+    "expected_failure_mode_to_watch": "Malformed stitched title or packet/render mismatch on Page 3.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "HV2_10",
+    "category": "locked_strong",
+    "title": "Robotics pit decision under pressure",
+    "raw_input": "During regionals our robot failed inspection twice, and I told the team to remove an autonomous feature to pass on time. Another programmer argued we should keep it and risk a late match. I overruled him. We qualified but lost our quarterfinal because of manual control mistakes. After the event he said my call protected schedule but ignored our actual strength. I now frame emergency decisions as tradeoffs out loud before choosing.",
+    "expected_founder_acceptance": [
+      "Recommendation names the real tradeoff and decision standard clearly.",
+      "Why-this-wins is case-specific and draftable.",
+      "Opening guidance stays evidence-first."
+    ],
+    "expected_failure_mode_to_watch": "Generic stronger/weaker comparison or flattened decision language.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "HV2_12",
+    "category": "locked_strong",
+    "title": "Benefits office translation responsibility",
+    "raw_input": "I used to think translating for my grandparents at government offices was just a family duty. At one appointment the clerk spoke quickly and I summarized instead of translating line by line so we could finish faster. My grandfather signed a form he did not understand. We had to return the next week to reverse it. Since then I ask officials to pause and I translate every instruction fully even when the line gets longer. That day changed what responsibility sounds like to me.",
+    "expected_founder_acceptance": [
+      "Page 3 chooses one believable center instead of generic growth language.",
+      "Evidence anchoring reflects the misunderstanding and correction.",
+      "Page 4 guidance starts from the proof-bearing scene."
+    ],
+    "expected_failure_mode_to_watch": "Surface drift back to generic responsibility narration.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "WK1_01",
+    "category": "weak_rescue",
+    "title": "Sentence fragments only",
+    "raw_input": "Hospital volunteer. Mom translating. Nurse asked him to repeat. I realized summary wasn't enough. Maybe essay?",
+    "expected_founder_acceptance": [
+      "The product recovers one usable direction without inventing false richness.",
+      "The next move gives the student a concrete recovery step.",
+      "Rendered output avoids generic values filler."
+    ],
+    "expected_failure_mode_to_watch": "Overconfident invented interpretation from fragmentary input.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "WK1_05",
+    "category": "weak_rescue",
+    "title": "Generic values language",
+    "raw_input": "I care about service, resilience, and community. I want my essay to show leadership and growth. I just do not know what story proves that yet.",
+    "expected_founder_acceptance": [
+      "The product does not mirror vague values language back to the user.",
+      "The page gives a concrete recovery move instead of abstract encouragement.",
+      "Rendered copy feels coach-like, not system-like."
+    ],
+    "expected_failure_mode_to_watch": "Values-only language reappears in recommendation or coaching blocks.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "WK1_06",
+    "category": "weak_rescue",
+    "title": "One moment but no interpretation",
+    "raw_input": "One student nodded like she understood my explanation and then turned in the problem blank. I changed how I asked questions after that. That's the only part that feels real.",
+    "expected_founder_acceptance": [
+      "The recommendation stays anchored to the one usable moment.",
+      "The next move is something the student can actually do next.",
+      "The rendered page is decisive without pretending the evidence is stronger than it is."
+    ],
+    "expected_failure_mode_to_watch": "Weak-input rescue gets overwritten by generic cleanup or abstract wording.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "HV2_11",
+    "category": "ambiguous_mixed_signal",
+    "title": "Split focus — art portfolio and cross-country",
+    "raw_input": "I paint portraits and I also run cross-country. Both matter to me and I am unsure which one is better for my college essay.",
+    "expected_founder_acceptance": [
+      "The product is decisive about the compare decision structure.",
+      "Rendered output clearly distinguishes the two angles.",
+      "The page does not collapse into indecisive summary."
+    ],
+    "expected_failure_mode_to_watch": "Ambiguous compare output blurs the options or feels generic.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "CT1_01",
+    "category": "ambiguous_mixed_signal",
+    "title": "Robotics reliability vs restaurant leadership",
+    "raw_input": "I keep circling between two things. One is robotics where I stopped chasing speed and started building checklists after our test runs kept failing. The other is helping at my family's restaurant where I started training younger cousins because I realized me doing everything fast was creating more confusion. Both feel true and I do not know which one is stronger for my essay yet.",
+    "expected_founder_acceptance": [
+      "The output does not split the difference lazily.",
+      "The recommendation feels like a real judgment call.",
+      "The rendered recommendation stays case-specific across compare logic."
+    ],
+    "expected_failure_mode_to_watch": "Fallback or ranking drift produces stitched or generic compare output.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "HV2_01_PROD",
+    "category": "production_smoke",
+    "title": "Chem lab checklist — production smoke",
+    "raw_input": "I was the fastest student in our AP chem lab section at finishing titration setups. During one lab, a classmate copied my setup and contaminated her sample because I had skipped labeling one transfer step I always did in my head. My teacher said speed was not the same thing as reliability. The next week I built a one-page checklist and made everyone use it before touching the burette. Our failed trials dropped a lot, and I stopped being proud of finishing first.",
+    "expected_founder_acceptance": [
+      "Production served output matches the approved preview behavior.",
+      "No malformed or truncated text appears on the rendered page.",
+      "Packet and render stay aligned on the live URL."
+    ],
+    "expected_failure_mode_to_watch": "Preview/production mismatch.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "HV2_01_TRUNC",
+    "category": "founder_regression",
+    "title": "Chem lab checklist — malformed title/truncation watch",
+    "raw_input": "I was the fastest student in our AP chem lab section at finishing titration setups. During one lab, a classmate copied my setup and contaminated her sample because I had skipped labeling one transfer step I always did in my head. My teacher said speed was not the same thing as reliability. The next week I built a one-page checklist and made everyone use it before touching the burette. Our failed trials dropped a lot, and I stopped being proud of finishing first.",
+    "expected_founder_acceptance": [
+      "No title contains stitched fragments like 'and the response in'.",
+      "No explanation line ends with truncated fragments like 'while the' or 'blur the'.",
+      "The rendered page feels like product judgment, not corrupted text assembly."
+    ],
+    "expected_failure_mode_to_watch": "Packet assembly or render corruption that recreates founder-observed malformed text.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs"
+  },
+  {
+    "case_id": "FR1_CRAYONS",
+    "category": "founder_regression",
+    "title": "Preschool / crayons regression",
+    "raw_input": "While helping in a preschool classroom, I kept organizing crayons and routines. I noticed one child sitting apart and sat beside her instead. That changed what I thought care looked like.",
+    "expected_founder_acceptance": [
+      "Must run against the exact preschool/crayons founder regression raw notes now frozen in the pack.",
+      "Must produce stable Page 3 and Page 4 served artifacts.",
+      "Must become a permanent founder regression case and never leave the pack."
+    ],
+    "expected_failure_mode_to_watch": "Regression back to broad service framing instead of the concrete pivot from organizing the room to sitting beside the isolated child.",
+    "status": "active",
+    "last_reviewed_date": "2026-04-01",
+    "owner_verification_path": "scripts/founder-served-verification-canonical.mjs",
+    "raw_input_provenance": "Recovered from the documented raw student notes in docs/engineering/PAGE_THREE_PIPELINE_ARCHITECTURE_AUDIT_SPEC_V1.md Case 3 (Preschool care moment)."
+  }
+]

@@ -1,0 +1,366 @@
+{
+  "spec_id": "STRUCTURED_BLANK_PAGE_INTAKE_V1",
+  "title": "First-minute recovery system for topic-only and scene-less users",
+  "status": "required_product_system_spec",
+  "program_status": "post_live_hard_block_recalibration_follow_on",
+  "purpose": {
+    "problem": "Many users arrive with only a topic, trait, activity, or uncertainty rather than a story.",
+    "goal": "Convert vague topic energy into recoverable narrative signal without false direction, over-blocking, or generic filler clarification.",
+    "system_identity": "story_center_discovery_system",
+    "non_identity": "not_an_essay_writing_assistant"
+  },
+  "core_principle": "Do not force a direction before the story exists.",
+  "user_types": [
+    {
+      "id": "type_a_topic_only",
+      "label": "Topic-only",
+      "examples": [
+        "I want to write about gardening.",
+        "Can I write about coding?",
+        "Can my essay be about volunteering?"
+      ]
+    },
+    {
+      "id": "type_b_theme_only",
+      "label": "Theme-only",
+      "examples": [
+        "I want to show resilience.",
+        "I want to write about growth.",
+        "I want to show leadership."
+      ]
+    },
+    {
+      "id": "type_c_activity_only",
+      "label": "Activity-only",
+      "examples": [
+        "I’m between robotics and debate.",
+        "I want to write about soccer.",
+        "I did a lot of volunteering."
+      ]
+    },
+    {
+      "id": "type_d_scope_uncertain",
+      "label": "Scope-uncertain",
+      "examples": [
+        "I don’t know if this says enough about me.",
+        "I’m not sure this is deep enough.",
+        "I have a topic but not a story."
+      ]
+    },
+    {
+      "id": "type_e_blank_page",
+      "label": "Blank-page",
+      "examples": [
+        "I have no idea what to write about.",
+        "Nothing feels special enough.",
+        "I don’t know where to start."
+      ]
+    }
+  ],
+  "non_negotiable_rules": [
+    "Do not produce a full-strength NDS direction when there is no real story signal yet.",
+    "Do not hard block blank-page users unless the input is truly unusable.",
+    "Do not ask generic filler questions unless tied to a specific missing-signal type.",
+    "Do not reward only polished users.",
+    "Do not collapse everything into the same prompt."
+  ],
+  "classifier": {
+    "top_level_outcomes": [
+      "ready_for_nds",
+      "needs_structured_blank_page_intake",
+      "true_block"
+    ],
+    "needs_structured_blank_page_intake_signals": [
+      "topic_nouns_with_no_event_signal",
+      "trait_language_with_no_scene",
+      "can_i_write_about_x",
+      "between_x_and_y",
+      "scope_uncertainty_language",
+      "blank_page_language",
+      "broad_activity_listing_without_hinge",
+      "extremely_low_scene_evidence_but_real_topic_intent"
+    ],
+    "true_block_signals": [
+      "incoherent_input",
+      "no_usable_topic_intent",
+      "empty_or_no_content_input",
+      "unsupported_or_irrelevant_request_type",
+      "malformed_state_with_no_possible_recovery_question"
+    ],
+    "debug_fields": [
+      "blank_page_intake_detected",
+      "blank_page_mode",
+      "blank_page_trigger_signals",
+      "blank_page_recovery_reason",
+      "blank_page_confidence"
+    ]
+  },
+  "modes": [
+    {
+      "id": "topic_probe",
+      "use_when": "User offers a topic or area, but not a story.",
+      "goal": "Find the lived center behind the topic.",
+      "question_style": [
+        "moment",
+        "change",
+        "conflict",
+        "responsibility",
+        "realization",
+        "person_centered_detail"
+      ],
+      "example_prompt": "Gardening can work — but not as a topic by itself. Was there a moment in gardening that changed how you saw yourself, another person, or what you were responsible for?"
+    },
+    {
+      "id": "theme_probe",
+      "use_when": "User offers a theme like growth, resilience, leadership, or identity.",
+      "goal": "Move from abstract trait to lived event.",
+      "question_style": [
+        "moment_trait_became_visible",
+        "actual_situation",
+        "turning_point",
+        "stakes"
+      ],
+      "example_prompt": "‘Resilience’ is not the essay yet. What actually happened, and what changed because of it?"
+    },
+    {
+      "id": "activity_probe",
+      "use_when": "User offers an activity, role, or domain but not the real center.",
+      "goal": "Separate activity topic from actual essay center.",
+      "question_style": [
+        "surprising_moment",
+        "failure_or_shift",
+        "conflict",
+        "person_dependent_moment",
+        "decision_that_mattered"
+      ],
+      "example_prompt": "Robotics might be the setting, but the essay is usually not ‘about robotics.’ Was there a moment inside it where your role changed, your assumptions broke, or you realized something you hadn’t seen before?"
+    },
+    {
+      "id": "scope_reframe",
+      "use_when": "User says they are unsure the topic says enough about them.",
+      "goal": "Evaluate whether the topic contains real essay material.",
+      "question_style": [
+        "change",
+        "responsibility",
+        "conflict",
+        "relationship",
+        "choice",
+        "shift_in_self_understanding"
+      ],
+      "example_prompt": "The right question is not whether gardening is impressive enough. It’s whether there’s a moment inside it that reveals something real about how you think, care, change, or take responsibility."
+    },
+    {
+      "id": "blank_page_discovery",
+      "use_when": "User has no topic and no direction.",
+      "goal": "Find promising story zones.",
+      "question_style": [
+        "responsibility",
+        "conflict",
+        "embarrassment_or_failure",
+        "care_or_duty",
+        "changed_assumption",
+        "became_different_than_before"
+      ],
+      "example_prompt": "Let’s not start with ‘the best topic.’ When have you felt more responsible than you expected to? Or when did something small end up changing how you thought or acted?"
+    },
+    {
+      "id": "too_thin_to_recover",
+      "use_when": "Even structured discovery cannot proceed.",
+      "goal": "Fail usefully, not bluntly.",
+      "question_style": [
+        "dignity_preserving_restart_path"
+      ],
+      "example_prompt": "I’m not seeing enough real topic signal yet to guide this honestly. Try naming one specific responsibility, conflict, or moment that stuck with you, and we’ll restart from there."
+    }
+  ],
+  "question_system": {
+    "requirements": [
+      "targeted",
+      "non_generic",
+      "low_shame",
+      "scene_seeking",
+      "center_seeking",
+      "brief_enough_to_answer",
+      "strong_enough_to_produce_signal"
+    ],
+    "question_families": [
+      "moment_question",
+      "hinge_question",
+      "responsibility_question",
+      "person_over_task_question",
+      "conflict_question",
+      "change_question",
+      "scope_reframe_question",
+      "blank_page_discovery_question"
+    ],
+    "banned_styles": [
+      "tell_me_more",
+      "generic_self_help_phrasing",
+      "admissions_cliche_wording",
+      "therapy_like_overreach",
+      "fake_premium_introspection_prompts"
+    ]
+  },
+  "payload_contract": {
+    "product_mode": "blank_page_intake",
+    "required_fields": [
+      "product_mode",
+      "blank_page_mode",
+      "why_not_ready_for_direction",
+      "recovery_question_primary",
+      "missing_signal_type",
+      "recovery_confidence",
+      "next_step_type"
+    ],
+    "optional_fields": [
+      "recovery_question_secondary",
+      "topic_candidate",
+      "reassurance_copy",
+      "example_answer_shape",
+      "what_good_signal_would_look_like"
+    ],
+    "next_step_types": [
+      "answer_question_then_run_nds",
+      "answer_one_of_two_questions",
+      "needs_more_discovery",
+      "too_thin_to_recover"
+    ],
+    "ui_message_contract": {
+      "must_communicate": [
+        "user_not_blocked",
+        "topic_may_still_work",
+        "need_real_center_behind_topic",
+        "next_question_will_help_find_center"
+      ],
+      "tone": [
+        "respectful",
+        "calm",
+        "specific",
+        "non_patronizing",
+        "non_robotic",
+        "not_overly_cheery",
+        "not_overly_academic"
+      ]
+    }
+  },
+  "conversion_logic": {
+    "post_answer_paths": [
+      {
+        "if": "enough_signal_now_exists",
+        "then": "direction_light_or_full_nds_prep"
+      },
+      {
+        "if": "still_weak_but_recoverable",
+        "then": "another_typed_recovery_question"
+      },
+      {
+        "if": "still_truly_insufficient",
+        "then": "low_shame_block_or_restart_path"
+      }
+    ],
+    "anti_loop_rule": "Do not loop endlessly in blank_page mode.",
+    "recommended_turn_policy": {
+      "max_structured_recovery_questions_before_reeval": 1,
+      "max_blank_page_turns": 2
+    },
+    "post_answer_decisions": [
+      "signal_gain_detected",
+      "scene_evidence_present",
+      "center_candidate_present",
+      "hinge_candidate_present",
+      "route_after_blank_page_answer"
+    ]
+  },
+  "telemetry": {
+    "required": [
+      "blank_page_mode",
+      "recovery_question_type",
+      "answer_received",
+      "post_answer_route",
+      "blank_page_to_direction_conversion",
+      "blank_page_to_clarification_repeat",
+      "blank_page_to_block",
+      "user_abandon_after_blank_page",
+      "user_continue_after_blank_page"
+    ],
+    "recommended": [
+      "blank_page_detection_confidence",
+      "blank_page_trigger_signals",
+      "recovery_question_token_length",
+      "recovery_answer_signal_gain",
+      "recovery_answer_scene_specificity_delta",
+      "recovery_answer_hinge_detected",
+      "recovery_mode_repeat_count"
+    ]
+  },
+  "evaluation_plan": {
+    "real_input_requirement": "at_least_70_percent_real_input_sourced",
+    "preferred_sources": [
+      "public_essay_help_posts",
+      "public_what_should_i_write_about_posts",
+      "anonymized_real_product_inputs"
+    ],
+    "required_test_groups": [
+      "topic_only",
+      "theme_only",
+      "activity_only",
+      "scope_uncertain",
+      "blank_page",
+      "weak_topic_but_recoverable",
+      "truly_insufficient"
+    ],
+    "evaluation_dimensions": [
+      "recovery_usefulness",
+      "question_specificity",
+      "dignity_and_trust",
+      "conversion_to_direction",
+      "overblocking_avoidance",
+      "false_direction_avoidance"
+    ]
+  },
+  "success_metrics": {
+    "must_improve": [
+      "recovery_usefulness_for_blank_page_users",
+      "conversion_from_topic_only_to_directional_readiness",
+      "reduction_in_unnecessary_hard_blocks",
+      "real_user_simulation_on_blank_page_flows",
+      "student_trust_in_the_first_minute"
+    ],
+    "anti_success_rule": "It is not success if more users get a show result but the result is fake, generic, or weak."
+  },
+  "non_regression_requirements": [
+    "evidence_grounding",
+    "direction_line_fit",
+    "direction_stability",
+    "screen_trust",
+    "flow_integrity",
+    "session_state_integrity",
+    "real_user_sim"
+  ],
+  "failure_conditions": [
+    "generic_advice",
+    "vague_filler_questions",
+    "false_direction_overproduction",
+    "user_shame_or_confusion",
+    "loops_without_progress",
+    "mostly_synthetic_test_cases",
+    "real_user_sim_or_first_minute_trust_regression"
+  ],
+  "release_criteria": {
+    "do_not_promote_widely_unless": [
+      "improves_blank_page_recovery",
+      "preserves_trust",
+      "converts_users_toward_real_direction_work",
+      "validated_primarily_on_real_input_cases"
+    ],
+    "minimum_release_gate": [
+      "dedicated_blank_page_eval_set_exists",
+      "real_input_sourcing_threshold_met",
+      "typed_recovery_questions_pass_review",
+      "post_answer_routing_is_auditable",
+      "trust_regressions_green",
+      "no_broad_show_inflation_detected"
+    ]
+  },
+  "build_summary": "A world-class product should not block blank-page users, fake a direction, or ask useless generic questions. It should help them find the real center."
+}

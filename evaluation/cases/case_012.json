@@ -1,0 +1,55 @@
+{
+  "case_id": "case_012",
+  "label": "medium-signal robotics leadership",
+  "difficulty": "medium",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "school_sensitive",
+    "conflicting_signals"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "mechanical engineering"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_012",
+    "project_type": "personal_statement",
+    "target_school": "School 6"
+  },
+  "story_entries": [
+    {
+      "id": "story_12_1",
+      "text": "Case 12: robotics leadership. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_12",
+    "text": "Draft for robotics leadership. I am trying to connect event-level details with values and future direction."
+  },
+  "school_context": {
+    "target_school": "School 6",
+    "notes": "Student is considering fit with School 6."
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers medium difficulty behavior and robotics leadership signal pattern.",
+    "reviewer_warning": ""
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "evaluation-case.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "label",
+    "difficulty",
+    "tags",
+    "student_profile",
+    "essay_project",
+    "story_entries",
+    "current_draft",
+    "school_context",
+    "expected_conditions",
+    "author_notes"
+  ],
+  "properties": {
+    "case_id": { "type": "string", "minLength": 1 },
+    "label": { "type": "string", "minLength": 1 },
+    "difficulty": { "type": "string", "enum": ["weak", "medium", "strong"] },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "red_team",
+          "messy_notes",
+          "draft_present",
+          "school_sensitive",
+          "conflicting_signals",
+          "resume_list",
+          "stale_draft_risk",
+          "parent_advisor_risk",
+          "generic_padding_risk",
+          "fake_confidence_temptation"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "student_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grade_level", "intended_majors", "core_interests", "identity_notes"],
+      "properties": {
+        "grade_level": { "type": "string" },
+        "intended_majors": { "type": "array", "items": { "type": "string" } },
+        "core_interests": { "type": "array", "items": { "type": "string" } },
+        "identity_notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "essay_project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_id", "project_type", "target_school"],
+      "properties": {
+        "project_id": { "type": "string", "minLength": 1 },
+        "project_type": { "type": "string", "enum": ["personal_statement"] },
+        "target_school": { "type": ["string", "null"] }
+      }
+    },
+    "story_entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "current_draft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "text": { "type": ["string", "null"] }
+      }
+    },
+    "school_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_school", "notes"],
+      "properties": {
+        "target_school": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "expected_conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["should_be_needs_more_input", "should_have_clear_winner", "likely_bad_baseline_behavior"],
+      "properties": {
+        "should_be_needs_more_input": { "type": "boolean" },
+        "should_have_clear_winner": { "type": "boolean" },
+        "likely_bad_baseline_behavior": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "author_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["why_included", "reviewer_warning"],
+      "properties": {
+        "why_included": { "type": "string", "minLength": 1 },
+        "reviewer_warning": { "type": "string" }
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "properties": {
+        "story_entries": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "current_draft": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": ["text"]
+        }
+      }
+    }
+  ]
+}

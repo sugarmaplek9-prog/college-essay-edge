@@ -1,0 +1,380 @@
+{
+  "pack_id": "RIC_NDS_CONTROLLED_VALIDATION_PACK_V1",
+  "version": "v1",
+  "status": "active",
+  "product_surface": "narrative_direction_selection",
+  "purpose": "Controlled validation pack for first human reviewer calibration and first human-reviewed NDS proof packet.",
+  "selection_rules": {
+    "minimum_case_count": 15,
+    "current_case_count": 20,
+    "required_case_families": [
+      "blank_page_confusion",
+      "achievement_clutter",
+      "vague_identity_angle",
+      "sensitive_topic_hesitation",
+      "over_polished_generic_direction",
+      "weak_student_fit_read"
+    ],
+    "additional_case_families_present": [
+      "prestige_motivated_framing",
+      "resume_disguised_prompt",
+      "contradictory_signals"
+    ],
+    "notes": "Balanced first-pass NDS validation pack intended for calibration and proof, not full-scale production benchmarking."
+  },
+  "review_protocol": {
+    "recommended_first_human_calibration_subset_size": 12,
+    "minimum_first_human_calibration_subset_size": 10,
+    "recommended_reviewers": 2,
+    "recommended_adjudicators": 1,
+    "requires_blind_independent_first_pass": true
+  },
+  "cases": [
+    {
+      "case_id": "RIC-NDS-CTRL-001",
+      "case_family": "blank_page_confusion",
+      "title": "No clear starting point, afraid of sounding ordinary",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I really do not know what to write about. Nothing in my life feels dramatic or special, and I am scared my essay will sound boring.",
+      "student_input_normalized": "Student has blank-page paralysis and believes their life lacks a dramatic or obviously impressive story. Needs direction toward a specific, authentic narrative center.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Core blank-page confusion case."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-002",
+      "case_family": "blank_page_confusion",
+      "title": "Many possible memories, no selection logic",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I have a bunch of random moments I could maybe write about, but I cannot tell which one actually matters for an essay.",
+      "student_input_normalized": "Student has candidate memories but lacks narrative-selection logic. Needs help identifying which moment reveals interpretive identity rather than random anecdote.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests selection logic rather than total absence of ideas."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-003",
+      "case_family": "achievement_clutter",
+      "title": "Strong resume, no narrative center",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I have robotics, soccer, volunteering, debate, and an internship, but I do not know which one to focus on or if I should combine them.",
+      "student_input_normalized": "Student presents multiple high-signal activities but no narrative center. Needs direction away from resume breadth and toward a coherent interpretive story.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Classic achievement clutter case."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-004",
+      "case_family": "achievement_clutter",
+      "title": "Leadership overload becoming generic",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "Everyone tells me to write about leadership because I held leadership roles, but that feels like what everyone else is probably doing too.",
+      "student_input_normalized": "Student is being pushed toward a generic leadership framing and senses the risk. Needs help distinguishing real narrative value from common prestige framing.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests anti-genericness."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-005",
+      "case_family": "vague_identity_angle",
+      "title": "Identity instinct without a concrete story",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I feel like my background matters a lot to who I am, but I do not know how to write about identity without sounding broad or cliché.",
+      "student_input_normalized": "Student feels identity is central but lacks a concrete narrative angle. Needs help narrowing from abstract identity language to lived, specific interpretation.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "identity",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests abstract-to-specific narrowing."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-006",
+      "case_family": "vague_identity_angle",
+      "title": "Community belonging but no interpretive core",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "My community shaped me a lot, but when I try to explain that, it turns into a big general statement instead of an actual essay idea.",
+      "student_input_normalized": "Student has a community-based instinct but no specific interpretive center. Needs help moving from diffuse belonging language to a precise narrative direction.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "community",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests community-angle specificity."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-007",
+      "case_family": "sensitive_topic_hesitation",
+      "title": "Family hardship topic uncertainty",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "Something difficult happened in my family and it changed me a lot, but I do not know if writing about it would feel honest or like I am trying to use it for admissions.",
+      "student_input_normalized": "Student is considering a sensitive family hardship topic and is conflicted about authenticity versus performative use. Needs guidance on whether and how this could be handled.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 5,
+        "sensitivity_flags": [
+          "sensitive_family_context"
+        ],
+        "notes": "Core sensitive-topic hesitation case."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-008",
+      "case_family": "sensitive_topic_hesitation",
+      "title": "Personal difficulty but unsure if too heavy",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I went through something personal that definitely affected me, but I do not know if it is too serious or too risky to center an essay on it.",
+      "student_input_normalized": "Student is weighing a personal difficulty topic but is uncertain about tone, risk, and strategic fit. Needs careful direction rather than encouragement by default.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "challenge",
+        "ambiguity_level": 5,
+        "sensitivity_flags": [
+          "sensitive_personal_context"
+        ],
+        "notes": "Tests caution and strategic handling."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-009",
+      "case_family": "over_polished_generic_direction",
+      "title": "Service trip essay temptation",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "One of my first ideas was writing about how a service trip changed my perspective, but now I am worried that sounds like the most predictable essay possible.",
+      "student_input_normalized": "Student is drawn to a potentially overused transformational service-trip frame and already suspects genericness risk. Needs sharper direction toward specificity or an alternative angle.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests cliché detection."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-010",
+      "case_family": "over_polished_generic_direction",
+      "title": "Sports injury comeback cliché risk",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I could write about recovering from an injury in my sport, but I know comeback essays can sound very standard. I do not know if mine is actually different.",
+      "student_input_normalized": "Student has a common adversity/comeback topic and needs help determining whether there is a distinctive interpretive angle or whether the topic should be redirected.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "challenge",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests differentiation under common topic pressure."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-011",
+      "case_family": "weak_student_fit_read",
+      "title": "High-achievement path but unclear deepest story",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I am good at a lot of school-related things, but I do not know what actually sounds most like me instead of just what looks strong on paper.",
+      "student_input_normalized": "Student is asking for a direction that fits who they are, not just what appears impressive. Needs a strong student-fit read and anti-prestige filtering.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Core student-fit test."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-012",
+      "case_family": "weak_student_fit_read",
+      "title": "Parents pushing one angle, student unsure",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "My parents think I should write about the hardest thing I have done, but I am not sure that is actually the best way to show who I am.",
+      "student_input_normalized": "Student is receiving external pressure toward one essay direction but is uncertain whether it reflects their real best narrative angle. Needs strong student-fit judgment.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests external-pressure filtering."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-013",
+      "case_family": "prestige_motivated_framing",
+      "title": "Choosing what sounds impressive",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "Part of me wants to choose the topic that sounds the most impressive to top schools, even if it is not the one that feels most natural.",
+      "student_input_normalized": "Student is explicitly prestige-optimizing and needs redirection toward authentic strategic differentiation rather than status signaling.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests prestige correction."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-014",
+      "case_family": "resume_disguised_prompt",
+      "title": "List of activities presented as essay content",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "Here are the main things I have done: student council, debate captain, volunteer tutoring, NHS, piano, and internship experience. Which one is the best essay topic?",
+      "student_input_normalized": "Student provides a resume-like list and asks for topic selection. Needs help reframing from activity inventory to actual narrative and interpretive value.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests résumé-to-story conversion."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-015",
+      "case_family": "contradictory_signals",
+      "title": "Wants something unusual but also safe",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I want my essay to stand out and feel unique, but I also do not want to take any risks or choose something that could be misunderstood.",
+      "student_input_normalized": "Student wants both distinctiveness and total safety, creating contradictory strategic pressure. Needs balanced direction rather than false certainty.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests handling of conflicting goals."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-016",
+      "case_family": "vague_identity_angle",
+      "title": "Cultural background matters but feels overgeneralized",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "My cultural background definitely matters to me, but every time I try to explain it, it feels like I am making broad statements instead of saying something real.",
+      "student_input_normalized": "Student wants to write about cultural background but cannot yet locate a lived, specific narrative angle. Needs narrowing and grounding.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "identity",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Second identity-angle case for stability."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-017",
+      "case_family": "sensitive_topic_hesitation",
+      "title": "Mental-health adjacent caution without explicit diagnosis",
+      "priority": "high",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "There was a period where I was really struggling internally and it changed how I see everything now, but I do not know if that is something I should even bring into an essay.",
+      "student_input_normalized": "Student is describing a sensitive internal struggle without giving clinical detail. Needs careful direction on whether an adjacent or more controlled angle is stronger.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "challenge",
+        "ambiguity_level": 5,
+        "sensitivity_flags": [
+          "sensitive_internal_struggle"
+        ],
+        "notes": "Sensitive handling and caution test."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-018",
+      "case_family": "achievement_clutter",
+      "title": "Too many strong angles causing paralysis",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "My problem is not that I have no ideas. My problem is that I have too many things I could write about and they all seem equally valid.",
+      "student_input_normalized": "Student has many potentially viable directions and needs prioritization logic, not idea generation.",
+      "context": {
+        "essay_stage": "blank_page",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests prioritization under abundance."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-019",
+      "case_family": "weak_student_fit_read",
+      "title": "Strong story candidate but unsure if too small",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "There is one smaller personal story that feels very me, but I keep wondering if it is too small compared to bigger, more impressive things I could write about.",
+      "student_input_normalized": "Student senses a high-fit story but doubts its scale relative to more visibly impressive options. Needs help distinguishing significance from spectacle.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 3,
+        "sensitivity_flags": [],
+        "notes": "Tests significance-vs-scale judgment."
+      }
+    },
+    {
+      "case_id": "RIC-NDS-CTRL-020",
+      "case_family": "over_polished_generic_direction",
+      "title": "Essay idea sounds polished but empty",
+      "priority": "normal",
+      "product_surface": "narrative_direction_selection",
+      "source_type": "controlled_seed",
+      "student_input_raw": "I can make a topic sound polished and meaningful when I talk about it, but I am worried it is more polished than real.",
+      "student_input_normalized": "Student is aware of the risk of constructing a polished but hollow essay frame. Needs guidance toward substance over rhetorical smoothness.",
+      "context": {
+        "essay_stage": "rough_idea",
+        "prompt_type": "personal_statement",
+        "ambiguity_level": 4,
+        "sensitivity_flags": [],
+        "notes": "Tests fake-depth resistance."
+      }
+    }
+  ]
+}

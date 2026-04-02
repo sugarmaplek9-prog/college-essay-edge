@@ -1,0 +1,203 @@
+{
+  "sprint_id": "LIVE_CANDIDATE_GENERATION_RECOVERY_SPRINT_V1",
+  "purpose": "Recover live candidate generation quality after intake-gate bottleneck relief.",
+  "required_inputs_used": [
+    "LIVE_INTAKE_GATE_DIAGNOSTIC_V1_PROD_POST_GATE_RECALIBRATION.json",
+    "LIVE_INTAKE_GATE_DIAGNOSTIC_V1_PROD_POST_GATE_RECALIBRATION.md",
+    "NDS_LIVE_CANDIDATE_INVENTORY_FULL25_PROD_POST_GATE_RECALIBRATION.json",
+    "NDS_SCORE_REPORT_FULL25_PROD_POST_GATE_RECALIBRATION.json",
+    "NDS_SCORE_REPORT_FULL25_PROD_POST_GATE_RECALIBRATION.md",
+    "NDS_BENCHMARK_MISS_REVIEW_FULL25_PROD_POST_GATE_RECALIBRATION.json"
+  ],
+  "tracks_executed_in_order": ["A", "B", "C", "D", "E"],
+  "pre_sprint_live_state": {
+    "blocked_count": 3,
+    "clarification_count": 19,
+    "direction_light_count": 3,
+    "non_zero_candidate_inventory_count": 3,
+    "full25_score": 9.8,
+    "miss_count": 9,
+    "miss_owner_split": {
+      "candidate_generation": 9
+    }
+  },
+  "post_sprint_live_state": {
+    "blocked_count": 3,
+    "clarification_count": 19,
+    "direction_light_count": 3,
+    "non_zero_candidate_inventory_count": 3,
+    "full25_score": 9.88,
+    "miss_count": 8,
+    "miss_owner_split": {
+      "candidate_generation": 7,
+      "selection_or_reranking": 1
+    }
+  },
+  "deltas": {
+    "blocked_delta": 0,
+    "clarification_delta": 0,
+    "direction_light_delta": 0,
+    "inventory_nonzero_delta": 0,
+    "score_delta": 0.08,
+    "miss_delta": -1
+  },
+  "case_level_patch_tracking": [
+    {
+      "source_case_id": "NDS-003",
+      "live_route_before": "direction_light",
+      "candidate_inventory_before": [
+        "There's a real story here, and this is the thread to follow.",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"I’m deciding between chronic illness, losing a competition, or a qu…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "primary_failure_pattern": "weak_but_salvageable_candidate_set",
+      "patch_track_applied": "Track A+B+C",
+      "candidate_inventory_after": [
+        "illness as resilience",
+        "failure with intellectual growth",
+        "ambition and revision",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"I’m deciding between chronic illness, losing a competition, or a qu…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Improved candidate set; residual miss shifted to selection_or_reranking."
+    },
+    {
+      "source_case_id": "NDS-004",
+      "live_route_before": "direction_light",
+      "candidate_inventory_before": [
+        "There's a real story here, and this is the thread to follow.",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"Would it be better to write about Type 1 diabetes, getting second p…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "primary_failure_pattern": "weak_but_salvageable_candidate_set",
+      "patch_track_applied": "Track A+B+C",
+      "candidate_inventory_after": [
+        "illness as resilience",
+        "failure with intellectual growth",
+        "ambition and revision",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"Would it be better to write about Type 1 diabetes, getting second p…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Candidate set became specific but still misses expected winner for this case."
+    },
+    {
+      "source_case_id": "NDS-018",
+      "live_route_before": "direction_light",
+      "candidate_inventory_before": [
+        "There's a real story here, and this is the thread to follow.",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"I’m between writing about coding a game and volunteering at the lib…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "primary_failure_pattern": "weak_but_salvageable_candidate_set",
+      "patch_track_applied": "Track A+B+C",
+      "candidate_inventory_after": [
+        "game coding as creator lens",
+        "library as community observation",
+        "service essay",
+        "This essay is about a moment that changed how you think or act.",
+        "You might open with: \"I’m between writing about coding a game and volunteering at the lib…\" — stay inside that moment rather than explaining what you were doing there."
+      ],
+      "post_patch_status": "improved_or_pass",
+      "remaining_trust_risk": "medium",
+      "reviewer_note": "Now matches expected best direction class and exits miss set."
+    },
+    {
+      "source_case_id": "NDS-005",
+      "live_route_before": "blocked",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "weak_note_latent_signal_not_recovered",
+      "patch_track_applied": "Track D",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Still blocked; candidate generation not yet engaged."
+    },
+    {
+      "source_case_id": "NDS-008",
+      "live_route_before": "clarification",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "no_good_candidate_existed",
+      "patch_track_applied": "Track B",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Scope-correction prompt remains clarification-route."
+    },
+    {
+      "source_case_id": "NDS-009",
+      "live_route_before": "clarification",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "no_good_candidate_existed",
+      "patch_track_applied": "Track B",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "No pass-through yet; route remains clarification."
+    },
+    {
+      "source_case_id": "NDS-012",
+      "live_route_before": "blocked",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "weak_note_latent_signal_not_recovered",
+      "patch_track_applied": "Track D",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Still blocked at intake threshold for this sparse prompt."
+    },
+    {
+      "source_case_id": "NDS-019",
+      "live_route_before": "clarification",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "no_good_candidate_existed",
+      "patch_track_applied": "Track B",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "Scope-correction prompt still not entering candidate lane."
+    },
+    {
+      "source_case_id": "NDS-023",
+      "live_route_before": "blocked",
+      "candidate_inventory_before": [],
+      "primary_failure_pattern": "no_good_candidate_existed",
+      "patch_track_applied": "Track B",
+      "candidate_inventory_after": [],
+      "post_patch_status": "miss",
+      "remaining_trust_risk": "high",
+      "reviewer_note": "High-risk guidance prompt remains blocked; no candidate set generated."
+    }
+  ],
+  "regression_checks": {
+    "required_suite": [
+      "test:nds:evidence-grounding",
+      "test:nds:direction-line-fit",
+      "test:nds:direction-stability",
+      "test:product:screen-trust",
+      "test:product:flow-break",
+      "test:product:session-state",
+      "test:product:real-user-sim",
+      "npm test"
+    ],
+    "status": {
+      "test:nds:evidence-grounding": "PASS",
+      "test:nds:direction-line-fit": "PASS",
+      "test:nds:direction-stability": "PASS",
+      "test:product:screen-trust": "PASS",
+      "test:product:flow-break": "PASS",
+      "test:product:session-state": "PASS",
+      "test:product:real-user-sim": "FAIL",
+      "npm test": "PASS"
+    }
+  },
+  "remaining_live_path_risks": [
+    "Scope-correction prompts still route to clarification more often than desired (NDS-008, NDS-019).",
+    "One option-ranking case now fails at selection/reranking despite a better generated candidate (NDS-003).",
+    "Blocked residual includes a high-risk guidance query (NDS-023)."
+  ],
+  "next_recommended_action": "Run a focused selection/reranking micro-sprint for option-ranking cases, then apply a narrow scope-correction route support patch and rerun prod ladder."
+}

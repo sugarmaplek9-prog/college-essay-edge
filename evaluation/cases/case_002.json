@@ -1,0 +1,57 @@
+{
+  "case_id": "case_002",
+  "label": "weak-signal robotics leadership",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "red_team",
+    "stale_draft_risk",
+    "parent_advisor_risk",
+    "fake_confidence_temptation"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "mechanical engineering"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_002",
+    "project_type": "personal_statement",
+    "target_school": null
+  },
+  "story_entries": [
+    {
+      "id": "story_2_1",
+      "text": "Robotics pit notes. At first I kept taking the repair back from Maya because I thought I could fix the intake faster. After our mentor told me I was freezing the whole pit, I changed my approach. Next round I stayed on testing and notes while Maya handled the repair, and we got through inspection."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_2",
+    "text": "This essay should frame robotics as a lesson in collaborative leadership and future engineering direction. I am trying to connect the event to values, maturity, and broader purpose."
+  },
+  "school_context": {
+    "target_school": null,
+    "notes": ""
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Parent/advisor contamination case: a polished robotics draft competes with a rough student-owned pit scene.",
+    "reviewer_warning": "Check whether the system follows the student-owned repair moment instead of the polished framing."
+  }
+}

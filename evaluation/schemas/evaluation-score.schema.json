@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "evaluation-score.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "reviewer_id",
+    "systems_compared",
+    "scores",
+    "binary_judgment",
+    "reviewer_notes"
+  ],
+  "properties": {
+    "case_id": { "type": "string" },
+    "reviewer_id": { "type": "string" },
+    "systems_compared": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "string" }
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "divergence_quality",
+        "conviction_quality",
+        "evidence_grounding",
+        "next_step_usefulness",
+        "substitution_risk",
+        "student_dignity_tone",
+        "product_sharpness"
+      ],
+      "properties": {
+        "divergence_quality": { "$ref": "#/$defs/headToHeadScore" },
+        "conviction_quality": { "$ref": "#/$defs/headToHeadScore" },
+        "evidence_grounding": { "$ref": "#/$defs/headToHeadScore" },
+        "next_step_usefulness": { "$ref": "#/$defs/headToHeadScore" },
+        "substitution_risk": { "$ref": "#/$defs/headToHeadScore" },
+        "student_dignity_tone": { "$ref": "#/$defs/headToHeadScore" },
+        "product_sharpness": { "$ref": "#/$defs/headToHeadScore" }
+      }
+    },
+    "binary_judgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nds_clearly_better_than_baseline"],
+      "properties": {
+        "nds_clearly_better_than_baseline": { "type": "boolean" }
+      }
+    },
+    "reviewer_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nds_strength", "baseline_failure", "important_comment"],
+      "properties": {
+        "nds_strength": { "type": "string" },
+        "baseline_failure": { "type": "string" },
+        "important_comment": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "headToHeadScore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nds", "baseline"],
+      "properties": {
+        "nds": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "baseline": { "type": "integer", "minimum": 1, "maximum": 5 }
+      }
+    }
+  }
+}

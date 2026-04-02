@@ -1,0 +1,57 @@
+{
+  "case_id": "case_006",
+  "label": "weak-signal translation advocacy",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "draft_present",
+    "school_sensitive",
+    "red_team",
+    "parent_advisor_risk",
+    "fake_confidence_temptation"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "biology"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_006",
+    "project_type": "personal_statement",
+    "target_school": "School 6"
+  },
+  "story_entries": [
+    {
+      "id": "story_6_1",
+      "text": "Clinic call notes. I first treated translating for my grandmother like just repeating words. After a volunteer at the clinic told me I was moving too fast, I changed my approach. I started stopping after each part of the call, checking what she understood, and the whole call got calmer."
+    }
+  ],
+  "current_draft": {
+    "id": "draft_6",
+    "text": "This essay should connect translation advocacy to service, empathy, and future direction in medicine. I am trying to frame the experience around values, voice, and the broader meaning of care."
+  },
+  "school_context": {
+    "target_school": "School 6",
+    "notes": "Student is considering fit with School 6."
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Parent/advisor contamination case: polished service framing competes with a student-owned clinic translation scene.",
+    "reviewer_warning": "Check whether the system centers the actual correction in care rather than the abstract service language."
+  }
+}

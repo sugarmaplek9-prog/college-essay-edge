@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "HV4_01",
+    "title": "Physics lab calibration shift",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "strong",
+    "raw_notes": "In physics lab I used to rush through calibration because I could usually fix errors later. During a pendulum trial, my partner copied my setup and our data drifted so far we had to restart. My teacher said I was solving symptoms, not preventing mistakes. The next week I wrote a calibration checklist and made our table run it before every test. Our graphs became consistent, and I stopped equating speed with competence."
+  },
+  {
+    "case_id": "HV4_02",
+    "title": "Writing center feedback reframing",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "strong",
+    "raw_notes": "As a writing center tutor I kept giving students polished topic sentences because sessions were short. They thanked me, but many came back with drafts that sounded generic. One student told me she did not know how to continue once she left the room. I switched to spending the first ten minutes asking questions and making students generate their own first move. Revisions improved, and I realized efficiency had made my help less useful."
+  },
+  {
+    "case_id": "HV4_03",
+    "title": "Clinic volunteer queue redesign",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I organized patient intake at a weekend clinic and still had a line wrapping the hallway by 10 a.m. I first blamed late volunteers, but after timing each station I saw insurance checks were stalling new patients. I redesigned intake so repeat patients used a fast lane while first visits met one dedicated volunteer. The next shift, wait times dropped sharply. I had been optimizing for neat process flow, not patient dignity."
+  },
+  {
+    "case_id": "HV4_04",
+    "title": "Course placement correction",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "I was placed into regular chemistry despite completing honors prerequisites. I emailed the department twice and got told scheduling was final. I asked my counselor for the placement rubric, created a one-page summary with grades and teacher notes, and waited after school until she reviewed it. I was moved into honors that week. I learned that following process can still require pushing process."
+  },
+  {
+    "case_id": "HV4_05",
+    "title": "Orchestra rehearsal authority conflict",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "As concertmaster I changed bowings the day before performance because I thought they sounded cleaner. Section leaders were upset and one told me I had ignored work they had prepared all week. I defended the decision in rehearsal. Later I listened to a recording and realized the musical gain came at the cost of trust. At the next concert cycle I asked principals for one non-negotiable before changing anything."
+  },
+  {
+    "case_id": "HV4_06",
+    "title": "Hackathon spotlight correction",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "strong",
+    "raw_notes": "After a hackathon win, I explained our project in an interview as if I had built the hardest parts. On the ride home my teammate said she felt invisible but did not want to embarrass me publicly. I replayed that sentence for days. I rewrote our project documentation with named ownership sections and started introducing every demo by crediting contributors first. I had confused confidence with control."
+  },
+  {
+    "case_id": "HV4_07",
+    "title": "Middle school coding club facilitation",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "medium",
+    "raw_notes": "I ran a coding club and solved bugs for students whenever we got stuck. A student told me club felt like watching me debug instead of learning to debug. I started asking everyone to write one hypothesis before I touched the keyboard. Participation went up and students began helping each other."
+  },
+  {
+    "case_id": "HV4_08",
+    "title": "Pharmacy translation teach-back",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "medium",
+    "raw_notes": "I translated prescription instructions for my uncle and summarized quickly because the pharmacist was busy. He took one medication at the wrong interval. At the follow-up, the pharmacist asked me to have him repeat each step back. Since then I translate line by line and ask for teach-back before leaving."
+  },
+  {
+    "case_id": "HV4_09",
+    "title": "School paper fact-check protocol",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I published a school newspaper story with an unchecked statistic and had to issue a correction. I assumed the problem was deadline pressure, but our workflow had no explicit number-verification step. I built a pre-publish checklist requiring source links and second-reader confirmation for every data claim. Corrections dropped the rest of the term, and I stopped treating verification as optional."
+  },
+  {
+    "case_id": "HV4_10",
+    "title": "Robotics pit tradeoff disclosure",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "At regionals we failed inspection shortly before our match, and I told the team to disable autonomous mode to pass quickly. Our controls lead argued we should risk starting late to keep our edge. I overruled him. We advanced but lost consistency points. On the bus home he said my choice protected schedule but erased our strength. I now state the tradeoff out loud before final calls."
+  },
+  {
+    "case_id": "HV4_11",
+    "title": "Split focus — photography and tennis",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "I do photography and I also play tennis competitively. Both are meaningful to me and I am unsure which one should be my college essay topic."
+  },
+  {
+    "case_id": "HV4_12",
+    "title": "Benefits office translation correction",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "medium",
+    "raw_notes": "I used to summarize benefits forms for my grandparents because I thought faster was kinder. At one appointment I skipped a paragraph on repayment and my grandfather signed without understanding it. We had to return to reverse the form. Since then I ask staff to slow down and translate each section fully, even when the line gets longer. That mistake changed what responsibility sounds like to me."
+  }
+]

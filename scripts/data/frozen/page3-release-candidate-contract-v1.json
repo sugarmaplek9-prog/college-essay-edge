@@ -1,0 +1,53 @@
+{
+  "release_candidate_id": "page3_rc_v1",
+  "status": "active_working_release_candidate",
+  "locked_on": "2026-03-26",
+  "validation_command": "npm run eval:page3:rc",
+  "freeze_command": "npm run eval:page3:rc:freeze",
+  "frozen_assets": {
+    "layer_a_benchmark": "scripts/data/frozen/page3-holdout-v2-cases.frozen.json",
+    "layer_b_unseen_validation": "scripts/data/page3-unseen-v1-cases.json",
+    "layer_c_messy_validation": "scripts/data/page3-messy-v1-cases.json",
+    "layer_runner": "scripts/page3-multilayer-validation-v3.mjs",
+    "holdout_runner": "scripts/page3-holdout-v2.mjs",
+    "pool_integrity_audit": "scripts/page3-pool-integrity-audit-v1.mjs",
+    "packet_validation_gate": "scripts/page3-packet-validation-gate-v3.mjs",
+    "why_contract_audit": "scripts/page3-why-contract-audit-v2.mjs",
+    "frozen_regression_standard": "scripts/data/frozen/page3-frozen-regression-standard-v1.json"
+  },
+  "pass_fail_contract": {
+    "layer_a": {
+      "expected_final_tally": {
+        "product_wins": 10,
+        "openai_wins": 0,
+        "ties": 2,
+        "unscored": 0
+      },
+      "collapse_cases_max": 0,
+      "packet_valid_for_review": true,
+      "dominant_family_ratio_max": 0.35
+    },
+    "layer_b": {
+      "collapse_cases_max": 0,
+      "packet_valid_for_review": true,
+      "zero_candidate_cases_max": 0,
+      "dominant_family_ratio_max": 0.35
+    },
+    "layer_c": {
+      "collapse_cases_max": 0,
+      "packet_valid_for_review": true,
+      "dominant_family_ratio_max": 0.35
+    },
+    "cross_layer": {
+      "all_layers_packet_valid": true,
+      "all_layers_no_collapse": true,
+      "why_contract_alignment_ok": true,
+      "major_new_malformed_composition_artifacts": false
+    }
+  },
+  "notes": [
+    "This contract protects the current remediation-complete Page 3 release candidate.",
+    "Future Page 3 edits must run the RC validation command before acceptance.",
+    "Validation assets listed here are frozen and must not be silently revised."
+  ]
+}

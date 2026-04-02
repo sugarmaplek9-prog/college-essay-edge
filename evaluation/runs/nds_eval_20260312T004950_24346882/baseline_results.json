@@ -1,0 +1,1332 @@
+[
+  {
+    "run_id": "eval_baseline_case_001_1773276590357",
+    "case_id": "case_001",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_002_1773276590357",
+    "case_id": "case_002",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "normalized_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_003_1773276590357",
+    "case_id": "case_003",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_004_1773276590357",
+    "case_id": "case_004",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "normalized_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_005_1773276590357",
+    "case_id": "case_005",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_006_1773276590357",
+    "case_id": "case_006",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "normalized_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_007_1773276590357",
+    "case_id": "case_007",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_008_1773276590357",
+    "case_id": "case_008",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "normalized_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_009_1773276590357",
+    "case_id": "case_009",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_010_1773276590357",
+    "case_id": "case_010",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "normalized_output": {
+      "status": "needs_more_input",
+      "best_direction": null,
+      "alternatives": [],
+      "evidence_anchors": [],
+      "recovery_question": "Can you share a meaningful personal experience?"
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_011_1773276590357",
+    "case_id": "case_011",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_012_1773276590357",
+    "case_id": "case_012",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_013_1773276590357",
+    "case_id": "case_013",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_014_1773276590357",
+    "case_id": "case_014",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_015_1773276590357",
+    "case_id": "case_015",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_016_1773276590357",
+    "case_id": "case_016",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_017_1773276590357",
+    "case_id": "case_017",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_018_1773276590357",
+    "case_id": "case_018",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_019_1773276590357",
+    "case_id": "case_019",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_020_1773276590357",
+    "case_id": "case_020",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_021_1773276590357",
+    "case_id": "case_021",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_022_1773276590357",
+    "case_id": "case_022",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_023_1773276590357",
+    "case_id": "case_023",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_024_1773276590357",
+    "case_id": "case_024",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_025_1773276590357",
+    "case_id": "case_025",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_026_1773276590357",
+    "case_id": "case_026",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_027_1773276590357",
+    "case_id": "case_027",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_028_1773276590357",
+    "case_id": "case_028",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_029_1773276590357",
+    "case_id": "case_029",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  },
+  {
+    "run_id": "eval_baseline_case_030_1773276590357",
+    "case_id": "case_030",
+    "system": "baseline_free_ai",
+    "baseline_mode": "deterministic_prompt_harness",
+    "raw_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "normalized_output": {
+      "status": "success",
+      "best_direction": {
+        "id": "direction_1",
+        "title": "Direction 1",
+        "summary": "Focus on a meaningful experience and what you learned.",
+        "why_it_wins": "It can be broadly compelling for admissions readers.",
+        "main_risk": "May feel generic.",
+        "next_move": "Draft a personal statement paragraph."
+      },
+      "alternatives": [
+        {
+          "id": "direction_2",
+          "title": "Direction 2",
+          "why_it_loses": "Less compelling overall.",
+          "risk": "Could be too broad."
+        }
+      ],
+      "evidence_anchors": [],
+      "recovery_question": null
+    },
+    "warnings": []
+  }
+]

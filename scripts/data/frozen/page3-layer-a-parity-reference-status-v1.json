@@ -1,0 +1,17 @@
+{
+  "layer_id": "layer_a_frozen_regression",
+  "status": "permanently_unavailable",
+  "reason": "benchmark_loss_missing_authoritative_artifact",
+  "locked_on": "2026-03-27",
+  "required_artifacts": [
+    "evaluation_outputs/page3_holdout_v2/summary.json",
+    "evaluation_outputs/page3_holdout_v2/blind_review_packet.json",
+    "evaluation_outputs/page3_holdout_v2/blind_review_answer_key.json"
+  ],
+  "recovery_policy": "Do not synthesize substitute parity opponents or use remediation artifacts as frozen truth.",
+  "runtime_mode": "continue_packet_validations_and_product_surface_work_with_layer_a_parity_unavailable",
+  "notes": [
+    "Packet and provenance restoration remain valid.",
+    "Release-candidate evaluation must continue failing only on parity-reference availability until an authoritative external artifact is supplied."
+  ]
+}

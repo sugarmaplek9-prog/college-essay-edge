@@ -1,0 +1,37 @@
+{
+  "artifact": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_6_IMPLEMENTATION_SPEC_V1",
+  "version": "v1",
+  "phase": 6,
+  "title": "Prod rollout + validation",
+  "objective": "Ship blank-page lane under controlled conditions with explicit validation and rollback discipline.",
+  "required_outcomes": [
+    "versioned release artifact",
+    "rollout note",
+    "production validation run",
+    "explicit rollback/no-ship conditions",
+    "release review recommendation"
+  ],
+  "contracts": {
+    "rollout": "narrow, reversible, observable",
+    "validation": "required pre-release",
+    "rollback": "immediate pause/rollback on trust or stability degradation"
+  },
+  "required_artifacts": [
+    "docs/engineering/STRUCTURED_BLANK_PAGE_INTAKE_PHASE_6_IMPLEMENTATION_SPEC_V1.md",
+    "docs/engineering/structured_blank_page_intake_phase_6_implementation_spec_v1.json",
+    "docs/engineering/STRUCTURED_BLANK_PAGE_INTAKE_PHASE_6_ROLLOUT_NOTE_V1.md",
+    "docs/engineering/STRUCTURED_BLANK_PAGE_INTAKE_PHASE_6_VALIDATION_RUN_V1.md",
+    "docs/engineering/STRUCTURED_BLANK_PAGE_INTAKE_PHASE_6_ROLLBACK_CONDITIONS_V1.md"
+  ],
+  "required_test_commands": [
+    "npm run test:product:screen-trust",
+    "npm run test:product:flow-break",
+    "npm run test:product:session-state",
+    "npm run test:product:real-user-sim",
+    "npm run test:nds:evidence-grounding",
+    "npm run test:nds:direction-line-fit",
+    "npm run test:nds:direction-stability",
+    "npm test",
+    "npm run build"
+  ]
+}

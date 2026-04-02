@@ -1,0 +1,56 @@
+{
+  "case_id": "case_027",
+  "label": "strong-signal community clinic volunteer",
+  "difficulty": "strong",
+  "tags": [
+    "school_sensitive"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "mechanical engineering"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_027",
+    "project_type": "personal_statement",
+    "target_school": "School 3"
+  },
+  "story_entries": [
+    {
+      "id": "story_27_1",
+      "text": "Case 27: community clinic volunteer. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    },
+    {
+      "id": "story_27_2",
+      "text": "Case 27: community clinic volunteer. I initially handled this situation poorly, then adapted my approach after feedback. I can point to one turning-point moment and a specific behavior change that affected others."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": "School 3",
+    "notes": "Student is considering fit with School 3."
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": true,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers strong difficulty behavior and community clinic volunteer signal pattern.",
+    "reviewer_warning": ""
+  }
+}

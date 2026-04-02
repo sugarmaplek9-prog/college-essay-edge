@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "HV3_01",
+    "title": "Bio lab false confidence correction",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "strong",
+    "raw_notes": "In AP Biology I was known for finishing dissections quickly, and I liked being the person people copied. During a frog lab, my partner followed my shortcut and nicked an artery, which ruined our sample. My teacher said precision mattered more than pace. The next week I wrote a two-column protocol with checkpoints and made our table use it before each cut. We finished slower but with clean results, and I stopped treating speed as proof that I was helping."
+  },
+  {
+    "case_id": "HV3_02",
+    "title": "Debate novice coaching pivot",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "strong",
+    "raw_notes": "I volunteered to coach novice debaters and kept giving them polished rebuttal lines to memorize. They sounded sharp in practice but froze in tournaments when rounds shifted. After one loss, a freshman told me she never knew why the lines worked. I changed practice so they had to build one argument from scratch before seeing mine. Their scores improved over the next month. I thought I was giving confidence, but I was giving dependency."
+  },
+  {
+    "case_id": "HV3_03",
+    "title": "Food pantry intake redesign",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I coordinated intake at a Saturday food pantry and still had forty-minute lines by noon. I blamed turnout until I timed each step and saw forms were bottlenecking first-time families. I redesigned check-in so returning families used color cards while new families met one volunteer at a side table. The next week wait times dropped by half. What embarrassed me most was realizing I had been optimizing for order, not dignity."
+  },
+  {
+    "case_id": "HV3_04",
+    "title": "Counselor scheduling appeal",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "I was placed out of advanced physics because of a data-entry mistake and got told to wait for the next semester. I emailed twice and got no change. I asked my counselor for the placement rubric, made a one-page timeline of my grades and teacher recommendations, and waited outside her office after school until she read it. She moved me back that week. I realized I had been treating bureaucracy like fate."
+  },
+  {
+    "case_id": "HV3_05",
+    "title": "Theater cue conflict",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "As stage manager I moved a lighting cue without warning because the transition looked cleaner from the back row. The lighting lead confronted me after rehearsal and said I had made her team look careless. I argued at first. Later that night I reviewed the recording and saw the visual fix came from timing they had built all week. At the next run I asked each crew lead to flag one non-negotiable before I changed anything."
+  },
+  {
+    "case_id": "HV3_06",
+    "title": "Hack team attribution reset",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "strong",
+    "raw_notes": "Our civic-tech app won a city challenge, and in the post-event interview I described it like I had driven every major decision. On the train home my teammate said she felt erased but did not want to start a fight in public. I replayed that line all weekend. I rewrote our project summary with named contribution sections and started opening demos by crediting each owner before features. I had confused visibility with leadership."
+  },
+  {
+    "case_id": "HV3_07",
+    "title": "Math circle facilitation",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "medium",
+    "raw_notes": "I led a middle school math circle and usually solved the puzzle myself when students got stuck. A student told me the session felt like watching me think instead of them thinking. I started waiting thirty seconds before speaking and asking for two wrong guesses first. Participation increased and students started arguing through strategies with each other."
+  },
+  {
+    "case_id": "HV3_08",
+    "title": "Hospital translation clarification",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "medium",
+    "raw_notes": "At a hospital front desk I translated discharge instructions for my aunt and summarized quickly because the line was long. She later took the dosage at the wrong interval. At the follow-up, a nurse asked me to have her repeat each instruction back. Since then I translate every step and ask for teach-back before we leave. The process takes longer but mistakes dropped in our family."
+  },
+  {
+    "case_id": "HV3_09",
+    "title": "Student newspaper correction protocol",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I published a student newspaper piece with one unchecked statistic and had to run a correction the next day. I thought the issue was rushing the deadline, but when I traced our workflow I found no explicit verification step for sourced numbers. I built a pre-publish checklist requiring source links and second-reader confirmation for every claim. Corrections dropped the rest of the semester, and I stopped seeing edits as optional polish."
+  },
+  {
+    "case_id": "HV3_10",
+    "title": "Robotics emergency tradeoff",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "At regionals our drivetrain failed inspection thirty minutes before our match. I told the team to remove the autonomous path to pass quickly, and our controls lead argued we should risk a late start instead. I overruled him. We made playoffs but lost on consistency. On the bus home he said my call protected schedule but erased our best capability. I now say the tradeoff out loud before final calls so everyone sees what we are giving up."
+  },
+  {
+    "case_id": "HV3_11",
+    "title": "Split focus — choir and coding",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "I sing in choir and I also build small coding projects. Both matter to me and I am not sure which would make a better college essay topic."
+  },
+  {
+    "case_id": "HV3_12",
+    "title": "Benefits office translation accountability",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "medium",
+    "raw_notes": "I used to summarize forms for my grandparents at public offices because I thought speed helped everyone. At one appointment I skipped a paragraph about repayment terms and my grandmother signed anyway. We had to return to fix it. Since then I ask clerks to pause and translate each section completely, even when people behind us get impatient. That mistake changed what responsibility means in my family."
+  }
+]

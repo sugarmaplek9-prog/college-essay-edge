@@ -1,0 +1,448 @@
+{
+  "generated_at": "2026-03-18T21:25:23.583Z",
+  "artifact_id": "structured_blank_page_intake_phase_1_spot_check_v1",
+  "total_cases": 35,
+  "pass_count": 35,
+  "fail_count": 0,
+  "rows": [
+    {
+      "id": 1,
+      "family": "topic-only",
+      "raw_input": "Can I write about gardening?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "topic_probe",
+      "trigger_signals": [
+        "topic_only_intent",
+        "topic_eligibility_question"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 2,
+      "family": "topic-only",
+      "raw_input": "Would volunteering work for my college essay?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "topic_probe",
+      "trigger_signals": [
+        "topic_only_intent",
+        "topic_eligibility_question"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 3,
+      "family": "topic-only",
+      "raw_input": "Should I write about coding for my personal statement?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "topic_probe",
+      "trigger_signals": [
+        "topic_only_intent",
+        "topic_eligibility_question"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 4,
+      "family": "topic-only",
+      "raw_input": "Can I write about moving schools?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "topic_probe",
+      "trigger_signals": [
+        "topic_only_intent",
+        "topic_eligibility_question"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 5,
+      "family": "topic-only",
+      "raw_input": "Is writing about tutoring a good topic?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "topic_probe",
+      "trigger_signals": [
+        "topic_only_intent"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 6,
+      "family": "theme-only",
+      "raw_input": "I want to show resilience.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "theme_probe",
+      "trigger_signals": [
+        "theme_only_intent",
+        "trait_show_language"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 7,
+      "family": "theme-only",
+      "raw_input": "I want to write about leadership.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "theme_probe",
+      "trigger_signals": [
+        "theme_only_intent"
+      ],
+      "confidence": "low",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 8,
+      "family": "theme-only",
+      "raw_input": "I want my essay to show growth.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "theme_probe",
+      "trigger_signals": [
+        "theme_only_intent",
+        "trait_show_language"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 9,
+      "family": "theme-only",
+      "raw_input": "How do I demonstrate integrity in my essay?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "theme_probe",
+      "trigger_signals": [
+        "theme_only_intent",
+        "trait_show_language"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 10,
+      "family": "theme-only",
+      "raw_input": "I want to highlight compassion but I do not have a story yet.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "theme_probe",
+      "trigger_signals": [
+        "no_topic_present",
+        "theme_only_intent",
+        "trait_show_language"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 11,
+      "family": "activity-only",
+      "raw_input": "I am between robotics and debate.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "activity_probe",
+      "trigger_signals": [
+        "activity_domain_only",
+        "multiple_activity_options"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 12,
+      "family": "activity-only",
+      "raw_input": "Maybe soccer for my essay?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "activity_probe",
+      "trigger_signals": [
+        "activity_domain_only"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 13,
+      "family": "activity-only",
+      "raw_input": "I am deciding between robotics, debate, and soccer.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "activity_probe",
+      "trigger_signals": [
+        "activity_domain_only",
+        "multiple_activity_options"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 14,
+      "family": "activity-only",
+      "raw_input": "Should I focus on band or robotics?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "activity_probe",
+      "trigger_signals": [
+        "activity_domain_only"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 15,
+      "family": "activity-only",
+      "raw_input": "Debate or coding club might be my essay topic.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "activity_probe",
+      "trigger_signals": [
+        "activity_domain_only"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 16,
+      "family": "scope-uncertain",
+      "raw_input": "I do not know if this says enough about me.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "scope_reframe",
+      "trigger_signals": [
+        "no_topic_present",
+        "scope_uncertain_language"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 17,
+      "family": "scope-uncertain",
+      "raw_input": "I like this topic but I am not sure it is deep enough.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "scope_reframe",
+      "trigger_signals": [
+        "scope_uncertain_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 18,
+      "family": "scope-uncertain",
+      "raw_input": "I am not sure this is really an essay-worthy topic.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "scope_reframe",
+      "trigger_signals": [
+        "scope_uncertain_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 19,
+      "family": "scope-uncertain",
+      "raw_input": "Is writing about babysitting too common?",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "scope_reframe",
+      "trigger_signals": [
+        "no_topic_present",
+        "scope_uncertain_language"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 20,
+      "family": "scope-uncertain",
+      "raw_input": "I have a topic but I do not know if it says enough.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "scope_reframe",
+      "trigger_signals": [
+        "scope_uncertain_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 21,
+      "family": "blank-page",
+      "raw_input": "I have no idea what to write about.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "blank_page_discovery",
+      "trigger_signals": [
+        "blank_page_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 22,
+      "family": "blank-page",
+      "raw_input": "Nothing feels special enough for my college essay.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "blank_page_discovery",
+      "trigger_signals": [
+        "blank_page_language"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 23,
+      "family": "blank-page",
+      "raw_input": "I do not know where to start for my personal statement.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "blank_page_discovery",
+      "trigger_signals": [
+        "blank_page_language"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 24,
+      "family": "blank-page",
+      "raw_input": "I am stuck and have no topic yet.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "blank_page_discovery",
+      "trigger_signals": [
+        "blank_page_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 25,
+      "family": "blank-page",
+      "raw_input": "I need help choosing what to write about for college essays.",
+      "top_level_route": "needs_structured_blank_page_intake",
+      "mode": "blank_page_discovery",
+      "trigger_signals": [
+        "blank_page_language",
+        "topic_only_intent"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 26,
+      "family": "truly-insufficient",
+      "raw_input": "hi",
+      "top_level_route": "true_block",
+      "mode": "too_thin_to_recover",
+      "trigger_signals": [
+        "no_topic_present",
+        "empty_or_near_empty_input"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 27,
+      "family": "truly-insufficient",
+      "raw_input": "n/a",
+      "top_level_route": "true_block",
+      "mode": "too_thin_to_recover",
+      "trigger_signals": [
+        "no_topic_present",
+        "empty_or_near_empty_input"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 28,
+      "family": "truly-insufficient",
+      "raw_input": "test",
+      "top_level_route": "true_block",
+      "mode": "too_thin_to_recover",
+      "trigger_signals": [
+        "no_topic_present",
+        "empty_or_near_empty_input"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 29,
+      "family": "truly-insufficient",
+      "raw_input": "write my essay for me",
+      "top_level_route": "true_block",
+      "mode": "too_thin_to_recover",
+      "trigger_signals": [
+        "off_domain_or_unusable"
+      ],
+      "confidence": "high",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 30,
+      "family": "truly-insufficient",
+      "raw_input": "asdf",
+      "top_level_route": "true_block",
+      "mode": "too_thin_to_recover",
+      "trigger_signals": [
+        "no_topic_present",
+        "empty_or_near_empty_input"
+      ],
+      "confidence": "medium",
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 31,
+      "family": "good-nds",
+      "raw_input": "I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.",
+      "top_level_route": "ready_for_nds",
+      "mode": null,
+      "trigger_signals": [
+        "no_topic_present"
+      ],
+      "confidence": null,
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 32,
+      "family": "good-nds",
+      "raw_input": "During robotics finals our bot stalled with 40 seconds left. I overrode the script and switched to manual control while my teammate called out timing. We lost that match, but the next round we rebuilt the handoff and won. That changed how I lead under pressure.",
+      "top_level_route": "ready_for_nds",
+      "mode": null,
+      "trigger_signals": [],
+      "confidence": null,
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 33,
+      "family": "good-nds",
+      "raw_input": "At debate camp, my coach stopped my speech and told me I was hiding behind big words. I rewrote my case overnight with one concrete story and tested it the next day. The room reacted differently, and I finally understood what clarity costs.",
+      "top_level_route": "ready_for_nds",
+      "mode": null,
+      "trigger_signals": [],
+      "confidence": null,
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 34,
+      "family": "good-nds",
+      "raw_input": "My first month tutoring, a student kept failing the same algebra quiz. I noticed I was explaining fast but never checking where she got lost. We rebuilt one problem step by step, and she later taught it to another student. That shifted my idea of helping.",
+      "top_level_route": "ready_for_nds",
+      "mode": null,
+      "trigger_signals": [
+        "no_topic_present"
+      ],
+      "confidence": null,
+      "reviewer_note": "PASS: expected route/mode match."
+    },
+    {
+      "id": 35,
+      "family": "good-nds",
+      "raw_input": "At my restaurant shift, tickets kept disappearing during rush hour. I designed a color-coded rail system, trained the team, and we cut missed orders to zero. The bigger change was realizing I needed to fix systems, not just work faster.",
+      "top_level_route": "ready_for_nds",
+      "mode": null,
+      "trigger_signals": [
+        "no_topic_present"
+      ],
+      "confidence": null,
+      "reviewer_note": "PASS: expected route/mode match."
+    }
+  ]
+}

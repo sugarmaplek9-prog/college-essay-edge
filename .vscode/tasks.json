@@ -1,0 +1,2985 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run-holdout-v1",
+			"type": "shell",
+			"command": "node scripts/page3-holdout-v1.mjs",
+			"problemMatcher": []
+		},
+		{
+			"label": "deployed-smoke-check",
+			"type": "shell",
+			"command": "test \"$(curl -s -o /dev/null -w '%{http_code}' https://college-essay-edge.vercel.app/)\" = \"200\" && echo home_ok && test \"$(curl -s -o /dev/null -w '%{http_code}' https://college-essay-edge.vercel.app/start)\" = \"200\" && echo start_ok"
+		},
+		{
+			"label": "deployed-api-route-check",
+			"type": "shell",
+			"command": "node -e \"const cases=[[\\\"F1\\\",\\\"I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.\\\"],[\\\"F3\\\",\\\"I like sports but I am not great at them.\\\"],[\\\"F4\\\",\\\"I am good at everything.\\\"]];(async()=>{for(const [label,raw_input] of cases){const res=await fetch('https://college-essay-edge.vercel.app/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input})});const text=await res.text();let json=null;try{json=JSON.parse(text);}catch{};console.log(label+': status='+res.status+' decision='+(json?.recommendation_viability?.decision??'n/a')+' blocking='+(json?.escalation?.blocking??'n/a'));}})();\""
+		},
+		{
+			"label": "deployed-api-error-body",
+			"type": "shell",
+			"command": "node -e \"(async()=>{const res=await fetch('https://college-essay-edge.vercel.app/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input:'I spent three summers volunteering at the hospital and learned service.'})});const text=await res.text();console.log('status='+res.status);console.log(text.slice(0,800));})();\""
+		},
+		{
+			"label": "dev-server",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true
+		},
+		{
+			"label": "local-api-check",
+			"type": "shell",
+			"command": "node -e \"(async()=>{const res=await fetch('http://localhost:3000/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input:'I spent three summers volunteering at the hospital and learned service.'})});const text=await res.text();console.log('status='+res.status);console.log(text.slice(0,400));})();\""
+		},
+		{
+			"label": "verify-unit-tests",
+			"type": "shell",
+			"command": "npm run test"
+		},
+		{
+			"label": "verify-critical-e2e",
+			"type": "shell",
+			"command": "npx playwright test src/__tests__/e2e/critical-path.spec.ts --project=chromium --workers=1 --reporter=line"
+		},
+		{
+			"label": "build-production",
+			"type": "shell",
+			"command": "npm run build"
+		},
+		{
+			"label": "deploy-vercel-prod",
+			"type": "shell",
+			"command": "npx vercel deploy --prod --yes"
+		},
+		{
+			"label": "post-deploy-home-check",
+			"type": "shell",
+			"command": "test \"$(curl -s -o /dev/null -w '%{http_code}' https://college-essay-edge.vercel.app/)\" = \"200\" && echo home_ok"
+		},
+		{
+			"label": "post-deploy-api-check",
+			"type": "shell",
+			"command": "node -e \"const cases=[[\\\"F1\\\",\\\"I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.\\\"],[\\\"F3\\\",\\\"I like sports but I am not great at them.\\\"],[\\\"F4\\\",\\\"I am good at everything.\\\"]];(async()=>{for(const [label,raw_input] of cases){const res=await fetch('https://college-essay-edge.vercel.app/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input})});const text=await res.text();let json=null;try{json=JSON.parse(text);}catch{};console.log(label+': status='+res.status+' decision='+(json?.recommendation_viability?.decision??'n/a')+' blocking='+(json?.escalation?.blocking??'n/a'));}})();\""
+		},
+		{
+			"label": "verify-after-routing-guardrails",
+			"type": "shell",
+			"command": "npm run test && npm run build"
+		},
+		{
+			"label": "verify-e2e-after-guardrails",
+			"type": "shell",
+			"command": "npx playwright test src/__tests__/e2e/critical-path.spec.ts --project=chromium --workers=1 --reporter=line"
+		},
+		{
+			"label": "deploy-after-guardrails",
+			"type": "shell",
+			"command": "npx vercel deploy --prod --yes"
+		},
+		{
+			"label": "alias-health-check",
+			"type": "shell",
+			"command": "test \"$(curl -s -o /dev/null -w '%{http_code}' https://college-essay-edge.vercel.app/)\" = \"200\" && echo alias_home_ok"
+		},
+		{
+			"label": "alias-api-check-after-guardrails",
+			"type": "shell",
+			"command": "node -e \"const cases=[[\\\"F1\\\",\\\"I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.\\\"],[\\\"F3\\\",\\\"I like sports but I am not great at them.\\\"],[\\\"F4\\\",\\\"I am good at everything.\\\"]];(async()=>{for(const [label,raw_input] of cases){const res=await fetch('https://college-essay-edge.vercel.app/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input})});const json=await res.json().catch(()=>null);console.log(label+': status='+res.status+' decision='+(json?.recommendation_viability?.decision??'n/a')+' blocking='+(json?.escalation?.blocking??'n/a'));}})();\""
+		},
+		{
+			"label": "deployed-browser-path-check",
+			"type": "shell",
+			"command": "node <<'EOF'\nconst { chromium } = require('@playwright/test');\n\nconst base = 'https://college-essay-edge.vercel.app';\n\nasync function run() {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  const results = [];\n  const submitName = /Find the strongest direction|Show me possible directions|See what's here/i;\n\n  // F1\n  await page.goto(base + '/start');\n  await page.getByLabel('Your notes or draft').fill('I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.');\n  await page.getByRole('button', { name: submitName }).click();\n  await page.waitForURL(/\\/start\\/(reflecting|direction)/, { timeout: 20000 });\n  results.push(['F1', page.url()]);\n\n  // F3\n  await page.goto(base + '/start');\n  await page.getByLabel('Your notes or draft').fill('I like sports but I am not great at them.');\n  await page.getByRole('button', { name: submitName }).click();\n  await page.waitForURL(/\\/start\\/(question|blocked)/, { timeout: 20000 });\n  results.push(['F3', page.url()]);\n\n  // F4\n  await page.goto(base + '/start');\n  await page.getByLabel('Your notes or draft').fill('I am good at everything.');\n  await page.getByRole('button', { name: submitName }).click();\n  await page.waitForURL('**/start/blocked', { timeout: 20000 });\n  results.push(['F4', page.url()]);\n\n  for (const [k, v] of results) console.log(k + ': ' + v);\n  await browser.close();\n}\n\nrun().catch((e) => { console.error(e); process.exit(1); });\nEOF"
+		},
+		{
+			"label": "verify-direction-actionability",
+			"type": "shell",
+			"command": "npm run test && npm run build"
+		},
+		{
+			"label": "verify-critical-path-after-ui-update",
+			"type": "shell",
+			"command": "npx playwright test src/__tests__/e2e/critical-path.spec.ts --project=chromium --workers=1 --reporter=line"
+		},
+		{
+			"label": "deploy-direction-upgrade",
+			"type": "shell",
+			"command": "npm run deploy:prod:canonical"
+		},
+		{
+			"label": "verify-deployed-direction-sections",
+			"type": "shell",
+			"command": "node <<'EOF'\nconst { chromium } = require('@playwright/test');\n\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  const base = 'https://college-essay-edge.vercel.app';\n  const submitName = /Find the strongest direction|Show me possible directions|See what's here/i;\n\n  await page.goto(base + '/start');\n  await page.getByLabel('Your notes or draft').fill('I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.');\n  await page.getByRole('button', { name: submitName }).click();\n\n  await page.waitForURL(/\\/start\\/(reflecting|direction)/, { timeout: 20000 });\n  if (page.url().includes('/reflecting')) {\n    await page.getByRole('button', { name: /Build from this direction|Show me the strongest angle|Show me the direction/i }).click();\n    await page.waitForURL('**/start/direction', { timeout: 20000 });\n  }\n\n  const labels = [\n    'Build from this direction',\n    'Why this wins',\n    'Draft the opening this way',\n    'What this opens up',\n    'What this essay is really about',\n    'Why this is the strongest angle',\n  ];\n\n  for (const text of labels) {\n    const visible = await page.getByText(text).first().isVisible().catch(() => false);\n    console.log(`${text}: ${visible ? 'present' : 'missing'}`);\n  }\n\n  await browser.close();\n})();\nEOF"
+		},
+		{
+			"label": "correction-regression-suite",
+			"type": "shell",
+			"command": "npm run test && npm run build && PLAYWRIGHT_BASE_URL=https://college-essay-edge.vercel.app npx playwright test src/__tests__/e2e/critical-path.spec.ts --project=chromium --workers=1 --reporter=line"
+		},
+		{
+			"label": "live-surface-smoke",
+			"type": "shell",
+			"command": "node <<'EOF'\nconst { chromium } = require('@playwright/test');\n\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  const base = 'https://college-essay-edge.vercel.app';\n  const submitName = /Find the strongest direction|Show me possible directions|See what's here/i;\n\n  await page.goto(base);\n  console.log('homepage_h1=' + await page.getByRole('heading', { level: 1 }).textContent());\n\n  await page.goto(base + '/start');\n  console.log('start_h1=' + await page.getByRole('heading', { level: 1 }).textContent());\n\n  await page.getByLabel('Your notes or draft').fill('I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.');\n  await page.getByRole('button', { name: submitName }).click();\n  await page.waitForURL(/\\/start\\/(reflecting|direction)/, { timeout: 20000 });\n  if (page.url().includes('/reflecting')) {\n    const body = await page.locator('body').textContent();\n    console.log('reflection_new=' + Boolean(body?.includes('Your direction')));\n    console.log('reflection_old=' + Boolean(body?.includes('Here’s where the essay really lives')));\n    await page.getByRole('button', { name: /Build from this direction|Show me the strongest angle|Show me the direction/i }).click();\n    await page.waitForURL('**/start/direction', { timeout: 20000 });\n  }\n\n  const labels = [\n    'Build from this direction',\n    'Why this wins',\n    'Draft the opening this way',\n    'What this opens up',\n    'What this essay is really about',\n    'Why this is the strongest angle',\n  ];\n\n  for (const text of labels) {\n    console.log(text + '=' + (await page.getByText(text).first().isVisible().catch(() => false)));\n  }\n\n  await browser.close();\n})();\nEOF"
+		},
+		{
+			"label": "verify-compare-doc-pass",
+			"type": "shell",
+			"command": "npm run test && npm run build && PLAYWRIGHT_BASE_URL=https://college-essay-edge.vercel.app npx playwright test src/__tests__/e2e/critical-path.spec.ts --project=chromium --workers=1 --reporter=line"
+		},
+		{
+			"label": "verify-session-state-guidance",
+			"type": "shell",
+			"command": "npm run test && npm run build"
+		},
+		{
+			"label": "focused-first-minute-tests",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-product-correction.spec.ts",
+				"src/__tests__/unit/clarification-system.spec.ts",
+				"src/__tests__/unit/first-minute-guards.spec.ts",
+				"--reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "focused-first-minute-tests-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts src/__tests__/unit/clarification-system.spec.ts src/__tests__/unit/first-minute-guards.spec.ts --reporter=basic 2>&1 | tail -120"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "clarification-system-tests-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/clarification-system.spec.ts --reporter=verbose 2>&1 | tail -120"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "first-minute-product-tests-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts --reporter=verbose 2>&1 | tail -120"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "first-minute-guards-tests-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-guards.spec.ts --reporter=verbose 2>&1 | tail -120"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-reflection",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t \"reflection content is exactly 2-3 plain observations without labeled mini-analysis\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-direction",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t \"direction content is reduced to the four locked sections only\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-guards-fallback",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-guards.spec.ts -t \"forces renderGuard to fall back when text is blocked\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-guards-sufficient",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-guards.spec.ts -t \"accepts an answer with exact words and action\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-reflection-output",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node -e \"const { deriveReflectionContent } = require('./.vitest-temp-nope')\""
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-reflection-output-tsx",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx tsx -e \"import { deriveReflectionContent } from './src/lib/fm/observations.ts'; import { FIXTURE_F1_STRONG_CASE } from './src/__tests__/fixtures/orchestrator-responses.ts'; const fixture = (FIXTURE_F1_STRONG_CASE.trusted_evidence?.trusted_evidence_rank ? FIXTURE_F1_STRONG_CASE : { ...FIXTURE_F1_STRONG_CASE, trusted_evidence: { trusted_evidence_rank: Array.isArray(FIXTURE_F1_STRONG_CASE?.trusted_evidence?.ranking) ? FIXTURE_F1_STRONG_CASE.trusted_evidence.ranking.map((item:any)=>item.source_id) : [], downgraded_sources: [], reason_codes:['STORY_ENTRY_OUTRANKS_POLISHED_DRAFT'], meta: FIXTURE_F1_STRONG_CASE?.trusted_evidence?.meta } }) as any; console.log(JSON.stringify(deriveReflectionContent(fixture), null, 2));\""
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-compare",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t \"compare content makes the stronger and weaker versions concrete\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-recovery",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t \"recovery-case direction still gives concrete next-step guidance after clarification\" --reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-reflection-direct",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-product-correction.spec.ts",
+				"-t",
+				"reflection content is exactly 2-3 plain observations without labeled mini-analysis",
+				"--reporter=verbose"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-reflection-json",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t 'reflection content is exactly 2-3 plain observations without labeled mini-analysis' --reporter=json > /tmp/fmp_reflection.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-reflection-json-workspace",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vitest run src/__tests__/unit/first-minute-product-correction.spec.ts -t 'reflection content is exactly 2-3 plain observations without labeled mini-analysis' --reporter=json > scripts/tmp-fmp-reflection.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-reflection-script",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/tmp-inspect-reflection.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-reflection-script-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx tsx scripts/tmp-inspect-reflection.ts 2>&1 | cat"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-fmp-reflection-json-direct",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-product-correction.spec.ts",
+				"-t",
+				"reflection content is exactly 2-3 plain observations without labeled mini-analysis",
+				"--reporter=json",
+				"--outputFile=./scripts/tmp-fmp-reflection.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-guards-json-direct",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-guards.spec.ts",
+				"--reporter=json",
+				"--outputFile=./scripts/tmp-first-minute-guards.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "focused-first-minute-tests-final",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-product-correction.spec.ts",
+				"src/__tests__/unit/clarification-system.spec.ts",
+				"src/__tests__/unit/first-minute-guards.spec.ts",
+				"--reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "full-test-suite-reset",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"test"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-reset-flow",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "deploy-reset-to-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "post-deploy-home-smoke-reset",
+			"type": "shell",
+			"command": "curl",
+			"args": [
+				"-s",
+				"https://college-essay-edge.vercel.app/"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "post-deploy-api-smoke-reset",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const cases=[[\"F1\",\"I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.\"],[\"F3\",\"I like sports but I am not great at them.\"],[\"F4\",\"I am good at everything.\"]];(async()=>{for(const [label,raw_input] of cases){const res=await fetch('https://college-essay-edge.vercel.app/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input})});const text=await res.text();let json=null;try{json=JSON.parse(text);}catch{};console.log(label+': status='+res.status+' decision='+(json?.recommendation_viability?.decision??'n/a')+' blocking='+(json?.escalation?.blocking??'n/a'));}})();"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "live-smoke-reset-script",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/live-smoke-reset.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "live-smoke-reset-to-file",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/live-smoke-reset.mjs > scripts/live-smoke-reset.out"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "live-smoke-reset-to-file-v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/live-smoke-reset.mjs > scripts/live-smoke-reset.out"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "live-smoke-reset-to-file-v3",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/live-smoke-reset.mjs > scripts/live-smoke-reset.out"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-threshold-regression",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-threshold.spec.ts",
+				"src/__tests__/unit/evidence-routing.spec.ts",
+				"--reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-threshold-only",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-threshold.spec.ts",
+				"--reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-threshold-json",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-threshold.spec.ts",
+				"--reporter=json",
+				"--outputFile=./scripts/tmp-threshold.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-threshold-and-routing",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vitest",
+				"run",
+				"src/__tests__/unit/first-minute-threshold.spec.ts",
+				"src/__tests__/unit/evidence-routing.spec.ts",
+				"--reporter=basic"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-after-threshold-tuning",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-entry-screen-spec",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-entry-screen-spec-2",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-after-route-copy-cleanup",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "deploy-entry-screen-fix-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-page2-copy-update",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-page2-rewrite-direction",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "deploy-page2-rewrite-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-page2-engineering-spec",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "phase6-live-smoke-rc2",
+			"type": "shell",
+			"command": "zsh",
+			"args": [
+				"-lc",
+				"set -euo pipefail\nBASE=\"https://college-essay-edge.vercel.app\"\n\ncurl -sS \"$BASE/\" > /tmp/phase6_home.html\nif grep -Eq \"Find the strongest story angle|Find your strongest college admissions essay theme\" /tmp/phase6_home.html; then echo \"home_render_ok\"; else echo \"home_render_fail\"; exit 1; fi\n\ncurl -sS \"$BASE/start\" > /tmp/phase6_start.html\nif grep -Eq \"Paste rough notes|Find the strongest direction|Show me possible directions\" /tmp/phase6_start.html; then echo \"start_render_ok\"; else echo \"start_render_fail\"; exit 1; fi\n\ncat > /tmp/phase6_api_smoke.mjs <<'NODE'\nconst base = 'https://college-essay-edge.vercel.app';\nconst cases = [\n  ['blank_page_candidate', 'I have no idea what to write about for my essay.'],\n  ['topic_probe_candidate', 'Can I write about helping in robotics club?'],\n  ['strong_direction_candidate', 'In my third summer at the hospital, a nurse told me I was in the way, and that changed how I showed up and listened.']\n];\n\nfor (const [label, raw_input] of cases) {\n  const res = await fetch(`${base}/api/intake/session`, {\n    method: 'POST',\n    headers: { 'content-type': 'application/json' },\n    body: JSON.stringify({ raw_input })\n  });\n  const body = await res.text();\n  let json = {};\n  try { json = JSON.parse(body); } catch {}\n\n  const out = {\n    label,\n    status: res.status,\n    product_mode: json.product_mode ?? null,\n    top_level_blank_page_route: json.top_level_blank_page_route ?? null,\n    blank_page_mode: json.blank_page_mode ?? null,\n    has_blank_page_intake_payload: Boolean(json.blank_page_intake_payload),\n    has_sharpening_question: Boolean(json.sharpening_question),\n  };\n  console.log(JSON.stringify(out));\n}\nNODE\n\nnode /tmp/phase6_api_smoke.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-render-smoke-rc2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"set -e; BASE='https://college-essay-edge.vercel.app'; curl -sS \"$BASE/\" | grep -Eq 'Find the strongest story angle|Find your strongest college admissions essay theme' && echo home_render_ok; curl -sS \"$BASE/start\" | grep -Eq 'Paste rough notes|Find the strongest direction|Show me possible directions' && echo start_render_ok"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-render-smoke-rc2b",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"set -e; BASE=https://college-essay-edge.vercel.app; curl -sS \"$BASE/\" | grep -Eq \"Find the strongest story angle|Find your strongest college admissions essay theme\" && echo home_render_ok; curl -sS \"$BASE/start\" | grep -Eq \"Paste rough notes|Find the strongest direction|Show me possible directions\" && echo start_render_ok"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-live-smoke-script",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase6-live-smoke.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-surface-diff-script",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase6-surface-diff.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-vercel-env-ls-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"env",
+				"ls",
+				"production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-url-status-check",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const urls=['https://college-essay-edge.vercel.app','https://college-essay-edge-ja661fh1f-college-edge.vercel.app','https://college-essay-edge-hhh61lwmj-college-edge.vercel.app'];(async()=>{for(const u of urls){const r=await fetch(u+'/api/intake/session',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({raw_input:'I have no idea what to write about for my essay.'})});console.log(u+' -> '+r.status);} })();"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-release-inputs-recheck",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/validate-blank-page-phase6-release.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-env-enabled",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"printf 'true\\n' | npx vercel env add BLANK_PAGE_ROLLOUT_ENABLED production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-env-modes",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"printf 'topic_probe,theme_probe,activity_probe,scope_reframe,blank_page_discovery\\n' | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_MODES production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-env-confidence",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"printf 'medium\\n' | npx vercel env add BLANK_PAGE_ROLLOUT_MIN_CONFIDENCE production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-env-allowed-envs",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"printf 'production\\n' | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_ENVS production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-rollout-env-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"env",
+				"ls",
+				"production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-controlled-deploy-activated",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-live-smoke-post-activation",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase6-live-smoke.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-vercel-list",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"ls",
+				"college-essay-edge",
+				"--prod"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-env-pull-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"env",
+				"pull",
+				".env.phase6.prod",
+				"--environment=production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fix-rollout-enabled-env",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ENABLED production --yes >/dev/null 2>&1 || true; echo true | npx vercel env add BLANK_PAGE_ROLLOUT_ENABLED production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fix-rollout-modes-env",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ALLOWED_MODES production --yes >/dev/null 2>&1 || true; echo topic_probe,theme_probe,activity_probe,scope_reframe,blank_page_discovery | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_MODES production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fix-rollout-confidence-env",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_MIN_CONFIDENCE production --yes >/dev/null 2>&1 || true; echo medium | npx vercel env add BLANK_PAGE_ROLLOUT_MIN_CONFIDENCE production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fix-rollout-allowed-envs-env",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ALLOWED_ENVS production --yes >/dev/null 2>&1 || true; echo production | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_ENVS production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-fixed-env-values",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"env",
+				"pull",
+				".env.phase6.prod",
+				"--environment=production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-controlled-deploy-with-env-fix",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-enabled-no-newline",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ENABLED production --yes >/dev/null 2>&1 || true; printf true | npx vercel env add BLANK_PAGE_ROLLOUT_ENABLED production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-modes-no-newline",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ALLOWED_MODES production --yes >/dev/null 2>&1 || true; printf topic_probe,theme_probe,activity_probe,scope_reframe,blank_page_discovery | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_MODES production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-confidence-no-newline",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_MIN_CONFIDENCE production --yes >/dev/null 2>&1 || true; printf medium | npx vercel env add BLANK_PAGE_ROLLOUT_MIN_CONFIDENCE production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "set-rollout-allowed-envs-no-newline",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel env rm BLANK_PAGE_ROLLOUT_ALLOWED_ENVS production --yes >/dev/null 2>&1 || true; printf production | npx vercel env add BLANK_PAGE_ROLLOUT_ALLOWED_ENVS production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "pull-env-after-no-newline",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"env",
+				"pull",
+				".env.phase6.prod",
+				"--environment=production"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "deploy-after-env-clean",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--prod",
+				"--yes"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "check-latest-prod-ready",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel ls college-essay-edge --prod | head -40"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-alias-current",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"inspect",
+				"college-essay-edge.vercel.app"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-alias-url-extract",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"npx vercel inspect college-essay-edge.vercel.app | grep -Eo 'https://college-essay-edge-[a-z0-9-]+\\.vercel\\.app' | head -1"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-live-smoke-after-env-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase6-live-smoke.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-surface-diff-after-activation",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase6-surface-diff.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "phase6-release-validator-final",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/validate-blank-page-phase6-release.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "prod-nds-browser-smoke-post1820",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const { chromium } = require('@playwright/test'); (async()=>{ const browser = await chromium.launch({headless:true}); const page = await browser.newPage(); const base='https://college-essay-edge.vercel.app'; await page.goto(base + '/start', {waitUntil:'networkidle'}); await page.locator('textarea').fill('I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.'); await page.getByRole('button', {name:'Find the strongest direction'}).click(); await page.waitForURL(/\\/start\\/(reflecting|direction)/, {timeout:20000}); console.log('url=' + page.url()); if (page.url().includes('/reflecting')) { const buttons = await page.getByRole('button').allTextContents(); console.log('reflecting_buttons=' + JSON.stringify(buttons)); const body = await page.locator('body').textContent(); console.log('reflecting_visible=' + body.includes('Your direction')); await page.getByRole('button', {name:'Build from this direction'}).click(); await page.waitForURL('**/start/direction', {timeout:20000}); } const body = await page.locator('body').textContent(); console.log('final_url=' + page.url()); ['Build from this direction','Why this wins','Draft the opening this way','What this opens up'].forEach((text)=>console.log(text + '=' + body.includes(text))); await browser.close(); })().catch((err)=>{ console.error(err); process.exit(1); });"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "prod-nds-browser-smoke-post1820-file",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-nds-browser-smoke.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-alias-post1820",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"inspect",
+				"college-essay-edge.vercel.app"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "prod-nds-browser-smoke-summary",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-nds-browser-smoke-summary.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rollback-post1820-prod",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"rollback",
+				"https://college-essay-edge-7pdfqiu9r-college-edge.vercel.app",
+				"--yes"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-rolled-back-alias",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"inspect",
+				"college-essay-edge.vercel.app"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-rollback-home-admin",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"(async()=>{for (const path of ['/', '/api/admin/real-input-corpus']) { const res = await fetch('https://college-essay-edge.vercel.app' + path); const text = await res.text(); console.log(path + ' status=' + res.status + ' body=' + text.slice(0,160).replace(/\\s+/g,' ')); }} )().catch((err)=>{ console.error(err); process.exit(1); });"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-rollback-home",
+			"type": "shell",
+			"command": "curl",
+			"args": [
+				"-s",
+				"-o",
+				"/tmp/rollback_home.html",
+				"-w",
+				"status=%{http_code}\\n",
+				"https://college-essay-edge.vercel.app/"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-rollback-admin",
+			"type": "shell",
+			"command": "curl",
+			"args": [
+				"-s",
+				"-o",
+				"/tmp/rollback_admin.json",
+				"-w",
+				"status=%{http_code}\\n",
+				"https://college-essay-edge.vercel.app/api/admin/real-input-corpus"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "post-nds-human-clarity-packet",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/post-nds-result-screen-human-clarity-packet.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "capture-post-nds-human-clarity",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"HUMAN_CLARITY_BASE_URL=http://127.0.0.1:3000 npx tsx scripts/capture-post-nds-result-screen-human-clarity.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "aggregate-post-nds-human-clarity",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/post-nds-result-screen-human-clarity-aggregate.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "deploy-post-nds-preview",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--yes"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-post-nds-preview",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"inspect",
+				"https://college-essay-edge-f58wr6o4r-college-edge.vercel.app"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "promote-post-nds-prod",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy:prod:canonical"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-prod-alias-post-nds",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"inspect",
+				"college-essay-edge.vercel.app"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-side-by-side-spec-smoke",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/__tmp_side_by_side_spec_smoke.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "tmp-side-by-side-spec-smoke-v2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/__tmp_side_by_side_spec_smoke.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "tmp-reflecting-inspect",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"import('node:fs/promises').then(async()=>{ const { chromium } = await import('@playwright/test'); const urls=['https://college-essay-edge.vercel.app','https://college-essay-edge-g311wfuqb-college-edge.vercel.app']; const input='I spent three summers volunteering at the hospital, and I thought I was helping. In my third summer, a nurse pulled me aside and said I was just getting in the way. That conversation changed how I think about service.'; const submit=/Find the strongest direction|Show me possible directions|See what\\'s here/i; const browser=await chromium.launch({headless:true}); for (const base of urls){ const page=await browser.newPage(); await page.goto(base + '/start', { waitUntil:'networkidle' }); await page.getByLabel('Your notes or draft').fill(input); await page.getByRole('button',{name:submit}).click(); await page.waitForURL(/\\/start\\/(reflecting|direction)/,{timeout:25000}); const out={base,url:page.url(),h1:await page.getByRole('heading',{level:1}).first().textContent().catch(()=>null),buttons:(await page.locator('button').allTextContents().catch(()=>[])).map(t=>t.replace(/\\s+/g,' ').trim()).filter(Boolean),body:(await page.locator('main').innerText().catch(()=>'' )).replace(/\\s+/g,' ').trim().slice(0,600)}; console.log(JSON.stringify(out)); await page.close(); } await browser.close(); })"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "tmp-reflecting-inspect-file",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/__tmp_reflecting_inspect.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase1-page3-specificity-smoke-prod",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/phase1-page3-specificity-smoke.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "page3-five-case-before-after-baseline",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-five-case-before-after-baseline.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "page3-five-case-before-after-baseline",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-five-case-before-after-baseline.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "page3-five-case-before-after-baseline",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-five-case-before-after-baseline.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "bundle-requested-files-v1",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && node -e \"const fs=require('fs'); const path=require('path'); const root=process.cwd(); const outDir=path.join(root,'evaluation_outputs','requested_files_bundle_v1'); fs.mkdirSync(outDir,{recursive:true}); const summary=JSON.parse(fs.readFileSync(path.join(root,'evaluation_outputs','page3_holdout_v2_remediation','summary.json'),'utf8')); const row=summary.rows.find(r=>r.case_id==='HV2_03'); if(!row){throw new Error('HV2_03 missing')} const canonical=(row.product&&row.product.canonical_payload)||{}; const packet={case_id:row.case_id,title:row.title,raw_notes:row.raw_notes,product_output_surface:row.product?.output||null,winning_candidate_id:canonical?.candidate_debug?.winner_id||null,weaker_read_source_id:canonical?.candidate_debug?.weaker_read_source_id||null,candidate_scores:canonical?.candidate_debug?.scores_by_candidate||[],final_canonical_payload:canonical,head_to_head_scores:row.scores||null}; fs.writeFileSync(path.join(outDir,'HV2_03_full_bad_canonical_payload_v1.json'),JSON.stringify(packet,null,2)); const manifest={generated_at:new Date().toISOString(),files:['src/lib/fm/direction.ts','src/lib/fm/canonicalPage3Payload.ts','scripts/page3-holdout-v2.mjs','scripts/frozen/page3-evaluator-frozen-2026-03-24-remediation.mjs','evaluation_outputs/requested_files_bundle_v1/HV2_03_full_bad_canonical_payload_v1.json','evaluation_outputs/page3_five_case_before_after_v1/summary.json','evaluation_outputs/page3_five_case_before_after_v1/PAGE3_FIVE_CASE_BEFORE_AFTER_V1.md','evaluation_outputs/page3_rewrite_revision_proof_v1/phrase_family_compliance_audit.json']}; fs.writeFileSync(path.join(outDir,'MANIFEST.json'),JSON.stringify(manifest,null,2));\" && cd \"/Volumes/TOSHIBA EXT/College Essay\" && zip -q \"/Volumes/TOSHIBA EXT/College Essay/evaluation_outputs/REQUESTED_FILES_EXACT_BUNDLE_V1.zip\" \"src/lib/fm/direction.ts\" \"src/lib/fm/canonicalPage3Payload.ts\" \"scripts/page3-holdout-v2.mjs\" \"scripts/frozen/page3-evaluator-frozen-2026-03-24-remediation.mjs\" \"evaluation_outputs/requested_files_bundle_v1/HV2_03_full_bad_canonical_payload_v1.json\" \"evaluation_outputs/page3_five_case_before_after_v1/summary.json\" \"evaluation_outputs/page3_five_case_before_after_v1/PAGE3_FIVE_CASE_BEFORE_AFTER_V1.md\" \"evaluation_outputs/page3_rewrite_revision_proof_v1/phrase_family_compliance_audit.json\" \"evaluation_outputs/requested_files_bundle_v1/MANIFEST.json\""
+		},
+		{
+			"label": "tmp-holdout-eval-after-candidate-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-gate-after-candidate-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp_audit_shell_repetition.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-packet-gate-after-candidate-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-packet-validation-gate-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-next-start-3100",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start",
+				"--",
+				"-p",
+				"3100"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "tmp-next-start-3200",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start",
+				"--",
+				"-p",
+				"3200"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "tmp-build-for-start",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-start-3200-after-build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start",
+				"--",
+				"-p",
+				"3200"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "tmp-eval-local-3200-after-fix",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3200",
+				"npm",
+				"run",
+				"eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-audit-and-gate-local-3200-after-fix",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-gate-local-3200-after-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-packet-validation-gate-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "pool-integrity-build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "pool-start-3400",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start",
+				"--",
+				"-p",
+				"3400"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "pool-build-clean",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-stat-direction",
+			"type": "shell",
+			"command": "stat",
+			"args": [
+				"-f",
+				"%Sm %N",
+				"/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-head-direction",
+			"type": "shell",
+			"command": "sed",
+			"args": [
+				"-n",
+				"1,20p",
+				"/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-grep-marker",
+			"type": "shell",
+			"command": "grep",
+			"args": [
+				"-n",
+				"pool-integrity-pass-marker",
+				"/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-pool-integrity-audit-v1",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-pool-integrity-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-why-contract-audit-v1",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-why-contract-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-why-contract-audit-v1-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/page3-why-contract-audit-v1.mjs 2>&1 | tail -120"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-why-contract-audit-v1-ok",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-why-contract-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-why-contract-audit-v1-tail2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/page3-why-contract-audit-v1.mjs 2>&1 | cat"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-why-contract-audit-v2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-why-contract-audit-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-direction-pool-fixes",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"sed -n '552,620p' src/lib/fm/direction.ts && printf '\\n---\\n' && sed -n '742,915p' src/lib/fm/direction.ts && printf '\\n---\\n' && sed -n '1258,1378p' src/lib/fm/direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "task-rewrite-direction-single-line",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"from pathlib import Path; p=Path('/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts'); t=p.read_text(); old='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 34 && whyHasBecause && nextHasConcrete;'; new='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 50 && whyHasBecause && nextHasConcrete;'; assert old in t, 'old missing'; p.write_text(t.replace(old,new,1)); print('ok')"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "task-rewrite-direction-single-line-venv",
+			"type": "shell",
+			"command": "/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python",
+			"args": [
+				"-c",
+				"from pathlib import Path; p=Path('/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts'); t=p.read_text(); old='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 34 && whyHasBecause && nextHasConcrete;'; new='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 50 && whyHasBecause && nextHasConcrete;'; assert old in t, 'old missing'; p.write_text(t.replace(old,new,1)); print('ok')"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "task-rewrite-direction-single-line-sh",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\" -c \"from pathlib import Path; p=Path('/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts'); t=p.read_text(); old='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 34 && whyHasBecause && nextHasConcrete;'; new='return hasClaimFirstForm(direction) && directionHasCore && directionWordCount <= 50 && whyHasBecause && nextHasConcrete;'; assert old in t, 'old missing'; p.write_text(t.replace(old,new,1)); print('ok')\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-tmp-direction-patch-script",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\" scripts/tmp_patch_direction_pool_health.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "dump-live-direction-snippets",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\" - <<'PY'\nfrom pathlib import Path\nsrc = Path('/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts').read_text()\nout = Path('/Volumes/TOSHIBA EXT/College Essay/evaluation_outputs/page3_holdout_v2_remediation/LIVE_DIRECTION_SNIPPETS_V1.txt')\nchunks = []\nfor needle in [\n    'directionWordCount <= 50',\n    'This is stronger than the obvious version because',\n    'function ensureWhyValidatorContract',\n    'Make your main claim that ${turningQ} made responsibility your call',\n    'Argue that the method you rebuilt after ${turningQ} changed your standard',\n    'Argue that what you believed about yourself collided with what ${turningQ} proved',\n    \"'essay_about_restate_fail',\",\n    'pool_backfill_recovery',\n]:\n    idx = src.find(needle)\n    chunks.append(f'NEEDLE: {needle}\\nFOUND: {idx}\\n')\nout.write_text('\\n'.join(chunks))\nprint(str(out))\nPY"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-dump-direction-snippets",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\" scripts/tmp_dump_direction_snippets.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build-after-pool-health-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-why-contract-audit-after-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-why-contract-audit-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "start-next-dev-3301",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"next",
+				"dev",
+				"-p",
+				"3301"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "eval-holdout-local-3301-after-pool-fix",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3301",
+				"npm",
+				"run",
+				"eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-pool-audit-after-fix",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-pool-integrity-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-pool-audit-live-rules",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-pool-integrity-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-packet-gate-after-pool-fix",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "map-final-prefixes-by-case",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp_prefix_case_map.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "write-prefix-case-map",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp_prefix_case_map.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "run-starter-diversification-patch",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\" scripts/tmp_patch_direction_starters.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "eval-holdout-local-3301-after-starter-diversification",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3301",
+				"npm",
+				"run",
+				"eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-pool-audit-after-starter-diversification",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/page3-pool-integrity-audit-v1.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rerun-gate-after-starter-diversification",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "refresh-human-blind-review-after-gate-pass",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"BLIND_PACKET='evaluation_outputs/page3_holdout_v2_remediation/blind_review_packet.json' BLIND_OUT_DIR='evaluation_outputs/page3_holdout_v2_remediation/human_blind_review' BLIND_LABEL='PAGE3 HOLDOUT V2 REMEDIATION' node scripts/prepare-human-blind-review.mjs && node scripts/restore_first_three_human_scores_v1.js && BLIND_BASE_DIR='evaluation_outputs/page3_holdout_v2_remediation' node scripts/score-human-blind-review.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fresh-blind-review-bundle-from-valid-run",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"set -e\nBASE='evaluation_outputs/page3_holdout_v2_remediation'\nHBR=\"$BASE/human_blind_review\"\nSTAMP=$(date -u +%Y%m%dT%H%M%SZ)\nmkdir -p \"$BASE/blind_review_snapshots/$STAMP\"\ncp \"$BASE/blind_review_packet.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_packet.json\"\ncp \"$BASE/blind_review_answer_key.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_answer_key.json\"\nBLIND_PACKET=\"$BASE/blind_review_packet.json\" BLIND_OUT_DIR=\"$HBR\" BLIND_LABEL=\"PAGE3 HOLDOUT V2 REMEDIATION (FRESH RUN $STAMP)\" node scripts/prepare-human-blind-review.mjs\n# reset decoded scores for a fresh human pass\nrm -f \"$HBR/human_blind_scores_decoded.json\"\n# also keep a copy of the fresh blank template with run stamp\ncp \"$HBR/human_blind_scores_template.csv\" \"$BASE/blind_review_snapshots/$STAMP/human_blind_scores_template.csv\"\ncp \"$HBR/HUMAN_BLIND_REVIEW_SHEET.md\" \"$BASE/blind_review_snapshots/$STAMP/HUMAN_BLIND_REVIEW_SHEET.md\"\necho \"$STAMP\" > \"$BASE/blind_review_snapshots/LATEST_STAMP.txt\"\necho \"$STAMP\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle-build-after-quote-clean",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && npm run build",
+			"isBackground": false
+		},
+		{
+			"label": "cycle2-deploy-prod-after-quote-strip",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && npx vercel deploy --prod --yes",
+			"isBackground": false
+		},
+		{
+			"label": "cycle2-fresh-holdout-local-after-quote-strip",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && PRODUCT_URL=\"http://127.0.0.1:3000\" npm run eval:holdout:v2:remediation",
+			"isBackground": false
+		},
+		{
+			"label": "cycle2-fresh-holdout-prod-after-quote-strip",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && PRODUCT_URL=\"https://college-essay-edge-college-edge.vercel.app\" npm run eval:holdout:v2:remediation",
+			"isBackground": false
+		},
+		{
+			"label": "cycle2-gates-after-prod-holdout",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && node scripts/page3-pool-integrity-audit-v1.mjs && node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs && node scripts/page3-why-contract-audit-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "cycle2-fresh-blind-review-bundle",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && BASE='evaluation_outputs/page3_holdout_v2_remediation' && HBR=\"$BASE/human_blind_review\" && STAMP=$(date -u +%Y%m%dT%H%M%SZ) && mkdir -p \"$BASE/blind_review_snapshots/$STAMP\" && cp \"$BASE/blind_review_packet.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_packet.json\" && cp \"$BASE/blind_review_answer_key.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_answer_key.json\" && BLIND_PACKET=\"$BASE/blind_review_packet.json\" BLIND_OUT_DIR=\"$HBR\" BLIND_LABEL=\"PAGE3 HOLDOUT V2 REMEDIATION (FRESH PROD RUN $STAMP)\" node scripts/prepare-human-blind-review.mjs && rm -f \"$HBR/human_blind_scores_decoded.json\" && cp \"$HBR/human_blind_scores_template.csv\" \"$BASE/blind_review_snapshots/$STAMP/human_blind_scores_template.csv\" && cp \"$HBR/HUMAN_BLIND_REVIEW_SHEET.md\" \"$BASE/blind_review_snapshots/$STAMP/HUMAN_BLIND_REVIEW_SHEET.md\" && echo \"$STAMP\" > \"$BASE/blind_review_snapshots/LATEST_STAMP.txt\" && echo \"$STAMP\"",
+			"isBackground": false
+		},
+		{
+			"label": "cycle3-build-generation-source-fix",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && npm run build",
+			"isBackground": false
+		},
+		{
+			"label": "cycle3a-build-clean",
+			"type": "shell",
+			"command": "cd \"/Volumes/TOSHIBA EXT/College Essay\" && echo \"CYCLE3A_BUILD_START\" && npm run build && echo \"CYCLE3A_BUILD_DONE\"",
+			"isBackground": false
+		},
+		{
+			"label": "tmp-user-request-direction-string-update",
+			"type": "shell",
+			"command": "\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\"",
+			"args": [
+				"-c",
+				"from pathlib import Path\np=Path('/Volumes/TOSHIBA EXT/College Essay/src/lib/fm/direction.ts')\nt=p.read_text()\nreps=[\n(\"return 'you realized your old standard failed and changed it';\",\"return 'the moment you realized your old standard failed and changed it';\"),\n(\"return 'you saw the failure clearly and changed your method';\",\"return 'the moment you saw the failure clearly and changed your method';\"),\n(\"return 'you noticed the mismatch and became different in practice';\",\"return 'the moment you noticed the mismatch and became different in practice';\"),\n(\"return 'you decided reliability mattered more and changed your approach';\",\"return 'the moment you decided reliability mattered more and changed your approach';\"),\n(\"return 'you realized intention was not enough and changed your response';\",\"return 'the moment you realized intention was not enough and changed your response';\"),\n(\"return 'you decided responsibility was yours and acted on it';\",\"return 'the moment you decided responsibility was yours and acted on it';\"),\n(\"return 'you saw the conflict differently and changed your lens';\",\"return 'the moment you saw the conflict differently and changed your lens';\"),\n(\"return 'you noticed what had to change and made the harder call';\",\"return 'the moment you noticed what had to change and made the harder call';\"),\n(\"return 'that decision proved the correction held under pressure';\",\"return 'the first proof that the correction held under pressure';\"),\n(\"return 'that shift showed up when you rebuilt what came next';\",\"return 'the first rebuilt step that showed the shift was real';\"),\n(\"return 'that change became visible in what you actually did';\",\"return 'the first visible behavior that made the change concrete';\"),\n(\"return 'that choice showed you valued accountability over speed';\",\"return 'the first choice that showed accountability mattered more than speed';\"),\n(\"return 'that response proved you adapted to real impact';\",\"return 'the first response that proved you adapted to real impact';\"),\n(\"return 'that action showed responsibility had become your call';\",\"return 'the first action that showed responsibility had become your call';\"),\n(\"return 'that response showed your new lens in action';\",\"return 'the first response that showed your new lens in action';\"),\n(\"return 'that outcome showed the decision changed what happened next';\",\"return 'the first outcome that showed the decision changed what happened next';\"),\n(\"`Center this essay on what ${turningQ} showed you about someone else’s need, and how you changed your response.`\",\"`Center this essay on what you learned when ${turningQ}, and how you changed your response.`\"),\n(\"`This essay is about what ${turningQ} taught you about another person’s need, and the response you chose after that.`\",\"`This essay is about what you learned when ${turningQ}, and the response you chose after that.`\"),\n(\"`Argue that what you believed about yourself collided with what ${turningQ} proved, and show the standard that replaced it.`\",\"`Argue that what you believed about yourself collided with what happened when ${turningQ}, and show the standard that replaced it.`\"),\n]\nchanged=0\nfor old,new in reps:\n    if old in t:\n        t=t.replace(old,new)\n        changed+=1\np.write_text(t)\nprint(changed)"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-run-user-request-direction-string-patch-script",
+			"type": "shell",
+			"command": "\"/Volumes/TOSHIBA EXT/College Essay/.venv/bin/python\"",
+			"args": [
+				"scripts/tmp_user_request_patch_direction_strings.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-remove-user-request-direction-patch-script",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-f",
+				"/Volumes/TOSHIBA EXT/College Essay/scripts/tmp_user_request_patch_direction_strings.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-local",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-deploy-prod",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy:prod:canonical"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-holdout-prod",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"PRODUCT_URL=\"https://college-essay-edge.vercel.app\" npm run eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-holdout-breakdown",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const s=require('./evaluation_outputs/page3_holdout_v2_remediation/summary.json'); for (const c of s.rows) { const p=c.scores?.product, w=c.scores?.winner; console.log(c.case_id, c.product?.canonical_payload?.classification?.primary_pattern || '?', c.narrative_pattern || '?', w?.winner || '?', 'P_wt='+(w?.weighted_product?.toFixed(3)||'?'), 'O_wt='+(w?.weighted_openai?.toFixed(3)||'?'), 'margin='+(w?.weighted_margin?.toFixed(3)||'?'), 'why=' + (p?.why_persuasion ?? '?'), 'read=' + (p?.human_packet_readability ?? '?'), 'pip=' + (p?.packet_identifiability_penalty ?? '?')); }"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-holdout-breakdown-2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node -e 'const s=require(\"./evaluation_outputs/page3_holdout_v2_remediation/summary.json\"); for (const c of s.rows) { const p=c.scores&&c.scores.product; const w=c.scores&&c.scores.winner; console.log(c.case_id, (c.product&&c.product.canonical_payload&&c.product.canonical_payload.classification&&c.product.canonical_payload.classification.primary_pattern)||\"?\", c.narrative_pattern||\"?\", (w&&w.winner)||\"?\", \"P_wt=\"+((w&&w.weighted_product!=null)?w.weighted_product.toFixed(3):\"?\"), \"O_wt=\"+((w&&w.weighted_openai!=null)?w.weighted_openai.toFixed(3):\"?\"), \"margin=\"+((w&&w.weighted_margin!=null)?w.weighted_margin.toFixed(3):\"?\"), \"why=\"+((p&&p.why_persuasion!=null)?p.why_persuasion:\"?\"), \"read=\"+((p&&p.human_packet_readability!=null)?p.human_packet_readability:\"?\"), \"pip=\"+((p&&p.packet_identifiability_penalty!=null)?p.packet_identifiability_penalty:\"?\")); }'"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-gates-post-deploy",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/page3-pool-integrity-audit-v1.mjs && node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs && node scripts/page3-why-contract-audit-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-apply-direction-patch-cycle4",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_copilot_direction_patch_cycle4.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-cycle4",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-deploy-cycle4",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy:prod:canonical"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-holdout-prod",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"cd '/Volumes/TOSHIBA EXT/College Essay' && PRODUCT_URL='https://college-essay-edge.vercel.app' npm run eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-holdout-prod-2",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"eval:holdout:v2:remediation"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-gates",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"node scripts/page3-pool-integrity-audit-v1.mjs && node scripts/tmp_audit_shell_repetition.mjs && node scripts/page3-packet-validation-gate-v2.mjs && node scripts/page3-why-contract-audit-v2.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-blind-packet-refresh",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"BASE='evaluation_outputs/page3_holdout_v2_remediation' && HBR=\"$BASE/human_blind_review\" && STAMP=$(date -u +%Y%m%dT%H%M%SZ) && mkdir -p \"$BASE/blind_review_snapshots/$STAMP\" && cp \"$BASE/blind_review_packet.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_packet.json\" && cp \"$BASE/blind_review_answer_key.json\" \"$BASE/blind_review_snapshots/$STAMP/blind_review_answer_key.json\" && BLIND_PACKET=\"$BASE/blind_review_packet.json\" BLIND_OUT_DIR=\"$HBR\" BLIND_LABEL=\"PAGE3 HOLDOUT V2 REMEDIATION (FRESH PROD RUN $STAMP)\" node scripts/prepare-human-blind-review.mjs && rm -f \"$HBR/human_blind_scores_decoded.json\" && cp \"$HBR/human_blind_scores_template.csv\" \"$BASE/blind_review_snapshots/$STAMP/human_blind_scores_template.csv\" && cp \"$HBR/HUMAN_BLIND_REVIEW_SHEET.md\" \"$BASE/blind_review_snapshots/$STAMP/HUMAN_BLIND_REVIEW_SHEET.md\" && echo \"$STAMP\" > \"$BASE/blind_review_snapshots/LATEST_STAMP.txt\" && echo \"$STAMP\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-report-nonwins",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp_cycle5_report.cjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle5-report-write",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp_cycle5_report_to_file.cjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle6-apply-patch",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_cycle6_patch_comparative_regex.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle6-build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "cycle6-deploy",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy:prod:canonical"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "probe-prod-api-cases",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_probe_prod_api.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rewrite-compare-fallback-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_rewrite_compare_fallback.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-compare-fallback-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"from pathlib import Path; t=Path('src/lib/fm/canonicalPage3Payload.ts').read_text(); print('cleanCompareOptionLabel' in t, 'extractCompareOptionLabels' in t, 'This is a compare decision, not a final topic win yet' in t, 'Angle A currently has this best support' in t)"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-compare-fallback-clean-shell-2",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_inspect_compare_fallback.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "rewrite-compare-fallback-v2-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_rewrite_compare_fallback_v2.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "revert-compare-fallback-v3-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_revert_compare_fallback_v3.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "patch-model-compare-heuristic-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_patch_model_compare_heuristic.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "patch-canonical-fallback-preference-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_patch_canonical_prefer_fallback.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "patch-ambiguity-provisional-clean-shell",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"scripts/tmp_patch_ambiguity_provisional.py"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-layer-a-parity-rerun",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"eval:page3:rc"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-layer-a-parity-dev-server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--",
+				"-p",
+				"3310"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "tmp-layer-a-parity-rc-via-dev",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3310",
+				"node",
+				"scripts/page3-release-candidate-validation.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-layer-a-parity-log-run",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL=http://127.0.0.1:3310 node scripts/page3-release-candidate-validation.mjs > evaluation_outputs/tmp_layer_a_parity_rc.log 2>&1"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-layer-a-parity-multilayer-via-dev",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL=http://127.0.0.1:3310 node scripts/page3-multilayer-validation-v3.mjs > evaluation_outputs/tmp_layer_a_multilayer.log 2>&1"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-layer-a-parity-rc-refresh",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL=http://127.0.0.1:3310 node scripts/page3-release-candidate-validation.mjs > evaluation_outputs/tmp_layer_a_rc_refresh.log 2>&1"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "patched-start-3311",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"start",
+				"--",
+				"-p",
+				"3311"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "patched-dev-3311",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--",
+				"--hostname",
+				"127.0.0.1",
+				"--port",
+				"3311"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "holdout-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2' HOLDOUT_LABEL='V2 remediation after realization display fix (patched runtime)' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-gate-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "SUMMARY_PATH='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2/summary.json' PACKET_PATH='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2/blind_review_packet.json' KEY_PATH='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2/blind_review_answer_key.json' OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2' node scripts/page3-remediation-gates-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-pool-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_realization_display_fix_v2' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-holdout-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_CASES_PATH='./scripts/data/frozen/page3-holdout-v2-cases.frozen.json' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_realization_display_fix_v2' HOLDOUT_LABEL='Layer A after realization display fix (patched runtime)' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-pool-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_realization_display_fix_v2' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "rc-after-realization-display-fix-v2",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' node scripts/page3-release-candidate-validation.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "rc-after-realization-display-fix-v2b",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' node scripts/page3-release-candidate-validation.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "rc-after-realization-display-fix-v2c",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' node scripts/page3-release-candidate-validation.mjs > evaluation_outputs/page3_release_candidate_v1/tmp_rc_after_realization_display_fix_v2.log 2>&1; tail -n 40 evaluation_outputs/page3_release_candidate_v1/tmp_rc_after_realization_display_fix_v2.log",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-after-winner-mapping-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_winner_mapping_fix_v1' HOLDOUT_LABEL='V2 after realization winner mapping fix' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-after-winner-mapping-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_CASES_PATH='./scripts/data/frozen/page3-holdout-v2-cases.frozen.json' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_winner_mapping_fix_v1' HOLDOUT_LABEL='Layer A after realization winner mapping fix' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "rc-after-winner-mapping-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' node scripts/page3-release-candidate-validation.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-pool-after-winner-mapping-fix",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_winner_mapping_fix_v1' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-pool-after-winner-mapping-fix",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_winner_mapping_fix_v1' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-after-relationship-shell-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_relationship_shell_fix_v1' HOLDOUT_LABEL='V2 after relationship shell fix' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-after-relationship-shell-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' HOLDOUT_CASES_PATH='./scripts/data/frozen/page3-holdout-v2-cases.frozen.json' HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_relationship_shell_fix_v1' HOLDOUT_LABEL='Layer A after relationship shell fix' node scripts/page3-holdout-v2.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "holdout-pool-after-relationship-shell-fix",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_holdout_v2_post_relationship_shell_fix_v1' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "layer-a-pool-after-relationship-shell-fix",
+			"type": "shell",
+			"command": "HOLDOUT_OUT_DIR='./evaluation_outputs/page3_layers/layer_a_relationship_shell_fix_v1' node scripts/page3-pool-integrity-audit-v1.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "rc-after-relationship-shell-fix",
+			"type": "shell",
+			"command": "PRODUCT_URL='http://127.0.0.1:3311' node scripts/page3-release-candidate-validation.mjs",
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-unknown-compare-live",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/__tmp_probe_unknown_compare.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-unknown-compare-live-to-file",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL='http://127.0.0.1:3311' node scripts/__tmp_probe_unknown_compare.mjs > evaluation_outputs/tmp_unknown_compare_probe.json"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-dev-3401-after-compare-compose-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--",
+				"--hostname",
+				"127.0.0.1",
+				"--port",
+				"3401"
+			],
+			"isBackground": true
+		},
+		{
+			"label": "tmp-probe-unknown-compare-after-patch",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL=http://127.0.0.1:3401 node scripts/__tmp_probe_unknown_compare.mjs > evaluation_outputs/tmp_unknown_compare_probe_after_patch.json"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-build-after-compare-compose-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-unknown-compare-3311-after-patch",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"PRODUCT_URL=http://127.0.0.1:3311 node scripts/__tmp_probe_unknown_compare.mjs > evaluation_outputs/tmp_unknown_compare_probe_3311_after_patch.json"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-unknown-compare-direct-3311",
+			"type": "shell",
+			"command": "/usr/bin/env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3311",
+				"node",
+				"scripts/__tmp_probe_unknown_compare.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-direction-unknown-compare-direct",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/__tmp_probe_unknown_compare_direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-probe-direction-unknown-compare-to-file",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/__tmp_probe_unknown_compare_direction.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-build-stable-compare-verify",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-verify-served-unknown-compare-3501",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/__tmp_verify_served_unknown_compare.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-3302",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3302",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-3303",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3303",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-3303-rerun",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3303",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-b24mt76ed",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-b24mt76ed-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-b24mt76ed-ready",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-b24mt76ed-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-headline-review-3303",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3303",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-fg8ag6hrp",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-fg8ag6hrp-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-fg8ag6hrp-ready",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-fg8ag6hrp-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-inspect-hv211-payload-3303",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const raw='I paint portraits and I also run cross-country. Both matter to me and I am unsure which one is better for my college essay.';fetch('http://127.0.0.1:3303/api/intake/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({raw_input:raw})}).then(r=>r.json()).then(j=>console.log(JSON.stringify({product_mode:j.product_mode,packet:j.canonical_page3_payload?.recommendation_packet,candidate_debug:j.canonical_page3_payload?.candidate_debug},null,2))).catch(err=>{console.error(err);process.exit(1);});"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-specificity-review-preview",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-fg8ag6hrp-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-specificity-review-3304",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3304",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-specificity-review-3304-rerun",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3304",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-specificity-review-3305",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3305",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-specificity-review-3305-rerun2",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3305",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-hv211-polish-review-3305",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3305",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-cd1x39uki",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-cd1x39uki-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-specificity-pass",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-after-compare-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-log-isolated",
+			"type": "shell",
+			"command": "zsh",
+			"args": [
+				"-lc",
+				"cd '/Volumes/TOSHIBA EXT/College Essay' && npm run build > /tmp/college_essay_build_isolated.log 2>&1; status=$?; tail -n 120 /tmp/college_essay_build_isolated.log; exit $status"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-log-isolated-2",
+			"type": "shell",
+			"command": "zsh",
+			"args": [
+				"-lc",
+				"cd \"/Volumes/TOSHIBA EXT/College Essay\" && npm run build > /tmp/college_essay_build_isolated.log 2>&1; status=$?; tail -n 120 /tmp/college_essay_build_isolated.log; exit $status"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-build-after-specificity-fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-a385k9vid",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-a385k9vid-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-page3-review-preview-a385k9vid-ready",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-a385k9vid-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_review_page3_surface.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-strong-opening-before-3305",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/__tmp_strong_opening_review.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-strong-opening-before-3306",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3306",
+				"npx",
+				"tsx",
+				"scripts/__tmp_strong_opening_review.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-strong-opening-before-3306-rerun",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3306",
+				"npx",
+				"tsx",
+				"scripts/__tmp_strong_opening_review.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-strong-opening-before-3307",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3307",
+				"npx",
+				"tsx",
+				"scripts/__tmp_strong_opening_review.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-strong-opening-after-3307",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=http://127.0.0.1:3307",
+				"npx",
+				"tsx",
+				"scripts/__tmp_strong_opening_review.ts"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "copilot-probe-strong-preview-3ygy69od5",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tsx",
+				"scripts/__tmp_probe_strong_preview.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "copilot-probe-strong-preview-node",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-3ygy69od5-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_probe_strong_preview.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "copilot-probe-founder-mismatch-live",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-2znydb2qi-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_probe_founder_mismatch_case.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "copilot-probe-founder-mismatch-live-v2",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-2znydb2qi-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_probe_founder_mismatch_case.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-probe-strong-preview-qwru3vak8",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-qwru3vak8-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_probe_strong_preview.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-dump-hv201-opening-qwru3vak8",
+			"type": "shell",
+			"command": "env",
+			"args": [
+				"PRODUCT_URL=https://college-essay-edge-qwru3vak8-college-edge.vercel.app",
+				"node",
+				"scripts/__tmp_dump_hv201_opening_text.mjs"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "tmp-local-founder-probe",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-local-founder-probe.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-curl-local-3302",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"curl -I http://localhost:3302/start | head -20"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-start-local-3302",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"PORT=3302 npm start"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-curl-local-3302-check",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"curl -I http://localhost:3302/start | head -20"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-local-founder-probe-run",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-local-founder-probe.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-current-workspace",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"vercel",
+				"deploy",
+				"--yes"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-capture",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npx vercel deploy --yes > /tmp/copilot-preview-deploy.log 2>&1; status=$?; echo $status > /tmp/copilot-preview-deploy.exit; exit $status"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-log-tail",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"printf 'exit='; cat /tmp/copilot-preview-deploy.exit 2>/dev/null || true; printf '\\n'; tail -120 /tmp/copilot-preview-deploy.log 2>/dev/null || true"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-log-tail-2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"printf 'exit='; cat /tmp/copilot-preview-deploy.exit 2>/dev/null || true; printf '\\n'; tail -120 /tmp/copilot-preview-deploy.log 2>/dev/null || true"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-grep-url",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"grep -Eo 'https://[^ ]+vercel.app' /tmp/copilot-preview-deploy.log 2>/dev/null | tail -5 || true"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-grep-url-2",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"-c",
+				"import re, pathlib; p=pathlib.Path('/tmp/copilot-preview-deploy.log'); print('\\n'.join(re.findall(r'https://[^\\s]+vercel\\.app', p.read_text())[-5:])) if p.exists() else print('')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-read-preview-deploy-log",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-read-preview-deploy-log.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-read-preview-deploy-log-2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-read-preview-deploy-log.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-status",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-preview-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-preview-deploy-status-2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-preview-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-capture",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"npm run deploy:prod:canonical > /tmp/copilot-prod-deploy.log 2>&1; status=$?; echo $status > /tmp/copilot-prod-deploy.exit; exit $status"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-status",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-status-2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-status-3",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-wait",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-lc",
+				"while [ ! -f /tmp/copilot-prod-deploy.exit ]; do sleep 5; done; node scripts/tmp-prod-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "tmp-prod-deploy-status-4",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/tmp-prod-deploy-status.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

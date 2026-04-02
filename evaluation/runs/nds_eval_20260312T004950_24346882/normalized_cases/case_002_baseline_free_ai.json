@@ -1,0 +1,20 @@
+{
+  "case_id": "case_002",
+  "system": "baseline_free_ai",
+  "status": "needs_more_input",
+  "best_direction": {
+    "title": "",
+    "summary": "",
+    "why_it_wins": "",
+    "main_risk": "",
+    "next_move": ""
+  },
+  "alternatives": [],
+  "evidence_anchors": [],
+  "recovery_question": "Can you share a meaningful personal experience?",
+  "meta": {
+    "clear_winner_present": false,
+    "alternative_count": 0,
+    "evidence_anchor_count": 0
+  }
+}

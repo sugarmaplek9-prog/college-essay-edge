@@ -1,0 +1,604 @@
+{
+  "artifact_id": "structured_blank_page_intake_build_backlog_v1",
+  "title": "Structured Blank Page Intake Build Backlog V1",
+  "product": "College Essay Edge",
+  "status": "execution_backlog",
+  "derived_from": [
+    "STRUCTURED_BLANK_PAGE_INTAKE_V1",
+    "STRUCTURED_BLANK_PAGE_INTAKE_IMPLEMENTATION_PLAN_V1"
+  ],
+  "purpose": {
+    "type": "build_ready_engineering_backlog",
+    "answers": [
+      "what_gets_built_first",
+      "what_files_are_touched",
+      "what_tests_are_required",
+      "what_review_gates_must_be_passed",
+      "what_counts_as_done"
+    ],
+    "is_not": "concept_memo"
+  },
+  "mission": {
+    "ship": "dedicated_first_minute_recovery_lane",
+    "target_users": [
+      "topic_but_no_story",
+      "theme_but_no_moment",
+      "activity_but_no_center",
+      "scope_uncertainty",
+      "no_idea_what_to_write_about"
+    ],
+    "must": [
+      "detect_blank_page_like_states",
+      "route_into_structured_recovery_instead_of_fake_direction_or_blunt_block",
+      "ask_typed_non_generic_questions",
+      "convert_recoverable_cases_into_stronger_downstream_readiness",
+      "preserve_trust_and_avoid_fake_specificity"
+    ]
+  },
+  "exit_condition": [
+    "blank_page_intake_implemented_behind_controlled_route",
+    "all_required_payload_fields_exist",
+    "ui_renders_mode_specific_state_correctly",
+    "telemetry_is_live",
+    "blank_page_eval_pack_passes",
+    "real_user_sim_remains_pass",
+    "no_core_nds_regressions_appear"
+  ],
+  "build_phases": [
+    {
+      "phase": 0,
+      "name": "contract_freeze"
+    },
+    {
+      "phase": 1,
+      "name": "detection_and_mode_assignment"
+    },
+    {
+      "phase": 2,
+      "name": "structured_recovery_question_engine"
+    },
+    {
+      "phase": 3,
+      "name": "payload_and_ui_integration"
+    },
+    {
+      "phase": 4,
+      "name": "post_answer_conversion_path"
+    },
+    {
+      "phase": 5,
+      "name": "telemetry_and_evaluation_harness"
+    },
+    {
+      "phase": 6,
+      "name": "prod_rollout_and_validation"
+    }
+  ],
+  "review_gates": [
+    {
+      "gate": 1,
+      "name": "contract_freeze",
+      "must_approve": [
+        "mode_taxonomy",
+        "payload_contract",
+        "telemetry_names",
+        "test_plan",
+        "real_input_evaluation_rules"
+      ]
+    },
+    {
+      "gate": 2,
+      "name": "implementation_review",
+      "must_approve": [
+        "file_level_change_set",
+        "route_boundaries",
+        "ui_state_handling",
+        "conversion_logic"
+      ]
+    },
+    {
+      "gate": 3,
+      "name": "pre_prod_review",
+      "must_approve": [
+        "test_results",
+        "eval_results",
+        "telemetry_visibility",
+        "no_regression_status"
+      ]
+    },
+    {
+      "gate": 4,
+      "name": "release_review",
+      "must_approve": [
+        "prod_validation",
+        "trust_behavior",
+        "real_user_sim",
+        "source_composition_of_evaluation_pack"
+      ]
+    }
+  ],
+  "backlog_items": {
+    "epic_a_detection_and_routing_foundation": [
+      {
+        "id": "A1",
+        "title": "add_blank_page_detection_signals",
+        "goal": "detect_when_a_user_is_not_ready_for_normal_nds",
+        "files": [
+          "src/lib/ml/evidenceStrength/features.ts",
+          "src/lib/ml/evidenceStrength/model.ts"
+        ],
+        "deliverables": {
+          "detection_logic_for": [
+            "topic_only",
+            "theme_only",
+            "activity_only",
+            "scope_uncertain",
+            "blank_page",
+            "too_thin_to_recover"
+          ],
+          "output_fields": [
+            "blank_page_intake_detected",
+            "blank_page_mode",
+            "blank_page_trigger_signals",
+            "blank_page_recovery_reason",
+            "blank_page_confidence"
+          ]
+        },
+        "tests": [
+          "unit_tests_for_each_input_class",
+          "regression_tests_on_existing_clarify_block_direction_routes"
+        ],
+        "done_when": [
+          "all_supported_blank_page_types_classify_correctly",
+          "no_broad_route_regressions_appear"
+        ]
+      },
+      {
+        "id": "A2",
+        "title": "add_pre_nds_blank_page_route_branch",
+        "goal": "route_eligible_inputs_into_blank_page_intake",
+        "files": [
+          "intake_routing_orchestration_layer",
+          "first_minute_session_builder_touched_by_route_decisions"
+        ],
+        "deliverables": {
+          "route_decision": [
+            "ready_for_nds",
+            "needs_structured_blank_page_intake",
+            "true_block"
+          ]
+        },
+        "tests": [
+          "blank_page_inputs_route_correctly",
+          "non_blank_page_directional_inputs_still_reach_normal_path"
+        ],
+        "done_when": [
+          "branch_is_deterministic",
+          "block_inflation_does_not_appear"
+        ]
+      }
+    ],
+    "epic_b_structured_recovery_question_engine": [
+      {
+        "id": "B1",
+        "title": "build_mode_specific_question_selector",
+        "goal": "no_generic_clarification_for_blank_page_users",
+        "files": [
+          "src/lib/fm/buildClarificationPayload.ts",
+          "src/lib/fm/buildBlankPagePayload.ts_recommended"
+        ],
+        "deliverables": {
+          "typed_question_templates_for": [
+            "topic_probe",
+            "theme_probe",
+            "activity_probe",
+            "scope_reframe",
+            "blank_page_discovery",
+            "too_thin_to_recover"
+          ],
+          "required_question_families": [
+            "moment_question",
+            "hinge_question",
+            "responsibility_question",
+            "person_over_task_question",
+            "conflict_question",
+            "change_question",
+            "scope_reframe_question",
+            "blank_page_discovery_question"
+          ]
+        },
+        "tests": [
+          "question_matches_mode",
+          "banned_generic_prompts_absent",
+          "question_length_and_tone_checks"
+        ],
+        "done_when": [
+          "every_blank_page_mode_emits_specific_primary_question",
+          "generic_tell_me_more_style_prompts_absent"
+        ]
+      },
+      {
+        "id": "B2",
+        "title": "add_missing_signal_typing",
+        "goal": "every_blank_page_question_targets_specific_missing_signal",
+        "files": [
+          "buildBlankPagePayload.ts",
+          "route_debug_packet_builders"
+        ],
+        "deliverables": [
+          "missing_signal_type",
+          "topic_candidate_optional",
+          "why_not_ready_for_direction"
+        ],
+        "tests": [
+          "topic_only_maps_to_moment_or_hinge_search",
+          "theme_only_maps_to_lived_event_conversion",
+          "scope_uncertain_maps_to_scope_reframe",
+          "blank_page_maps_to_discovery"
+        ],
+        "done_when": [
+          "missing_signal_typing_visible_in_payload_and_debug"
+        ]
+      }
+    ],
+    "epic_c_payload_contract_and_ui_integration": [
+      {
+        "id": "C1",
+        "title": "extend_intake_payload_types",
+        "goal": "blank_page_intake_becomes_first_class_api_mode",
+        "files": [
+          "src/types/intake.ts"
+        ],
+        "deliverables": [
+          "product_mode_blank_page_intake",
+          "blank_page_mode",
+          "recovery_question_primary",
+          "recovery_question_secondary",
+          "recovery_confidence",
+          "next_step_type",
+          "reassurance_copy",
+          "example_answer_shape",
+          "what_good_signal_would_look_like"
+        ],
+        "tests": [
+          "type_check_and_build",
+          "runtime_contract_validation"
+        ],
+        "done_when": [
+          "payload_compiles_cleanly",
+          "all_consumers_handle_optional_fields_safely"
+        ]
+      },
+      {
+        "id": "C2",
+        "title": "render_blank_page_intake_state_in_ui",
+        "goal": "user_sees_distinct_recovery_lane_not_generic_clarification_or_block",
+        "files": [
+          "src/app/start/page.tsx",
+          "supporting_state_or_render_helpers_if_needed"
+        ],
+        "deliverables": [
+          "blank_page_mode_ui_state",
+          "mode_specific_copy",
+          "typed_cta",
+          "answer_input_state",
+          "too_thin_fallback_state"
+        ],
+        "tests": [
+          "rendering_tests",
+          "user_flow_tests",
+          "state_persistence_tests"
+        ],
+        "done_when": [
+          "ui_differentiates_blank_page_intake_from_standard_clarification",
+          "screen_trust_remains_pass"
+        ]
+      }
+    ],
+    "epic_d_post_answer_conversion_logic": [
+      {
+        "id": "D1",
+        "title": "ingest_blank_page_answers_into_downstream_routing",
+        "goal": "once_user_answers_system_can_progress_intelligently",
+        "files": [
+          "first_minute_answer_handling_path",
+          "case_state_handling",
+          "downstream_route_decision_layer"
+        ],
+        "deliverables": {
+          "allowed_post_answer_routes": [
+            "direction_light",
+            "second_recovery_question",
+            "clarification",
+            "too_thin_to_recover"
+          ]
+        },
+        "tests": [
+          "answer_transitions",
+          "no_infinite_loop",
+          "no_premature_fake_show"
+        ],
+        "done_when": [
+          "post_answer_routing_deterministic",
+          "some_recoverable_cases_convert_forward_correctly"
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "add_bounded_recovery_depth",
+        "goal": "prevent_endless_blank_page_looping",
+        "files": [
+          "first_minute_session_or_case_state",
+          "answer_history_logic"
+        ],
+        "deliverables": [
+          "max_blank_page_recovery_depth",
+          "escalation_rule_after_second_failed_recovery_attempt"
+        ],
+        "tests": [
+          "repeat_answer_flow",
+          "escalation_behavior",
+          "session_state_integrity"
+        ],
+        "done_when": [
+          "no_unbounded_loop_exists"
+        ]
+      }
+    ],
+    "epic_e_telemetry_and_debug": [
+      {
+        "id": "E1",
+        "title": "add_blank_page_telemetry_events",
+        "goal": "make_lane_measurable",
+        "files": [
+          "telemetry_event_layer",
+          "analytics_binding_layer"
+        ],
+        "required_events": [
+          "blank_page_mode_assigned",
+          "blank_page_question_rendered",
+          "blank_page_answer_submitted",
+          "blank_page_to_direction_conversion",
+          "blank_page_to_second_question",
+          "blank_page_to_block",
+          "blank_page_abandon",
+          "blank_page_continue"
+        ],
+        "required_properties": [
+          "blank_page_mode",
+          "missing_signal_type",
+          "next_step_type",
+          "post_answer_route",
+          "source_type_where_applicable"
+        ],
+        "tests": [
+          "event_fires_on_expected_transitions",
+          "event_schema_validation"
+        ],
+        "done_when": [
+          "analytics_can_compute_conversion_and_abandonment_by_mode"
+        ]
+      },
+      {
+        "id": "E2",
+        "title": "add_debug_observability",
+        "goal": "make_blank_page_routing_auditable",
+        "files": [
+          "debug_payload_builders",
+          "intake_response_debug_fields"
+        ],
+        "deliverables": [
+          "mode_detection_trace",
+          "trigger_signals",
+          "missing_signal_type",
+          "route_after_answer"
+        ],
+        "done_when": [
+          "engineers_can_inspect_why_case_hit_blank_page_mode"
+        ]
+      }
+    ],
+    "epic_f_real_input_evaluation_pack": [
+      {
+        "id": "F1",
+        "title": "build_blank_page_evaluation_pack",
+        "goal": "validate_primarily_on_real_inputs_not_synthetic_cases",
+        "inputs_must_be": [
+          ">=70_percent_public_internet_or_anonymized_product_input"
+        ],
+        "files": [
+          "evaluation_harness_directory",
+          "new_blank_page_runner_or_report_generator"
+        ],
+        "required_groups": [
+          "topic_only",
+          "theme_only",
+          "activity_only",
+          "scope_uncertain",
+          "blank_page",
+          "weak_topic_but_recoverable",
+          "truly_insufficient"
+        ],
+        "deliverables": [
+          "score_report",
+          "source_composition_report",
+          "trust_or_usefulness_review",
+          "route_distribution_report"
+        ],
+        "done_when": [
+          "evaluation_pack_runs_end_to_end",
+          "realism_threshold_reported_and_passes"
+        ]
+      },
+      {
+        "id": "F2",
+        "title": "add_source_governance_enforcement",
+        "goal": "all_future_testing_uses_real_world_inputs_as_primary_source",
+        "files": [
+          "case_schema",
+          "evaluation_artifact_builder",
+          "source_composition_reporter"
+        ],
+        "deliverables": [
+          "source_type",
+          "source_origin",
+          "source_reference",
+          "capture_date",
+          "transformation_level",
+          "adjudication_status"
+        ],
+        "done_when": [
+          "no_blank_page_major_test_pack_is_source_blind",
+          "report_includes_source_composition_every_run"
+        ]
+      }
+    ],
+    "epic_g_non_regression_and_rollout": [
+      {
+        "id": "G1",
+        "title": "run_required_tests",
+        "required": [
+          "npm run test:nds:evidence-grounding",
+          "npm run test:nds:direction-line-fit",
+          "npm run test:nds:direction-stability",
+          "npm run test:product:screen-trust",
+          "npm run test:product:flow-break",
+          "npm run test:product:session-state",
+          "npm run test:product:real-user-sim",
+          "npm test"
+        ],
+        "done_when": [
+          "all_green"
+        ]
+      },
+      {
+        "id": "G2",
+        "title": "controlled_rollout",
+        "goal": "deploy_behind_narrow_route_conditions_first",
+        "deliverables": [
+          "version_tag",
+          "rollout_note",
+          "prod_validation_run",
+          "rollback_condition"
+        ],
+        "done_when": [
+          "prod_behaves_as_expected",
+          "no_trust_regressions_observed"
+        ]
+      }
+    ]
+  },
+  "test_matrix": {
+    "unit": [
+      "mode_detection",
+      "question_template_selection",
+      "missing_signal_mapping",
+      "payload_typing",
+      "bounded_recovery_logic"
+    ],
+    "integration": [
+      "start_page_renders_blank_page_state",
+      "answer_submission_works",
+      "route_after_answer_works"
+    ],
+    "product": [
+      "screen_trust",
+      "flow_break",
+      "session_state",
+      "real_user_sim"
+    ],
+    "evaluation": [
+      "blank_page_evaluation_pack",
+      "source_realism_report"
+    ]
+  },
+  "acceptance_thresholds": {
+    "functional": [
+      "blank_page_users_no_longer_get_generic_block_by_default",
+      "questions_are_typed_and_specific",
+      "some_recoverable_cases_progress_to_stronger_routes"
+    ],
+    "trust": [
+      "no_fake_direction_inflation",
+      "tone_remains_dignified",
+      "no_rise_in_brittle_over_show"
+    ],
+    "product": [
+      "real_user_sim_pass",
+      "screen_trust_pass",
+      "flow_break_pass",
+      "session_state_pass"
+    ],
+    "data": [
+      ">=70_percent_real_input_sourced_evaluation_pack",
+      "source_composition_reported"
+    ]
+  },
+  "risks": [
+    {
+      "id": "R1",
+      "risk": "generic_coaching_language",
+      "mitigation": "banned_prompt_patterns_and_review_packet"
+    },
+    {
+      "id": "R2",
+      "risk": "fake_specificity",
+      "mitigation": "no_direction_without_sufficient_signal_and_confidence_cap"
+    },
+    {
+      "id": "R3",
+      "risk": "user_loops",
+      "mitigation": "bounded_recovery_depth_and_escalation_path"
+    },
+    {
+      "id": "R4",
+      "risk": "synthetic_eval_distortion",
+      "mitigation": "real_input_corpus_policy_enforcement"
+    },
+    {
+      "id": "R5",
+      "risk": "live_flow_regression",
+      "mitigation": "mandatory_real_user_sim_and_product_test_reruns"
+    }
+  ],
+  "rollout_order": [
+    "freeze_contract_and_review_gates",
+    "implement_detection_and_mode_assignment",
+    "implement_question_engine",
+    "implement_payload_and_ui",
+    "implement_post_answer_transitions",
+    "add_telemetry_and_debug",
+    "run_real_input_eval_pack",
+    "run_full_non_regression_suite",
+    "deploy_behind_narrow_conditions",
+    "run_prod_validation_and_release_review"
+  ],
+  "required_artifacts": {
+    "markdown": [
+      "STRUCTURED_BLANK_PAGE_INTAKE_BUILD_BACKLOG_V1.md"
+    ],
+    "json": [
+      "structured_blank_page_intake_build_backlog_v1.json"
+    ],
+    "supporting": [
+      "blank_page_evaluation_report",
+      "source_composition_report",
+      "rollout_verification_report"
+    ]
+  },
+  "final_engineering_instruction": {
+    "must_execute_as": "typed_bounded_real_input_validated_recovery_system",
+    "not": [
+      "generic_prompting",
+      "vague_ux_polish",
+      "synthetic_benchmark_tuning"
+    ],
+    "standard": [
+      "explicit_modes",
+      "explicit_contracts",
+      "explicit_gates",
+      "explicit_tests",
+      "real_input_first_validation"
+    ]
+  }
+}

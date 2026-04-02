@@ -1,0 +1,88 @@
+{
+  "registry_version": "1.0",
+  "generated_at": "2026-03-24",
+  "spec_section": "I.3",
+  "description": "Registry of banned scaffold language in page-three direction output and their approved replacements.",
+  "file_modified": "src/lib/fm/direction.ts",
+  "banned_entries": [
+    {
+      "id": "SCAFFOLD_01",
+      "banned_template": "Your essay is about {X}.",
+      "function": "deriveThemeStatement()",
+      "reason": "Restates the topic rather than coaching the angle. Generic across all essays. Fails spec Section A.",
+      "replacement_family": "Direct coaching language scoped to the classified pattern.",
+      "examples_banned": [
+        "Your essay is about what changed when the correction landed — and why the gap existed in the first place.",
+        "Your essay is about what you understood after you stopped defending your decision.",
+        "Your essay is about the moment when being capable stopped being the same as being responsible."
+      ],
+      "examples_approved": [
+        "The real story is the correction, not the activity. At [turningQ], the gap between what you were doing and what was needed became visible.",
+        "The conflict is not the story. What you understood after you stopped defending — visible at [turningQ] — is where the essay lives.",
+        "At [turningQ], being able to do something stopped being the same as whether you should."
+      ]
+    },
+    {
+      "id": "SCAFFOLD_02",
+      "banned_template": "This direction works because {X}.",
+      "function": "deriveWhyStatement()",
+      "reason": "Explains the direction back to itself. Not persuasive. Fails spec Section A.",
+      "replacement_family": "Persuasive case-specific language that argues why this angle is harder, more specific, and more yours than the generic alternative.",
+      "examples_banned": [
+        "This direction works because it shows a specific gap — not a general lesson.",
+        "This direction works because it captures a real moment of growth.",
+        "This direction works because the correction is concrete."
+      ],
+      "examples_approved": [
+        "Showing a specific correction is harder than claiming growth — the move to [consequenceQ] is what makes this angle non-generic and yours.",
+        "Saying what changed after defending yourself is harder than describing the conflict — and it is more specific to you.",
+        "Good intentions are common. The moment you understood yours were not enough — in [consequenceQ] — is specific to you."
+      ]
+    },
+    {
+      "id": "SCAFFOLD_03",
+      "banned_template": "Build from the chain where {X}.",
+      "function": "buildRuntimeCandidates() — candidateB.direction_line",
+      "reason": "Procedural instruction that tells the student what to do rather than naming the essay center. Fails spec Section A.",
+      "replacement_family": "Named essay center with specific chain identification.",
+      "examples_banned": [
+        "Build from the chain where [turningQ] leads to [consequenceQ]."
+      ],
+      "examples_approved": [
+        "The essay center is the move from [turningQ] to [consequenceQ] — show that chain, not the context around it."
+      ]
+    },
+    {
+      "id": "SCAFFOLD_04",
+      "banned_template": "This version overweights setup and underweights the real decision.",
+      "function": "deriveCoachComparison() — runner-up weaker_read",
+      "reason": "Judgment template that applies identically to all runner-up candidates regardless of actual case content. Fails spec Section A.",
+      "replacement_family": "Case-specific language about what this path misses.",
+      "examples_banned": [
+        "This version overweights setup and underweights the real decision."
+      ],
+      "examples_approved": [
+        "This path stays in context and misses the moment that makes the essay specific."
+      ]
+    },
+    {
+      "id": "SCAFFOLD_05",
+      "banned_template": "This version keeps the decision and consequence tied to one clear thread.",
+      "function": "deriveCoachComparison() — runner-up stronger_read",
+      "reason": "Approval template that applies identically regardless of what the actual stronger thread is. Fails spec Section A.",
+      "replacement_family": "Case-specific language about why the winning read wins.",
+      "examples_banned": [
+        "This version keeps the decision and consequence tied to one clear thread. The stronger read wins because it gives you a clear essay center and a concrete move to draft from."
+      ],
+      "examples_approved": [
+        "This version centers the real decision — the one your notes make specific to you."
+      ]
+    }
+  ],
+  "enforcement_notes": [
+    "All banned templates were audited in direction.ts on 2026-03-24.",
+    "Pattern matching for essayAboutnessClarity scoring was updated to recognize the new approved language families.",
+    "The banned templates were fully removed from all code paths in deriveThemeStatement(), deriveWhyStatement(), buildRuntimeCandidates(), and deriveCoachComparison().",
+    "Future additions to direction.ts must not reintroduce template language from the banned_entries list."
+  ]
+}

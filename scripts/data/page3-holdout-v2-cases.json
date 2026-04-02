@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "HV2_01",
+    "title": "Chem lab checklist — fast vs safe",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "strong",
+    "raw_notes": "I was the fastest student in our AP chem lab section at finishing titration setups. During one lab, a classmate copied my setup and contaminated her sample because I had skipped labeling one transfer step I always did in my head. My teacher said speed was not the same thing as reliability. The next week I built a one-page checklist and made everyone use it before touching the burette. Our failed trials dropped a lot, and I stopped being proud of finishing first."
+  },
+  {
+    "case_id": "HV2_02",
+    "title": "Peer tutoring — helping by overexplaining",
+    "narrative_pattern": "usefulness_vs_intention",
+    "signal_quality": "strong",
+    "raw_notes": "I volunteered to tutor algebra after school. Students kept nodding while I explained every step, but their quiz scores stayed flat for three weeks. One student told me she could follow me in the room but froze when she had to start a problem alone. I switched to asking them to narrate the first two steps before I said anything. Scores improved the next quiz cycle. I thought being clear meant giving better explanations, but it really meant giving up control sooner."
+  },
+  {
+    "case_id": "HV2_03",
+    "title": "Coffee kiosk inventory miss",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "strong",
+    "raw_notes": "I managed inventory for a weekend coffee kiosk fundraiser and still ran out of cups before noon. I thought the problem was volume, but when I reviewed receipts I saw we were overpouring because the cup stacks had mixed sizes. I rebuilt the prep system so volunteers checked size-color stickers before service and logged each refill. The next event sold more drinks with less waste. The embarrassing shortage turned into the first process I designed that other clubs asked to copy."
+  },
+  {
+    "case_id": "HV2_04",
+    "title": "District bus stop reassignment",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "Our district moved my younger brother's bus stop two miles away without notice. I called transportation twice and got told to wait. I asked the assistant principal for data on students affected and wrote a one-page brief with walk times and safety issues. Then I stayed outside the office after school until she read it. By Friday the district added a temporary stop near our apartment complex. I realized I had been assuming adults would fix timing problems once they heard them."
+  },
+  {
+    "case_id": "HV2_05",
+    "title": "Marching band set change conflict",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "As drum major, I changed our halftime formation five minutes before rehearsal because the spacing looked uneven from the stands. The section leaders were frustrated and one said I was treating everyone like movable pieces. I defended the change in the moment. After rehearsal I watched phone footage and realized I had fixed geometry but broken trust. At the next practice I explained the visual issue first and asked each section leader for one adjustment before I finalized anything."
+  },
+  {
+    "case_id": "HV2_06",
+    "title": "Hackathon project credit",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "strong",
+    "raw_notes": "At a local hackathon our app won second place, and I introduced it on stage as if I had built most of it. On the drive home my teammate said she almost did not correct me because she assumed I needed the spotlight for college apps. I replayed that sentence for days. I rewrote our project page to show exactly who built what and started opening every team presentation with contribution roles. I had confused confidence with ownership."
+  },
+  {
+    "case_id": "HV2_07",
+    "title": "Clinic intake translation gap",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "medium",
+    "raw_notes": "I translated at a free clinic and thought accuracy meant literal translation. A nurse asked why a patient kept nodding but still took medication wrong at home. I realized I was translating words but not comprehension checks. I started ending each interaction by asking patients to explain instructions back in their own words. The room slowed down, but fewer repeat errors came back on follow-up visits."
+  },
+  {
+    "case_id": "HV2_08",
+    "title": "Cafeteria allergy labeling push",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "strong",
+    "raw_notes": "A freshman with a nut allergy sat at our table and skipped lunch three days in a row because the labels were inconsistent. I reported it once and was told food service was already reviewing labels. Two weeks later nothing changed. I gathered photos of mislabeled trays, wrote a short memo, and asked the vice principal to walk the line with me before first lunch. New color-coded signs were posted that week. I stopped treating escalation like overreaction."
+  },
+  {
+    "case_id": "HV2_09",
+    "title": "History day citation collapse",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "medium",
+    "raw_notes": "My National History Day project advanced to state, then lost points for citation errors I thought were minor formatting issues. When I reviewed feedback, most deductions came from weak source pairing, not punctuation. I built a two-column source map showing each claim and the exact evidence line before writing the script. Our class adopted the template for the next cycle. Losing on citations changed how I define research quality."
+  },
+  {
+    "case_id": "HV2_10",
+    "title": "Robotics pit decision under pressure",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "strong",
+    "raw_notes": "During regionals our robot failed inspection twice, and I told the team to remove an autonomous feature to pass on time. Another programmer argued we should keep it and risk a late match. I overruled him. We qualified but lost our quarterfinal because of manual control mistakes. After the event he said my call protected schedule but ignored our actual strength. I now frame emergency decisions as tradeoffs out loud before choosing."
+  },
+  {
+    "case_id": "HV2_11",
+    "title": "Split focus — art portfolio and cross-country",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "I paint portraits and I also run cross-country. Both matter to me and I am unsure which one is better for my college essay."
+  },
+  {
+    "case_id": "HV2_12",
+    "title": "Interpreting for grandparents at benefits office",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "medium",
+    "raw_notes": "I used to think translating for my grandparents at government offices was just a family duty. At one appointment the clerk spoke quickly and I summarized instead of translating line by line so we could finish faster. My grandfather signed a form he did not understand. We had to return the next week to reverse it. Since then I ask officials to pause and I translate every instruction fully even when the line gets longer. That day changed what responsibility sounds like to me."
+  }
+]

@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — College Essay Edge
+   First-minute experience
+   ============================================================ */
+
+@theme {
+  /* Typefaces */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Base scale: calm, readable, no crowding */
+  --spacing-page: 1.5rem;
+  --spacing-section: 3rem;
+
+  /* Neutral palette — warm white to near-black, no cold grays */
+  --color-surface:   #fafaf8;
+  --color-surface-2: #f3f2ee;
+  --color-border:    #e5e3dc;
+  --color-text:      #1a1916;
+  --color-muted:     #6b6860;
+  --color-subtle:    #9e9b94;
+
+  /* Brand accent — one intentional color, used sparingly */
+  --color-accent:    #2d5a27;
+  --color-accent-2:  #e8f0e7;
+
+  /* Feedback states */
+  --color-caution:   #92400e;
+  --color-caution-bg:#fef3c7;
+
+  /* Interior flow semantic surfaces */
+  --color-judgment-accent: #173a6a;
+  --color-judgment-surface: rgba(242, 247, 252, 0.78);
+  --color-stronger-surface: rgba(232, 239, 249, 0.72);
+  --color-weaker-surface: rgba(250, 244, 236, 0.72);
+  --color-evidence-surface: rgba(255, 255, 255, 0.86);
+  --color-warning-surface: rgba(254, 243, 199, 0.74);
+  --color-task-surface: rgba(255, 255, 255, 0.82);
+  --color-border-neutral: rgba(17, 24, 39, 0.12);
+  --color-border-accent: rgba(23, 58, 106, 0.16);
+
+  /* Radii */
+  --radius-card:  0.75rem;
+  --radius-card-lg: 1.1rem;
+  --radius-input: 0.5rem;
+  --radius-pill:  9999px;
+}
+
+/* ============================================================
+   Base resets
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+/* ============================================================
+   Focus management — visible but not harsh
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Typography scale — used via utility classes below
+   ============================================================ */
+
+.text-display {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.text-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}

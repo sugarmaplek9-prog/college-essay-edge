@@ -1,0 +1,54 @@
+{
+  "case_id": "case_009",
+  "label": "weak-signal cross-country recovery",
+  "difficulty": "weak",
+  "tags": [
+    "messy_notes",
+    "school_sensitive",
+    "generic_padding_risk"
+  ],
+  "student_profile": {
+    "grade_level": "12",
+    "intended_majors": [
+      "computer science"
+    ],
+    "core_interests": [
+      "community",
+      "learning",
+      "growth"
+    ],
+    "identity_notes": []
+  },
+  "essay_project": {
+    "project_id": "eval_case_009",
+    "project_type": "personal_statement",
+    "target_school": "School 3"
+  },
+  "story_entries": [
+    {
+      "id": "story_9_1",
+      "text": "Short notes: cross-country recovery. Did a lot. Learned something."
+    }
+  ],
+  "current_draft": {
+    "id": null,
+    "text": null
+  },
+  "school_context": {
+    "target_school": "School 3",
+    "notes": "Student is considering fit with School 3."
+  },
+  "expected_conditions": {
+    "should_be_needs_more_input": false,
+    "should_have_clear_winner": false,
+    "likely_bad_baseline_behavior": [
+      "generic_praise",
+      "flat_options",
+      "resume_list_regurgitation"
+    ]
+  },
+  "author_notes": {
+    "why_included": "Covers weak difficulty behavior and cross-country recovery signal pattern.",
+    "reviewer_warning": "Watch for fake confidence under thin context."
+  }
+}

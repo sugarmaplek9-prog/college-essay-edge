@@ -1,0 +1,42 @@
+{
+  "case_021": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "case_024": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "case_027": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "case_011": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "case_014": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "case_017": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "case_002": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "case_003": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "case_006": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "case_008": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  }
+}

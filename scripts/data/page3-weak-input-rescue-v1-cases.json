@@ -1,0 +1,51 @@
+[
+  {
+    "case_id": "WK1_01",
+    "category": "sentence_fragments",
+    "title": "Sentence fragments only",
+    "operator_notes": "Check whether the product recovers one usable direction without inventing too much meaning.",
+    "raw_input": "Hospital volunteer. Mom translating. Nurse asked him to repeat. I realized summary wasn't enough. Maybe essay?"
+  },
+  {
+    "case_id": "WK1_02",
+    "category": "half_scene",
+    "title": "Half-scene with no interpretation",
+    "operator_notes": "Check whether the product identifies a real hinge without overclaiming a grand lesson.",
+    "raw_input": "We were about to start the demo and I told everyone to skip one check because we were late. It worked until another team member copied me and the board failed. I just keep replaying that part."
+  },
+  {
+    "case_id": "WK1_03",
+    "category": "disconnected_notes",
+    "title": "Disconnected notes",
+    "operator_notes": "Check whether the system chooses one center instead of summarizing a list.",
+    "raw_input": "newspaper edits / correction policy / stayed late / one teacher upset / source check / not about leadership?? / maybe accountability / still messy"
+  },
+  {
+    "case_id": "WK1_04",
+    "category": "compare_confusion_low_evidence",
+    "title": "Low-evidence compare confusion",
+    "operator_notes": "Check whether compare output is decisive but modest, not false-premium.",
+    "raw_input": "Maybe essay about track captain or helping at family restaurant. Track has pressure. Restaurant has responsibility. Neither has a full story yet and I can't tell which one is real."
+  },
+  {
+    "case_id": "WK1_05",
+    "category": "generic_values_language",
+    "title": "Generic values language",
+    "operator_notes": "Check whether the system avoids mirroring vague values language back to the student.",
+    "raw_input": "I care about service, resilience, and community. I want my essay to show leadership and growth. I just do not know what story proves that yet."
+  },
+  {
+    "case_id": "WK1_06",
+    "category": "one_moment_no_interpretation",
+    "title": "One moment but no interpretation",
+    "operator_notes": "Check whether the product gives a next move the student can actually do from one usable scene.",
+    "raw_input": "One student nodded like she understood my explanation and then turned in the problem blank. I changed how I asked questions after that. That's the only part that feels real."
+  },
+  {
+    "case_id": "WK1_07",
+    "category": "very_short_raw_input",
+    "title": "Very short raw input",
+    "operator_notes": "Check whether the product stays useful without pretending the evidence is stronger than it is.",
+    "raw_input": "Robotics failure. Cut feature. Regretted why."
+  }
+]

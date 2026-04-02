@@ -1,0 +1,58 @@
+[
+  {
+    "case_id": "MW1_01",
+    "title": "Bus app confusion note dump",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "weak",
+    "raw_notes": "umm this is messy but basically our bus app said on time and then no bus for 40 min, kids waiting, i complained but only in group chat. later i took screenshots for a week + wrote times and finally sent to assistant principal not just ranting. they changed pickup order for our stop. i guess i learned proof > noise"
+  },
+  {
+    "case_id": "MW1_02",
+    "title": "Two activities uncertain",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "idk if essay should be robotics captain stuff OR caring for my grandma after school. both huge, both emotional, i keep switching every draft and it becomes vague."
+  },
+  {
+    "case_id": "MW1_03",
+    "title": "Group project voice memo transcript",
+    "narrative_pattern": "conflict_reframe",
+    "signal_quality": "medium",
+    "raw_notes": "voice memo transcript-ish: 'i kept saying let's just do my slide order' because deadline. teammate got quiet. presentation looked smooth but Q&A collapsed. after that we tried 15-min challenge round where each person attacks plan first. slower prep, better answers. the shift was from control to stress-testing.'"
+  },
+  {
+    "case_id": "MW1_04",
+    "title": "Clinic translation fragmented",
+    "narrative_pattern": "competence_vs_responsibility",
+    "signal_quality": "medium",
+    "raw_notes": "at clinic volunteering i translated fast / nurse happy, but pt came back wrong dosage. i had used literal words no check-back. now i pause + ask patient repeat instructions in own words before leaving desk. not fancy, but fewer repeats"
+  },
+  {
+    "case_id": "MW1_05",
+    "title": "Yearbook over-edit chaos",
+    "narrative_pattern": "failure_reinterpretation",
+    "signal_quality": "medium",
+    "raw_notes": "notes from midnight lol: kept fixing everyone's captions myself, thought quality control. then pages bottlenecked under me + missed print warning. switched to rubric + peer pass first, i only final check. less 'perfect', actually on time. maybe essay about letting go as responsibility?"
+  },
+  {
+    "case_id": "MW1_06",
+    "title": "Debate credit awkward moment",
+    "narrative_pattern": "identity_shift",
+    "signal_quality": "medium",
+    "raw_notes": "tournament win post: i said 'my case carried us' (bad). partner texted she felt erased. i sat with that, changed team doc to include contribution lines and now we open debrief by naming who built what argument. confidence vs ownership thing"
+  },
+  {
+    "case_id": "MW1_07",
+    "title": "Fundraiser food labels rough",
+    "narrative_pattern": "responsibility_shift",
+    "signal_quality": "weak",
+    "raw_notes": "food sale issue. allergy labels inconsistent. i told teacher once = nothing. then collected photos dates + asked admin to walk table before lunch wave. signs fixed next week. writing this as fragments sorry"
+  },
+  {
+    "case_id": "MW1_08",
+    "title": "Open-ended theme ask",
+    "narrative_pattern": "unknown",
+    "signal_quality": "weak",
+    "raw_notes": "can i write about being resilient? i have several moments but none feels THE one and i don't want generic"
+  }
+]

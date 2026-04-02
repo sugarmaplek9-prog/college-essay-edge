@@ -1,0 +1,33 @@
+{
+  "artifact": "STRUCTURED_BLANK_PAGE_INTAKE_PHASE_3_RENDER_REVIEW_PACKET_V1",
+  "status": "engineering-validated",
+  "verified_by": "automated-tests-and-code-inspection",
+  "checks": {
+    "dedicated_blank_page_branch": true,
+    "safe_payload_fallback": true,
+    "too_thin_distinct_fallback": true,
+    "secondary_question_conditional_render": true,
+    "support_fields_bounded_render": true,
+    "recoverable_submit_error_state": true
+  },
+  "samples": [
+    { "mode": "topic_probe", "sample_id": "TP-01", "expected_state": "blank_page_question_with_secondary", "status": "pass" },
+    { "mode": "topic_probe", "sample_id": "TP-02", "expected_state": "blank_page_question_ready", "status": "pass" },
+    { "mode": "topic_probe", "sample_id": "TP-03", "expected_state": "blank_page_answer_drafting", "status": "pass" },
+    { "mode": "theme_probe", "sample_id": "TH-01", "expected_state": "blank_page_question_ready", "status": "pass" },
+    { "mode": "theme_probe", "sample_id": "TH-02", "expected_state": "blank_page_answer_drafting", "status": "pass" },
+    { "mode": "theme_probe", "sample_id": "TH-03", "expected_state": "blank_page_answer_submit_error", "status": "pass" },
+    { "mode": "activity_probe", "sample_id": "AP-01", "expected_state": "blank_page_question_with_secondary", "status": "pass" },
+    { "mode": "activity_probe", "sample_id": "AP-02", "expected_state": "blank_page_answer_drafting", "status": "pass" },
+    { "mode": "activity_probe", "sample_id": "AP-03", "expected_state": "blank_page_answer_submitting", "status": "pass" },
+    { "mode": "scope_reframe", "sample_id": "SR-01", "expected_state": "blank_page_question_with_secondary", "status": "pass" },
+    { "mode": "scope_reframe", "sample_id": "SR-02", "expected_state": "blank_page_question_ready", "status": "pass" },
+    { "mode": "scope_reframe", "sample_id": "SR-03", "expected_state": "blank_page_answer_drafting", "status": "pass" },
+    { "mode": "blank_page_discovery", "sample_id": "BD-01", "expected_state": "blank_page_question_with_secondary", "status": "pass" },
+    { "mode": "blank_page_discovery", "sample_id": "BD-02", "expected_state": "blank_page_question_ready", "status": "pass" },
+    { "mode": "blank_page_discovery", "sample_id": "BD-03", "expected_state": "blank_page_answer_drafting", "status": "pass" },
+    { "mode": "too_thin_to_recover", "sample_id": "TT-01", "expected_state": "blank_page_too_thin_fallback", "status": "pass" },
+    { "mode": "too_thin_to_recover", "sample_id": "TT-02", "expected_state": "blank_page_too_thin_fallback", "status": "pass" },
+    { "mode": "too_thin_to_recover", "sample_id": "TT-03", "expected_state": "blank_page_too_thin_fallback", "status": "pass" }
+  ]
+}

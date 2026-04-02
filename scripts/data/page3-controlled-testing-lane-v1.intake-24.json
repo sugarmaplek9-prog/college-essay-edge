@@ -1,0 +1,268 @@
+[
+  {
+    "case_id": "CT24_01",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Tutoring role but uncertain real hinge",
+    "tags": ["messy", "blank-page", "unclear-center"],
+    "operator_notes": "Check whether recommendation picks one claim and avoids generic service framing.",
+    "review_notes": "",
+    "raw_notes": "I tutor ninth graders after school and everyone says I should write about helping people, but the part that keeps replaying is when one student shut down because my explanation sounded like a lecture. I changed how I asked questions after that, and the session went differently. I am not sure if the essay is about tutoring generally or that one moment."
+  },
+  {
+    "case_id": "CT24_02",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Draft fragments from robotics failure",
+    "tags": ["partial-draft", "process", "messy"],
+    "operator_notes": "Watch for process-vs-resilience clarity and next-step concreteness.",
+    "review_notes": "",
+    "raw_notes": "Current draft lines: 'We failed three test runs.' 'I learned persistence.' But that is not it. The actual shift was I stopped patching each error separately and rebuilt our testing checklist so we could catch the same mistake early. I have details but my draft still sounds motivational instead of specific."
+  },
+  {
+    "case_id": "CT24_03",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Debate captaincy vs family caregiving",
+    "tags": ["compare", "split-choice", "messy"],
+    "operator_notes": "Verify compare handling does not flatten into vague 'both matter' language.",
+    "review_notes": "",
+    "raw_notes": "I cannot tell if my essay should focus on debate captain stuff or caring for my younger brother after school. Debate gave me confidence speaking up, but taking care of him changed how I make decisions under pressure. Both shaped me and I keep bouncing between them."
+  },
+  {
+    "case_id": "CT24_04",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Clinic volunteer with mixed scenes",
+    "tags": ["messy", "relationship", "unclear-center"],
+    "operator_notes": "Check route stability and whether surfaced output avoids template echoes.",
+    "review_notes": "",
+    "raw_notes": "At the clinic I mostly thought I was useful because I moved things quickly, but one parent kept nodding and still left confused. Later I changed how I checked understanding. I also have another scene from intake line chaos and I am unsure which belongs first."
+  },
+  {
+    "case_id": "CT24_05",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Cross-country injury rewrite",
+    "tags": ["partial-draft", "identity-shift", "messy"],
+    "operator_notes": "See if recommendation avoids generic comeback framing.",
+    "review_notes": "",
+    "raw_notes": "I wrote half a draft about getting injured junior year and not racing. It feels cliché. The more real piece is that when I started coaching freshmen I stopped measuring success by time and started measuring whether they could explain their pacing decisions. I am struggling to frame that shift clearly."
+  },
+  {
+    "case_id": "CT24_06",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Research lab vs community pantry leadership",
+    "tags": ["compare", "mixed-signal", "messy"],
+    "operator_notes": "Watch for decisive direction rather than split summary.",
+    "review_notes": "",
+    "raw_notes": "I have two possible essay centers: in the lab I redesigned how I tracked contamination errors, and at the pantry I changed volunteer handoff so people were not waiting in confusion. Both involve systems but in very different settings. I do not know which one has stronger essay energy."
+  },
+  {
+    "case_id": "CT24_07",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Band section leader communication miss",
+    "tags": ["messy", "communication", "unclear-center"],
+    "operator_notes": "Check for relationship framing without hollow leadership clichés.",
+    "review_notes": "",
+    "raw_notes": "As section leader I thought giving clear directions was enough, but rehearsals kept falling apart when new players looked lost and nodded anyway. I changed to quick call-and-response checks and tempo cues. I can describe what changed but I am not sure how to turn this into an essay angle."
+  },
+  {
+    "case_id": "CT24_08",
+    "slice_id": "slice_01",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Draft with overloaded metaphors",
+    "tags": ["partial-draft", "overwritten", "messy"],
+    "operator_notes": "Check whether system cuts through abstract draft language.",
+    "review_notes": "",
+    "raw_notes": "My draft opens with five metaphor paragraphs about storms and maps. The actual event was me realizing our student newspaper correction policy let mistakes sit too long because no one owned the final check. I proposed a simple verification step and used it before publication. I need a cleaner direction from this mess."
+  },
+
+  {
+    "case_id": "CT24_09",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Family translation and accountability",
+    "tags": ["messy", "relationship", "blank-page"],
+    "operator_notes": "Watch for specificity and whether why_this_direction is actionable.",
+    "review_notes": "",
+    "raw_notes": "At home I translated medical instructions for my grandparents and assumed literal translation was enough. One week they followed everything but still mixed up timing. I changed to asking them to explain it back in their own words. I have notes but no strong opening yet."
+  },
+  {
+    "case_id": "CT24_10",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Coding workshop lesson plan pivot",
+    "tags": ["partial-draft", "process", "messy"],
+    "operator_notes": "Check if next-step guidance is concrete enough to draft paragraph one.",
+    "review_notes": "",
+    "raw_notes": "I run middle school coding workshops. My old plan was to demo then let them copy. It looked smooth but no one could explain what they built. I redesigned sessions around tiny prediction checks before each step. I have fragments but cannot decide what claim line should lead."
+  },
+  {
+    "case_id": "CT24_11",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Art portfolio growth vs student council budgeting",
+    "tags": ["compare", "split-choice", "messy"],
+    "operator_notes": "Check for overuse of compare-mode language and decisiveness.",
+    "review_notes": "",
+    "raw_notes": "I am torn between writing about art portfolio work and student council budget meetings. Art shows personal growth, but council taught me to defend tradeoffs when everyone wanted different priorities. I keep writing two weak intros and cannot choose one center."
+  },
+  {
+    "case_id": "CT24_12",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Library volunteer conflict reframe",
+    "tags": ["messy", "conflict", "blank-page"],
+    "operator_notes": "Watch for contradiction-family quality and malformed language.",
+    "review_notes": "",
+    "raw_notes": "At the library I argued with another volunteer about whether strict quiet rules helped younger kids. I assumed structure was automatically better, but I watched one student stop asking for help. I changed how we used the space and tracked what happened after. Not sure if this is too small for essay."
+  },
+  {
+    "case_id": "CT24_13",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Research draft with unclear consequence",
+    "tags": ["partial-draft", "research", "messy"],
+    "operator_notes": "Check if recommendation names consequence clearly, not just method.",
+    "review_notes": "",
+    "raw_notes": "Draft sentence I keep using: 'I learned precision matters.' That is too generic. In reality, my initial data cleaning assumptions erased an outlier cluster. I rebuilt the process and changed our interpretation in the report meeting. I need a direction that sounds like judgment, not just technique."
+  },
+  {
+    "case_id": "CT24_14",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Dance captain decisions vs math tutoring",
+    "tags": ["compare", "mixed-signal", "messy"],
+    "operator_notes": "Check whether system chooses one route instead of blending two scenes loosely.",
+    "review_notes": "",
+    "raw_notes": "I lead my dance team and also tutor algebra. Dance gave me high-pressure decision moments before competitions, tutoring gave me patience and better listening. I do not know which one should carry the essay because both feel important for different reasons."
+  },
+  {
+    "case_id": "CT24_15",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Community garden logistics change",
+    "tags": ["messy", "process", "unclear-center"],
+    "operator_notes": "Watch for route concentration and family concentration signals.",
+    "review_notes": "",
+    "raw_notes": "In our community garden project I thought enthusiasm would solve volunteer turnout, but people kept duplicating tasks and leaving beds unfinished. I switched us to a simple board with role ownership and check-outs. It worked, but I do not know how to frame what this says about me beyond 'I organized things.'"
+  },
+  {
+    "case_id": "CT24_16",
+    "slice_id": "slice_02",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Internship notes with scattered chronology",
+    "tags": ["partial-draft", "overwritten", "messy"],
+    "operator_notes": "Check whether system finds one hinge from timeline-heavy notes.",
+    "review_notes": "",
+    "raw_notes": "My internship notes jump all over: week 1 training, week 2 mistakes, week 4 presentation, week 5 revision. The key moment was when I stopped trying to impress and admitted our tracking sheet had gaps that were causing handoff errors. I want a direction that cuts the noise and gives me a real opening scene."
+  },
+
+  {
+    "case_id": "CT24_17",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Peer mentoring with misunderstood feedback",
+    "tags": ["messy", "relationship", "blank-page"],
+    "operator_notes": "Check for coaching tone and whether output feels sharp, not formulaic.",
+    "review_notes": "",
+    "raw_notes": "I mentor new peer counselors. I used to think giving direct advice was efficient, but one student repeated my words without changing anything. I shifted to asking them to map consequences before choosing. I have scenes, but I keep writing generic leadership language."
+  },
+  {
+    "case_id": "CT24_18",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Science fair rewrite after failed assumption",
+    "tags": ["partial-draft", "failure-reinterpretation", "messy"],
+    "operator_notes": "Watch for comprehension and clarity under short messy phrasing.",
+    "review_notes": "",
+    "raw_notes": "My draft says 'I failed then improved,' which is weak. Real story: I blamed bad equipment, then realized my sampling intervals were the real issue. I redesigned collection and got a different pattern. Need angle that focuses on judgment shift not generic persistence."
+  },
+  {
+    "case_id": "CT24_19",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Choir director support vs coding captain role",
+    "tags": ["compare", "split-choice", "messy"],
+    "operator_notes": "Check compare-mode overuse and fallback usage.",
+    "review_notes": "",
+    "raw_notes": "Two possible essays: helping my choir director rebuild section confidence after bad auditions, or leading coding team debugging sessions where I changed how we documented failures. Both involve communication and accountability. I cannot decide which one should be the center."
+  },
+  {
+    "case_id": "CT24_20",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Food drive operations conflict",
+    "tags": ["messy", "contradiction", "unclear-center"],
+    "operator_notes": "Check for malformed composition or route mismatch under conflict-heavy text.",
+    "review_notes": "",
+    "raw_notes": "At our food drive I believed saying yes to every request was leadership, but it made distribution chaotic and some families waited much longer. I changed to priority rules and got pushback from friends. I am not sure if this is too operational for an essay or exactly the point."
+  },
+  {
+    "case_id": "CT24_21",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Podcast project with editing turnaround",
+    "tags": ["partial-draft", "process", "messy"],
+    "operator_notes": "Check next-step quality and whether stronger/weaker comparison is useful.",
+    "review_notes": "",
+    "raw_notes": "I produce a school podcast and kept re-editing episodes endlessly. Turning point was when I created a shared checklist and fixed responsibility for final audio approval. My current draft sounds like project management notes, not an essay direction."
+  },
+  {
+    "case_id": "CT24_22",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "compare_split",
+    "title": "Hospital volunteer vs family business",
+    "tags": ["compare", "mixed-signal", "messy"],
+    "operator_notes": "Watch whether compare route becomes repetitive across slice.",
+    "review_notes": "",
+    "raw_notes": "I am stuck between writing about hospital volunteering and helping run my family's small business. Hospital gave me listening moments with patients, business gave me decision pressure when inventory errors happened. Both changed me and I do not know which one gives a clearer argument."
+  },
+  {
+    "case_id": "CT24_23",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "messy_blank_page",
+    "title": "Student newspaper correction ethics",
+    "tags": ["messy", "ethics", "blank-page"],
+    "operator_notes": "Check if recommendation sounds like sharp coach and not generic responsibility talk.",
+    "review_notes": "",
+    "raw_notes": "In student newspaper work I thought speed mattered most, but after a correction issue I realized my standard for verification was too loose. I pushed for a final source check before publishing and had to defend it when others wanted faster turnaround. Unsure how to frame this without sounding preachy."
+  },
+  {
+    "case_id": "CT24_24",
+    "slice_id": "slice_03",
+    "run_group": "page3_controlled_v1_24",
+    "pattern_group": "partial_draft",
+    "title": "Math team captain with scattered drafts",
+    "tags": ["partial-draft", "messy", "unclear-hinge"],
+    "operator_notes": "Check thin coverage and suppressed strong candidates on diffuse input.",
+    "review_notes": "",
+    "raw_notes": "I have three half-drafts about math team captain year. One focuses on competition loss, one on mentoring, one on redesigning practice format. The meaningful shift was when I stopped solving first and started forcing explanation-first rounds so quieter teammates could expose reasoning gaps. Need direction that picks one line."
+  }
+]

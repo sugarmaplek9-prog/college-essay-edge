@@ -1,0 +1,243 @@
+{
+  "sprint_id": "LIVE_HARD_BLOCK_RECALIBRATION_SPRINT_V1",
+  "generated_at": "2026-03-18T00:03:00.000Z",
+  "status": "COMPLETE",
+  "deployment": {
+    "url": "https://college-essay-edge.vercel.app",
+    "inspect_url": "https://college-essay-edge-hip571tv0-college-edge.vercel.app",
+    "platform": "Vercel"
+  },
+  "baseline": {
+    "snapshot": "PROD_POST_CLARIFICATION_CONVERSION",
+    "score": 10.6,
+    "score_max": 14,
+    "misses": 2,
+    "blocked": 2,
+    "clarification": 16,
+    "direction_light": 7,
+    "real_user_sim": "PASS",
+    "remaining_miss_cases": [
+      "NDS-005",
+      "NDS-012"
+    ]
+  },
+  "post_sprint": {
+    "snapshot": "PROD_POST_HARD_BLOCK_RECALIBRATION",
+    "score": 11.0,
+    "score_max": 14,
+    "misses": 0,
+    "blocked": 0,
+    "clarification": 18,
+    "direction_light": 7,
+    "real_user_sim": "PASS"
+  },
+  "deltas": {
+    "score": 0.4,
+    "misses": -2,
+    "blocked": -2,
+    "clarification": 2,
+    "direction_light": 0
+  },
+  "track_status": {
+    "A_residual_hard_block_case_review": "complete",
+    "B_hard_block_class_segmentation": "complete",
+    "C_recoverable_low_signal_lane_design": "complete",
+    "D_narrow_hard_block_recalibration": "complete",
+    "E_prod_validation_and_non_regression": "complete"
+  },
+  "residual_case_reviews": [
+    {
+      "source_case_id": "NDS-005",
+      "raw_input": "I really have no idea what to write about for my college essay.",
+      "benchmark_expected_action": "ask_question_before_showing",
+      "live_route_before": "blocked",
+      "block_reason_before": "NO_SCENE_EVIDENCE",
+      "candidate_inventory_before": [],
+      "candidate_inventory_status_before": "empty",
+      "evidence_strength_before": {
+        "blocked": 5,
+        "clarification": 1,
+        "direction_light": 0,
+        "direction_full": 0
+      },
+      "hinge_exists": false,
+      "latent_center_exists": false,
+      "truly_insufficient": false,
+      "clarification_more_useful_than_block": true,
+      "thin_signal_candidate_family_missing": true,
+      "primary_residual_block_class": "recoverable_but_candidate_family_missing",
+      "secondary_residual_block_class": "none",
+      "current_block_correctness": false,
+      "clarification_viable": true,
+      "direction_recovery_viable": false,
+      "trust_risk_if_unblocked": "medium",
+      "recommendation": "clarify_instead",
+      "patch_track_applied": [
+        "blank_page_help_request_detection",
+        "recoverable_low_signal_clarification_lane",
+        "blank_page_inventory_style_question"
+      ],
+      "recovery_lane_used_after": "clarification",
+      "live_route_after": "clarification",
+      "post_patch_status": "resolved",
+      "remaining_trust_risk": "low",
+      "reviewer_note": "This is weak but not hopeless. The failure was a blunt terminal block on a blank-page request that should have entered structured intake rather than fake topic generation or blocking."
+    },
+    {
+      "source_case_id": "NDS-012",
+      "raw_input": "Is writing about moving schools three times too common?",
+      "benchmark_expected_action": "ask_question_before_showing",
+      "live_route_before": "blocked",
+      "block_reason_before": "NO_SCENE_EVIDENCE",
+      "candidate_inventory_before": [],
+      "candidate_inventory_status_before": "empty",
+      "evidence_strength_before": {
+        "blocked": 5,
+        "clarification": 1,
+        "direction_light": 0,
+        "direction_full": 0
+      },
+      "hinge_exists": false,
+      "latent_center_exists": true,
+      "truly_insufficient": false,
+      "clarification_more_useful_than_block": true,
+      "thin_signal_candidate_family_missing": false,
+      "primary_residual_block_class": "recoverable_but_topic_shaped_as_question",
+      "secondary_residual_block_class": "recoverable_but_scene_thin",
+      "current_block_correctness": false,
+      "clarification_viable": true,
+      "direction_recovery_viable": false,
+      "trust_risk_if_unblocked": "low",
+      "recommendation": "clarify_instead",
+      "patch_track_applied": [
+        "topic_viability_help_request_detection",
+        "recoverable_low_signal_clarification_lane",
+        "scope_reframe_topic_sanitization"
+      ],
+      "recovery_lane_used_after": "clarification",
+      "live_route_after": "clarification",
+      "post_patch_status": "resolved",
+      "remaining_trust_risk": "low",
+      "reviewer_note": "The topic exists but is shaped as a validation question with no scene evidence. Block was acting as a proxy for missing recovery logic; clarification is the correct next move."
+    }
+  ],
+  "segmentation_table": [
+    {
+      "case_id": "NDS-005",
+      "primary_residual_block_class": "recoverable_but_candidate_family_missing",
+      "secondary_residual_block_class": "none",
+      "current_block_correctness": false,
+      "clarification_viable": true,
+      "direction_recovery_viable": false,
+      "trust_risk_if_unblocked": "medium",
+      "reviewer_note": "Blank-page intake request needed structured recovery, not terminal block."
+    },
+    {
+      "case_id": "NDS-012",
+      "primary_residual_block_class": "recoverable_but_topic_shaped_as_question",
+      "secondary_residual_block_class": "recoverable_but_scene_thin",
+      "current_block_correctness": false,
+      "clarification_viable": true,
+      "direction_recovery_viable": false,
+      "trust_risk_if_unblocked": "low",
+      "reviewer_note": "Topic-validation question has recoverable center but insufficient scene support."
+    }
+  ],
+  "recoverable_low_signal_lane_design": {
+    "lane_type": "clarification_only",
+    "goal": "Recover weak but honest asks into constrained clarification instead of hard block.",
+    "eligibility_criteria": [
+      "some real topic or essay-help intent exists",
+      "signal_strength remains none",
+      "block would be too harsh relative to available next-step help",
+      "normal direction generation remains disallowed"
+    ],
+    "activated_for": [
+      "blank_page_intake_request",
+      "topic_viability_scope_question"
+    ],
+    "allowed_outputs": [
+      "single recovery-oriented clarification question",
+      "high-honesty scope reframe tied to a proposed center",
+      "explicit low-confidence debug state"
+    ],
+    "disallowed_outputs": [
+      "tentative direction candidates from empty input",
+      "premium-sounding angle generation from no-scene input",
+      "confidence above low in the recovery debug lane"
+    ],
+    "debug_fields": {
+      "recoverable_low_signal_lane_activated": true,
+      "low_signal_recovery_reason": [
+        "blank_page_intake_request",
+        "topic_viability_scope_question"
+      ],
+      "recovery_lane_confidence_cap": "low",
+      "recovery_lane_block_override_reason": [
+        "recoverable_blank_page_request",
+        "recoverable_topic_validation_request"
+      ]
+    }
+  },
+  "code_changes": [
+    {
+      "file": "src/lib/ml/evidenceStrength/features.ts",
+      "change": "Expanded recoverable help-seeking detection to include blank-page requests and 'writing about ... too common' topic-viability questions."
+    },
+    {
+      "file": "src/lib/fm/buildClarificationPayload.ts",
+      "change": "Added recoverable low-signal debug block, blank-page recovery question override, and sanitized scope-question topic extraction."
+    },
+    {
+      "file": "src/types/intake.ts",
+      "change": "Extended ClarificationPayload with lowSignalRecoveryDebug fields."
+    },
+    {
+      "file": "src/__tests__/unit/evidence-routing.spec.ts",
+      "change": "Added focused tests for NDS-005 and NDS-012 style recovery."
+    }
+  ],
+  "validation": {
+    "build": "PASS",
+    "unit_tests": "PASS (242 passed, 13 skipped)",
+    "real_user_sim": "PASS",
+    "prod_intake_gate_diagnostic": {
+      "status": "PASS",
+      "blocked": 0,
+      "clarification": 18,
+      "direction_light": 7
+    },
+    "prod_full25_benchmark": {
+      "status": "PASS",
+      "score": 11.0,
+      "misses": 0,
+      "live_api_errors": 0
+    },
+    "regressions": {
+      "test:nds:evidence-grounding": "PASS",
+      "test:nds:direction-line-fit": "PASS",
+      "test:nds:direction-stability": "PASS",
+      "test:product:screen-trust": "PASS",
+      "test:product:flow-break": "PASS",
+      "test:product:session-state": "PASS",
+      "test:product:real-user-sim": "PASS",
+      "npm test": "PASS",
+      "test:nds:edge-case-breaker": "PASS"
+    }
+  },
+  "remaining_live_path_risks": [
+    "Blank-page requests still rely on clarification rather than a richer structured intake inventory lane.",
+    "Recoverable low-signal prompts remain intentionally conservative and can sound more operational than fully conversational.",
+    "No new direction candidate family was introduced for these weak-input classes; recovery is clarification-only by design."
+  ],
+  "next_recommended_action": "Monitor live blank-page and topic-validation traffic for recurring patterns, then decide whether a dedicated structured intake lane should replace the current clarification-only recovery path without expanding show behavior.",
+  "artifacts_created": [
+    "evaluation/nds_eval_package_v1/outputs/LIVE_INTAKE_GATE_DIAGNOSTIC_V1_PROD_POST_HARD_BLOCK_RECALIBRATION.json",
+    "evaluation/nds_eval_package_v1/outputs/LIVE_INTAKE_GATE_DIAGNOSTIC_V1_PROD_POST_HARD_BLOCK_RECALIBRATION.md",
+    "evaluation/nds_eval_package_v1/outputs/NDS_LIVE_CANDIDATE_INVENTORY_FULL25_PROD_POST_HARD_BLOCK_RECALIBRATION.json",
+    "evaluation/nds_eval_package_v1/outputs/NDS_SCORE_REPORT_FULL25_PROD_POST_HARD_BLOCK_RECALIBRATION.json",
+    "evaluation/nds_eval_package_v1/outputs/NDS_SCORE_REPORT_FULL25_PROD_POST_HARD_BLOCK_RECALIBRATION.md",
+    "evaluation/nds_eval_package_v1/outputs/NDS_BENCHMARK_MISS_REVIEW_FULL25_PROD_POST_HARD_BLOCK_RECALIBRATION.json",
+    "docs/engineering/live_hard_block_recalibration_sprint_v1.json"
+  ]
+}

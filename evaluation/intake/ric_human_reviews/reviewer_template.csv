@@ -1,0 +1,13 @@
+reviewer_id,case_id,preferred_output,decision_confidence,directional_usefulness,non_genericness,actionability,student_fit,gold_candidate,failure_tags,notes
+reviewer_name,RIC-NDS-CTRL-001,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-002,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-003,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-004,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-005,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-006,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-007,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-008,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-009,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-010,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-011,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note
+reviewer_name,RIC-NDS-CTRL-012,A_or_B_or_tie,1_to_5,1_to_5,1_to_5,1_to_5,1_to_5,true_or_false,tag1|tag2|tag3,short note

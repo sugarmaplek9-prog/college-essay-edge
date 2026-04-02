@@ -1,0 +1,126 @@
+{
+  "run_id": "eval_nds_case_016_1773286175600",
+  "case_id": "case_016",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "ready",
+  "execution_mode": "standard",
+  "validator_decision": "accept",
+  "artifact_status": "success",
+  "artifact_payload": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "core_claim": "Do not start with the accomplishment. Start at the moment the student recognized something was wrong and changed course — and stay close to what happened next.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real.",
+      "what_it_reveals_about_the_student": "It shows a student who can identify where they got it wrong and demonstrate that the correction held.",
+      "why_it_beats_the_obvious_angle": "Leadership framing describes a trait. The correction angle shows one specific moment where judgment changed — which is more concrete and easier to believe.",
+      "main_risk_if_written_poorly": "If the essay describes character without a concrete moment of correction, it loses the specificity that makes it work.",
+      "next_move": "Write the moment you got it wrong. Then write the next moment where your corrected approach is visible. Keep only what proves the change was real. The anchor is the strongest evidence-backed internal revision and its outward impact."
+    },
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Execution quality and accomplishment evidence in the same experience.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "id": "direction_3",
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "How your actions affected other people and community outcomes.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      {
+        "label": "Primary story evidence",
+        "source_type": "story_entry",
+        "source_id": "story_16_1"
+      },
+      {
+        "label": "Draft trajectory signal",
+        "source_type": "essay_draft_version",
+        "source_id": "draft_16"
+      }
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "eval_case_016"
+      },
+      "student_core": {
+        "name": "Eval case_016",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "community",
+          "learning",
+          "growth"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "story_16_1",
+          "source_type": "story_entry",
+          "event_summary": "Student story story where the student started with an ineffective approach, used feedback as a turning point, and changed behavior in a way that affected others.",
+          "change_signal": "The student corrected an ineffective first instinct in the other context, changed behavior, and recognized how their actions affected others.",
+          "evidence_strength": "medium",
+          "recency_rank": 1,
+          "narrative_signal": {
+            "pattern": "self_correction_arc",
+            "pattern_confidence": "high",
+            "tension_type": "initial_mistake",
+            "feedback_present": true,
+            "pivot_present": true,
+            "behavior_change_present": true,
+            "impact_on_others_present": true
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        }
+      ],
+      "draft_signals": [
+        {
+          "source_id": "draft_16",
+          "source_type": "essay_draft_version",
+          "signal_summary": "Draft exists, but the language is polished and abstract without enough student-owned scene evidence.",
+          "strength": "low",
+          "authorship_signal": {
+            "contamination_risk": "high",
+            "student_scene_evidence": "absent",
+            "weighting_decision": "prioritize_story"
+          }
+        }
+      ],
+      "school_signals": [],
+      "context_gaps": [
+        "Student-authored story evidence should take priority over polished draft framing."
+      ],
+      "assembler_meta": {
+        "story_signal_count": 1,
+        "draft_signal_count": 1,
+        "school_signal_count": 0,
+        "used_current_draft": true
+      }
+    },
+    "warnings": []
+  }
+}
