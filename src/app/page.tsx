@@ -19,94 +19,90 @@ export default function HomePage() {
     <main
       style={{
         minHeight: '100svh',
-        background:
-          'radial-gradient(circle at 82% 16%, rgba(40, 76, 136, 0.14) 0%, rgba(40, 76, 136, 0.06) 18%, transparent 40%), linear-gradient(180deg, #faf6ef 0%, #f5f1ea 20%, #fbfaf7 54%, #ffffff 100%)',
+        background: 'linear-gradient(180deg, #f7f3eb 0%, #f3eee5 34%, #faf8f3 72%, #ffffff 100%)',
         color: 'var(--color-text)',
-        padding: 'clamp(4rem, 8vw, 5.5rem) var(--spacing-page) clamp(4.5rem, 10vw, 6rem)',
-        position: 'relative',
-        overflow: 'hidden',
+        padding: 'clamp(4rem, 8vw, 5.8rem) var(--spacing-page) clamp(4.8rem, 10vw, 6.4rem)',
       }}
     >
       <div
-        aria-hidden="true"
         style={{
-          position: 'absolute',
-          inset: 'auto auto 12% 62%',
-          width: '24rem',
-          height: '24rem',
-          background: 'radial-gradient(circle, rgba(94, 120, 78, 0.14) 0%, rgba(94, 120, 78, 0.06) 42%, transparent 72%)',
-          filter: 'blur(26px)',
-          pointerEvents: 'none',
-        }}
-      />
-      <div
-        style={{
-          maxWidth: '75rem',
+          maxWidth: '74rem',
           margin: '0 auto',
           width: '100%',
-          textAlign: 'left',
-          position: 'relative',
         }}
       >
-        {/* A. Top identity row */}
-        <div style={{ marginBottom: '1.5rem' }}>
-          <p className="text-label" style={{ marginBottom: '0.35rem', letterSpacing: '0.08em' }}>
+        <header style={{ marginBottom: '1.6rem' }}>
+          <p className="text-label" style={{ marginBottom: '0.32rem', letterSpacing: '0.08em' }}>
             College Essay Edge
           </p>
           <p className="text-small" style={{ margin: 0, color: 'var(--color-muted)' }}>
-            Narrative Direction Selection
+            Decide the essay before you draft it
           </p>
-        </div>
+        </header>
 
-        {/* B. Main hero + trust panel + artifact */}
         <section
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 1.12fr) minmax(18rem, 0.88fr)',
-            gap: '1.75rem',
+            gridTemplateColumns: 'minmax(0, 0.86fr) minmax(20rem, 1.14fr)',
+            gap: 'clamp(2rem, 4vw, 3.4rem)',
             alignItems: 'start',
-            marginBottom: '3rem',
+            marginBottom: 'clamp(2.8rem, 6vw, 4.4rem)',
           }}
         >
-          <div style={{ maxWidth: '44rem' }}>
-            <h1 className="text-display" style={{ marginBottom: '1.35rem', lineHeight: 1.04, maxWidth: '40rem' }}>
-              Find the strongest direction for your college essay before you draft it.
+          <div style={{ maxWidth: '31rem', paddingTop: '0.7rem' }}>
+            <p
+              className="text-label"
+              style={{
+                marginBottom: '0.9rem',
+                color: '#173a6a',
+                letterSpacing: '0.1em',
+              }}
+            >
+              Consequence first
+            </p>
+
+            <h1
+              className="text-display"
+              style={{
+                marginBottom: '1rem',
+                fontSize: 'clamp(3rem, 6.8vw, 5rem)',
+                lineHeight: 0.94,
+                letterSpacing: '-0.05em',
+                maxWidth: '28rem',
+              }}
+            >
+              Stop before the wrong essay hardens.
             </h1>
 
             <p
               className="text-body"
               style={{
+                marginBottom: '1.8rem',
                 color: 'var(--color-muted)',
-                marginBottom: '2rem',
-                maxWidth: '41rem',
+                maxWidth: '29rem',
+                fontSize: '1.06rem',
+                lineHeight: 1.65,
               }}
             >
-              Bring rough notes, a partial paragraph, or the moment you keep returning to. College Essay Edge helps you choose the strongest direction, understand why it works, and decide what to draft next — while keeping the essay student-authored.
+              Bring the note, half draft, or safe version you keep polishing. College Essay Edge makes one clear call on what earns the page and what to kill.
             </p>
 
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.75rem',
-                maxWidth: '21rem',
-                marginBottom: '1.6rem',
-              }}
-            >
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.9rem' }}>
               <Link
                 href="/start?entry=notes"
                 onClick={handleCtaClick}
                 style={{
-                  display: 'inline-block',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minHeight: '3.2rem',
+                  padding: '0.95rem 1.4rem',
+                  borderRadius: '999px',
                   backgroundColor: '#173a6a',
                   color: 'var(--color-surface)',
-                  padding: '0.95rem 1.5rem',
-                  borderRadius: 'var(--radius-input)',
-                  fontWeight: 600,
-                  fontSize: '1rem',
                   textDecoration: 'none',
-                  textAlign: 'center',
-                  boxShadow: '0 12px 30px rgba(23, 58, 106, 0.18)',
+                  fontWeight: 650,
+                  boxShadow: '0 18px 34px rgba(23, 58, 106, 0.14)',
                 }}
               >
                 Start with rough notes
@@ -116,212 +112,344 @@ export default function HomePage() {
                 href="/start?entry=draft"
                 onClick={handleCtaClick}
                 style={{
-                  display: 'inline-block',
-                  color: 'var(--color-text)',
-                  border: '1px solid rgba(23, 58, 106, 0.14)',
-                  backgroundColor: 'rgba(255,255,255,0.76)',
-                  padding: '0.8rem 1.25rem',
-                  borderRadius: 'var(--radius-input)',
-                  fontSize: '0.95rem',
+                  color: 'rgba(23, 58, 106, 0.88)',
                   textDecoration: 'none',
-                  textAlign: 'center',
+                  fontSize: '0.96rem',
+                  fontWeight: 600,
                 }}
               >
-                I already have a draft
+                Already drafted? Start there
               </Link>
             </div>
           </div>
 
-          <div style={{ display: 'grid', gap: '1rem' }}>
-            <aside
-              style={{
-                border: '1px solid rgba(23, 58, 106, 0.12)',
-                borderRadius: '1.3rem',
-                backgroundColor: 'rgba(255,255,255,0.76)',
-                backdropFilter: 'blur(12px)',
-                padding: '1.2rem',
-                boxShadow: '0 16px 46px rgba(17, 24, 39, 0.07)',
-              }}
-            >
-              <p className="text-label" style={{ marginBottom: '0.9rem', color: '#173a6a' }}>
-                How College Essay Edge makes the call
-              </p>
-              <div style={{ display: 'grid', gap: '0.7rem' }}>
-                <TrustRow
-                  title="Learns from reviewed cases"
-                  body="The system is built to learn from real reviewed essay work, not just generate polished text."
-                />
-                <TrustRow
-                  title="Chooses stronger directions"
-                  body="It compares paths, rejects weaker angles, and pushes toward stronger narrative material."
-                />
-                <TrustRow
-                  title="Stops generic mistakes early"
-                  body="It is designed to catch résumé-summary moves, cliché framing, and vague meaning before they take over the draft."
-                />
-              </div>
-            </aside>
-
-            <CoachArtifact />
-          </div>
+          <SignatureArtifact />
         </section>
 
-        {/* C. Lower principle band */}
-        <section
-          style={{
-            border: '1px solid rgba(23, 58, 106, 0.1)',
-            borderRadius: '1.4rem',
-            background:
-              'linear-gradient(135deg, rgba(255,255,255,0.74) 0%, rgba(245, 241, 234, 0.96) 100%)',
-            padding: '1.45rem 1.5rem',
-            boxShadow: '0 14px 36px rgba(17, 24, 39, 0.04)',
-          }}
-        >
-          <p className="text-label" style={{ marginBottom: '0.85rem', color: '#173a6a' }}>
-            Why our approach
-          </p>
-          <p className="text-small" style={{ margin: '0 0 0.95rem', color: 'var(--color-muted)', maxWidth: '60rem' }}>
-            AI-written essays may sound polished, but they often become generic, weakly owned, and strategically less convincing.
-          </p>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(14rem, 1fr))',
-              gap: '1rem',
-            }}
-          >
-            <PrincipleItem
-              title="Direction before drafting"
-              body="A strong essay starts with the right angle, not just smoother writing."
-            />
-            <PrincipleItem
-              title="Judgment backed by ML-guided evaluation"
-              body="The system is built to compare options, expose weak paths, and support better decisions."
-            />
-            <PrincipleItem
-              title="Serious guidance without private-consultant pricing"
-              body="Families get stronger essay direction and coaching without paying thousands for one-on-one consulting."
-            />
-          </div>
-        </section>
+        <EditorialComparison />
+
+        <TrustStrip />
       </div>
     </main>
   );
 }
 
-function TrustRow({ title, body }: { title: string; body: string }) {
+function SignatureArtifact() {
   return (
-    <article
+    <aside
       style={{
-        border: '1px solid rgba(23, 58, 106, 0.08)',
-        borderRadius: '1rem',
-        backgroundColor: 'rgba(255,255,255,0.88)',
-        padding: '0.85rem 0.95rem',
+        border: '1px solid rgba(23, 58, 106, 0.14)',
+        borderRadius: '1.8rem',
+        background: 'rgba(255,255,255,0.78)',
+        padding: '1.65rem',
+        boxShadow: '0 24px 60px rgba(17, 24, 39, 0.08)',
       }}
     >
-      <h2 className="text-body" style={{ margin: '0 0 0.3rem 0', fontWeight: 600, fontSize: '1rem' }}>
-        {title}
-      </h2>
-      <p className="text-small" style={{ margin: 0, color: 'var(--color-muted)' }}>
-        {body}
-      </p>
-    </article>
+      <div style={{ display: 'grid', gap: '1.15rem' }}>
+        <p className="text-label" style={{ marginBottom: 0, color: '#173a6a' }}>
+          Raw note → real call
+        </p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+            gap: '0.9rem',
+            alignItems: 'start',
+          }}
+        >
+          <ArtifactPanel
+            label="Raw note"
+            body="I kept organizing the preschool room until I noticed one child sitting alone."
+          />
+
+          <div
+            style={{
+              borderLeft: '1px solid rgba(23, 58, 106, 0.12)',
+              paddingLeft: '1.1rem',
+              minHeight: '100%',
+            }}
+          >
+            <p className="text-label" style={{ marginBottom: '0.45rem', color: '#173a6a' }}>
+              Real call
+            </p>
+            <p
+              className="text-body"
+              style={{
+                margin: '0 0 0.8rem',
+                fontSize: '1.55rem',
+                lineHeight: 1.16,
+                letterSpacing: '-0.03em',
+                fontWeight: 650,
+                maxWidth: '15rem',
+              }}
+            >
+              Not helpfulness. Attention.
+            </p>
+            <p
+              className="text-small"
+              style={{
+                margin: 0,
+                color: 'var(--color-muted)',
+                lineHeight: 1.6,
+                maxWidth: '18rem',
+              }}
+            >
+              One decision, not five maybes.
+              <br />
+              Parent-safe by design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
   );
 }
 
-function CoachArtifact() {
+function ArtifactPanel({
+  label,
+  body,
+}: {
+  label: string;
+  body: string;
+}) {
+  return (
+    <div
+      style={{
+        borderRadius: '1.2rem',
+        backgroundColor: 'rgba(247, 243, 236, 0.92)',
+        border: '1px solid rgba(128, 94, 52, 0.1)',
+        padding: '1rem 1rem 1.05rem',
+      }}
+    >
+      <p className="text-label" style={{ marginBottom: '0.45rem', color: '#805e34' }}>
+        {label}
+      </p>
+      <p className="text-body" style={{ margin: 0, lineHeight: 1.58, fontSize: '1rem' }}>
+        “{body}”
+      </p>
+    </div>
+  );
+}
+
+function EditorialComparison() {
   return (
     <section
       style={{
-        border: '1px solid rgba(17, 24, 39, 0.08)',
-        borderRadius: '1.35rem',
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(244, 247, 251, 0.88) 100%)',
-        padding: '1.1rem',
-        boxShadow: '0 18px 44px rgba(17, 24, 39, 0.06)',
+        marginBottom: 'clamp(2.8rem, 6vw, 4rem)',
+        paddingTop: '0.3rem',
       }}
     >
-      <p className="text-label" style={{ marginBottom: '0.8rem', color: '#173a6a' }}>
-        Coach comparison
-      </p>
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
-          gap: '0.85rem',
-          marginBottom: '0.85rem',
+          gridTemplateColumns: 'minmax(0, 0.72fr) minmax(0, 1.28fr)',
+          gap: '1.2rem',
+          alignItems: 'end',
+          marginBottom: '1.1rem',
         }}
       >
-        <ArtifactColumn
-          label="Weaker path"
-          tone="weaker"
-          quote="Soccer taught me leadership."
-        />
-        <ArtifactColumn
-          label="Stronger path"
-          tone="stronger"
-          quote="I stopped trying to sound like a captain and started noticing the silence after I made a bad pass."
-        />
+        <div>
+          <p className="text-label" style={{ marginBottom: '0.55rem', color: '#173a6a' }}>
+            The decision artifact
+          </p>
+          <p
+            className="text-body"
+            style={{
+              margin: 0,
+              maxWidth: '18rem',
+              color: 'var(--color-muted)',
+              lineHeight: 1.58,
+            }}
+          >
+            Avoid the safe version. Keep the one with stakes.
+          </p>
+        </div>
+
+        <div
+          style={{
+            borderTop: '1px solid rgba(23, 58, 106, 0.14)',
+            paddingTop: '0.9rem',
+          }}
+        >
+          <p
+            className="text-body"
+            style={{
+              margin: 0,
+              fontSize: '1.22rem',
+              lineHeight: 1.45,
+              maxWidth: '34rem',
+            }}
+          >
+            The job is not to polish both versions. It is to choose the one that gives the reader a mistake, a shift, and a cost.
+          </p>
+        </div>
       </div>
+
       <div
         style={{
-          borderTop: '1px solid rgba(23, 58, 106, 0.1)',
-          paddingTop: '0.85rem',
+          display: 'grid',
+          gridTemplateColumns: 'minmax(13rem, 0.76fr) minmax(0, 1.24fr)',
+          gap: '1.1rem',
+          alignItems: 'stretch',
         }}
       >
-        <p className="text-small" style={{ margin: 0, color: 'var(--color-text)', fontWeight: 600 }}>
-          Coach note
-        </p>
-        <p className="text-small" style={{ margin: '0.3rem 0 0', color: 'var(--color-muted)' }}>
-          The stronger path begins with tension and self-awareness, not résumé language.
-        </p>
+        <ComparisonSide
+          label="Avoid"
+          quote="Soccer taught me leadership and resilience."
+          body="Clean. Respectable. Replaceable."
+          tone="avoid"
+        />
+
+        <ComparisonSide
+          label="Choose"
+          quote="After the bad pass, I stopped trying to sound like a captain and paid attention to the silence I had created."
+          body="Mistake. Shift. Consequence. Something real can finally happen on the page."
+          tone="choose"
+        />
       </div>
     </section>
   );
 }
 
-function ArtifactColumn({
+function ComparisonSide({
   label,
   quote,
+  body,
   tone,
 }: {
   label: string;
   quote: string;
-  tone: 'weaker' | 'stronger';
+  body: string;
+  tone: 'avoid' | 'choose';
 }) {
+  const isChoose = tone === 'choose';
+
   return (
     <article
       style={{
-        border: tone === 'stronger'
-          ? '1px solid rgba(23, 58, 106, 0.2)'
-          : '1px solid rgba(128, 94, 52, 0.16)',
-        borderRadius: '1rem',
-        backgroundColor: tone === 'stronger' ? 'rgba(232, 239, 249, 0.72)' : 'rgba(250, 244, 236, 0.72)',
-        padding: '0.95rem',
+        border: isChoose
+          ? '1px solid rgba(23, 58, 106, 0.18)'
+          : '1px solid rgba(128, 94, 52, 0.12)',
+        borderRadius: '1.6rem',
+        background: isChoose ? 'rgba(255,255,255,0.9)' : 'rgba(249, 244, 236, 0.72)',
+        padding: isChoose ? '1.45rem 1.5rem' : '1.2rem 1.2rem 1.25rem',
+        boxShadow: isChoose ? '0 22px 50px rgba(17, 24, 39, 0.08)' : 'none',
+        display: 'grid',
+        alignContent: 'start',
+        gap: '0.75rem',
       }}
     >
-      <p className="text-label" style={{ marginBottom: '0.45rem', color: tone === 'stronger' ? '#173a6a' : '#805e34' }}>
+      <p className="text-label" style={{ marginBottom: 0, color: isChoose ? '#173a6a' : '#805e34' }}>
         {label}
       </p>
-      <p className="text-body" style={{ margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+
+      <p
+        className="text-body"
+        style={{
+          margin: 0,
+          fontSize: isChoose ? '1.45rem' : '1.08rem',
+          lineHeight: isChoose ? 1.42 : 1.55,
+          letterSpacing: isChoose ? '-0.03em' : '-0.01em',
+          fontWeight: isChoose ? 650 : 560,
+          maxWidth: isChoose ? '33rem' : '16rem',
+        }}
+      >
         “{quote}”
+      </p>
+
+      <p
+        className="text-small"
+        style={{
+          margin: 0,
+          color: isChoose ? 'var(--color-text)' : 'var(--color-muted)',
+          fontSize: isChoose ? '1rem' : '0.95rem',
+          lineHeight: 1.62,
+          maxWidth: isChoose ? '29rem' : '15rem',
+        }}
+      >
+        {body}
       </p>
     </article>
   );
 }
 
-function PrincipleItem({ title, body }: { title: string; body: string }) {
+function TrustStrip() {
   return (
-    <article
+    <section
       style={{
-        padding: '0.15rem 0.2rem',
+        borderTop: '1px solid rgba(23, 58, 106, 0.12)',
+        paddingTop: '1.5rem',
       }}
     >
-      <h2 className="text-body" style={{ margin: '0 0 0.45rem 0', fontWeight: 600 }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+          gap: '1.3rem',
+          alignItems: 'start',
+          marginBottom: '1.2rem',
+        }}
+      >
+        <div>
+          <p className="text-label" style={{ marginBottom: '0.5rem', color: '#173a6a' }}>
+            Why this matters
+          </p>
+          <p
+            className="text-body"
+            style={{
+              margin: 0,
+              fontSize: '1.2rem',
+              lineHeight: 1.48,
+              maxWidth: '24rem',
+            }}
+          >
+            The quiet expensive mistake happens before the draft is finished.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+            gap: '1rem',
+          }}
+        >
+          <TruthColumn
+            title="Polished can still be wrong"
+            body="A cleaner sentence does not rescue a weak center."
+          />
+          <TruthColumn
+            title="Safe choices harden fast"
+            body="Respectable versions get drafted early and questioned late."
+          />
+          <TruthColumn
+            title="The real win is earlier"
+            body="Make the call before the draft starts absorbing time."
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TruthColumn({ title, body }: { title: string; body: string }) {
+  return (
+    <div style={{ paddingRight: '0.5rem' }}>
+      <h2
+        className="text-body"
+        style={{
+          margin: '0 0 0.45rem',
+          fontSize: '1.02rem',
+          fontWeight: 650,
+          lineHeight: 1.42,
+        }}
+      >
         {title}
       </h2>
-      <p className="text-small" style={{ margin: 0, color: 'var(--color-muted)' }}>
+      <p className="text-small" style={{ margin: 0, color: 'var(--color-muted)', lineHeight: 1.6 }}>
         {body}
       </p>
-    </article>
+    </div>
   );
 }

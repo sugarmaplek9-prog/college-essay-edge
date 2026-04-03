@@ -40,7 +40,7 @@ test.describe('F1 — Strong Case Success Path', () => {
 
     // Verify homepage hero is visible
     const hero = page.locator('h1');
-    await expect(hero).toContainText('Find the strongest direction for your college essay before you draft it');
+    await expect(hero).toContainText('Stop before the wrong essay hardens.');
 
     // Verify primary CTA exists
     const cta = page.locator('a, button').filter({ hasText: /start|begin|let's go/i }).first();
