@@ -19,7 +19,8 @@ export default function HomePage() {
     <main
       style={{
         minHeight: '100svh',
-        background: 'linear-gradient(180deg, #f7f3eb 0%, #f3eee5 34%, #faf8f3 72%, #ffffff 100%)',
+        background:
+          'radial-gradient(circle at 82% 12%, rgba(23, 58, 106, 0.14) 0%, rgba(23, 58, 106, 0.06) 24%, transparent 46%), linear-gradient(180deg, #f7f3eb 0%, #f3eee5 34%, #faf8f3 72%, #ffffff 100%)',
         color: 'var(--color-text)',
         padding: 'clamp(4rem, 8vw, 5.8rem) var(--spacing-page) clamp(4.8rem, 10vw, 6.4rem)',
       }}
@@ -43,7 +44,7 @@ export default function HomePage() {
         <section
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 0.86fr) minmax(20rem, 1.14fr)',
+            gridTemplateColumns: 'minmax(0, 0.84fr) minmax(20rem, 1.16fr)',
             gap: 'clamp(2rem, 4vw, 3.4rem)',
             alignItems: 'start',
             marginBottom: 'clamp(2.8rem, 6vw, 4.4rem)',
@@ -68,10 +69,10 @@ export default function HomePage() {
                 fontSize: 'clamp(3rem, 6.8vw, 5rem)',
                 lineHeight: 0.94,
                 letterSpacing: '-0.05em',
-                maxWidth: '28rem',
+                maxWidth: '29rem',
               }}
             >
-              Stop before the wrong essay hardens.
+              Choose the real essay before the safe one hardens.
             </h1>
 
             <p
@@ -84,7 +85,7 @@ export default function HomePage() {
                 lineHeight: 1.65,
               }}
             >
-              Bring the note, half draft, or safe version you keep polishing. College Essay Edge makes one clear call on what earns the page and what to kill.
+              Bring the note or draft. We make one clear call on what stays and what goes.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.9rem' }}>
@@ -118,9 +119,22 @@ export default function HomePage() {
                   fontWeight: 600,
                 }}
               >
-                Already drafted? Start there
+                I already have a draft
               </Link>
             </div>
+
+            <p
+              className="text-small"
+              style={{
+                margin: '1.2rem 0 0',
+                color: 'rgba(23, 58, 106, 0.84)',
+                fontSize: '0.95rem',
+                lineHeight: 1.58,
+                maxWidth: '28rem',
+              }}
+            >
+              Strong judgment. Visible restraint. Parent-safe by design.
+            </p>
           </div>
 
           <SignatureArtifact />
@@ -140,14 +154,14 @@ function SignatureArtifact() {
       style={{
         border: '1px solid rgba(23, 58, 106, 0.14)',
         borderRadius: '1.8rem',
-        background: 'rgba(255,255,255,0.78)',
+        background: 'rgba(255,255,255,0.82)',
         padding: '1.65rem',
         boxShadow: '0 24px 60px rgba(17, 24, 39, 0.08)',
       }}
     >
       <div style={{ display: 'grid', gap: '1.15rem' }}>
         <p className="text-label" style={{ marginBottom: 0, color: '#173a6a' }}>
-          Raw note → real call
+          From note to call
         </p>
 
         <div
@@ -171,7 +185,7 @@ function SignatureArtifact() {
             }}
           >
             <p className="text-label" style={{ marginBottom: '0.45rem', color: '#173a6a' }}>
-              Real call
+              The decision artifact
             </p>
             <p
               className="text-body"
@@ -181,10 +195,10 @@ function SignatureArtifact() {
                 lineHeight: 1.16,
                 letterSpacing: '-0.03em',
                 fontWeight: 650,
-                maxWidth: '15rem',
+                maxWidth: '16rem',
               }}
             >
-              Not helpfulness. Attention.
+              Attention, not helpfulness.
             </p>
             <p
               className="text-small"
@@ -195,7 +209,7 @@ function SignatureArtifact() {
                 maxWidth: '18rem',
               }}
             >
-              One decision, not five maybes.
+              One serious decision.
               <br />
               Parent-safe by design.
             </p>
@@ -258,30 +272,37 @@ function EditorialComparison() {
             style={{
               margin: 0,
               maxWidth: '18rem',
+              fontSize: '1.32rem',
+              lineHeight: 1.26,
+              letterSpacing: '-0.03em',
+              fontWeight: 640,
+            }}
+          >
+            The respectable one dies first.
+          </p>
+        </div>
+
+        <div>
+          <p
+            className="text-body"
+            style={{
+              margin: '0 0 0.55rem',
+              fontSize: '1.18rem',
+              lineHeight: 1.48,
+              maxWidth: '38rem',
+            }}
+          >
+            Keep the line with mistake, shift, and cost.
+          </p>
+          <p
+            className="text-small"
+            style={{
+              margin: 0,
               color: 'var(--color-muted)',
               lineHeight: 1.58,
             }}
           >
-            Avoid the safe version. Keep the one with stakes.
-          </p>
-        </div>
-
-        <div
-          style={{
-            borderTop: '1px solid rgba(23, 58, 106, 0.14)',
-            paddingTop: '0.9rem',
-          }}
-        >
-          <p
-            className="text-body"
-            style={{
-              margin: 0,
-              fontSize: '1.22rem',
-              lineHeight: 1.45,
-              maxWidth: '34rem',
-            }}
-          >
-            The job is not to polish both versions. It is to choose the one that gives the reader a mistake, a shift, and a cost.
+            Kill the respectable one. Keep the line with damage in it.
           </p>
         </div>
       </div>
@@ -302,7 +323,7 @@ function EditorialComparison() {
         />
 
         <ComparisonSide
-          label="Choose"
+          label="Keep"
           quote="After the bad pass, I stopped trying to sound like a captain and paid attention to the silence I had created."
           body="Mistake. Shift. Consequence. Something real can finally happen on the page."
           tone="choose"
@@ -404,7 +425,7 @@ function TrustStrip() {
               maxWidth: '24rem',
             }}
           >
-            The quiet expensive mistake happens before the draft is finished.
+            Most drafts fail early.
           </p>
         </div>
 
@@ -415,18 +436,9 @@ function TrustStrip() {
             gap: '1rem',
           }}
         >
-          <TruthColumn
-            title="Polished can still be wrong"
-            body="A cleaner sentence does not rescue a weak center."
-          />
-          <TruthColumn
-            title="Safe choices harden fast"
-            body="Respectable versions get drafted early and questioned late."
-          />
-          <TruthColumn
-            title="The real win is earlier"
-            body="Make the call before the draft starts absorbing time."
-          />
+          <TruthColumn title="Polished still loses" body="A cleaner sentence does not rescue a weak center." />
+          <TruthColumn title="Safe gets sticky" body="Respectable versions get drafted early and questioned late." />
+          <TruthColumn title="The gain is earlier" body="Make the call before the draft starts absorbing time." />
         </div>
       </div>
     </section>
