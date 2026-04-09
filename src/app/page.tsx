@@ -20,9 +20,9 @@ export default function HomePage() {
       style={{
         minHeight: '100svh',
         background:
-          'radial-gradient(circle at 84% 12%, rgba(23, 58, 106, 0.2) 0%, rgba(23, 58, 106, 0.08) 22%, transparent 44%), radial-gradient(circle at 16% 28%, rgba(94, 120, 78, 0.1) 0%, rgba(94, 120, 78, 0.04) 22%, transparent 48%), linear-gradient(180deg, #f8f3ea 0%, #f2ebdf 21%, #f9f6ef 55%, #ffffff 100%)',
+          'radial-gradient(circle at 84% 12%, rgba(23, 58, 106, 0.16) 0%, rgba(23, 58, 106, 0.06) 20%, transparent 43%), radial-gradient(circle at 16% 28%, rgba(94, 120, 78, 0.06) 0%, rgba(94, 120, 78, 0.025) 20%, transparent 46%), linear-gradient(180deg, #faf6ee 0%, #f6f0e6 24%, #faf8f2 58%, #ffffff 100%)',
         color: 'var(--color-text)',
-        padding: 'clamp(4.2rem, 8vw, 5.8rem) var(--spacing-page) clamp(4.8rem, 10vw, 6.2rem)',
+        padding: 'clamp(4.6rem, 8vw, 6.2rem) var(--spacing-page) clamp(5.3rem, 10vw, 6.9rem)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -31,11 +31,11 @@ export default function HomePage() {
         aria-hidden="true"
         style={{
           position: 'absolute',
-          inset: '4% auto auto 58%',
-          width: '30rem',
-          height: '30rem',
-          background: 'radial-gradient(circle, rgba(23, 58, 106, 0.16) 0%, rgba(23, 58, 106, 0.07) 38%, transparent 68%)',
-          filter: 'blur(28px)',
+          inset: '4% auto auto 60%',
+          width: '28rem',
+          height: '28rem',
+          background: 'radial-gradient(circle, rgba(23, 58, 106, 0.12) 0%, rgba(23, 58, 106, 0.05) 36%, transparent 68%)',
+          filter: 'blur(30px)',
           pointerEvents: 'none',
         }}
       />
@@ -48,7 +48,7 @@ export default function HomePage() {
           position: 'relative',
         }}
       >
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ marginBottom: '1.85rem' }}>
           <p className="text-label" style={{ marginBottom: '0.35rem', letterSpacing: '0.08em' }}>
             College Essay Edge
           </p>
@@ -60,17 +60,17 @@ export default function HomePage() {
         <section
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 0.82fr) minmax(21rem, 1.18fr)',
-            gap: '2.7rem',
+            gridTemplateColumns: 'minmax(0, 0.78fr) minmax(23rem, 1.22fr)',
+            gap: 'clamp(3.1rem, 6vw, 4.8rem)',
             alignItems: 'center',
-            marginBottom: '2.5rem',
+            marginBottom: '3.4rem',
           }}
         >
-          <div style={{ maxWidth: '34rem', paddingTop: '0.9rem' }}>
+          <div style={{ maxWidth: '33rem', paddingTop: '1rem' }}>
             <p
               className="text-label"
               style={{
-                marginBottom: '0.8rem',
+                marginBottom: '0.9rem',
                 color: '#173a6a',
                 letterSpacing: '0.1em',
               }}
@@ -84,7 +84,7 @@ export default function HomePage() {
                 marginBottom: '1rem',
                 lineHeight: 0.93,
                 maxWidth: '33rem',
-                fontSize: 'clamp(3.1rem, 7vw, 5.4rem)',
+                fontSize: 'clamp(3.2rem, 6.6vw, 5.25rem)',
                 letterSpacing: '-0.045em',
               }}
             >
@@ -101,7 +101,7 @@ export default function HomePage() {
                 lineHeight: 1.68,
               }}
             >
-              Bring rough notes, a half draft, or the story you keep circling. College Essay Edge makes one serious call on what is worth writing — and shows you the safe, polished version to kill before it eats the month.
+              Bring rough notes or a half draft. College Essay Edge tells you which essay is worth writing, which safe version to kill, and where to start before the wrong draft absorbs the month.
             </p>
 
             <div
@@ -126,7 +126,7 @@ export default function HomePage() {
                   fontSize: '1rem',
                   textDecoration: 'none',
                   textAlign: 'center',
-                  boxShadow: '0 16px 36px rgba(23, 58, 106, 0.2)',
+                  boxShadow: '0 14px 30px rgba(23, 58, 106, 0.16)',
                 }}
               >
                 Start with rough notes
@@ -137,19 +137,28 @@ export default function HomePage() {
                 onClick={handleCtaClick}
                 style={{
                   display: 'inline-block',
-                  color: 'var(--color-text)',
-                  border: '1px solid rgba(23, 58, 106, 0.14)',
-                  backgroundColor: 'rgba(255,255,255,0.76)',
-                  padding: '0.84rem 1.25rem',
-                  borderRadius: 'var(--radius-input)',
-                  fontSize: '0.95rem',
+                  color: 'rgba(17, 24, 39, 0.78)',
+                  padding: '0.25rem 0',
+                  fontSize: '0.94rem',
                   textDecoration: 'none',
-                  textAlign: 'center',
+                  textAlign: 'left',
                 }}
               >
                 I already have a draft
               </Link>
             </div>
+
+            <p
+              className="text-small"
+              style={{
+                margin: '0 0 1.2rem',
+                color: 'rgba(17, 24, 39, 0.62)',
+                fontSize: '0.88rem',
+                lineHeight: 1.5,
+              }}
+            >
+              Low risk to start: bring notes, not a polished essay.
+            </p>
 
             <div
               style={{
@@ -175,7 +184,7 @@ export default function HomePage() {
                 lineHeight: 1.6,
               }}
             >
-              Guidance with restraint for students and families who want judgment they can trust — not ghostwriting, and not another thoughtful writing tool that never makes the hard call.
+              Serious decision support for students and families who want judgment they can trust — without ghostwriting, and without wasting time on the wrong draft.
             </p>
           </div>
 
@@ -281,14 +290,14 @@ function DominantProofSurface() {
         }}
       />
 
-      <div style={{ position: 'relative', display: 'grid', gap: '1.1rem' }}>
-        <p className="text-label" style={{ marginBottom: 0, color: '#173a6a' }}>
-          Proof of judgment
+      <div style={{ position: 'relative', display: 'grid', gap: '1.35rem' }}>
+        <p className="text-label" style={{ marginBottom: 0, color: '#173a6a', letterSpacing: '0.09em' }}>
+          The decision artifact
         </p>
 
         <div>
           <p className="text-small" style={{ margin: '0 0 0.45rem', color: 'rgba(23, 58, 106, 0.84)', fontWeight: 700 }}>
-            From rough note to a real call
+            Raw note → real call
           </p>
           <p
             className="text-body"
@@ -300,18 +309,18 @@ function DominantProofSurface() {
               maxWidth: '34rem',
             }}
           >
-            You do not get a motivational summary. You get the sentence that decides what the essay is actually about — and what to stop drafting.
+            One signature product behavior: take a rough note, expose the weak version, and make the real essay decision legible enough to draft immediately.
           </p>
         </div>
 
         <div
           style={{
-            borderRadius: '1.35rem',
-            background: 'rgba(255,255,255,0.88)',
-            border: '1px solid rgba(23, 58, 106, 0.12)',
-            padding: '1.2rem',
             display: 'grid',
-            gap: '0.9rem',
+            gridTemplateColumns: 'minmax(0, 0.78fr) minmax(0, 1.22fr)',
+            gap: '1.2rem',
+            alignItems: 'start',
+            paddingBottom: '1.15rem',
+            borderBottom: '1px solid rgba(23, 58, 106, 0.1)',
           }}
         >
           <CalloutBlock
@@ -329,16 +338,14 @@ function DominantProofSurface() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 1.14fr) minmax(15rem, 0.86fr)',
-            gap: '0.95rem',
+            gridTemplateColumns: 'minmax(0, 1.2fr) minmax(14rem, 0.8fr)',
+            gap: '1.1rem',
+            alignItems: 'start',
           }}
         >
           <div
             style={{
-              borderRadius: '1.2rem',
-              background: 'rgba(244, 238, 229, 0.9)',
-              border: '1px solid rgba(128, 94, 52, 0.12)',
-              padding: '1rem 1.05rem',
+              paddingRight: '1rem',
             }}
           >
             <p className="text-label" style={{ marginBottom: '0.45rem', color: '#805e34' }}>
@@ -358,10 +365,8 @@ function DominantProofSurface() {
 
           <div
             style={{
-              borderRadius: '1.2rem',
-              background: 'rgba(232, 239, 249, 0.84)',
-              border: '1px solid rgba(23, 58, 106, 0.14)',
-              padding: '1rem 1.05rem',
+              paddingLeft: '1.1rem',
+              borderLeft: '1px solid rgba(23, 58, 106, 0.09)',
             }}
           >
             <p className="text-label" style={{ marginBottom: '0.45rem', color: '#173a6a' }}>
@@ -389,12 +394,7 @@ function CalloutBlock({
   return (
     <div
       style={{
-        borderRadius: '1rem',
-        backgroundColor: tone === 'call' ? 'rgba(232, 239, 249, 0.88)' : 'rgba(247, 243, 236, 0.92)',
-        border: tone === 'call'
-          ? '1px solid rgba(23, 58, 106, 0.14)'
-          : '1px solid rgba(128, 94, 52, 0.12)',
-        padding: '0.95rem 1rem',
+        paddingRight: tone === 'call' ? 0 : '0.7rem',
       }}
     >
       <p className="text-label" style={{ marginBottom: '0.4rem', color: tone === 'call' ? '#173a6a' : '#805e34' }}>
@@ -432,16 +432,15 @@ function ComparisonSpotlight() {
   return (
     <section
       style={{
-        border: '1px solid rgba(17, 24, 39, 0.12)',
-        borderRadius: '1.95rem',
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(240, 244, 250, 0.96) 42%, rgba(246, 241, 232, 0.98) 100%)',
-        padding: '1.75rem',
-        boxShadow: '0 26px 72px rgba(17, 24, 39, 0.11)',
-        marginBottom: '2.45rem',
+        borderTop: '1px solid rgba(17, 24, 39, 0.08)',
+        borderBottom: '1px solid rgba(17, 24, 39, 0.08)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(241, 245, 250, 0.68) 40%, rgba(247, 242, 234, 0.72) 100%)',
+        padding: '1.95rem 0.2rem 1.85rem',
+        marginBottom: '2.8rem',
       }}
     >
       <p className="text-label" style={{ marginBottom: '0.65rem', color: '#173a6a' }}>
-        Generic path vs essay worth writing
+        Signature decision spread
       </p>
       <p
         className="text-body"
@@ -454,14 +453,15 @@ function ComparisonSpotlight() {
           lineHeight: 1.45,
         }}
       >
-        This is the signature product reveal: not nicer wording, but a materially stronger story call.
+        This is where the product proves its point of view: not nicer wording, but a decision strong enough to change what gets written.
       </p>
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
-          gap: '1rem',
-          marginBottom: '1.15rem',
+          gridTemplateColumns: 'minmax(0, 0.78fr) minmax(0, 1.22fr)',
+          gap: '1.5rem',
+          marginBottom: '1.3rem',
+          alignItems: 'start',
         }}
       >
         <ComparisonColumn
@@ -508,13 +508,8 @@ function ComparisonColumn({
   return (
     <article
       style={{
-        border: tone === 'stronger'
-          ? '1px solid rgba(23, 58, 106, 0.24)'
-          : '1px solid rgba(128, 94, 52, 0.16)',
-        borderRadius: '1.35rem',
-        backgroundColor: tone === 'stronger' ? 'rgba(232, 239, 249, 0.84)' : 'rgba(250, 244, 236, 0.8)',
-        padding: tone === 'stronger' ? '1.4rem' : '1.2rem',
-        boxShadow: tone === 'stronger' ? '0 20px 42px rgba(23, 58, 106, 0.1)' : 'none',
+        padding: tone === 'stronger' ? '0.2rem 0 0.2rem 1.6rem' : '0.2rem 1rem 0.2rem 0',
+        borderLeft: tone === 'stronger' ? '1px solid rgba(23, 58, 106, 0.12)' : 'none',
       }}
     >
       <p className="text-label" style={{ marginBottom: '0.45rem', color: tone === 'stronger' ? '#173a6a' : '#805e34' }}>
