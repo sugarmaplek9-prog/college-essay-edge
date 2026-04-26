@@ -1,0 +1,38 @@
+{
+  "NSB-FS-005": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "NSB-FS-006": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "NSB-FS-013": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "NSB-FS-014": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "NSB-FS-015": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "NSB-FS-016": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "NSB-FS-020": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "NSB-FS-021": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "NSB-FS-022": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "execution_started_at": "2026-04-26T23:01:49.647Z",
+  "execution_finished_at": "2026-04-26T23:01:49.715Z",
+  "approved_manifest": "specs/072-real-human-corpus-expansion/split-manifest.yaml",
+  "input_artifact": "evaluation_outputs/072-real-human-corpus-expansion/blind-evaluation-run-v1/input/072_blind_frozen_input_v1.json",
+  "protected_decode_path": "evaluation_outputs/072-real-human-corpus-expansion/blind-evaluation-run-v1/protected/reviewer_blind_decode.json",
+  "output_dir": "evaluation_outputs/072-real-human-corpus-expansion/blind-evaluation-run-v1",
+  "case_count": 9,
+  "blind_case_ids": [
+    "NSB-FS-005",
+    "NSB-FS-006",
+    "NSB-FS-013",
+    "NSB-FS-014",
+    "NSB-FS-015",
+    "NSB-FS-016",
+    "NSB-FS-020",
+    "NSB-FS-021",
+    "NSB-FS-022"
+  ]
+}

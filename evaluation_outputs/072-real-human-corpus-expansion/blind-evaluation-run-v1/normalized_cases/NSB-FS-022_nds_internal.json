@@ -1,0 +1,44 @@
+{
+  "case_id": "NSB-FS-022",
+  "system": "nds_internal",
+  "status": "success",
+  "best_direction": {
+    "angle_title": "When solving it alone started hurting the team",
+    "core_claim": "The robotics project is the setting. The essay is about the moment the student's instinct — handling it alone — started costing the team. What changed after that is the real subject. The strongest center is primary, grounded in a concrete event: the student reveals intellectual identity through making, building, or experimenting rather than by. This interpretation is consistent with the selected direction: Start with the moment the student reveals intellectual identity through making, building, or experimenting rather changed what you did next.",
+    "why_this_is_the_real_story": "The interesting part is not the technical work. It is the moment the student recognized that solving problems alone was making the team weaker — and changed how they operated. The key shift is explicit in the evidence: the tension is between what happened and what it actually changed in you. That keeps the essay focused on the same axis rather than retelling context.",
+    "what_it_reveals_about_the_student": "It reveals how the student changed from \"assuming solving the problem yourself was the best way forward\" to \"changing how you worked so the team could function better\", with visible consequence: the student reveals intellectual identity through making, building, or experimenting rather than. The specific reveal in this case is the student reveals intellectual identity through making, building, or experimenting rather than.",
+    "why_it_beats_the_obvious_angle": "A generic framing (problem-solving excellence as a static trait) would flatten the story. The evidence points to the student reveals intellectual identity through making, building, or experimenting, which is more specific and faithful to the axis.",
+    "main_risk_if_written_poorly": "If written as an accomplishment sequence, it loses the pivot that makes the essay meaningful.",
+    "next_move": "Keep the focus on the team moment, not the technical solution. Write the decision where your first approach was not working, then show what you changed and what it produced. The pivot point is the shift from individual performance to relational leadership. Build more specific evidence for mistake, pivot, and behavior change."
+  },
+  "alternatives": [
+    {
+      "angle_title": "Competence proof angle",
+      "what_this_angle_would_focus_on": "A strong output should preserve the connection between curiosity and physical creation, showing how ideas become tangible.",
+      "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+      "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+    },
+    {
+      "angle_title": "Service / responsibility angle",
+      "what_this_angle_would_focus_on": "A weak answer would collapse the case into generic STEM enthusiasm without the maker texture that makes the student distinct.",
+      "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+      "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+    }
+  ],
+  "evidence_anchors": [
+    "Evidence 1",
+    "Evidence 2"
+  ],
+  "depth_signals": {
+    "detected_tension": "The tension is between what happened and what it actually changed in you.",
+    "detected_shift": null,
+    "obvious_but_weaker_angle": "Obvious but weaker angle: problem-solving excellence as a static trait.",
+    "essay_opportunity": "Frame the essay around the shift from individual performance to relational leadership. Build more specific evidence for mistake, pivot, and behavior change."
+  },
+  "recovery_question": null,
+  "meta": {
+    "clear_winner_present": true,
+    "alternative_count": 2,
+    "evidence_anchor_count": 2
+  }
+}
