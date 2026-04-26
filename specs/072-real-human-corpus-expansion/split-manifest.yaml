@@ -1,0 +1,40 @@
+manifest_version: 1
+program_slug: 072-real-human-corpus-expansion
+phase: founder_approved_controlled_freeze
+freeze_status: frozen_after_founder_approval
+freeze_rule: "No case movement after founder-approved freeze unless founder explicitly re-approves a new manifest."
+frozen_set_size: 15
+bucket_counts:
+  visible: 6
+  blind: 9
+  quarantine: 0
+current_posture:
+  freeze_source_manifest: split-manifest-freeze-candidate-v1.yaml
+  founder_approval_status: approved_for_controlled_freeze
+  blind_status: frozen_not_yet_authorized
+  visible_status: frozen_not_yet_executed
+  quarantine_status: none
+case_assignments:
+  visible:
+    - NSB-FS-008
+    - NSB-FS-017
+    - NSB-FS-018
+    - NSB-FS-019
+    - NSB-FS-023
+    - NSB-FS-024
+  blind:
+    - NSB-FS-005
+    - NSB-FS-006
+    - NSB-FS-013
+    - NSB-FS-014
+    - NSB-FS-015
+    - NSB-FS-016
+    - NSB-FS-020
+    - NSB-FS-021
+    - NSB-FS-022
+  quarantine: []
+notes:
+  - "This active manifest was updated from the founder-approved candidate manifest split-manifest-freeze-candidate-v1.yaml."
+  - "No cases were added, removed, or substituted during freeze execution."
+  - "072 split is frozen, but blind evaluation is not yet authorized."
+  - "Any future blind execution requires separate founder approval."
