@@ -1,0 +1,416 @@
+[
+  {
+    "case_id": "NSB-FS-005",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-006",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-013",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-014",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-015",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-016",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-020",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-021",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  },
+  {
+    "case_id": "NSB-FS-022",
+    "reviewer_id": "auto_reviewer",
+    "systems_compared": [
+      "nds_internal",
+      "baseline_free_ai"
+    ],
+    "scores": {
+      "divergence_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "conviction_quality": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "evidence_grounding": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "next_step_usefulness": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "substitution_risk": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "student_dignity_tone": {
+        "nds": 5,
+        "baseline": 2
+      },
+      "product_sharpness": {
+        "nds": 5,
+        "baseline": 2
+      }
+    },
+    "binary_judgment": {
+      "nds_clearly_better_than_baseline": true
+    },
+    "reviewer_notes": {
+      "nds_strength": "stronger structure and grounding",
+      "baseline_failure": "low_groundedness, low_specificity",
+      "important_comment": "Auto-scored for engineering verification; replace with human review for release gate."
+    }
+  }
+]

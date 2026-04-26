@@ -1,0 +1,326 @@
+[
+  {
+    "case_id": "NSB-FS-005",
+    "label": "official blind case — playlist as identity architecture",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["music", "identity", "reflection"],
+      "identity_notes": ["student uses music curation to explain self-understanding"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_005",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_005_1", "text": "The student's playlist becomes the organizing device for explaining memory, taste, and how different parts of the self fit together." },
+      { "id": "nsb_fs_005_2", "text": "Music matters here because each selection carries a specific personal meaning, not because the student wants to claim that music is universally powerful." },
+      { "id": "nsb_fs_005_3", "text": "The strongest direction preserves voice and specificity by treating the playlist as a structure for identity rather than as a list of favorite songs." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the playlist-as-identity engine without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic love-of-music framing", "resume-list summary", "flattened voice"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing unusual-voice and identity judgment on a provenance-strong official example.",
+      "reviewer_warning": "Do not let the model reduce the case to generic passion language."
+    }
+  },
+  {
+    "case_id": "NSB-FS-006",
+    "label": "official blind case — classical study through a history and gender lens",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["history", "music", "women's stories"],
+      "identity_notes": ["student's intellectual voice emerges through interpretation and historical reflection"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_006",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_006_1", "text": "The student uses classical material and historical reflection to show how curiosity deepened into a more gender-aware reading of the past." },
+      { "id": "nsb_fs_006_2", "text": "The essay signal is intellectual identity built from interpretation and pattern-finding, not just achievement in an arts activity." },
+      { "id": "nsb_fs_006_3", "text": "A strong output should preserve the way scholarship, art, and perspective-taking reinforce each other." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the interpretive intellectual engine without copying source wording."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["resume-style accomplishment framing", "generic women-in-history message", "thin arts passion summary"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing intellectual and interpretive judgment on an official example.",
+      "reviewer_warning": "Avoid flattening the essay into a generic empowerment statement."
+    }
+  },
+  {
+    "case_id": "NSB-FS-013",
+    "label": "official blind case — anchor relationship as family and selfhood engine",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["family", "stability", "reflection"],
+      "identity_notes": ["student defines growth through a grounding relationship"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_013",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_013_1", "text": "The essay centers on a person who functions as the student's rock, making relationship rather than résumé the core narrative engine." },
+      { "id": "nsb_fs_013_2", "text": "The strongest direction preserves what this bond taught the student about steadiness, values, and self-definition." },
+      { "id": "nsb_fs_013_3", "text": "A weak output would turn the essay into simple gratitude instead of showing how the relationship shaped the student's inner logic." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the family-anchor engine without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic tribute essay", "flat gratitude summary", "low-stakes family sentimentality"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing family/background judgment without relying on trauma or generic admiration.",
+      "reviewer_warning": "Preserve the relationship as a shaping force, not a Hallmark-style thank-you note."
+    }
+  },
+  {
+    "case_id": "NSB-FS-014",
+    "label": "official blind case — repair-the-world service ethic",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["service", "community", "ethics"],
+      "identity_notes": ["student's worldview is organized around communal responsibility"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_014",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_014_1", "text": "The student's central engine is a service ethic rooted in the idea that the world is repaired through responsibility to other people." },
+      { "id": "nsb_fs_014_2", "text": "The essay should not become generic volunteer branding; the stronger direction shows a moral framework the student actually lives by." },
+      { "id": "nsb_fs_014_3", "text": "A good output should connect belief, action, and personal identity instead of listing service activities." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the service-and-ethics engine without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic service cliché", "activity list", "flattened moral slogan"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing service/community judgment with a clear values engine.",
+      "reviewer_warning": "Avoid turning the case into résumé philanthropy."
+    }
+  },
+  {
+    "case_id": "NSB-FS-015",
+    "label": "official blind case — preparedness as a lived discipline",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["adaptation", "planning", "resilience"],
+      "identity_notes": ["student sees preparedness as a way of moving through uncertainty"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_015",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_015_1", "text": "The essay uses the habit of packing lightly but preparing carefully as a metaphor for how the student handles change." },
+      { "id": "nsb_fs_015_2", "text": "The strongest direction keeps preparation tied to lived situations and decision-making rather than productivity branding." },
+      { "id": "nsb_fs_015_3", "text": "A weak answer would praise organization in the abstract instead of showing how readiness became character." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the preparedness-under-pressure engine without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic responsibility essay", "self-help productivity frame", "thin metaphor without life evidence"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing challenge/preparedness judgment on an official example.",
+      "reviewer_warning": "Do not reduce the case to generic planning advice."
+    }
+  },
+  {
+    "case_id": "NSB-FS-016",
+    "label": "official blind case — bringing order to disorder",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["systems", "order", "problem-solving"],
+      "identity_notes": ["student's voice emerges through making chaos manageable"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_016",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_016_1", "text": "The central signal is the student's drive to organize what feels scattered, messy, or overwhelming." },
+      { "id": "nsb_fs_016_2", "text": "This is not merely tidiness; the stronger direction treats order-making as the student's way of creating clarity and agency." },
+      { "id": "nsb_fs_016_3", "text": "A generic answer would praise being organized without explaining why disorder matters emotionally or structurally." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve the order-making voice without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic organization praise", "thin systems metaphor", "resume-style efficiency branding"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing unusual voice and internal logic around order-making.",
+      "reviewer_warning": "Maintain the emotional stake behind structure rather than summarizing the student as simply neat."
+    }
+  },
+  {
+    "case_id": "NSB-FS-020",
+    "label": "official blind case — belonging and identity through sport",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["sport", "belonging", "identity"],
+      "identity_notes": ["student uses an activity setting to understand where and how they belong"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_020",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_020_1", "text": "The student's sport environment becomes the place where questions of belonging and identity become visible instead of abstract." },
+      { "id": "nsb_fs_020_2", "text": "A strong direction should preserve the tension between participation, self-definition, and voice inside a competitive space." },
+      { "id": "nsb_fs_020_3", "text": "A weak answer would collapse the case into generic athlete resilience without preserving the identity stakes." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve belonging-in-sport and identity signal without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic sports perseverance essay", "achievement-only framing", "flattened identity language"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing non-JHU unusual-voice and identity judgment on a new official archive family.",
+      "reviewer_warning": "Do not reduce this to wins, losses, or generic team lessons."
+    }
+  },
+  {
+    "case_id": "NSB-FS-021",
+    "label": "official blind case — environmental stewardship as community service",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["environment", "service", "community"],
+      "identity_notes": ["student links stewardship to service rather than abstract concern"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_021",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_021_1", "text": "The essay's engine is environmental stewardship understood as responsibility to a shared community rather than a résumé item." },
+      { "id": "nsb_fs_021_2", "text": "A strong direction should preserve action, care, and a specific service lens instead of turning the case into generic climate concern." },
+      { "id": "nsb_fs_021_3", "text": "The student's voice is strongest when stewardship looks relational and lived, not merely policy-minded." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve stewardship-as-service signal without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic climate activism summary", "activity list", "impersonal policy tone"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case testing the non-JHU service/community correction in the blind pool.",
+      "reviewer_warning": "Keep the case grounded in stewardship-as-service, not abstract environmental branding."
+    }
+  },
+  {
+    "case_id": "NSB-FS-022",
+    "label": "official blind case — maker-style intellectual identity",
+    "difficulty": "strong",
+    "tags": [],
+    "student_profile": {
+      "grade_level": "12",
+      "intended_majors": [],
+      "core_interests": ["making", "STEM", "curiosity"],
+      "identity_notes": ["student's thinking style is hands-on and experimental"]
+    },
+    "essay_project": {
+      "project_id": "072_blind_nsb_fs_022",
+      "project_type": "personal_statement",
+      "target_school": null
+    },
+    "story_entries": [
+      { "id": "nsb_fs_022_1", "text": "The student reveals intellectual identity through making, building, or experimenting rather than by naming academic ambition in the abstract." },
+      { "id": "nsb_fs_022_2", "text": "A strong output should preserve the connection between curiosity and physical creation, showing how ideas become tangible." },
+      { "id": "nsb_fs_022_3", "text": "A weak answer would collapse the case into generic STEM enthusiasm without the maker texture that makes the student distinct." }
+    ],
+    "current_draft": { "id": null, "text": null },
+    "school_context": {
+      "target_school": null,
+      "notes": "Derived public benchmark from a founder-approved frozen 072 blind official case. Preserve maker-STEM intellectual signal without copying source prose."
+    },
+    "expected_conditions": {
+      "should_be_needs_more_input": false,
+      "should_have_clear_winner": true,
+      "likely_bad_baseline_behavior": ["generic STEM passion essay", "achievement summary", "thin curiosity language"]
+    },
+    "author_notes": {
+      "why_included": "Founder-approved frozen blind case directly filling the intellectual/academic identity requirement from the final sourcing pass.",
+      "reviewer_warning": "Preserve hands-on maker logic rather than abstract academic aspiration."
+    }
+  }
+]
