@@ -1,0 +1,408 @@
+{
+  "run_label": "072-targeted-output-repair-v1",
+  "generated_at": "2026-04-27T00:18:21.668Z",
+  "input_artifact": "evaluation_outputs/072-real-human-corpus-expansion/blind-evaluation-run-v1/input/072_blind_frozen_input_v1.json",
+  "pre_repair_results": "evaluation_outputs/072-real-human-corpus-expansion/blind-evaluation-run-v1/nds_results.json",
+  "rubric": {
+    "critical_leaks_must_be_zero": true,
+    "dangling_fragments_must_be_zero": true,
+    "average_source_overlap_must_improve": true,
+    "low_specificity_cases_must_not_increase": true
+  },
+  "before_summary": {
+    "case_count": 9,
+    "correction_template_count": 7,
+    "meta_instructional_leak_count": 3,
+    "generic_next_move_suffix_count": 9,
+    "dangling_fragment_count": 7,
+    "low_specificity_case_count": 0,
+    "average_source_overlap": 7.67
+  },
+  "after_summary": {
+    "case_count": 9,
+    "correction_template_count": 0,
+    "meta_instructional_leak_count": 0,
+    "generic_next_move_suffix_count": 0,
+    "dangling_fragment_count": 0,
+    "low_specificity_case_count": 0,
+    "average_source_overlap": 9.44
+  },
+  "before_assessments": [
+    {
+      "case_id": "NSB-FS-005",
+      "label": "official blind case — playlist as identity architecture",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": true,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "playlist",
+        "specific",
+        "preserves",
+        "voice",
+        "specificity",
+        "treating",
+        "identity",
+        "rather"
+      ],
+      "source_overlap_count": 8
+    },
+    {
+      "case_id": "NSB-FS-006",
+      "label": "official blind case — classical study through a history and gender lens",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "signal",
+        "intellectual",
+        "identity",
+        "built",
+        "interpretation",
+        "pattern-finding",
+        "strong"
+      ],
+      "source_overlap_count": 7
+    },
+    {
+      "case_id": "NSB-FS-013",
+      "label": "official blind case — anchor relationship as family and selfhood engine",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "centers",
+        "person",
+        "functions",
+        "student's",
+        "making",
+        "rather"
+      ],
+      "source_overlap_count": 6
+    },
+    {
+      "case_id": "NSB-FS-014",
+      "label": "official blind case — repair-the-world service ethic",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": true,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "connect",
+        "belief",
+        "action",
+        "personal",
+        "identity",
+        "instead",
+        "listing"
+      ],
+      "source_overlap_count": 7
+    },
+    {
+      "case_id": "NSB-FS-015",
+      "label": "official blind case — preparedness as a lived discipline",
+      "angle_title": "The moment in clinic volunteering when tasks stopped being enough",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": true,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "change",
+        "preparation",
+        "lived",
+        "situations",
+        "decision-making",
+        "rather",
+        "branding"
+      ],
+      "source_overlap_count": 7
+    },
+    {
+      "case_id": "NSB-FS-016",
+      "label": "official blind case — bringing order to disorder",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "student's",
+        "merely",
+        "tidiness",
+        "treats",
+        "order-making",
+        "without"
+      ],
+      "source_overlap_count": 6
+    },
+    {
+      "case_id": "NSB-FS-020",
+      "label": "official blind case — belonging and identity through sport",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "student's",
+        "sport",
+        "environment",
+        "becomes",
+        "place",
+        "where",
+        "questions",
+        "belonging",
+        "identity",
+        "visible",
+        "strong",
+        "without"
+      ],
+      "source_overlap_count": 12
+    },
+    {
+      "case_id": "NSB-FS-021",
+      "label": "official blind case — environmental stewardship as community service",
+      "angle_title": "The moment the student corrected course and what changed after",
+      "has_correction_template": true,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "rather",
+        "strong",
+        "action",
+        "specific",
+        "service",
+        "instead"
+      ],
+      "source_overlap_count": 6
+    },
+    {
+      "case_id": "NSB-FS-022",
+      "label": "official blind case — maker-style intellectual identity",
+      "angle_title": "When solving it alone started hurting the team",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": true,
+      "has_dangling_fragment": true,
+      "source_overlap_tokens": [
+        "reveals",
+        "intellectual",
+        "identity",
+        "making",
+        "building",
+        "experimenting",
+        "rather",
+        "strong",
+        "between",
+        "makes"
+      ],
+      "source_overlap_count": 10
+    }
+  ],
+  "after_assessments": [
+    {
+      "case_id": "NSB-FS-005",
+      "label": "official blind case — playlist as identity architecture",
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "student's",
+        "playlist",
+        "becomes",
+        "organizing",
+        "device",
+        "explaining",
+        "memory",
+        "taste",
+        "specific",
+        "rather"
+      ],
+      "source_overlap_count": 10
+    },
+    {
+      "case_id": "NSB-FS-006",
+      "label": "official blind case — classical study through a history and gender lens",
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "material",
+        "signal",
+        "intellectual",
+        "identity",
+        "built",
+        "interpretation",
+        "pattern-finding",
+        "strong"
+      ],
+      "source_overlap_count": 8
+    },
+    {
+      "case_id": "NSB-FS-013",
+      "label": "official blind case — anchor relationship as family and selfhood engine",
+      "angle_title": "When the student changed how the work could move",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "centers",
+        "person",
+        "functions",
+        "student's",
+        "making",
+        "instead"
+      ],
+      "source_overlap_count": 6
+    },
+    {
+      "case_id": "NSB-FS-014",
+      "label": "official blind case — repair-the-world service ethic",
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "student's",
+        "central",
+        "engine",
+        "service",
+        "ethic",
+        "rooted",
+        "actually",
+        "identity",
+        "instead"
+      ],
+      "source_overlap_count": 9
+    },
+    {
+      "case_id": "NSB-FS-015",
+      "label": "official blind case — preparedness as a lived discipline",
+      "angle_title": "When the old response stopped working under pressure",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "habit",
+        "packing",
+        "lightly",
+        "preparing",
+        "carefully",
+        "change",
+        "lived",
+        "instead"
+      ],
+      "source_overlap_count": 8
+    },
+    {
+      "case_id": "NSB-FS-016",
+      "label": "official blind case — bringing order to disorder",
+      "angle_title": "When the student changed how the work could move",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "central",
+        "signal",
+        "student's",
+        "drive",
+        "organize",
+        "feels",
+        "scattered",
+        "messy",
+        "praise"
+      ],
+      "source_overlap_count": 9
+    },
+    {
+      "case_id": "NSB-FS-020",
+      "label": "official blind case — belonging and identity through sport",
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "student's",
+        "sport",
+        "environment",
+        "becomes",
+        "place",
+        "where",
+        "questions",
+        "belonging",
+        "identity",
+        "visible",
+        "instead",
+        "abstract"
+      ],
+      "source_overlap_count": 12
+    },
+    {
+      "case_id": "NSB-FS-021",
+      "label": "official blind case — environmental stewardship as community service",
+      "angle_title": "What the student owed the people affected by the moment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "essay's",
+        "engine",
+        "environmental",
+        "stewardship",
+        "understood",
+        "responsibility",
+        "shared",
+        "community",
+        "strong",
+        "specific",
+        "instead",
+        "student's"
+      ],
+      "source_overlap_count": 12
+    },
+    {
+      "case_id": "NSB-FS-022",
+      "label": "official blind case — maker-style intellectual identity",
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "has_correction_template": false,
+      "has_meta_instructional_leak": false,
+      "has_generic_next_move_suffix": false,
+      "has_dangling_fragment": false,
+      "source_overlap_tokens": [
+        "reveals",
+        "intellectual",
+        "identity",
+        "making",
+        "building",
+        "experimenting",
+        "rather",
+        "strong",
+        "between",
+        "without",
+        "makes"
+      ],
+      "source_overlap_count": 11
+    }
+  ],
+  "recommendation": {
+    "label": "REPAIR_PASS",
+    "rationale": "All critical templating leaks drop to zero, phrasing artifacts clear, and source-overlap grounding improves on the fixed 072 set."
+  }
+}

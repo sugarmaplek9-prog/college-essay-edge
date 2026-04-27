@@ -240,10 +240,7 @@ function detectDomainSignal(
   const likelyHumanStakes = likelyHumanStakesByDomain[situationalDomain];
   const baseOpportunity = interpretiveOpportunityByDomain[situationalDomain];
 
-  const interpretiveOpportunity =
-    narrativeSignal.pattern === 'self_correction_arc'
-      ? baseOpportunity
-      : `${baseOpportunity} Build more specific evidence for mistake, pivot, and behavior change.`;
+  const interpretiveOpportunity = baseOpportunity;
 
   return {
     situational_domain: situationalDomain,

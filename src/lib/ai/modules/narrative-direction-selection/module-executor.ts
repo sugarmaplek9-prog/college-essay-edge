@@ -701,6 +701,16 @@ function buildDeterministicCandidate(
       restraintMode: useRestraintMode,
     }
   );
+  const selectedPresentation = buildSelectedDirectionPresentation({
+    winnerSeed,
+    selectedFrame,
+    domain: top?.domain_signal?.situational_domain ?? 'other',
+    interpretiveFocus,
+    executionMode,
+    sourceContextText: context.story_signals
+      .flatMap((signal) => [signal.event_summary ?? '', signal.change_signal ?? ''])
+      .join(' '),
+  });
 
   const outputAssertiveness: 'high' | 'medium' | 'low' =
     finalRouteDecision === 'ask_question_before_showing'
@@ -769,16 +779,13 @@ function buildDeterministicCandidate(
     status: 'success',
     best_direction: {
       id: 'direction_1',
-      angle_title:
-        executionMode === 'reduced_scope'
-          ? `Constrained bet: ${selectedFrame.angleTitle}`
-          : selectedFrame.angleTitle,
+      angle_title: selectedPresentation.angleTitle,
       core_claim: constrainedExplanation.core_claim,
       why_this_is_the_real_story: constrainedExplanation.why_this_is_the_real_story,
       what_it_reveals_about_the_student: constrainedExplanation.what_it_reveals_about_the_student,
       why_it_beats_the_obvious_angle: constrainedExplanation.why_it_beats_the_obvious_angle,
-      main_risk_if_written_poorly: selectedFrame.risk,
-      next_move: `${selectedFrame.nextMove} ${selectedFrame.nextMoveConnector} ${interpretiveFocus}`,
+      main_risk_if_written_poorly: selectedPresentation.mainRisk,
+      next_move: selectedPresentation.nextMove,
     },
     recommended_direction: scoring.candidates[0]?.direction_line ?? winnerSeed?.direction_line ?? selectedFrame.angleTitle,
     why_this_direction: whyThisDirectionPlain,
@@ -2432,16 +2439,19 @@ function buildEvidenceSpans(
   signal: NdsNormalizedContextPack['story_signals'][number] | null,
   context: NdsNormalizedContextPack
 ): Array<{ text: string; start_char: number; end_char: number }> {
-  const eventSummary = signal?.event_summary?.trim();
-  const changeSignal = signal?.change_signal?.trim();
+  const preferredTexts = selectPreferredEvidenceCandidates([
+    signal?.event_summary ?? '',
+    signal?.change_signal ?? '',
+    ...context.story_signals.map((candidate) => candidate.event_summary ?? ''),
+    ...context.story_signals.map((candidate) => candidate.change_signal ?? ''),
+  ]);
   const rawText =
     context.story_signals.find((candidate) => candidate.source_id === signal?.source_id)?.event_summary ??
     signal?.event_summary ??
     context.story_signals[0]?.event_summary ??
     context.draft_signals[0]?.signal_summary ??
     '';
-  const spans = [eventSummary, changeSignal]
-    .filter((item): item is string => Boolean(item && item.length > 0))
+  const spans = preferredTexts
     .slice(0, 2)
     .map((text) => ({
       text,
@@ -2478,6 +2488,419 @@ function truncateForQuestion(text: string): string {
   return text.length > 96 ? `${text.slice(0, 93).trim()}…` : text;
 }
 
+const META_INSTRUCTIONAL_TEXT_PATTERN =
+  /^(the strongest direction|a strong output|a weak output|a weak answer|a good output|the essay should not|the essay should|avoid turning|do not let the model|preserve the|reviewer warning:)/i;
+
+const DANGLING_FRAGMENT_PATTERN = /\b(a|an|the|and|or|of|to|as|not|than|by|with|for)$/i;
+
+function isMetaInstructionalText(text: string): boolean {
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  if (!normalized) return false;
+  return META_INSTRUCTIONAL_TEXT_PATTERN.test(normalized);
+}
+
+function cleanAnchorFragment(text: string): string {
+  let normalized = text
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^[,:;\-–—]+/, '')
+    .replace(/[.,:;]+$/, '');
+  const words = normalized.split(/\s+/).filter(Boolean);
+  while (words.length > 2 && DANGLING_FRAGMENT_PATTERN.test(words[words.length - 1] ?? '')) {
+    words.pop();
+  }
+  normalized = words.join(' ').trim().replace(/[.,:;]+$/, '');
+  return normalized || 'the described situation';
+}
+
+function pickEvidenceBackedAnchor(
+  preferredText: string,
+  fallbackText: string,
+  maxWords: number
+): string {
+  const preferred = extractConcreteAnchor(preferredText, maxWords);
+  if (preferred !== 'the described situation') {
+    return preferred;
+  }
+  return extractConcreteAnchor(fallbackText, maxWords);
+}
+
+function selectPreferredEvidenceCandidates(texts: string[]): string[] {
+  const candidates = texts
+    .map((text) => text?.replace(/\s+/g, ' ').trim())
+    .filter((text): text is string => Boolean(text && text.length > 0))
+    .map((text) => {
+      const sentences = text
+        .split(/[.!?]+/)
+        .map((sentence) => sentence.trim())
+        .filter((sentence) => sentence.length >= 15);
+      const nonMeta = sentences.filter((sentence) => !isMetaInstructionalText(sentence));
+      return nonMeta[0] ?? null;
+    })
+    .filter((text): text is string => Boolean(text && text.length > 0));
+
+  const deduped: string[] = [];
+  const seen = new Set<string>();
+  for (const item of candidates) {
+    const key = item.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(item);
+  }
+  return deduped;
+}
+
+type PresentationCategory =
+  | 'intellectual_curiosity'
+  | 'family_relationship_responsibility'
+  | 'community_belonging'
+  | 'craft_making_creative_discipline'
+  | 'service_contribution'
+  | 'adversity_constraint_navigation'
+  | 'identity_self_definition'
+  | 'leadership_initiative'
+  | 'values_under_pressure';
+
+function inferPresentationCategory(input: {
+  domain: string;
+  axis: string;
+  winnerSeed: RuntimeCandidateSeed;
+  selectedFrame: {
+    angleTitle: string;
+    coreClaim: string;
+    realStory: string;
+    studentReveal: string;
+    whyBeatsObvious: string;
+    obviousAngle: string;
+    risk: string;
+    nextMove: string;
+  };
+  interpretiveFocus: string;
+}): PresentationCategory {
+  const abstractText = [
+    input.domain.replace(/_/g, ' '),
+    input.axis,
+    input.winnerSeed.kind.replace(/_/g, ' '),
+    input.winnerSeed.direction_line,
+    input.selectedFrame.angleTitle,
+    input.selectedFrame.coreClaim,
+    input.selectedFrame.realStory,
+    input.selectedFrame.studentReveal,
+    input.selectedFrame.whyBeatsObvious,
+    input.selectedFrame.obviousAngle,
+    input.interpretiveFocus,
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  if (/identity|self-definition|self-concept|voice|becoming/.test(abstractText)) {
+    return 'identity_self_definition';
+  }
+  if (/research|method|experiment|analysis|interpret|scholarship|academic|study|learning/.test(abstractText)) {
+    return 'intellectual_curiosity';
+  }
+  if (/making|building|design|technical|project|craft|prototype|creative/.test(abstractText)) {
+    return 'craft_making_creative_discipline';
+  }
+  if (/injury|recovery|constraint|uncertainty|pressure|failure|loss|adapt|pattern/.test(abstractText)) {
+    return 'adversity_constraint_navigation';
+  }
+  if (/values|integrity|fairness|dignity|conflict|argument|owed/.test(abstractText)) {
+    return 'values_under_pressure';
+  }
+  if (/leadership|initiative|ownership|delegat|system|workflow|redesign|bottleneck/.test(abstractText)) {
+    return 'leadership_initiative';
+  }
+  if (/belonging|community|group|participation|team/.test(abstractText)) {
+    return 'community_belonging';
+  }
+  if (/family|relationship|listening|person in front|caregiving|care\s+for|another person/.test(abstractText)) {
+    return 'family_relationship_responsibility';
+  }
+  if (/service|contribution|volunteer|help|support|care|responsibility/.test(abstractText)) {
+    return 'service_contribution';
+  }
+
+  if (input.domain === 'research_failure') return 'intellectual_curiosity';
+  if (input.domain === 'technical_leadership') {
+    return input.axis === 'identity_transformation'
+      ? 'craft_making_creative_discipline'
+      : 'leadership_initiative';
+  }
+  if (input.domain === 'peer_teaching') return 'service_contribution';
+  if (input.domain === 'community_care') {
+    return input.axis === 'relationship_or_listening'
+      ? 'family_relationship_responsibility'
+      : 'service_contribution';
+  }
+  if (input.domain === 'service_operations') return 'values_under_pressure';
+  if (input.domain === 'athletic_recovery') {
+    return input.axis === 'identity_transformation'
+      ? 'community_belonging'
+      : 'adversity_constraint_navigation';
+  }
+  if (input.domain === 'debate_conflict') return 'values_under_pressure';
+
+  switch (input.axis) {
+    case 'identity_transformation':
+      return 'identity_self_definition';
+    case 'relationship_or_listening':
+      return 'family_relationship_responsibility';
+    case 'system_redesign':
+    case 'delegation':
+      return 'leadership_initiative';
+    case 'pattern_breaking':
+      return 'adversity_constraint_navigation';
+    case 'responsibility':
+      return 'service_contribution';
+    default:
+      return 'identity_self_definition';
+  }
+}
+
+function buildPresentationTitle(axis: string, category: PresentationCategory): string {
+  if (axis === 'identity_transformation') {
+    const titles: Partial<Record<PresentationCategory, string>> = {
+      intellectual_curiosity: 'When curiosity became the shape of intellectual identity',
+      family_relationship_responsibility: 'When one relationship reshaped the student\'s sense of self',
+      community_belonging: 'When belonging became the real story',
+      craft_making_creative_discipline: 'When the work started revealing how the student thinks',
+      service_contribution: 'When contribution became part of the student\'s self-definition',
+      adversity_constraint_navigation: 'When navigating constraint changed who the student was becoming',
+      identity_self_definition: 'When the story became about self-definition, not just accomplishment',
+      leadership_initiative: 'When leadership changed how the student understood themself',
+      values_under_pressure: 'When pressure clarified the student\'s sense of self',
+    };
+    return titles[category] ?? titles.identity_self_definition!;
+  }
+
+  if (axis === 'relationship_or_listening') {
+    const titles: Partial<Record<PresentationCategory, string>> = {
+      family_relationship_responsibility: 'When responsibility to another person changed the story',
+      service_contribution: 'When listening changed what contribution required',
+      community_belonging: 'When attention changed the student\'s place in the group',
+      values_under_pressure: 'When pressure made attention to another person non-negotiable',
+    };
+    return titles[category] ?? 'When paying attention to another person changed what mattered';
+  }
+
+  if (axis === 'system_redesign') {
+    if (category === 'intellectual_curiosity') {
+      return 'When redesigning the method mattered more than pushing through';
+    }
+    if (category === 'leadership_initiative') {
+      return 'When changing the system mattered more than individual effort';
+    }
+    return 'When redesigning the system mattered more than working harder';
+  }
+
+  if (axis === 'delegation') {
+    if (category === 'community_belonging') {
+      return 'When shared ownership mattered more than solo performance';
+    }
+    if (category === 'leadership_initiative') {
+      return 'When leadership meant changing how the work moved';
+    }
+    return 'When the student stopped being the bottleneck';
+  }
+
+  if (axis === 'pattern_breaking') {
+    if (category === 'values_under_pressure') {
+      return 'When pressure exposed the limits of the first instinct';
+    }
+    if (category === 'adversity_constraint_navigation') {
+      return 'When the old response stopped working under pressure';
+    }
+    return 'When the first instinct stopped working';
+  }
+
+  if (axis === 'responsibility') {
+    const titles: Partial<Record<PresentationCategory, string>> = {
+      service_contribution: 'What responsibility required once other people carried the consequence',
+      family_relationship_responsibility: 'What the student owed the person depending on them',
+      values_under_pressure: 'When pressure made the student\'s values visible',
+    };
+    return titles[category] ?? 'What the student owed the people affected by the moment';
+  }
+
+  const titles: Record<PresentationCategory, string> = {
+    intellectual_curiosity: 'When intellectual curiosity became the real center',
+    family_relationship_responsibility: 'When responsibility to another person changed the story',
+    community_belonging: 'When belonging became the real pressure point',
+    craft_making_creative_discipline: 'When the work revealed how the student thinks',
+    service_contribution: 'When contribution mattered more than looking helpful',
+    adversity_constraint_navigation: 'When constraint forced a different way forward',
+    identity_self_definition: 'When the story became about self-definition, not just accomplishment',
+    leadership_initiative: 'When the student changed how the work could move',
+    values_under_pressure: 'When pressure exposed what the student stood for',
+  };
+
+  return titles[category];
+}
+
+function buildPresentationRisk(axis: string, category: PresentationCategory): string {
+  if (axis === 'identity_transformation') {
+    return 'If the draft stays at the level of broad self-description, it will lose the moment or image that makes the shift in self-understanding believable.';
+  }
+  if (axis === 'relationship_or_listening') {
+    return 'If the draft only praises care or responsibility in the abstract, it will lose the interaction that shows why another person\'s stakes mattered.';
+  }
+  if (axis === 'system_redesign') {
+    return 'If the draft praises effort without naming the structural redesign, the story will collapse into generic hard-work language.';
+  }
+  if (axis === 'delegation') {
+    return 'If the draft sounds like management advice instead of a concrete handoff moment, the shift away from self-centrality will not feel earned.';
+  }
+  if (axis === 'pattern_breaking') {
+    return 'If the draft does not show the old response before the change, the new approach will feel like a slogan instead of a real decision.';
+  }
+  if (axis === 'responsibility') {
+    return 'If the draft stays at the level of stated values, it will lose the concrete consequence that makes the obligation credible.';
+  }
+
+  const risks: Record<PresentationCategory, string> = {
+    intellectual_curiosity:
+      'If the draft flattens into generic academic praise, it will lose the specific question or interpretive move that makes the student\'s mind visible.',
+    family_relationship_responsibility:
+      'If the draft turns into generic gratitude or caretaking language, it will lose the exact relationship pressure that makes the story feel earned.',
+    community_belonging:
+      'If the draft stays at the level of team or group language, it will lose the identity stakes that make belonging matter.',
+    craft_making_creative_discipline:
+      'If the draft turns into an accomplishment recap, it will miss the decision inside the work that shows how the student thinks.',
+    service_contribution:
+      'If the draft slips into broad service language, it will lose the concrete contribution and consequence that make the essay credible.',
+    adversity_constraint_navigation:
+      'If the draft treats the constraint as generic hardship, it will miss the choice that changed how the student moved through it.',
+    identity_self_definition:
+      'If the draft stays abstract about identity, it will lose the scene that makes the student\'s inner logic feel real.',
+    leadership_initiative:
+      'If the draft only praises initiative, it will lose the operational shift that made the work move differently.',
+    values_under_pressure:
+      'If the draft states values without the moment of pressure, it will sound admirable but unearned.',
+  };
+
+  return risks[category];
+}
+
+function buildPresentationNextMove(input: {
+  axis: string;
+  category: PresentationCategory;
+  sceneAnchor: string;
+  outcomeAnchor: string;
+}): string {
+  if (input.axis === 'identity_transformation') {
+    return `Open on ${input.sceneAnchor}. Then show how that moment clarified ${input.outcomeAnchor}. Keep the draft on self-definition and inner logic rather than turning it into a generic accomplishment recap.`;
+  }
+  if (input.axis === 'relationship_or_listening') {
+    return `Write the interaction around ${input.sceneAnchor}. Then show how the student responded differently in ${input.outcomeAnchor}. Keep the other person's stakes visible so the essay stays relational, not abstract.`;
+  }
+  if (input.axis === 'system_redesign') {
+    return `Start with the recurring problem inside ${input.sceneAnchor}. Then show the redesign choice and the visible change in ${input.outcomeAnchor}. Keep effort language secondary to the structural fix itself.`;
+  }
+  if (input.axis === 'delegation') {
+    return `Anchor the draft in the moment around ${input.sceneAnchor}. Show what the student handed off, what changed in ${input.outcomeAnchor}, and why shared ownership mattered more than doing everything alone.`;
+  }
+  if (input.axis === 'pattern_breaking') {
+    return `Start with the moment around ${input.sceneAnchor}. Then contrast the first response with the later move visible in ${input.outcomeAnchor}. Keep the essay on the changed pattern, not generic perseverance.`;
+  }
+  if (input.axis === 'responsibility') {
+    return `Write the scene around ${input.sceneAnchor}. Then show what the student realized they owed other people and how that becomes visible in ${input.outcomeAnchor}. Keep the essay on obligation and consequence, not broad values language.`;
+  }
+
+  const nextMoves: Record<PresentationCategory, string> = {
+    intellectual_curiosity:
+      `Start with ${input.sceneAnchor}. Then show the question, method, or interpretation that changed how the student understood ${input.outcomeAnchor}. Keep the draft on reasoning rather than résumé language.`,
+    family_relationship_responsibility:
+      `Start with the relationship pressure inside ${input.sceneAnchor}. Then show how that bond or duty shaped ${input.outcomeAnchor}. Keep the draft on lived responsibility rather than generic gratitude.`,
+    community_belonging:
+      `Open on ${input.sceneAnchor}. Then show how that situation clarified ${input.outcomeAnchor}. Keep the draft on belonging, participation, and voice rather than a standard team narrative.`,
+    craft_making_creative_discipline:
+      `Start with ${input.sceneAnchor}. Then show the decision inside the work that changed ${input.outcomeAnchor}. Keep the texture of making, building, or revising visible so the essay stays specific.`,
+    service_contribution:
+      `Open on ${input.sceneAnchor}. Then show how contribution changed ${input.outcomeAnchor}. Keep concrete people and consequences visible so the essay does not flatten into service branding.`,
+    adversity_constraint_navigation:
+      `Start with ${input.sceneAnchor}. Then show the alternative response that changed ${input.outcomeAnchor}. Keep the essay on adaptation under constraint, not generic resilience.`,
+    identity_self_definition:
+      `Open on ${input.sceneAnchor}. Then show how that moment clarified ${input.outcomeAnchor}. Keep the draft on self-definition rather than a generic accomplishment recap.`,
+    leadership_initiative:
+      `Open on ${input.sceneAnchor}. Then show how the student changed the flow of work in ${input.outcomeAnchor}. Keep the essay on judgment and initiative, not self-congratulation.`,
+    values_under_pressure:
+      `Start with ${input.sceneAnchor}. Then show what pressure revealed in ${input.outcomeAnchor}. Keep the essay on the choice under stress rather than a broad values statement.`,
+  };
+
+  return nextMoves[input.category];
+}
+
+function buildSelectedDirectionPresentation(input: {
+  winnerSeed: RuntimeCandidateSeed | null;
+  selectedFrame: {
+    angleTitle: string;
+    coreClaim: string;
+    realStory: string;
+    studentReveal: string;
+    whyBeatsObvious: string;
+    obviousAngle: string;
+    risk: string;
+    nextMove: string;
+  };
+  domain: string;
+  interpretiveFocus: string;
+  executionMode: NdsModuleExecutionInput['execution_mode'];
+}): {
+  angleTitle: string;
+  mainRisk: string;
+  nextMove: string;
+} {
+  if (!input.winnerSeed) {
+    const baseTitle =
+      input.executionMode === 'reduced_scope'
+        ? `Constrained bet: ${input.selectedFrame.angleTitle}`
+        : input.selectedFrame.angleTitle;
+    return {
+      angleTitle: baseTitle,
+      mainRisk: input.selectedFrame.risk,
+      nextMove: `${input.selectedFrame.nextMove} ${input.interpretiveFocus}`,
+    };
+  }
+
+  const evidenceText = input.winnerSeed.evidence_spans.map((span) => span.text).join(' ');
+  const sceneAnchor = cleanAnchorFragment(
+    extractConcreteAnchor(evidenceText || input.winnerSeed.direction_summary, 12)
+  );
+  const outcomeAnchor = cleanAnchorFragment(
+    extractOutcomeAnchor(evidenceText, input.winnerSeed.after_state, 12)
+  );
+  const axis = inferAxisFromLine(input.winnerSeed.direction_line);
+  const category = inferPresentationCategory({
+    domain: input.domain,
+    axis,
+    winnerSeed: input.winnerSeed,
+    selectedFrame: input.selectedFrame,
+    interpretiveFocus: input.interpretiveFocus,
+  });
+
+  let angleTitle = input.selectedFrame.angleTitle;
+  let mainRisk = input.selectedFrame.risk;
+  let nextMove = `${input.selectedFrame.nextMove} ${input.interpretiveFocus}`;
+
+  if (axis !== 'unclassified' || input.domain === 'other') {
+    angleTitle = buildPresentationTitle(axis, category);
+    mainRisk = buildPresentationRisk(axis, category);
+    nextMove = buildPresentationNextMove({
+      axis,
+      category,
+      sceneAnchor,
+      outcomeAnchor,
+    });
+  }
+
+  if (input.executionMode === 'reduced_scope') {
+    angleTitle = `Constrained bet: ${angleTitle}`;
+  }
+
+  return { angleTitle, mainRisk, nextMove };
+}
+
 // ─── Evidence-constrained explanation builder ─────────────────────────────────
 // These helpers extract concrete vocabulary from the winning candidate's evidence
 // spans and inject it into the explanation fields so each field is lexically
@@ -2493,7 +2916,8 @@ function extractConcreteAnchor(text: string, maxWords: number): string {
   const sentences = text
     .split(/[.!?]+/)
     .map((s) => s.trim())
-    .filter((s) => s.length >= 15);
+    .filter((s) => s.length >= 15)
+    .filter((s) => !isMetaInstructionalText(s));
   const chosen =
     sentences.find((s) =>
       /told|said|asked|noticed|found|changed|stopped|started|built|made|designed|implemented|showed|realized|kept|dropped|wrote|measured|clipped|split|assigned|delegated|trained|coached/i.test(
@@ -2502,12 +2926,13 @@ function extractConcreteAnchor(text: string, maxWords: number): string {
     ) ??
     sentences[0] ??
     text;
-  return chosen
-    .split(/\s+/)
-    .slice(0, maxWords)
-    .join(' ')
-    .replace(/[,;:]+$/, '')
-    .toLowerCase();
+  return cleanAnchorFragment(
+    chosen
+      .split(/\s+/)
+      .slice(0, maxWords)
+      .join(' ')
+      .replace(/[,;:]+$/, '')
+  );
 }
 
 /**
@@ -2524,22 +2949,27 @@ function extractShiftAnchor(
   const sentences = combined
     .split(/[.!?]+/)
     .map((s) => s.trim())
-    .filter((s) => s.length >= 15);
+    .filter((s) => s.length >= 15)
+    .filter((s) => !isMetaInstructionalText(s));
   const shift = sentences.find((s) =>
     /changed|stopped|started|no\s+longer|instead|had\s+to|realized|shifted|redesigned|delegated|adjusted|learned|adapted|revised/i.test(
       s
     )
   );
   if (shift) {
-    return shift
-      .split(/\s+/)
-      .slice(0, maxWords)
-      .join(' ')
-      .replace(/[,;:]+$/, '')
-      .toLowerCase();
+    return cleanAnchorFragment(
+      shift
+        .split(/\s+/)
+        .slice(0, maxWords)
+        .join(' ')
+        .replace(/[,;:]+$/, '')
+    );
   }
-  // Reliable fallback: opening words of direction_summary ARE the student's text
-  return directionText.split(/\s+/).slice(0, maxWords).join(' ').toLowerCase();
+  const evidenceFallback = extractConcreteAnchor(evidenceText, maxWords);
+  if (evidenceFallback !== 'the described situation') {
+    return evidenceFallback;
+  }
+  return cleanAnchorFragment(directionText.split(/\s+/).slice(0, maxWords).join(' '));
 }
 
 /**
@@ -2554,28 +2984,31 @@ function extractOutcomeAnchor(
   const sentences = evidenceText
     .split(/[.!?]+/)
     .map((s) => s.trim())
-    .filter((s) => s.length >= 15);
+    .filter((s) => s.length >= 15)
+    .filter((s) => !isMetaInstructionalText(s));
   const outcome = sentences.find((s) =>
     /after|result|next|then|now|finally|outcome|once|showed|confirmed|proved|kept|dropped|reduced|followed|first\s+sign|measurable/i.test(
       s
     )
   );
   if (outcome) {
-    return outcome
-      .split(/\s+/)
-      .slice(0, maxWords)
-      .join(' ')
-      .replace(/[,;:]+$/, '')
-      .toLowerCase();
+    return cleanAnchorFragment(
+      outcome
+        .split(/\s+/)
+        .slice(0, maxWords)
+        .join(' ')
+        .replace(/[,;:]+$/, '')
+    );
   }
   if (sentences.length > 1) {
-    return sentences[sentences.length - 1]
-      .split(/\s+/)
-      .slice(0, maxWords)
-      .join(' ')
-      .toLowerCase();
+    return cleanAnchorFragment(
+      sentences[sentences.length - 1]
+        .split(/\s+/)
+        .slice(0, maxWords)
+        .join(' ')
+    );
   }
-  return afterState.split(/\s+/).slice(0, maxWords).join(' ').toLowerCase();
+  return cleanAnchorFragment(afterState.split(/\s+/).slice(0, maxWords).join(' '));
 }
 
 /**
@@ -2639,11 +3072,11 @@ function buildEvidenceConstrainedExplanation(
     12
   );
   // direction_summary opens with the student's own story words — best vocab source
-  const directionAnchor = winnerSeed.direction_summary
-    .split(/\s+/)
-    .slice(0, 10)
-    .join(' ')
-    .toLowerCase();
+  const directionAnchor = cleanAnchorFragment(
+    isMetaInstructionalText(winnerSeed.direction_summary)
+      ? pickEvidenceBackedAnchor(allEvidenceText, winnerSeed.after_state, 10)
+      : winnerSeed.direction_summary.split(/\s+/).slice(0, 10).join(' ')
+  );
 
   const axisLabel =
     winnerSeed.kind === 'system_redesign'
@@ -2678,22 +3111,41 @@ function buildEvidenceConstrainedExplanation(
     };
   }
 
+  const axisSpecificCoreLead: Record<string, string> = {
+    'system redesign': 'The essay is not about effort alone. It becomes strongest when the student names the structural fix and the moment it became necessary.',
+    'delegation and distributed responsibility': 'The story gets sharper once the student stops centering solo competence and shows the handoff that changed the work.',
+    'pattern breaking': 'The center is not persistence by itself. It is the moment the old response stopped helping and the student broke that pattern on purpose.',
+    'identity transformation': 'The strongest version is not a résumé summary. It is the point where the experience starts revealing who the student was becoming.',
+    'listening and relational attention': 'The strongest version stays with the interaction where attention to another person changed what help or responsibility actually meant.',
+    primary: frame.coreClaim,
+    competence: 'The strongest version stays with the exact situation where execution had to become judgment rather than simple performance.',
+    responsibility: 'The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people.',
+  };
+
+  const axisSpecificRevealLead: Record<string, string> = {
+    'system redesign': 'It reveals a student who can see when hard work is no longer enough and redesign the structure underneath the problem.',
+    'delegation and distributed responsibility': 'It reveals a student who can stop being the center of the system and build shared ownership instead.',
+    'pattern breaking': 'It reveals a student who can recognize an unhelpful repeated response and deliberately replace it with a better one.',
+    'identity transformation': 'It reveals a student whose inner logic changed in a way the essay can actually show on the page.',
+    'listening and relational attention': 'It reveals a student who can move from control or efficiency toward attention, listening, and relational judgment.',
+    primary: frame.studentReveal,
+    competence: 'It reveals a student whose competence becomes convincing because it changes how they respond in a real situation.',
+    responsibility: 'It reveals a student who treats responsibility as a concrete choice with visible consequences for other people.',
+  };
+
+  const polishedAxisCore = axisSpecificCoreLead[axisLabel] ?? frame.coreClaim;
+  const polishedAxisReveal = axisSpecificRevealLead[axisLabel] ?? frame.studentReveal;
+
   return {
-    // Explanation stabilization: rely on selected-candidate state + evidence
-    // anchors first; keep frame text only as lightweight context.
     core_claim:
-      `${frame.coreClaim} The strongest center is ${axisLabel}, grounded in a concrete event: ${sceneAnchor}. ` +
-      `This interpretation is consistent with the selected direction: ${winnerSeed.direction_line}`,
+      `${polishedAxisCore} The strongest evidence sits in ${sceneAnchor}, which keeps the direction anchored to the student's actual material instead of a reusable summary.`,
     why_this_is_the_real_story:
-      `${frame.realStory} The key shift is explicit in the evidence: ${shiftAnchor}. ` +
-      `That keeps the essay focused on the same axis rather than retelling context.` ,
+      `${frame.realStory} The key turn is visible in ${shiftAnchor}. That keeps the essay on the lived hinge, instead of retelling background or broad traits.`,
     what_it_reveals_about_the_student:
-      `It reveals how the student changed from "${extractConcreteAnchor(winnerSeed.before_state, 10)}" ` +
-      `to "${extractConcreteAnchor(winnerSeed.after_state, 10)}", with visible consequence: ${outcomeAnchor}. ` +
-      `The specific reveal in this case is ${extractConcreteAnchor(winnerSeed.direction_summary, 12)}.`,
+      `${polishedAxisReveal} The before-and-after movement is from "${extractConcreteAnchor(winnerSeed.before_state, 10)}" to "${extractConcreteAnchor(winnerSeed.after_state, 10)}," and the consequence shows up in ${outcomeAnchor}.`,
     why_it_beats_the_obvious_angle:
       `A generic framing (${frame.obviousAngle}) would flatten the story. ` +
-      `The evidence points to ${directionAnchor}, which is more specific and faithful to the axis.` ,
+      `The evidence points to ${directionAnchor}, which is more specific, more draftable, and easier to trust on first read.`,
   };
 }
 
