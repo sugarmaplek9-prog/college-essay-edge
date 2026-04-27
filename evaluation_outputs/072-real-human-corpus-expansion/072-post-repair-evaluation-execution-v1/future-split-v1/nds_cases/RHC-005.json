@@ -1,0 +1,617 @@
+{
+  "run_id": "eval_nds_RHC-005_1777250889050",
+  "case_id": "RHC-005",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "ready",
+  "execution_mode": "standard",
+  "validator_decision": "accept",
+  "artifact_status": "success",
+  "artifact_payload": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "The moment in clinic volunteering when tasks stopped being enough",
+      "core_claim": "The volunteering itself is not the subject. The essay is the moment the student realized that doing the task correctly still was not helping — and had to figure out why. The strongest evidence sits in I thought I had prepared the perfect piano performance for a long-term-care audience, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "The clinic is not the subject. The essay is a specific moment when the student's approach to care was wrong — and they had to change it because another person's outcome depended on it. The key turn is visible in The tension is between what happened and what it actually changed in you. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It shows that the student can notice when good intentions are not translating into actual help — and adjust before the other person carries the cost. The before-and-after movement is from \"Trying to help by doing the task quickly and correctly\" to \"Listening first and measuring help by whether it actually landed,\" and the consequence shows up in I thought I had prepared the perfect piano performance for a long-term-care.",
+      "why_it_beats_the_obvious_angle": "A generic framing (service leadership framed as generic compassion) would flatten the story. The evidence points to I thought I had prepared the perfect piano performance, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If written as values language without concrete moments, it will read as polished service branding rather than earned insight.",
+      "next_move": "Build the draft around one interaction: first how you handled it, then what you changed. The essay is the gap between those two moments. the shift from volunteer role execution to personal accountability for others."
+    },
+    "recommended_direction": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+    "why_this_direction": "This direction is stronger because it stays with a real hinge — The tension is between what happened and what it actually — instead of a broad theme.",
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "id": "direction_3",
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "That moment made me realize I was centering my own taste instead of the people I was there to serve.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      {
+        "label": "Evidence 1",
+        "source_type": "story_entry",
+        "source_id": "RHC-005_story_1",
+        "excerpt": "I thought I had prepared the perfect piano performance for a long-term-care",
+        "source_index": 0,
+        "anchor_type": "phrase_fragment",
+        "hinge_relevance_score": 0.76,
+        "support_role": "supports_selected"
+      },
+      {
+        "label": "Evidence 2",
+        "source_type": "story_entry",
+        "source_id": "RHC-005_story_1",
+        "excerpt": "After I played, someone asked for a completely different kind of song",
+        "source_index": 1,
+        "anchor_type": "scene_detail",
+        "hinge_relevance_score": 0.2,
+        "support_role": "supports_selected"
+      }
+    ],
+    "rejected_direction_rationale": "Rejected direction_1 because redundant with stronger candidate.",
+    "generation_metadata": {
+      "raw_note_count": 4,
+      "anchor_candidates_extracted": [
+        {
+          "text": "I thought I had prepared the perfect piano performance for a long-term-care",
+          "source_id": "RHC-005_story_1",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 0
+        },
+        {
+          "text": "After I played, someone asked for a completely different kind of song",
+          "source_id": "RHC-005_story_2",
+          "source_type": "story_entry",
+          "anchor_type": "scene_detail",
+          "source_index": 1
+        },
+        {
+          "text": "That moment made me realize I was centering my own taste instead",
+          "source_id": "RHC-005_story_3",
+          "source_type": "story_entry",
+          "anchor_type": "scene_detail",
+          "source_index": 2
+        },
+        {
+          "text": "I want the essay to stay inside that humiliation-to-empathy turn, not become",
+          "source_id": "RHC-005_story_4",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 3
+        }
+      ],
+      "hinge_candidates_extracted": [
+        {
+          "text": "I thought I had prepared the perfect piano performance for a long-term-care audience",
+          "source_id": "RHC-005_story_1",
+          "source_type": "story_entry",
+          "source_index": 0,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "After I played, someone asked for a completely different kind of song and I",
+          "source_id": "RHC-005_story_2",
+          "source_type": "story_entry",
+          "source_index": 1,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "That moment made me realize I was centering my own taste instead",
+          "source_id": "RHC-005_story_3",
+          "source_type": "story_entry",
+          "source_index": 2,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "I want the essay to stay inside that humiliation-to-empathy turn, not become generic musician",
+          "source_id": "RHC-005_story_4",
+          "source_type": "story_entry",
+          "source_index": 3,
+          "hinge_relevance_score": 1
+        }
+      ],
+      "candidate_scores_by_dimension": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+          "source_grounding": 1,
+          "anchor_retention": 1,
+          "narrative_hinge_clarity": 1,
+          "draftability": 0.9,
+          "individualization": 0.38,
+          "non_repeatability": 1,
+          "coaching_usefulness": 1,
+          "abstraction_penalty": 0,
+          "total_score": 0.7
+        }
+      ]
+    },
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: service leadership framed as generic compassion.",
+      "essay_opportunity": "Frame the essay around the shift from volunteer role execution to personal accountability for others."
+    },
+    "recovery_question": null,
+    "selected_candidate_id": "direction_1",
+    "confidence_band": "medium",
+    "route_decision": "show_strongest_direction",
+    "score_summary": {
+      "top_score": 0.7,
+      "runner_up_score": 0,
+      "score_margin": 0.12
+    },
+    "candidates": [
+      {
+        "candidate_id": "direction_1",
+        "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+        "direction_summary": "I thought I had prepared the perfect piano performance for a long-term-care audience.",
+        "core_tension": "The tension is between what happened and what it actually changed in you.",
+        "before_state": "Trying to help by doing the task quickly and correctly.",
+        "after_state": "Listening first and measuring help by whether it actually landed.",
+        "evidence_spans": [
+          {
+            "text": "I thought I had prepared the perfect piano performance for a long-term-care audience",
+            "start_char": 0,
+            "end_char": 84
+          },
+          {
+            "text": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside",
+            "start_char": 0,
+            "end_char": 110
+          }
+        ],
+        "why_strong": "A service essay describes what the student did and how it felt. This version goes to the moment understanding changed — a narrower and more specific story.",
+        "risk_if_chosen": "If written as values language without concrete moments, it will read as polished service branding rather than earned insight.",
+        "clarifying_question_if_uncertain": "When you realized your help was not landing the way you expected, what did you do differently right after that?",
+        "scores": {
+          "student_specificity": 0.38,
+          "evidence_grounding": 1,
+          "non_genericity": 0.4,
+          "buildability": 0.9,
+          "distinctness": 0.45,
+          "scene_strength": 0.76,
+          "reflective_potential": 0.74,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.7
+        },
+        "validator_flags": {
+          "has_banned_abstraction": false,
+          "is_too_generic": false,
+          "has_source_anchor": true,
+          "has_narrative_hinge": true,
+          "is_coaching_instruction": true,
+          "repeatable_direction_risk": false,
+          "passes_direction_rule_lock": true,
+          "has_clear_evidence": true,
+          "is_distinct_from_others": false,
+          "meta_label_reject": false,
+          "meta_label_penalty": false,
+          "meta_label_reason": null,
+          "axis_presence": "missing",
+          "degraded_input_mode": false,
+          "fallback_contaminated": false,
+          "candidate_duplication_risk": "medium",
+          "candidate_support_density": "medium",
+          "family_confidence": "weak",
+          "passes_minimum_quality": false
+        },
+        "rank": 1,
+        "selected": true,
+        "axis_family": "unclassified",
+        "total_score": 0.7,
+        "why_this_direction": "The clinic is not the subject. The essay is a specific moment when the student's approach to care was wrong — and they had to change it because another person's outcome depended on it. The key turn is visible in The tension is between what happened and what it actually changed in you. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+        "selected_evidence": [
+          {
+            "quote": "I thought I had prepared the perfect piano performance for a long-term-care audience",
+            "note": "evidence_span_0_84"
+          },
+          {
+            "quote": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside",
+            "note": "evidence_span_0_110"
+          }
+        ]
+      }
+    ],
+    "rejected_candidates": [
+      {
+        "candidate_id": "direction_1",
+        "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+        "rejection_reasons": [
+          "redundant_with_stronger_candidate"
+        ],
+        "rejected_direction_rationale": "direction_1 rejected: redundant with stronger candidate."
+      },
+      {
+        "candidate_id": "direction_2",
+        "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+        "rejection_reasons": [
+          "generic_angle",
+          "redundant_with_stronger_candidate"
+        ],
+        "rejected_direction_rationale": "direction_2 rejected: generic angle."
+      }
+    ],
+    "clarifying_question": {
+      "question_text": "When you realized your help was not landing the way you expected, what did you do differently right after that?",
+      "linked_candidate_id": "direction_1",
+      "question_reason": "clarify_shift"
+    },
+    "scoring_debug": {
+      "generated_candidate_count": 2,
+      "surviving_candidate_count": 1,
+      "selected_candidate_id": "direction_1",
+      "candidate_rankings": [
+        {
+          "candidate_id": "direction_1",
+          "total_score": 0.7,
+          "rank": 1
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+          "direction_summary": "I thought I had prepared the perfect piano performance for a long-term-care audience.",
+          "core_tension": "The tension is between what happened and what it actually changed in you.",
+          "before_state": "Trying to help by doing the task quickly and correctly.",
+          "after_state": "Listening first and measuring help by whether it actually landed.",
+          "evidence_spans": [
+            {
+              "text": "I thought I had prepared the perfect piano performance for a long-term-care audience",
+              "start_char": 0,
+              "end_char": 84
+            },
+            {
+              "text": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside",
+              "start_char": 0,
+              "end_char": 110
+            }
+          ],
+          "why_strong": "A service essay describes what the student did and how it felt. This version goes to the moment understanding changed — a narrower and more specific story.",
+          "risk_if_chosen": "If written as values language without concrete moments, it will read as polished service branding rather than earned insight.",
+          "clarifying_question_if_uncertain": "When you realized your help was not landing the way you expected, what did you do differently right after that?",
+          "scores": {
+            "student_specificity": 0.38,
+            "evidence_grounding": 1,
+            "non_genericity": 0.4,
+            "buildability": 0.9,
+            "distinctness": 0.45,
+            "scene_strength": 0.76,
+            "reflective_potential": 0.74,
+            "explanation_coherence": 0.95,
+            "clarification_need": 0.15,
+            "total_score": 0.7
+          },
+          "validator_flags": {
+            "has_banned_abstraction": false,
+            "is_too_generic": false,
+            "has_source_anchor": true,
+            "has_narrative_hinge": true,
+            "is_coaching_instruction": true,
+            "repeatable_direction_risk": false,
+            "passes_direction_rule_lock": true,
+            "has_clear_evidence": true,
+            "is_distinct_from_others": false,
+            "meta_label_reject": false,
+            "meta_label_penalty": false,
+            "meta_label_reason": null,
+            "axis_presence": "missing",
+            "degraded_input_mode": false,
+            "fallback_contaminated": false,
+            "candidate_duplication_risk": "medium",
+            "candidate_support_density": "medium",
+            "family_confidence": "weak",
+            "passes_minimum_quality": false
+          },
+          "rank": 1,
+          "selected": true
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+          "rejection_reasons": [
+            "redundant_with_stronger_candidate"
+          ],
+          "rejected_direction_rationale": "direction_1 rejected: redundant with stronger candidate."
+        },
+        {
+          "candidate_id": "direction_2",
+          "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+          "rejection_reasons": [
+            "generic_angle",
+            "redundant_with_stronger_candidate"
+          ],
+          "rejected_direction_rationale": "direction_2 rejected: generic angle."
+        }
+      ],
+      "score_summary": {
+        "top_score": 0.7,
+        "runner_up_score": 0,
+        "score_margin": 0.12
+      },
+      "confidence_band": "medium",
+      "route_decision": "show_strongest_direction",
+      "selected_axis_family": "unclassified",
+      "semantic_anchors": {
+        "core_event": "I thought I had prepared the perfect piano performance for a long-term-care audience After",
+        "core_shift": "I thought I had prepared the perfect piano performance for a long-term-care",
+        "story_axis": "primary",
+        "before_state": "Trying to help by doing the task quickly and correctly",
+        "after_state": "Listening first and measuring help by whether it actually landed",
+        "evidence_anchors": [
+          "I thought I had prepared the perfect piano performance",
+          "After I played, someone asked for a completely different kind"
+        ]
+      },
+      "clarification_reason": "clarify_shift",
+      "clarification_specificity": "medium",
+      "clarification_targets_actual_ambiguity": true,
+      "trust_mode": "standard",
+      "output_assertiveness": "medium",
+      "direction_line_confidence_fit": "borderline",
+      "explanation_restraint_mode": false,
+      "generation_metadata": {
+        "raw_note_count": 4,
+        "anchor_candidates_extracted": [
+          {
+            "text": "I thought I had prepared the perfect piano performance for a long-term-care",
+            "source_id": "RHC-005_story_1",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 0
+          },
+          {
+            "text": "After I played, someone asked for a completely different kind of song",
+            "source_id": "RHC-005_story_2",
+            "source_type": "story_entry",
+            "anchor_type": "scene_detail",
+            "source_index": 1
+          },
+          {
+            "text": "That moment made me realize I was centering my own taste instead",
+            "source_id": "RHC-005_story_3",
+            "source_type": "story_entry",
+            "anchor_type": "scene_detail",
+            "source_index": 2
+          },
+          {
+            "text": "I want the essay to stay inside that humiliation-to-empathy turn, not become",
+            "source_id": "RHC-005_story_4",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 3
+          }
+        ],
+        "hinge_candidates_extracted": [
+          {
+            "text": "I thought I had prepared the perfect piano performance for a long-term-care audience",
+            "source_id": "RHC-005_story_1",
+            "source_type": "story_entry",
+            "source_index": 0,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "After I played, someone asked for a completely different kind of song and I",
+            "source_id": "RHC-005_story_2",
+            "source_type": "story_entry",
+            "source_index": 1,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "That moment made me realize I was centering my own taste instead",
+            "source_id": "RHC-005_story_3",
+            "source_type": "story_entry",
+            "source_index": 2,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "I want the essay to stay inside that humiliation-to-empathy turn, not become generic musician",
+            "source_id": "RHC-005_story_4",
+            "source_type": "story_entry",
+            "source_index": 3,
+            "hinge_relevance_score": 1
+          }
+        ],
+        "candidate_scores_by_dimension": [
+          {
+            "candidate_id": "direction_1",
+            "direction_line": "Start with the moment I thought I had prepared the perfect piano performance changed what you did next.",
+            "source_grounding": 1,
+            "anchor_retention": 1,
+            "narrative_hinge_clarity": 1,
+            "draftability": 0.9,
+            "individualization": 0.38,
+            "non_repeatability": 1,
+            "coaching_usefulness": 1,
+            "abstraction_penalty": 0,
+            "total_score": 0.7
+          }
+        ]
+      },
+      "shift_risk_flags": {
+        "adult_shaped": false,
+        "polished_empty": false,
+        "cultural_indirect": false,
+        "contradiction": false,
+        "low_signal": false
+      },
+      "shift_confidence_compressed": false,
+      "polished_emptiness_skepticism_activated": false,
+      "cultural_style_support_activated": false,
+      "contradiction_sensitive_clarification_activated": false,
+      "weak_note_recovery_mode_activated": false,
+      "generic_fallback_suppression_activated": false,
+      "indirect_hinge_candidates_detected": [],
+      "hinge_sentence_count": 2,
+      "hinge_support_activated": false,
+      "false_premium_candidate_flag": false,
+      "premium_tone_without_support": false,
+      "false_premium_suppression_activated": false,
+      "careful_but_unhelpful_risk": false,
+      "useful_caution_mode_activated": false,
+      "flat_line_repair_activated": false,
+      "class_repair_track_activations": {
+        "track_a_parent_polished_guard": false,
+        "track_b_cultural_support": false,
+        "track_c_contradiction_calibration": false,
+        "track_d_weak_note_recovery": false,
+        "track_e_messy_dump_recovery": false,
+        "track_f_achievement_thin_handling": false
+      },
+      "selected_vs_runner_up_scores": {
+        "selected": {
+          "student_specificity": 0.38,
+          "evidence_grounding": 1,
+          "non_genericity": 0.4,
+          "buildability": 0.9,
+          "distinctness": 0.45,
+          "scene_strength": 0.76,
+          "reflective_potential": 0.74,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.7
+        },
+        "runner_up": null
+      }
+    }
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "072_rhc-005"
+      },
+      "student_core": {
+        "name": "Eval RHC-005",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "reflection",
+          "writing",
+          "direction-finding"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "RHC-005_story_1",
+          "source_type": "story_entry",
+          "event_summary": "I thought I had prepared the perfect piano performance for a long-term-care audience.",
+          "change_signal": "I thought I had prepared the perfect piano performance for a long-term-care audience.",
+          "evidence_strength": "low",
+          "recency_rank": 1,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "community_care",
+            "likely_human_stakes": "Whether the student treats responsibility as human care, not just task completion.",
+            "interpretive_opportunity": "Frame the essay around the shift from volunteer role execution to personal accountability for others."
+          }
+        },
+        {
+          "source_id": "RHC-005_story_2",
+          "source_type": "story_entry",
+          "event_summary": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside.",
+          "change_signal": "After I played, someone asked for a completely different kind of song and I reacted way too defensively inside.",
+          "evidence_strength": "low",
+          "recency_rank": 2,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-005_story_3",
+          "source_type": "story_entry",
+          "event_summary": "That moment made me realize I was centering my own taste instead of the people I was there to serve.",
+          "change_signal": "That moment made me realize I was centering my own taste instead of the people I was there to serve.",
+          "evidence_strength": "low",
+          "recency_rank": 3,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-005_story_4",
+          "source_type": "story_entry",
+          "event_summary": "I want the essay to stay inside that humiliation-to-empathy turn, not become generic musician discipline language.",
+          "change_signal": "I want the essay to stay inside that humiliation-to-empathy turn, not become generic musician discipline language.",
+          "evidence_strength": "low",
+          "recency_rank": 4,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        }
+      ],
+      "draft_signals": [],
+      "school_signals": [],
+      "context_gaps": [
+        "No draft signal available.",
+        "Student-authored story evidence should take priority over polished draft framing."
+      ],
+      "assembler_meta": {
+        "story_signal_count": 4,
+        "draft_signal_count": 0,
+        "school_signal_count": 0,
+        "used_current_draft": false
+      }
+    },
+    "warnings": []
+  }
+}

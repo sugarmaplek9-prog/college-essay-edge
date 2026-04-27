@@ -1,0 +1,713 @@
+[
+  {
+    "case_id": "RHC-026",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "The strongest version stays with the interaction where attention to another person changed what help or responsibility actually meant. The strongest evidence sits in I am split between writing about my absent father and alcoholism around me, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I am split between writing about my absent father and alcoholism around me. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who can move from control or efficiency toward attention, listening, and relational judgment. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in I am split between writing about my absent father and alcoholism around.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I am split between writing about my absent father, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I am split between writing about my absent father and alcoholism around. Then show how the student changed the flow of work in I am split between writing about my absent father and alcoholism around. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Both topics feel personal, but I do not know which one is actually more honest and workable.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I need help recognizing which path has a real essay engine instead of just shock or sadness.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-027",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people. The strongest evidence sits in I need help identifying which option has actual personal traction instead of surface, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I need help identifying which option has actual personal traction instead of surface. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who treats responsibility as a concrete choice with visible consequences for other people. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I need help identifying which option has actual personal traction, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I need help identifying which option has actual personal traction instead. Then show how the student changed the flow of work in Working from a more specific and accountable understanding of what mattered. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Each idea feels more like a fragment than a real story.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I need help identifying which option has actual personal traction instead of surface appeal.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-028",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people. The strongest evidence sits in I need help judging whether this has a personal engine or is just, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I need help judging whether this has a personal engine or is just. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who treats responsibility as a concrete choice with visible consequences for other people. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in I need help judging whether this has a personal engine or is.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I need help judging whether this has a personal engine, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I need help judging whether this has a personal engine or is. Then show how the student changed the flow of work in I need help judging whether this has a personal engine or is. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "I worry music is oversaturated, especially for STEM applicants.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I need help judging whether this has a personal engine or is just a familiar topic shell.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-029",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When redesigning the system mattered more than working harder",
+      "core_claim": "The essay is not about effort alone. It becomes strongest when the student names the structural fix and the moment it became necessary. The strongest evidence sits in One essay idea is that the process from wet clay to a finished, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in One essay idea is that the process from wet clay to a finished. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who can see when hard work is no longer enough and redesign the structure underneath the problem. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to One essay idea is that the process from wet clay, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft praises effort without naming the structural redesign, the story will collapse into generic hard-work language.",
+      "next_move": "Start with the recurring problem inside One essay idea is that the process from wet clay. Then show the redesign choice and the visible change in Working from a more specific and accountable understanding of what mattered. Keep effort language secondary to the structural fix itself."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Other weaker ideas involve language struggle and inspiration toward a legal career.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I know I have ideas but not the structure to piece them together.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-030",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "Do not start with the accomplishment. Start at the moment the student recognized something was wrong and changed course — and stay close to what happened next. The strongest evidence sits in I have rough ideas around my sister's death, war and medicine, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in The tension is between what happened and what it actually changed in you. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It shows a student who can identify where they got it wrong and demonstrate that the correction held. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in I have rough ideas around my sister's death, war and medicine.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I have rough ideas around my sister's death, war, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I have rough ideas around my sister's death, war and medicine. Then show how the student changed the flow of work in I have rough ideas around my sister's death, war and medicine. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Some of these feel deeply personal, but I do not know which one can carry the essay honestly.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I need help seeing whether there is one real through-line or if I am mixing separate engines.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-031",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "Do not start with the accomplishment. Start at the moment the student recognized something was wrong and changed course — and stay close to what happened next. The strongest evidence sits in I am comparing a high-risk high-reward topic against a safer essay option I, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in The tension is between what happened and what it actually changed in you. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It shows a student who can identify where they got it wrong and demonstrate that the correction held. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I am comparing a high-risk high-reward topic against a safer, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I am comparing a high-risk high-reward topic against a safer essay option. Then show how the student changed the flow of work in Working from a more specific and accountable understanding of what mattered. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "I need help deciding which choice is more honest and strategically sound without flattening the essay into risk management.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "The comparison itself is structured, but I still do not have a settled direction.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-032",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people. The strongest evidence sits in I am worried that shaping this in my essays could sound like, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I am worried that shaping this in my essays could sound like. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who treats responsibility as a concrete choice with visible consequences for other people. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I am worried that shaping this in my essays could, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I am worried that shaping this in my essays could sound like. Then show how the student changed the flow of work in Working from a more specific and accountable understanding of what mattered. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "My grades improved over time, and I want admissions officers to understand that growth.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "I am worried that shaping this in my essays could sound like an excuse or even conflict with the current message of my essay.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-033",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When the story became about self-definition, not just accomplishment",
+      "core_claim": "The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people. The strongest evidence sits in Other possible routes include coding to art, visible self-presentation changes, and a chronic, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in Other possible routes include coding to art, visible self-presentation changes, and a chronic. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student who treats responsibility as a concrete choice with visible consequences for other people. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to Other possible routes include coding to art, visible self-presentation changes, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft stays at the level of broad self-description, it will lose the moment or image that makes the shift in self-understanding believable.",
+      "next_move": "Open on Other possible routes include coding to art, visible self-presentation changes. Then show how that moment clarified Working from a more specific and accountable understanding of what mattered. Keep the draft on self-definition and inner logic rather than turning it into a generic accomplishment recap."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "Part of that shift is tied to a close friend's death, but I am worried about trauma-dumping or making the situation about me.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "Other possible routes include coding to art, visible self-presentation changes, and a chronic health issue that shaped my interest in medicine.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-034",
+    "system": "nds_internal",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "When constraint forced a different way forward",
+      "core_claim": "The strongest version stays with the exact situation where execution had to become judgment rather than simple performance. The strongest evidence sits in The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student whose competence becomes convincing because it changes how they respond in a real situation. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to The draft connects a Chipotle moment, family sacrifice, productivity pressure, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft treats the constraint as generic hardship, it will miss the choice that changed how the student moved through it.",
+      "next_move": "Start with The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my. Then show the alternative response that changed Working from a more specific and accountable understanding of what mattered. Keep the essay on adaptation under constraint, not generic resilience."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      "Evidence 1",
+      "Evidence 2"
+    ],
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 2,
+      "evidence_anchor_count": 2
+    }
+  },
+  {
+    "case_id": "RHC-026",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-027",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-028",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-029",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-030",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-031",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-032",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-033",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  },
+  {
+    "case_id": "RHC-034",
+    "system": "baseline_free_ai",
+    "status": "success",
+    "best_direction": {
+      "angle_title": "Direction 1",
+      "core_claim": "Focus on a meaningful experience and what you learned.",
+      "why_this_is_the_real_story": "It can be broadly compelling for admissions readers.",
+      "what_it_reveals_about_the_student": "Shows persistence and maturity.",
+      "why_it_beats_the_obvious_angle": "This angle appears strong at a high level.",
+      "main_risk_if_written_poorly": "May feel generic.",
+      "next_move": "Draft a personal statement paragraph."
+    },
+    "alternatives": [
+      {
+        "angle_title": "Direction 2",
+        "what_this_angle_would_focus_on": "A different meaningful experience with similar lessons.",
+        "why_it_is_weaker": "Less compelling overall.",
+        "failure_mode": "Could be too broad."
+      }
+    ],
+    "evidence_anchors": [],
+    "depth_signals": {
+      "detected_tension": null,
+      "detected_shift": null,
+      "obvious_but_weaker_angle": null,
+      "essay_opportunity": null
+    },
+    "recovery_question": null,
+    "meta": {
+      "clear_winner_present": true,
+      "alternative_count": 1,
+      "evidence_anchor_count": 0
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "RHC-026": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "RHC-027": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "RHC-028": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "RHC-029": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "RHC-030": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "RHC-001": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "RHC-002": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "RHC-003": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  },
+  "RHC-004": {
+    "A": "nds_internal",
+    "B": "baseline_free_ai"
+  },
+  "RHC-005": {
+    "A": "baseline_free_ai",
+    "B": "nds_internal"
+  }
+}

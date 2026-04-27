@@ -1,0 +1,44 @@
+{
+  "case_id": "RHC-002",
+  "system": "nds_internal",
+  "status": "success",
+  "best_direction": {
+    "angle_title": "When the student changed how the work could move",
+    "core_claim": "Do not start with the accomplishment. Start at the moment the student recognized something was wrong and changed course — and stay close to what happened next. The strongest evidence sits in I hated the cicadas in DC and kept thinking about how loud, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+    "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I hated the cicadas in DC and kept thinking about how loud. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+    "what_it_reveals_about_the_student": "It shows a student who can identify where they got it wrong and demonstrate that the correction held. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in I hated the cicadas in DC and kept thinking about how loud.",
+    "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I hated the cicadas in DC and kept thinking about, which is more specific, more draftable, and easier to trust on first read.",
+    "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+    "next_move": "Open on I hated the cicadas in DC and kept thinking about how loud. Then show how the student changed the flow of work in I hated the cicadas in DC and kept thinking about how loud. Keep the essay on judgment and initiative, not self-congratulation."
+  },
+  "alternatives": [
+    {
+      "angle_title": "Competence proof angle",
+      "what_this_angle_would_focus_on": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge.",
+      "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+      "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+    },
+    {
+      "angle_title": "Service / responsibility angle",
+      "what_this_angle_would_focus_on": "The essay is really about becoming ready to leave home for college even if I feel awkward and unprepared.",
+      "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+      "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+    }
+  ],
+  "evidence_anchors": [
+    "Evidence 1",
+    "Evidence 2"
+  ],
+  "depth_signals": {
+    "detected_tension": "The tension is between what happened and what it actually changed in you.",
+    "detected_shift": null,
+    "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+    "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+  },
+  "recovery_question": null,
+  "meta": {
+    "clear_winner_present": true,
+    "alternative_count": 2,
+    "evidence_anchor_count": 2
+  }
+}

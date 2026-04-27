@@ -1,0 +1,44 @@
+{
+  "case_id": "RHC-011",
+  "system": "nds_internal",
+  "status": "success",
+  "best_direction": {
+    "angle_title": "When solving it alone started hurting the team",
+    "core_claim": "The robotics project is the setting. The essay is about the moment the student's instinct — handling it alone — started costing the team. What changed after that is the real subject. The strongest evidence sits in I spend months building fictional worlds from scratch, including maps, governments, histories, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+    "why_this_is_the_real_story": "The interesting part is not the technical work. It is the moment the student recognized that solving problems alone was making the team weaker — and changed how they operated. The key turn is visible in The tension is between what happened and what it actually changed in you. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+    "what_it_reveals_about_the_student": "It shows that the student can recognize when their own competence is becoming a problem for others — and adjust without waiting to be asked. The before-and-after movement is from \"Assuming solving the problem yourself was the best way forward\" to \"Changing how you worked so the team could function better,\" and the consequence shows up in I spend months building fictional worlds from scratch, including maps, governments, histories.",
+    "why_it_beats_the_obvious_angle": "A generic framing (problem-solving excellence as a static trait) would flatten the story. The evidence points to I spend months building fictional worlds from scratch, including maps, which is more specific, more draftable, and easier to trust on first read.",
+    "main_risk_if_written_poorly": "If written as an accomplishment sequence, it loses the pivot that makes the essay meaningful.",
+    "next_move": "Keep the focus on the team moment, not the technical solution. Write the decision where your first approach was not working, then show what you changed and what it produced. the shift from individual performance to relational leadership."
+  },
+  "alternatives": [
+    {
+      "angle_title": "Competence proof angle",
+      "what_this_angle_would_focus_on": "What matters is not fantasy for its own sake but how worldbuilding forces me to learn from geology, history, law, language, games, and other fields at once.",
+      "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+      "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+    },
+    {
+      "angle_title": "Service / responsibility angle",
+      "what_this_angle_would_focus_on": "I like this topic because the rest of my application can make me look robotic, and this is the clearest window into how my mind actually works.",
+      "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+      "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+    }
+  ],
+  "evidence_anchors": [
+    "Evidence 1",
+    "Evidence 2"
+  ],
+  "depth_signals": {
+    "detected_tension": "The tension is between what happened and what it actually changed in you.",
+    "detected_shift": null,
+    "obvious_but_weaker_angle": "Obvious but weaker angle: problem-solving excellence as a static trait.",
+    "essay_opportunity": "Frame the essay around the shift from individual performance to relational leadership."
+  },
+  "recovery_question": null,
+  "meta": {
+    "clear_winner_present": true,
+    "alternative_count": 2,
+    "evidence_anchor_count": 2
+  }
+}

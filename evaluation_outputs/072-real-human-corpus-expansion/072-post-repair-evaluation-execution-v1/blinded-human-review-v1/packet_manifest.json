@@ -1,0 +1,17 @@
+{
+  "holdout_case_ids": [
+    "RHC-026",
+    "RHC-027",
+    "RHC-028",
+    "RHC-029",
+    "RHC-030"
+  ],
+  "future_split_case_ids": [
+    "RHC-001",
+    "RHC-002",
+    "RHC-003",
+    "RHC-004",
+    "RHC-005"
+  ],
+  "total_cases": 10
+}

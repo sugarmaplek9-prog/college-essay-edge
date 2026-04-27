@@ -1,0 +1,576 @@
+{
+  "run_id": "eval_nds_RHC-002_1777250889048",
+  "case_id": "RHC-002",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "ready",
+  "execution_mode": "standard",
+  "validator_decision": "accept",
+  "artifact_status": "success",
+  "artifact_payload": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "When the student changed how the work could move",
+      "core_claim": "Do not start with the accomplishment. Start at the moment the student recognized something was wrong and changed course — and stay close to what happened next. The strongest evidence sits in I hated the cicadas in DC and kept thinking about how loud, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I hated the cicadas in DC and kept thinking about how loud. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It shows a student who can identify where they got it wrong and demonstrate that the correction held. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in I hated the cicadas in DC and kept thinking about how loud.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I hated the cicadas in DC and kept thinking about, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft only praises initiative, it will lose the operational shift that made the work move differently.",
+      "next_move": "Open on I hated the cicadas in DC and kept thinking about how loud. Then show how the student changed the flow of work in I hated the cicadas in DC and kept thinking about how loud. Keep the essay on judgment and initiative, not self-congratulation."
+    },
+    "recommended_direction": "Start with the moment I hated the cicadas in DC and kept thinking about how changed what you did next.",
+    "why_this_direction": "This direction is stronger because it stays with a real hinge — I hated the cicadas in DC and kept thinking about — instead of a broad theme.",
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "id": "direction_3",
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "The essay is really about becoming ready to leave home for college even if I feel awkward and unprepared.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      {
+        "label": "Evidence 1",
+        "source_type": "story_entry",
+        "source_id": "RHC-002_story_1",
+        "excerpt": "I hated the cicadas in DC and kept thinking about how loud",
+        "source_index": 0,
+        "anchor_type": "phrase_fragment",
+        "hinge_relevance_score": 0.83,
+        "support_role": "supports_selected"
+      },
+      {
+        "label": "Evidence 2",
+        "source_type": "story_entry",
+        "source_id": "RHC-002_story_1",
+        "excerpt": "After a year of Zoom and staying in the same place, I",
+        "source_index": 1,
+        "anchor_type": "scene_detail",
+        "hinge_relevance_score": 0.2,
+        "support_role": "supports_selected"
+      }
+    ],
+    "rejected_direction_rationale": "No stronger alternative was rejected by quality gates.",
+    "generation_metadata": {
+      "raw_note_count": 4,
+      "anchor_candidates_extracted": [
+        {
+          "text": "I hated the cicadas in DC and kept thinking about how loud",
+          "source_id": "RHC-002_story_1",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 0
+        },
+        {
+          "text": "After a year of Zoom and staying in the same place, I",
+          "source_id": "RHC-002_story_2",
+          "source_type": "story_entry",
+          "anchor_type": "scene_detail",
+          "source_index": 1
+        },
+        {
+          "text": "The essay is really about becoming ready to leave home for college",
+          "source_id": "RHC-002_story_3",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 2
+        },
+        {
+          "text": "I want the image of cicadas to stay concrete, not become",
+          "source_id": "RHC-002_story_4",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 3
+        }
+      ],
+      "hinge_candidates_extracted": [
+        {
+          "text": "I hated the cicadas in DC and kept thinking about how loud and invasive",
+          "source_id": "RHC-002_story_1",
+          "source_type": "story_entry",
+          "source_index": 0,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "After a year of Zoom and staying in the same place, I realized I",
+          "source_id": "RHC-002_story_2",
+          "source_type": "story_entry",
+          "source_index": 1,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "The essay is really about becoming ready to leave home for college even if",
+          "source_id": "RHC-002_story_3",
+          "source_type": "story_entry",
+          "source_index": 2,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "I want the image of cicadas to stay concrete, not become a generic transition",
+          "source_id": "RHC-002_story_4",
+          "source_type": "story_entry",
+          "source_index": 3,
+          "hinge_relevance_score": 1
+        }
+      ],
+      "candidate_scores_by_dimension": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I hated the cicadas in DC and kept thinking about how changed what you did next.",
+          "source_grounding": 1,
+          "anchor_retention": 1,
+          "narrative_hinge_clarity": 1,
+          "draftability": 0.94,
+          "individualization": 0.37,
+          "non_repeatability": 1,
+          "coaching_usefulness": 1,
+          "abstraction_penalty": 0,
+          "total_score": 0.72
+        }
+      ]
+    },
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "selected_candidate_id": "direction_1",
+    "confidence_band": "medium",
+    "route_decision": "show_strongest_direction",
+    "score_summary": {
+      "top_score": 0.72,
+      "runner_up_score": 0,
+      "score_margin": 0.12
+    },
+    "candidates": [
+      {
+        "candidate_id": "direction_1",
+        "direction_line": "Start with the moment I hated the cicadas in DC and kept thinking about how changed what you did next.",
+        "direction_summary": "I hated the cicadas in DC and kept thinking about how loud and invasive they were.",
+        "core_tension": "The tension is between what happened and what it actually changed in you.",
+        "before_state": "Operating from the obvious first version of the situation.",
+        "after_state": "Working from a more specific and accountable understanding of what mattered.",
+        "evidence_spans": [
+          {
+            "text": "I hated the cicadas in DC and kept thinking about how loud and invasive they were",
+            "start_char": 0,
+            "end_char": 81
+          },
+          {
+            "text": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge",
+            "start_char": 0,
+            "end_char": 131
+          }
+        ],
+        "why_strong": "Leadership framing describes a trait. The correction angle shows one specific moment where judgment changed — which is more concrete and easier to believe.",
+        "risk_if_chosen": "If the essay describes character without a concrete moment of correction, it loses the specificity that makes it work.",
+        "clarifying_question_if_uncertain": "What specific moment inside \"I hated the cicadas in DC and kept thinking about how loud and invasive they were.\" best shows why this angle matters?",
+        "scores": {
+          "student_specificity": 0.37,
+          "evidence_grounding": 1,
+          "non_genericity": 0.4,
+          "buildability": 0.94,
+          "distinctness": 0.75,
+          "scene_strength": 0.79,
+          "reflective_potential": 0.76,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.72
+        },
+        "validator_flags": {
+          "has_banned_abstraction": false,
+          "is_too_generic": false,
+          "has_source_anchor": true,
+          "has_narrative_hinge": true,
+          "is_coaching_instruction": true,
+          "repeatable_direction_risk": false,
+          "passes_direction_rule_lock": true,
+          "has_clear_evidence": true,
+          "is_distinct_from_others": true,
+          "meta_label_reject": false,
+          "meta_label_penalty": false,
+          "meta_label_reason": null,
+          "axis_presence": "missing",
+          "degraded_input_mode": false,
+          "fallback_contaminated": false,
+          "candidate_duplication_risk": "medium",
+          "candidate_support_density": "medium",
+          "family_confidence": "partial",
+          "passes_minimum_quality": true
+        },
+        "rank": 1,
+        "selected": true,
+        "axis_family": "unclassified",
+        "total_score": 0.72,
+        "why_this_direction": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I hated the cicadas in DC and kept thinking about how loud. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+        "selected_evidence": [
+          {
+            "quote": "I hated the cicadas in DC and kept thinking about how loud and invasive they were",
+            "note": "evidence_span_0_81"
+          },
+          {
+            "quote": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge",
+            "note": "evidence_span_0_131"
+          }
+        ]
+      }
+    ],
+    "rejected_candidates": [],
+    "clarifying_question": null,
+    "scoring_debug": {
+      "generated_candidate_count": 1,
+      "surviving_candidate_count": 1,
+      "selected_candidate_id": "direction_1",
+      "candidate_rankings": [
+        {
+          "candidate_id": "direction_1",
+          "total_score": 0.72,
+          "rank": 1
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I hated the cicadas in DC and kept thinking about how changed what you did next.",
+          "direction_summary": "I hated the cicadas in DC and kept thinking about how loud and invasive they were.",
+          "core_tension": "The tension is between what happened and what it actually changed in you.",
+          "before_state": "Operating from the obvious first version of the situation.",
+          "after_state": "Working from a more specific and accountable understanding of what mattered.",
+          "evidence_spans": [
+            {
+              "text": "I hated the cicadas in DC and kept thinking about how loud and invasive they were",
+              "start_char": 0,
+              "end_char": 81
+            },
+            {
+              "text": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge",
+              "start_char": 0,
+              "end_char": 131
+            }
+          ],
+          "why_strong": "Leadership framing describes a trait. The correction angle shows one specific moment where judgment changed — which is more concrete and easier to believe.",
+          "risk_if_chosen": "If the essay describes character without a concrete moment of correction, it loses the specificity that makes it work.",
+          "clarifying_question_if_uncertain": "What specific moment inside \"I hated the cicadas in DC and kept thinking about how loud and invasive they were.\" best shows why this angle matters?",
+          "scores": {
+            "student_specificity": 0.37,
+            "evidence_grounding": 1,
+            "non_genericity": 0.4,
+            "buildability": 0.94,
+            "distinctness": 0.75,
+            "scene_strength": 0.79,
+            "reflective_potential": 0.76,
+            "explanation_coherence": 0.95,
+            "clarification_need": 0.15,
+            "total_score": 0.72
+          },
+          "validator_flags": {
+            "has_banned_abstraction": false,
+            "is_too_generic": false,
+            "has_source_anchor": true,
+            "has_narrative_hinge": true,
+            "is_coaching_instruction": true,
+            "repeatable_direction_risk": false,
+            "passes_direction_rule_lock": true,
+            "has_clear_evidence": true,
+            "is_distinct_from_others": true,
+            "meta_label_reject": false,
+            "meta_label_penalty": false,
+            "meta_label_reason": null,
+            "axis_presence": "missing",
+            "degraded_input_mode": false,
+            "fallback_contaminated": false,
+            "candidate_duplication_risk": "medium",
+            "candidate_support_density": "medium",
+            "family_confidence": "partial",
+            "passes_minimum_quality": true
+          },
+          "rank": 1,
+          "selected": true
+        }
+      ],
+      "rejected_candidates": [],
+      "score_summary": {
+        "top_score": 0.72,
+        "runner_up_score": 0,
+        "score_margin": 0.12
+      },
+      "confidence_band": "medium",
+      "route_decision": "show_strongest_direction",
+      "selected_axis_family": "unclassified",
+      "semantic_anchors": {
+        "core_event": "I hated the cicadas in DC and kept thinking about how loud and invasive",
+        "core_shift": "I hated the cicadas in DC and kept thinking about how loud",
+        "story_axis": "primary",
+        "before_state": "Operating from the obvious first version of the situation",
+        "after_state": "Working from a more specific and accountable understanding of what mattered",
+        "evidence_anchors": [
+          "I hated the cicadas in DC and kept thinking about",
+          "After a year of Zoom and staying in the same"
+        ]
+      },
+      "clarification_specificity": "weak",
+      "clarification_targets_actual_ambiguity": true,
+      "trust_mode": "standard",
+      "output_assertiveness": "medium",
+      "direction_line_confidence_fit": "borderline",
+      "explanation_restraint_mode": false,
+      "generation_metadata": {
+        "raw_note_count": 4,
+        "anchor_candidates_extracted": [
+          {
+            "text": "I hated the cicadas in DC and kept thinking about how loud",
+            "source_id": "RHC-002_story_1",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 0
+          },
+          {
+            "text": "After a year of Zoom and staying in the same place, I",
+            "source_id": "RHC-002_story_2",
+            "source_type": "story_entry",
+            "anchor_type": "scene_detail",
+            "source_index": 1
+          },
+          {
+            "text": "The essay is really about becoming ready to leave home for college",
+            "source_id": "RHC-002_story_3",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 2
+          },
+          {
+            "text": "I want the image of cicadas to stay concrete, not become",
+            "source_id": "RHC-002_story_4",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 3
+          }
+        ],
+        "hinge_candidates_extracted": [
+          {
+            "text": "I hated the cicadas in DC and kept thinking about how loud and invasive",
+            "source_id": "RHC-002_story_1",
+            "source_type": "story_entry",
+            "source_index": 0,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "After a year of Zoom and staying in the same place, I realized I",
+            "source_id": "RHC-002_story_2",
+            "source_type": "story_entry",
+            "source_index": 1,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "The essay is really about becoming ready to leave home for college even if",
+            "source_id": "RHC-002_story_3",
+            "source_type": "story_entry",
+            "source_index": 2,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "I want the image of cicadas to stay concrete, not become a generic transition",
+            "source_id": "RHC-002_story_4",
+            "source_type": "story_entry",
+            "source_index": 3,
+            "hinge_relevance_score": 1
+          }
+        ],
+        "candidate_scores_by_dimension": [
+          {
+            "candidate_id": "direction_1",
+            "direction_line": "Start with the moment I hated the cicadas in DC and kept thinking about how changed what you did next.",
+            "source_grounding": 1,
+            "anchor_retention": 1,
+            "narrative_hinge_clarity": 1,
+            "draftability": 0.94,
+            "individualization": 0.37,
+            "non_repeatability": 1,
+            "coaching_usefulness": 1,
+            "abstraction_penalty": 0,
+            "total_score": 0.72
+          }
+        ]
+      },
+      "shift_risk_flags": {
+        "adult_shaped": false,
+        "polished_empty": false,
+        "cultural_indirect": false,
+        "contradiction": false,
+        "low_signal": false
+      },
+      "shift_confidence_compressed": false,
+      "polished_emptiness_skepticism_activated": false,
+      "cultural_style_support_activated": false,
+      "contradiction_sensitive_clarification_activated": false,
+      "weak_note_recovery_mode_activated": false,
+      "generic_fallback_suppression_activated": false,
+      "indirect_hinge_candidates_detected": [],
+      "hinge_sentence_count": 0,
+      "hinge_support_activated": false,
+      "false_premium_candidate_flag": false,
+      "premium_tone_without_support": false,
+      "false_premium_suppression_activated": false,
+      "careful_but_unhelpful_risk": false,
+      "useful_caution_mode_activated": false,
+      "flat_line_repair_activated": false,
+      "class_repair_track_activations": {
+        "track_a_parent_polished_guard": false,
+        "track_b_cultural_support": false,
+        "track_c_contradiction_calibration": false,
+        "track_d_weak_note_recovery": false,
+        "track_e_messy_dump_recovery": false,
+        "track_f_achievement_thin_handling": false
+      },
+      "selected_vs_runner_up_scores": {
+        "selected": {
+          "student_specificity": 0.37,
+          "evidence_grounding": 1,
+          "non_genericity": 0.4,
+          "buildability": 0.94,
+          "distinctness": 0.75,
+          "scene_strength": 0.79,
+          "reflective_potential": 0.76,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.72
+        },
+        "runner_up": null
+      }
+    }
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "072_rhc-002"
+      },
+      "student_core": {
+        "name": "Eval RHC-002",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "reflection",
+          "writing",
+          "direction-finding"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "RHC-002_story_1",
+          "source_type": "story_entry",
+          "event_summary": "I hated the cicadas in DC and kept thinking about how loud and invasive they were.",
+          "change_signal": "I hated the cicadas in DC and kept thinking about how loud and invasive they were.",
+          "evidence_strength": "low",
+          "recency_rank": 1,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-002_story_2",
+          "source_type": "story_entry",
+          "event_summary": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge.",
+          "change_signal": "After a year of Zoom and staying in the same place, I realized I was weirdly like them — blurry-eyed, restless, and about to emerge.",
+          "evidence_strength": "low",
+          "recency_rank": 2,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": true,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-002_story_3",
+          "source_type": "story_entry",
+          "event_summary": "The essay is really about becoming ready to leave home for college even if I feel awkward and unprepared.",
+          "change_signal": "The essay is really about becoming ready to leave home for college even if I feel awkward and unprepared.",
+          "evidence_strength": "low",
+          "recency_rank": 3,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-002_story_4",
+          "source_type": "story_entry",
+          "event_summary": "I want the image of cicadas to stay concrete, not become a generic transition essay.",
+          "change_signal": "I want the image of cicadas to stay concrete, not become a generic transition essay.",
+          "evidence_strength": "low",
+          "recency_rank": 4,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        }
+      ],
+      "draft_signals": [],
+      "school_signals": [],
+      "context_gaps": [
+        "No draft signal available.",
+        "Student-authored story evidence should take priority over polished draft framing."
+      ],
+      "assembler_meta": {
+        "story_signal_count": 4,
+        "draft_signal_count": 0,
+        "school_signal_count": 0,
+        "used_current_draft": false
+      }
+    },
+    "warnings": []
+  }
+}

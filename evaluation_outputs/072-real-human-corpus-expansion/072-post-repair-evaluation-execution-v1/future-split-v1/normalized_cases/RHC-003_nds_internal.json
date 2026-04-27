@@ -1,0 +1,44 @@
+{
+  "case_id": "RHC-003",
+  "system": "nds_internal",
+  "status": "success",
+  "best_direction": {
+    "angle_title": "What the student owed the people affected by the moment",
+    "core_claim": "The strongest version stays with the interaction where attention to another person changed what help or responsibility actually meant. The strongest evidence sits in I grew up with two moms, later three parental figures, and a donor, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+    "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in I grew up with two moms, later three parental figures, and a donor. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+    "what_it_reveals_about_the_student": "It reveals a student who can move from control or efficiency toward attention, listening, and relational judgment. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+    "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to I grew up with two moms, later three parental figures, which is more specific, more draftable, and easier to trust on first read.",
+    "main_risk_if_written_poorly": "If the draft stays at the level of stated values, it will lose the concrete consequence that makes the obligation credible.",
+    "next_move": "Write the scene around I grew up with two moms, later three parental figures. Then show what the student realized they owed other people and how that becomes visible in Working from a more specific and accountable understanding of what mattered. Keep the essay on obligation and consequence, not broad values language."
+  },
+  "alternatives": [
+    {
+      "angle_title": "Competence proof angle",
+      "what_this_angle_would_focus_on": "One of my moms died when I was young, and grief changed what family memory felt like for me.",
+      "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+      "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+    },
+    {
+      "angle_title": "Service / responsibility angle",
+      "what_this_angle_would_focus_on": "The real essay is not about proving my family is valid; it is about how being raised inside difference made me reject the idea of one normal template.",
+      "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+      "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+    }
+  ],
+  "evidence_anchors": [
+    "Evidence 1",
+    "Evidence 2"
+  ],
+  "depth_signals": {
+    "detected_tension": "The tension is between what happened and what it actually changed in you.",
+    "detected_shift": null,
+    "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+    "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+  },
+  "recovery_question": null,
+  "meta": {
+    "clear_winner_present": true,
+    "alternative_count": 2,
+    "evidence_anchor_count": 2
+  }
+}

@@ -1,0 +1,294 @@
+[
+  {
+    "case_id": "RHC-001",
+    "label": "Hamilton official essay — books, moving, and queer self-recognition",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "family",
+      "moved",
+      "books",
+      "stable",
+      "place",
+      "change",
+      "understand",
+      "before"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-002",
+    "label": "Hamilton official essay — cicadas as leaving-home metaphor",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "hated",
+      "cicadas",
+      "thinking"
+    ],
+    "source_overlap_count": 3
+  },
+  {
+    "case_id": "RHC-003",
+    "label": "Hamilton official essay — grief, donor family structure, and difference owned openly",
+    "angle_title": "What the student owed the people affected by the moment",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "later",
+      "three",
+      "parental",
+      "figures",
+      "donor",
+      "other",
+      "people",
+      "changed",
+      "actual"
+    ],
+    "source_overlap_count": 9
+  },
+  {
+    "case_id": "RHC-004",
+    "label": "Hamilton official essay — layered Russian/Chechen identity and cosmopolitan belonging",
+    "angle_title": "When being right in the argument became the problem",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "language",
+      "assumptions",
+      "instead"
+    ],
+    "source_overlap_count": 3
+  },
+  {
+    "case_id": "RHC-005",
+    "label": "Hamilton official essay — piano performance humbled by audience need",
+    "angle_title": "The moment in clinic volunteering when tasks stopped being enough",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "thought",
+      "prepared",
+      "perfect",
+      "piano",
+      "performance",
+      "long-term-care",
+      "audience",
+      "moment",
+      "realize",
+      "instead",
+      "language"
+    ],
+    "source_overlap_count": 11
+  },
+  {
+    "case_id": "RHC-006",
+    "label": "Hamilton official essay — first female scout and the forest-after-fire analogy",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "first",
+      "local",
+      "scouts",
+      "context",
+      "differently",
+      "point",
+      "leadership"
+    ],
+    "source_overlap_count": 7
+  },
+  {
+    "case_id": "RHC-007",
+    "label": "Hamilton official essay — Irish dance shoes as a record of growth and identity",
+    "angle_title": "When the story became about self-definition, not just accomplishment",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "dance",
+      "version",
+      "older",
+      "under",
+      "ending",
+      "eventually",
+      "becoming",
+      "dancer"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-008",
+    "label": "Hamilton official essay — painting mistake transformed through wildfire imagery",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "ruined",
+      "painting",
+      "black",
+      "smear",
+      "obsessed",
+      "fixing",
+      "instead",
+      "something"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-009",
+    "label": "JHU official essay — public speaking fear becomes leadership and example",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "instead",
+      "later",
+      "ended",
+      "visible",
+      "leadership",
+      "realized"
+    ],
+    "source_overlap_count": 6
+  },
+  {
+    "case_id": "RHC-010",
+    "label": "JHU official essay — coral blush and weather reporting become self-acceptance",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "started",
+      "trying",
+      "other",
+      "girls",
+      "looked",
+      "immediately",
+      "visible",
+      "instead"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-011",
+    "label": "JHU official essay — worldbuilding as interdisciplinary curiosity",
+    "angle_title": "When solving it alone started hurting the team",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "spend",
+      "months",
+      "building",
+      "fictional",
+      "worlds",
+      "scratch",
+      "including",
+      "governments",
+      "histories",
+      "other",
+      "robotic",
+      "actually"
+    ],
+    "source_overlap_count": 12
+  },
+  {
+    "case_id": "RHC-012",
+    "label": "JHU official essay — math passion translated into real-world teaching",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "never",
+      "numbers",
+      "pictured",
+      "movement",
+      "collisions",
+      "shapes",
+      "instead",
+      "something",
+      "leadership",
+      "where"
+    ],
+    "source_overlap_count": 10
+  },
+  {
+    "case_id": "RHC-013",
+    "label": "Public student-help post — waiting, boredom, and no clear story yet",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "obvious",
+      "topics",
+      "think",
+      "depressing",
+      "tangled",
+      "especially",
+      "point",
+      "actually"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-014",
+    "label": "Public student-help post — microwave hook about unnoticed support work",
+    "angle_title": "When the story became about self-definition, not just accomplishment",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "microwave",
+      "really",
+      "itself",
+      "treat"
+    ],
+    "source_overlap_count": 4
+  },
+  {
+    "case_id": "RHC-015",
+    "label": "Public student-help post — anti-Asian hate incident with unresolved narrative turn",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "started",
+      "drafting",
+      "moment",
+      "thought",
+      "might",
+      "draft",
+      "change"
+    ],
+    "source_overlap_count": 7
+  }
+]

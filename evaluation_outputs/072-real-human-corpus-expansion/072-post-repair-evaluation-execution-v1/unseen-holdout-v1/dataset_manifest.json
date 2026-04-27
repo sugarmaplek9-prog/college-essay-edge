@@ -1,0 +1,16 @@
+{
+  "dataset_label": "unseen_holdout_v1",
+  "source_path": "../../evaluation/cases/072_real_human_visible_medium_weak_v1.json",
+  "case_ids": [
+    "RHC-026",
+    "RHC-027",
+    "RHC-028",
+    "RHC-029",
+    "RHC-030",
+    "RHC-031",
+    "RHC-032",
+    "RHC-033",
+    "RHC-034"
+  ],
+  "case_count": 9
+}

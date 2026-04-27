@@ -1,0 +1,15 @@
+{
+  "run_label": "072-post-repair-evaluation-execution-v1",
+  "execution_started_at": "2026-04-27T00:48:08.850Z",
+  "execution_finished_at": "2026-04-27T00:48:09.077Z",
+  "approved_plan": "specs/072-real-human-corpus-expansion/post-repair-evaluation-plan-v1.md",
+  "branch_intent": "072-post-repair-evaluation-execution",
+  "repair_baseline_merge_commit": "ee2ff2a4990b8117d8c80991edf9cd230ed0516a",
+  "planning_merge_commit": "a49bbd534fd7ebd848a9a47fb8cc921b169c5836",
+  "rules_confirmed": {
+    "repair_code_altered": false,
+    "frozen_072_artifacts_altered": false,
+    "evaluation_inputs_altered_after_start": false,
+    "public_proof_claim_authorized": false
+  }
+}
