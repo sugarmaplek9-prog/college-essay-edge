@@ -1,0 +1,233 @@
+{
+  "run_label": "072-targeted-repair-v2",
+  "generated_at": "2026-04-30T18:01:04.295Z",
+  "target_case_ids": [
+    "RHC-026",
+    "RHC-028",
+    "RHC-030",
+    "RHC-001",
+    "RHC-004",
+    "RHC-005"
+  ],
+  "guardrail_case_ids": [
+    "RHC-027",
+    "RHC-029",
+    "RHC-002",
+    "RHC-003"
+  ],
+  "category_scores": [
+    {
+      "case_id": "RHC-001",
+      "label": "Hamilton official essay — books, moving, and queer self-recognition",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "family",
+        "moved",
+        "books",
+        "became",
+        "stable",
+        "place",
+        "change",
+        "understand"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-002",
+      "label": "Hamilton official essay — cicadas as leaving-home metaphor",
+      "bucket": "guardrail",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "hated",
+        "cicadas",
+        "thinking",
+        "leave",
+        "become"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-003",
+      "label": "Hamilton official essay — grief, donor family structure, and difference owned openly",
+      "bucket": "guardrail",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "later",
+        "three",
+        "parental",
+        "figures",
+        "donor",
+        "other",
+        "people",
+        "explanation",
+        "changed",
+        "actual",
+        "become"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-004",
+      "label": "Hamilton official essay — layered Russian/Chechen identity and cosmopolitan belonging",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 1,
+      "lexical_overlap": [
+        "language",
+        "assumptions",
+        "instead"
+      ],
+      "total": 9
+    },
+    {
+      "case_id": "RHC-005",
+      "label": "Hamilton official essay — piano performance humbled by audience need",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "thought",
+        "prepared",
+        "perfect",
+        "piano",
+        "performance",
+        "long-term-care",
+        "audience",
+        "different",
+        "moment",
+        "realize",
+        "instead",
+        "there"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-026",
+      "label": "Public student-help post — choosing between father/alcoholism and chronic migraine topics",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "split",
+        "between",
+        "writing",
+        "absent",
+        "father",
+        "alcoholism",
+        "actually",
+        "instead"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-027",
+      "label": "Public student-help post — four-topic Common App shortlist",
+      "bucket": "guardrail",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "identifying",
+        "which",
+        "option",
+        "actual",
+        "personal",
+        "traction",
+        "instead",
+        "surface"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-028",
+      "label": "Public student-help post — jazz versus classical music topic fragment",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 1,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "write",
+        "learning",
+        "classical",
+        "piano",
+        "changed",
+        "familiar"
+      ],
+      "total": 9
+    },
+    {
+      "case_id": "RHC-029",
+      "label": "Public student-help post — ceramics metaphor and family relationship brainstorm",
+      "bucket": "guardrail",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 2,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "process",
+        "finished",
+        "changed",
+        "language",
+        "structure"
+      ],
+      "total": 10
+    },
+    {
+      "case_id": "RHC-030",
+      "label": "Public student-help post — grief, medicine, and place-memory brainstorm",
+      "bucket": "target",
+      "artifact_status": "success",
+      "admissions_judgment_quality": 2,
+      "recommendation_decisiveness": 1,
+      "stronger_vs_obvious_reasoning": 2,
+      "premium_coaching_tone": 2,
+      "student_specific_evidence_use": 2,
+      "lexical_overlap": [
+        "these",
+        "deeply",
+        "personal",
+        "which",
+        "there"
+      ],
+      "total": 9
+    }
+  ],
+  "final_classification": "V2_REPAIR_PASS",
+  "note": "This is a machine-scored V2 implementation packet only."
+}

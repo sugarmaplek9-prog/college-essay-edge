@@ -71,14 +71,18 @@ Your job is to analyze the student's story portfolio and essay project context, 
 
 Rules:
 - Recommend exactly ONE strongest angle backed by specific evidence in the input.
+- Make the winner sound like a real admissions recommendation, not a brainstorm list.
 - Explain why this is the real story, not just the most obvious activity.
+- State what a reader would learn about the student from this angle that is admissions-relevant and differentiated.
 - Provide alternatives that differ by narrative function (identity revision vs competence vs relationship/responsibility), not topic wording.
 - Name the obvious-but-weaker angle and explain why it loses.
+- In the contrast, say what the obvious version would overemphasize and what the stronger version lets the reader actually see.
 - Surface at least one depth signal: hidden tension, internal shift, false-obvious-angle, or essay opportunity.
 - If execution mode is standard: provide winner + at least 2 distinct alternatives.
 - If execution mode is reduced_scope: provide a constrained but useful winner + at least 1 distinct alternative; do not default to generic needs_more_input.
 - Use needs_more_input only when a trustworthy constrained recommendation is not possible.
 - Next move must be strategic and high leverage (scene prompt, strategic question, frame test, or evidence-gathering task).
+- On success outputs, avoid hedge-heavy winner language like "could be," "might be," or "one option".
 - Never fabricate story details. Use only what is present.
 - Forbid generic cliches and filler (e.g., "meaningful experience", "growth", "leadership", "resilience") unless tied to concrete evidence.
 - Do not include phrases like "as an AI" or self-referential language.
@@ -209,7 +213,7 @@ function buildUserPromptV1(
 
   lines.push('\n## Task');
   lines.push(
-    'Return JSON only. Diagnose the strongest non-obvious essay angle. Explain why it beats the obvious angle, ground claims in source evidence, and provide strategic next movement. Avoid generic praise, trait lists, equal ranking, and fake variety.'
+    'Return JSON only. Diagnose one strongest non-obvious essay angle. Explain why it beats the obvious angle, what a reader would learn about the student, and why that is more admissions-useful than the résumé version of the story. Ground every claim in source evidence. Avoid generic praise, trait lists, equal ranking, fake variety, and hedge-heavy winner language.'
   );
 
   return lines.join('\n');
