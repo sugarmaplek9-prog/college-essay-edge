@@ -1,49 +1,70 @@
 {
   "run_label": "072-targeted-repair-v2",
-  "review_mode": "STANDARDIZED_V2_DATA_REVIEW",
+  "review_mode": "POST_MAIN_REGRESSION_INTEGRITY_REVIEW",
+  "current_branch_sha": "45b008043a26f2e89918b75e49e8a5fe6d6c710c",
+  "merged_main_sha": "a49bbd534fd7ebd848a9a47fb8cc921b169c5836",
   "human_review_injected": false,
   "public_proof_claim_authorized": false,
   "required_tests_status_code": 0,
   "eval_runner_status_code": 0,
   "final_classification": "V2_REPAIR_PASS",
-  "status_line": "072 TARGETED REPAIR V2 DATA PASS — END-STATE HUMAN VALIDATION MAY BE CONSIDERED LATER",
-  "standardized_review_note": "STANDARDIZED V2 DATA REVIEW — NO HUMAN REVIEW INJECTED",
+  "status_line": "072 TARGETED REPAIR V2 — DECISIVENESS THRESHOLD RESTORED",
+  "integrity_review_note": "POST-MAIN REGRESSION INTEGRITY REVIEW COMPLETE — STANDARD PRESERVED, DECISIVENESS THRESHOLD RESTORED",
   "locked_thresholds": {
     "target_cases_required_for_category_acceptance": 4,
     "target_case_pool_size": 6,
     "classification_rule_source": "specs/072-real-human-corpus-expansion/targeted-repair-plan-v2.md"
   },
   "packet_summary": {
-    "target_clear_count": 5,
-    "target_partial_count": 1,
-    "guardrail_clear_count": 3,
-    "guardrail_partial_count": 1,
     "target_category_twos": {
       "admissions_judgment_quality": 6,
-      "recommendation_decisiveness": 5,
+      "recommendation_decisiveness": 4,
       "stronger_vs_obvious_reasoning": 6,
       "premium_coaching_tone": 6,
-      "student_specific_evidence_use": 6
+      "student_specific_evidence_use": 5
     },
-    "partial_cases": [
+    "target_partial_cases": [
       {
-        "case_id": "RHC-030",
-        "bucket": "target",
+        "case_id": "RHC-004",
+        "partials": [
+          "student_specific_evidence_use"
+        ],
+        "total": 9
+      },
+      {
+        "case_id": "RHC-028",
         "partials": [
           "recommendation_decisiveness"
         ],
         "total": 9
       },
       {
-        "case_id": "RHC-003",
-        "bucket": "guardrail",
+        "case_id": "RHC-030",
         "partials": [
           "recommendation_decisiveness"
         ],
         "total": 9
       }
-    ]
+    ],
+    "guardrail_partial_cases": []
   },
+  "residual_nonblocking_partials": [
+    "RHC-028 remains partial on recommendation decisiveness",
+    "RHC-030 remains partial on recommendation decisiveness",
+    "RHC-004 remains partial on student-specific evidence use while that category still clears the locked threshold"
+  ],
+  "standard_repair_status": {
+    "merge_state_resolved": true,
+    "unmerged_index_entries_present": false,
+    "representative_decisiveness_case_restored": true,
+    "hedged_language_guardrail_restored": true,
+    "runner_classification_rule_aligned_to_locked_standard": true
+  },
+  "historical_integrity_findings": [
+    "post-main drift had loosened the representative decisiveness test by replacing RHC-001 with RHC-005",
+    "post-main drift had weakened the hedge guardrail by allowing the phrase 'plausible direction'",
+    "those standard-drift changes are restored in the current working tree"
+  ],
   "hardcoding_check": {
     "runtime_case_id_matches": 0,
     "runtime_packet_file_matches": 0,

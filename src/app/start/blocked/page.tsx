@@ -5,6 +5,71 @@ import { useRouter } from 'next/navigation';
 import { fireFmEvent, buildEvent } from '@/lib/fm/events';
 import { buildCaseTranscript } from '@/lib/fm/case-state';
 import { getStoredCaseState, setResumeDraft } from '@/lib/fm/clientSession';
+import { RepresentationContractScripts } from '@/components/representation/renderPageFromContract';
+import { buildJourneySessionContract } from '@/lib/representation/handoff/buildHandoffContract';
+import type { RepresentationPageContract } from '@/lib/representation/contracts';
+import { CTARegion, InteriorHeaderBlock, InteriorPageShell, SurfaceCard, primaryCTA, secondaryCTA } from '@/components/firstMinute/InteriorFlowSystem';
+
+const BLOCKED_PAGE_CONTRACT: RepresentationPageContract = {
+  pageRole: 'blocked',
+  pageId: 'start-blocked',
+  title: 'We need a little more to work with',
+  subtitle: 'One more concrete detail or one focused follow-up gets you back into the direction flow.',
+  blocks: [
+    {
+      blockType: 'recovery',
+      blockId: 'start-blocked-recovery',
+      visible: true,
+      content: {
+        label: 'Why we paused',
+        title: 'We need a little more to work with',
+        message: 'The signal is still too broad to trust. Add one concrete detail or take one focused follow-up to unlock the next direction call.',
+        issues: [
+          'Missing piece: one concrete hinge we can test against your own words.',
+          'Fastest recovery: add what was said, what you noticed, or what happened right after the turn.',
+        ],
+      },
+    },
+  ],
+  primaryCta: {
+    id: 'blocked-add-detail',
+    label: 'Add one concrete detail',
+    actionType: 'recovery',
+    targetRoute: '/start',
+    requiredStateKeys: [],
+    analyticsEvent: 'blocked_add_detail',
+    variant: 'primary',
+  },
+  secondaryCta: {
+    id: 'blocked-answer-question',
+    label: 'Answer one focused question',
+    actionType: 'route',
+    targetRoute: '/start/question',
+    requiredStateKeys: [],
+    analyticsEvent: 'blocked_answer_question',
+    variant: 'secondary',
+  },
+  requiredInputs: [],
+  carryForwardKeys: [],
+};
+
+const BLOCKED_SESSION_CONTRACT = buildJourneySessionContract({
+  sessionId: 'start-blocked-session',
+  currentPage: BLOCKED_PAGE_CONTRACT,
+  selectedDirection: null,
+  compareOptions: [],
+  handoffState: null,
+  recoveryState: {
+    reasonCode: 'insufficient-specificity',
+    message: 'The direction signal is still too broad.',
+    issues: ['Add one concrete detail or answer one focused question.'],
+    restartRoute: '/start',
+  },
+  availableStateKeys: [],
+  currentRoute: '/start/blocked',
+  priorRoutes: ['/start'],
+  nextRoutes: ['/start', '/start/question'],
+});
 
 export default function BlockedPage() {
   const router = useRouter();
@@ -23,70 +88,55 @@ export default function BlockedPage() {
   }
 
   return (
-    <main
-      style={{
-        minHeight: '100svh',
-        backgroundColor: 'var(--color-surface)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: 'var(--spacing-page)',
-      }}
-    >
-      <div style={{ maxWidth: '36rem', margin: '0 auto', width: '100%' }}>
-        {/* §6: Graceful blocked state — never show "Blocked" or error codes */}
-        <h1 className="text-title" style={{ marginBottom: '1rem' }}>
-          We need a little more to work with
-        </h1>
+    <InteriorPageShell maxWidth="36rem">
+      <div>
+        <RepresentationContractScripts
+          pageContract={BLOCKED_PAGE_CONTRACT}
+          journeySessionContract={BLOCKED_SESSION_CONTRACT}
+        />
+        <InteriorHeaderBlock
+          eyebrow="We need one more concrete detail"
+          title="We need a little more to work with"
+          subtitle="You did not do anything wrong. We need one concrete hinge before we can trust the next direction call."
+        />
 
-        <p
-          className="text-body"
-          style={{ color: 'var(--color-muted)', marginBottom: '2rem' }}
-        >
-          What you shared gives us a starting point, but the fastest way to move
-          forward is to answer one focused question — or add one concrete detail.
-        </p>
+        <SurfaceCard label="Why we paused here" variant="coach" style={{ marginBottom: '1rem' }}>
+          <p className="text-small" style={{ margin: 0, color: 'var(--color-text)', fontWeight: 500 }}>
+            What you shared gives us a direction family, but not yet one hinge we can trust enough to build on.
+          </p>
+          <p className="text-small" style={{ margin: '0.45rem 0 0', color: 'var(--color-muted)' }}>
+            Add what was said, what you noticed, or what happened right after the moment shifted.
+          </p>
+          <p className="text-small" style={{ margin: '0.45rem 0 0', color: '#173a6a', fontWeight: 500 }}>
+            A usable answer sounds like: “I stopped trying to sound certain and noticed everyone else stop talking too.”
+          </p>
+        </SurfaceCard>
 
-        <p className="text-small" style={{ color: 'var(--color-muted)', marginTop: '-1.2rem', marginBottom: '1.6rem' }}>
-          You did not do anything wrong. We are holding quality so your direction is specific and usable.
-        </p>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: '20rem' }}>
+        <CTARegion>
           <button
             onClick={handleAddMoreNotes}
-            style={{
-              padding: '0.875rem 1.5rem',
-              backgroundColor: 'var(--color-text)',
-              color: 'var(--color-surface)',
-              border: 'none',
-              borderRadius: 'var(--radius-input)',
-              fontSize: '1rem',
-              fontWeight: 600,
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-            }}
+            style={primaryCTA}
           >
             Add one concrete detail
           </button>
 
           <button
             onClick={() => router.push('/start/question')}
-            style={{
-              padding: '0.875rem 1.5rem',
-              backgroundColor: 'var(--color-surface)',
-              color: 'var(--color-text)',
-              border: '1.5px solid var(--color-border)',
-              borderRadius: 'var(--radius-input)',
-              fontSize: '1rem',
-              fontWeight: 500,
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-            }}
+            style={secondaryCTA}
           >
             Answer one focused question
           </button>
+        </CTARegion>
+
+        <div style={{ display: 'grid', gap: '0.45rem', marginTop: '0.8rem' }}>
+          <p className="text-small" style={{ margin: 0, color: '#173a6a', fontWeight: 500 }}>
+            Add one concrete detail → go back to your notes and fill the missing hinge.
+          </p>
+          <p className="text-small" style={{ margin: 0, color: 'var(--color-muted)' }}>
+            Answer one focused question → take the shortest route into a stronger direction call.
+          </p>
         </div>
       </div>
-    </main>
+    </InteriorPageShell>
   );
 }

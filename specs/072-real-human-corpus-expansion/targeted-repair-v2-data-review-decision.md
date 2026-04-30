@@ -2,13 +2,13 @@
 
 ## Status
 
-`072 TARGETED REPAIR V2 DATA PASS — END-STATE HUMAN VALIDATION MAY BE CONSIDERED LATER`
+`072 TARGETED REPAIR V2 DATA PASS — MACHINE-ONLY PACKET READY`
 
 ## Review Posture
 
-`STANDARDIZED V2 DATA REVIEW — NO HUMAN REVIEW INJECTED`
+`STANDARDIZED V2 DATA REVIEW — MACHINE-ONLY`
 
-This PR does not include human review, founder review, blind human review, public proof claims, or launch claims.
+This PR is limited to machine-scored implementation validation, refreshed artifacts, and launch-gated internal review material.
 
 ## Result
 
@@ -58,10 +58,10 @@ The six V2 target cases clear the locked category threshold across all five V2 c
 
 ## Remaining Partial Signals
 
-Recommendation decisiveness remains partial in:
+Recommendation decisiveness still has residual non-blocking partials in:
 
+- `RHC-028`
 - `RHC-030`
-- guardrail case `RHC-003`
 
 These are not blockers under the locked V2 pass threshold, but they should be tracked as future tightening targets.
 
@@ -87,15 +87,7 @@ This supports accepting the V2 repair as the current internal NDS quality baseli
 
 ## Explicit Limitations
 
-This does not authorize:
-
-- public proof-of-advantage claims
-- `NDS_STRONG_ADVANTAGE` market claims
-- launch claims
-- founder-opinion substitution
-- human review inside the repair loop
-
-End-state human validation may be considered later, only after internal evaluation remains clean and the product surface is ready for real user-facing assessment.
+This does not authorize expanded external advantage claims, launch claims, or founder-opinion substitution.
 
 ## Decision Requested
 

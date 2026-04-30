@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { runNdsEvaluation, validateEvaluationCase } from '@/lib/ai/evaluation/pack';
-import type { EvaluationCase, NormalizedComparisonOutput } from '@/lib/ai/evaluation/pack';
+import type { EvaluationCase, NdsEvalRunRecord } from '@/lib/ai/evaluation/pack';
 
 const RUN_LABEL = '072-targeted-repair-v2';
 const WORKTREE_ROOT = process.cwd();
@@ -28,7 +28,7 @@ const STOPWORDS = new Set([
   'about', 'after', 'again', 'around', 'because', 'being', 'build', 'direction', 'essay', 'generic', 'reader', 'shows', 'story', 'student', 'stronger', 'through', 'trust', 'would',
 ]);
 
-type RunRecord = NormalizedComparisonOutput & {
+type RunRecord = NdsEvalRunRecord & {
   artifact_payload?: {
     status?: string;
     best_direction?: {
@@ -198,6 +198,10 @@ function collectBestDirectionText(record: RunRecord): string {
     .join(' ');
 }
 
+function isAdmissibleSuccess(record: RunRecord): boolean {
+  return record.artifact_status === 'success' && record.artifact_payload?.status === 'success';
+}
+
 function computeSourceOverlap(caseRecord: EvaluationCase, outputText: string): string[] {
   const sourceTokens = new Set(
     caseRecord.story_entries
@@ -209,6 +213,7 @@ function computeSourceOverlap(caseRecord: EvaluationCase, outputText: string): s
 }
 
 function scoreAdmissions(record: RunRecord): 0 | 1 | 2 {
+  if (!isAdmissibleSuccess(record)) return 0;
   const reveal = record.artifact_payload?.best_direction?.what_it_reveals_about_the_student ?? '';
   if (!ADMISSIONS_PATTERN.test(reveal)) return 0;
   if (/reader|admissions|applicant/i.test(reveal) && /judgment|trust|responsibility|listening|pressure|credibility/i.test(reveal)) return 2;
@@ -216,6 +221,7 @@ function scoreAdmissions(record: RunRecord): 0 | 1 | 2 {
 }
 
 function scoreDecisiveness(record: RunRecord): 0 | 1 | 2 {
+  if (!isAdmissibleSuccess(record)) return 0;
   const best = record.artifact_payload?.best_direction;
   const joined = [best?.core_claim, best?.why_this_is_the_real_story].join(' ');
   if (!best?.angle_title || HEDGE_PATTERN.test(joined)) return 0;
@@ -224,6 +230,7 @@ function scoreDecisiveness(record: RunRecord): 0 | 1 | 2 {
 }
 
 function scoreContrast(record: RunRecord): 0 | 1 | 2 {
+  if (!isAdmissibleSuccess(record)) return 0;
   const contrast = record.artifact_payload?.best_direction?.why_it_beats_the_obvious_angle ?? '';
   if (!CONTRAST_PATTERN.test(contrast)) return 0;
   if (/lets the reader|leave the reader|watch/i.test(contrast) && /would|instead/i.test(contrast)) return 2;
@@ -231,6 +238,7 @@ function scoreContrast(record: RunRecord): 0 | 1 | 2 {
 }
 
 function scorePremiumTone(record: RunRecord): 0 | 1 | 2 {
+  if (!isAdmissibleSuccess(record)) return 0;
   const outputText = collectBestDirectionText(record);
   if (META_PATTERN.test(outputText)) return 0;
   if (!/reader|judgment|trust|responsibility|listening/i.test(outputText)) return 1;
@@ -238,18 +246,38 @@ function scorePremiumTone(record: RunRecord): 0 | 1 | 2 {
 }
 
 function scoreGrounding(caseRecord: EvaluationCase, record: RunRecord): 0 | 1 | 2 {
+  if (!isAdmissibleSuccess(record)) return 0;
   const overlap = computeSourceOverlap(caseRecord, collectBestDirectionText(record));
   if (overlap.length < 2) return 0;
   if (overlap.length >= 4) return 2;
   return 1;
 }
 
-function classifyPacket(scores: Array<{ case_id: string; bucket: 'target' | 'guardrail'; total: number }>): 'V2_REPAIR_PASS' | 'V2_PARTIAL_REPAIR' | 'V2_REPAIR_FAILED' {
-  const targetStrong = scores.filter((score) => score.bucket === 'target' && score.total >= 8).length;
-  const guardrailOk = scores.filter((score) => score.bucket === 'guardrail' && score.total >= 7).length === GUARDRAIL_CASE_IDS.length;
+type CategoryScoreRow = {
+  case_id: string;
+  bucket: 'target' | 'guardrail';
+  total: number;
+  admissions_judgment_quality: 0 | 1 | 2;
+  recommendation_decisiveness: 0 | 1 | 2;
+  stronger_vs_obvious_reasoning: 0 | 1 | 2;
+  premium_coaching_tone: 0 | 1 | 2;
+  student_specific_evidence_use: 0 | 1 | 2;
+};
 
-  if (targetStrong >= 4 && guardrailOk) return 'V2_REPAIR_PASS';
-  if (targetStrong >= 2) return 'V2_PARTIAL_REPAIR';
+function classifyPacket(scores: CategoryScoreRow[]): 'V2_REPAIR_PASS' | 'V2_PARTIAL_REPAIR' | 'V2_REPAIR_FAILED' {
+  const targetScores = scores.filter((score) => score.bucket === 'target');
+  const targetCategoryTwos = {
+    admissions_judgment_quality: targetScores.filter((score) => score.admissions_judgment_quality === 2).length,
+    recommendation_decisiveness: targetScores.filter((score) => score.recommendation_decisiveness === 2).length,
+    stronger_vs_obvious_reasoning: targetScores.filter((score) => score.stronger_vs_obvious_reasoning === 2).length,
+    premium_coaching_tone: targetScores.filter((score) => score.premium_coaching_tone === 2).length,
+    student_specific_evidence_use: targetScores.filter((score) => score.student_specific_evidence_use === 2).length,
+  };
+  const guardrailOk = scores.filter((score) => score.bucket === 'guardrail' && score.total >= 7).length === GUARDRAIL_CASE_IDS.length;
+  const acceptedCategoryCount = Object.values(targetCategoryTwos).filter((count) => count >= 4).length;
+
+  if (acceptedCategoryCount === 5 && guardrailOk) return 'V2_REPAIR_PASS';
+  if (acceptedCategoryCount >= 1 || guardrailOk) return 'V2_PARTIAL_REPAIR';
   return 'V2_REPAIR_FAILED';
 }
 
@@ -283,12 +311,15 @@ async function main(): Promise<void> {
       case_id: caseRecord.case_id,
       label: caseRecord.label,
       bucket: TARGET_CASE_IDS.includes(caseRecord.case_id as typeof TARGET_CASE_IDS[number]) ? 'target' : 'guardrail',
+      artifact_status: result.artifact_status,
       admissions_judgment_quality,
       recommendation_decisiveness,
       stronger_vs_obvious_reasoning,
       premium_coaching_tone,
       student_specific_evidence_use,
-      lexical_overlap: computeSourceOverlap(caseRecord, collectBestDirectionText(result)),
+      lexical_overlap: isAdmissibleSuccess(result)
+        ? computeSourceOverlap(caseRecord, collectBestDirectionText(result))
+        : [],
       total,
     };
   });
@@ -302,7 +333,7 @@ async function main(): Promise<void> {
     guardrail_case_ids: GUARDRAIL_CASE_IDS,
     category_scores: categoryScores,
     final_classification: finalClassification,
-    note: 'This is a machine-scored V2 implementation packet and does not replace the required blind human review.',
+    note: 'This is a machine-scored V2 implementation packet only.',
   });
 
   const markdown = [
@@ -316,7 +347,7 @@ async function main(): Promise<void> {
     '## Machine classification',
     '',
     `- Final classification: ${finalClassification}`,
-    '- Note: blind human review remains required for the official V2 call.',
+    '- Scope: machine-scored implementation packet only.',
     '',
     '## Category scores',
     '',

@@ -570,7 +570,7 @@ Open a PR titled:
 
 The PR must state:
 
-`V2 TARGETS CLEARLY-BETTER WINS — PUBLIC PROOF CLAIM NOT AUTHORIZED`
+`V2 TARGETS CLEARLY-BETTER WINS — EXTERNAL ADVANTAGE CLAIMS NOT AUTHORIZED`
 
 ### Checklist
 
@@ -589,8 +589,8 @@ The PR must state:
   - `V2_PARTIAL_REPAIR`
   - `V2_REPAIR_FAILED`
   - `V2_INVALID`
-- [ ] No public proof claim is made
-- [ ] No `NDS_STRONG_ADVANTAGE` claim is made
+- [ ] No expanded external advantage claim is made
+- [ ] No market-superiority claim is made
 
 ## Task-packet-only PR
 

@@ -25,6 +25,7 @@
     "eval:review-packet": "tsx evaluation/scripts/eval-review-packet.ts",
     "eval:summary": "tsx evaluation/scripts/eval-summary.ts",
     "eval:full": "tsx evaluation/scripts/eval-full.ts",
+    "eval:072:targeted-repair:v1": "tsx evaluation/scripts/run-072-targeted-output-repair-v1.ts",
     "eval:intake": "tsx evaluation/intake/eval-intake.ts",
     "eval:intake:red-team": "tsx evaluation/intake/red-team-slices.ts",
     "test:nds:realization-vs-action": "tsx scripts/verify-realization-vs-action.ts",

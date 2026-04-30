@@ -50,8 +50,8 @@ No evidence in the changed runtime files suggests manual per-case output editing
 
 - Frozen accepted post-repair artifacts were not modified as part of this packet.
 - The current review uses generated logs, generated scores, and generated packet outputs already present under `evaluation_outputs/072-real-human-corpus-expansion/072-targeted-repair-v2/`.
-- This packet does not perform blind decode or inject human review.
-- No public-proof claim is made here.
+- This packet stays inside machine-scored implementation review only.
+- No expanded external advantage claim is made here.
 
 ## Conclusion
 

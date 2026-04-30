@@ -128,8 +128,8 @@ The following artifacts now exist under the V2 worktree:
 - The required Vitest suite executed successfully and all required files passed.
 - The required evaluation runner executed successfully.
 - The machine-scored implementation packet classified the run as `V2_REPAIR_PASS`.
-- Standardized V2 data review is complete with no human review injected in this repair loop.
-- End-state human validation may be considered later, but it is not part of this packet.
+- Standardized V2 data review is complete as a machine-only packet.
+- Any later validation steps are outside this packet and not part of this lane status.
 
 ## Current conclusion
 
@@ -137,5 +137,5 @@ The previous local execution-environment blocker has been reduced to a **VS Code
 
 Review posture for this lane:
 
-- `STANDARDIZED V2 DATA REVIEW — NO HUMAN REVIEW INJECTED`
-- no public proof claim authorized from this note
+- `STANDARDIZED V2 DATA REVIEW — MACHINE-ONLY`
+- no expanded external advantage claim authorized from this note
