@@ -1,0 +1,53 @@
+{
+  "run_label": "072-targeted-repair-v2",
+  "review_mode": "STANDARDIZED_V2_DATA_REVIEW",
+  "human_review_injected": false,
+  "public_proof_claim_authorized": false,
+  "required_tests_status_code": 0,
+  "eval_runner_status_code": 0,
+  "final_classification": "V2_REPAIR_PASS",
+  "status_line": "072 TARGETED REPAIR V2 DATA PASS — END-STATE HUMAN VALIDATION MAY BE CONSIDERED LATER",
+  "standardized_review_note": "STANDARDIZED V2 DATA REVIEW — NO HUMAN REVIEW INJECTED",
+  "locked_thresholds": {
+    "target_cases_required_for_category_acceptance": 4,
+    "target_case_pool_size": 6,
+    "classification_rule_source": "specs/072-real-human-corpus-expansion/targeted-repair-plan-v2.md"
+  },
+  "packet_summary": {
+    "target_clear_count": 5,
+    "target_partial_count": 1,
+    "guardrail_clear_count": 3,
+    "guardrail_partial_count": 1,
+    "target_category_twos": {
+      "admissions_judgment_quality": 6,
+      "recommendation_decisiveness": 5,
+      "stronger_vs_obvious_reasoning": 6,
+      "premium_coaching_tone": 6,
+      "student_specific_evidence_use": 6
+    },
+    "partial_cases": [
+      {
+        "case_id": "RHC-030",
+        "bucket": "target",
+        "partials": [
+          "recommendation_decisiveness"
+        ],
+        "total": 9
+      },
+      {
+        "case_id": "RHC-003",
+        "bucket": "guardrail",
+        "partials": [
+          "recommendation_decisiveness"
+        ],
+        "total": 9
+      }
+    ]
+  },
+  "hardcoding_check": {
+    "runtime_case_id_matches": 0,
+    "runtime_packet_file_matches": 0,
+    "runtime_known_case_phrase_matches": 0,
+    "result": "PASS"
+  }
+}

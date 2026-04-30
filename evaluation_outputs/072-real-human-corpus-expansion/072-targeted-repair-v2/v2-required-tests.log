@@ -1,0 +1,25 @@
+
+> college-essay-edge@0.1.0 test
+> vitest run src/__tests__/ai/nds-targeted-repair-v2-admissions-judgment.test.ts src/__tests__/ai/nds-targeted-repair-v2-contrast-reasoning.test.ts src/__tests__/ai/nds-targeted-repair-v2-decisiveness.test.ts src/__tests__/ai/nds-targeted-repair-v2-premium-tone.test.ts src/__tests__/ai/nds-targeted-repair-v2-student-grounding.test.ts src/__tests__/ai/nds-072-targeted-output-repair.test.ts src/__tests__/ai/nds-premium-angle-writing.test.ts src/__tests__/ai/nds-domain-angle-construction.test.ts src/__tests__/ai/nds-quality-rebuild.test.ts src/__tests__/ai/selection.test.ts
+
+
+ RUN  v2.1.9 /Volumes/TOSHIBA EXT/College Essay/.worktrees/072-targeted-repair-v2-implementation
+
+ ✓ src/__tests__/ai/selection.test.ts (11 tests) 4ms
+ ✓ src/__tests__/ai/nds-domain-angle-construction.test.ts (2 tests) 15ms
+ ✓ src/__tests__/ai/nds-072-targeted-output-repair.test.ts (2 tests) 52ms
+ ✓ src/__tests__/ai/nds-targeted-repair-v2-decisiveness.test.ts (1 test) 55ms
+ ✓ src/__tests__/ai/nds-targeted-repair-v2-premium-tone.test.ts (1 test) 56ms
+ ✓ src/__tests__/ai/nds-targeted-repair-v2-admissions-judgment.test.ts (1 test) 56ms
+ ✓ src/__tests__/ai/nds-premium-angle-writing.test.ts (1 test) 58ms
+ ✓ src/__tests__/ai/nds-quality-rebuild.test.ts (6 tests) 28ms
+ ✓ src/__tests__/ai/nds-targeted-repair-v2-contrast-reasoning.test.ts (1 test) 64ms
+ ✓ src/__tests__/ai/nds-targeted-repair-v2-student-grounding.test.ts (1 test) 19ms
+
+ Test Files  10 passed (10)
+      Tests  27 passed (27)
+   Start at  13:22:57
+   Duration  1.11s (transform 446ms, setup 0ms, collect 1.49s, tests 407ms, environment 1ms, prepare 2.06s)
+
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m

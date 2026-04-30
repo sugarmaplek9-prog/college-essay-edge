@@ -51,7 +51,9 @@ const FC = {
   GENERIC_DIRECTION_TITLE: 'nds.semantic.generic_direction_title',
   MISSING_DEPTH_SIGNAL_CONTENT: 'nds.semantic.missing_depth_signal_content',
   GENERIC_REAL_STORY_EXPLANATION: 'nds.semantic.generic_real_story_explanation',
+  GENERIC_STUDENT_REVEAL: 'nds.semantic.generic_student_reveal',
   WEAK_OBVIOUS_ANGLE_COMPARE: 'nds.semantic.weak_obvious_angle_compare',
+  HEDGED_WINNER_LANGUAGE: 'nds.semantic.hedged_winner_language',
   WEAK_NEXT_MOVE: 'nds.semantic.weak_next_move',
   ALTERNATIVES_NOT_FUNCTIONALLY_DISTINCT: 'nds.semantic.alternatives_not_functionally_distinct',
   BANNED_PHRASE: 'nds.brand.banned_phrase',
@@ -93,6 +95,21 @@ const GENERIC_CLICHE_PATTERN =
 
 const LOW_VALUE_NEXT_MOVE_PATTERN =
   /(^|\b)(draft a paragraph|expand on this|describe what you learned|write more|add more detail)(\b|$)/i;
+
+const HEDGED_WINNER_PATTERN =
+  /\b(could be|might be|maybe|perhaps|one option|possible direction|plausible direction|you could|you might|could also)\b/i;
+
+const ADMISSIONS_SIGNAL_PATTERN =
+  /\b(reader|admissions|committee|applicant|judgment|discernment|decision-making|decision making|trust|responsibility|listening|humility|self-command|self awareness|diagnose|adapt|pressure|credibility|follow-through|follow through|relational|intellectual)\b/i;
+
+const REVEAL_ACTION_PATTERN =
+  /\b(shows|reveals|demonstrates|lets|proves|makes clear|signals)\b/i;
+
+const CONTRAST_REASON_PATTERN =
+  /\b(would|instead|lets the reader|leave the reader|watch|centers|overemphasize|retell|resume|résumé|trait claim|summary)\b/i;
+
+const VAGUE_COMPARE_FILLER_PATTERN =
+  /\b(more specific|less generic|more concrete|more interesting|more unique|more faithful)\b/i;
 
 /**
  * Attempts to parse a raw provider response into a typed NdsPayload.
@@ -331,7 +348,6 @@ function runSemanticValidation(
   const titleLower = best_direction.angle_title.toLowerCase().trim();
   if (GENERIC_DIRECTION_TITLES.some((g) => titleLower === g)) {
     failures.push(FC.GENERIC_DIRECTION_TITLE);
-    return false;
   }
 
   if (
@@ -340,7 +356,6 @@ function runSemanticValidation(
     !Object.values(payload.depth_signals).some((v) => typeof v === 'string' && v.trim().length > 0)
   ) {
     failures.push(FC.MISSING_DEPTH_SIGNAL_CONTENT);
-    return false;
   }
 
   if (
@@ -348,12 +363,31 @@ function runSemanticValidation(
     GENERIC_CLICHE_PATTERN.test(best_direction.why_this_is_the_real_story)
   ) {
     failures.push(FC.GENERIC_REAL_STORY_EXPLANATION);
-    return false;
   }
 
-  if (best_direction.why_it_beats_the_obvious_angle.trim().length < 25) {
+  if (
+    HEDGED_WINNER_PATTERN.test(best_direction.core_claim) ||
+    HEDGED_WINNER_PATTERN.test(best_direction.why_this_is_the_real_story)
+  ) {
+    failures.push(FC.HEDGED_WINNER_LANGUAGE);
+  }
+
+  if (
+    best_direction.what_it_reveals_about_the_student.trim().length < 45 ||
+    GENERIC_CLICHE_PATTERN.test(best_direction.what_it_reveals_about_the_student) ||
+    !REVEAL_ACTION_PATTERN.test(best_direction.what_it_reveals_about_the_student) ||
+    !ADMISSIONS_SIGNAL_PATTERN.test(best_direction.what_it_reveals_about_the_student)
+  ) {
+    failures.push(FC.GENERIC_STUDENT_REVEAL);
+  }
+
+  if (
+    best_direction.why_it_beats_the_obvious_angle.trim().length < 55 ||
+    !CONTRAST_REASON_PATTERN.test(best_direction.why_it_beats_the_obvious_angle) ||
+    (VAGUE_COMPARE_FILLER_PATTERN.test(best_direction.why_it_beats_the_obvious_angle) &&
+      !/reader|watch|would|instead|leave the reader/i.test(best_direction.why_it_beats_the_obvious_angle))
+  ) {
     failures.push(FC.WEAK_OBVIOUS_ANGLE_COMPARE);
-    return false;
   }
 
   if (
@@ -361,7 +395,6 @@ function runSemanticValidation(
     LOW_VALUE_NEXT_MOVE_PATTERN.test(best_direction.next_move)
   ) {
     failures.push(FC.WEAK_NEXT_MOVE);
-    return false;
   }
 
   const anchorsWithSource = payload.evidence_anchors.filter(
@@ -369,7 +402,6 @@ function runSemanticValidation(
   );
   if (anchorsWithSource.length === 0) {
     failures.push(FC.DISHONEST_SUCCESS_INSUFFICIENT_EVIDENCE);
-    return false;
   }
 
   const normalizedBest = normalizeTitle(best_direction.angle_title);
@@ -381,12 +413,10 @@ function runSemanticValidation(
   ).length;
   if (alternativesSameAsBest > 0) {
     failures.push(FC.NO_CLEAR_WINNER);
-    return false;
   }
 
   if (alternatives.length < 1) {
     failures.push(FC.ALTERNATIVES_NOT_FUNCTIONALLY_DISTINCT);
-    return false;
   }
 
   if (alternatives.length >= 2) {
@@ -402,7 +432,6 @@ function runSemanticValidation(
 
     if (distinctAltTitles.size < alternatives.length || (distinctLoses.size === 1 && distinctModes.size === 1)) {
       failures.push(FC.ALTERNATIVES_NOT_FUNCTIONALLY_DISTINCT);
-      return false;
     }
   }
 

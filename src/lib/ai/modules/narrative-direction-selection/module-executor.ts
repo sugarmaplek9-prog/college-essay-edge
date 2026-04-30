@@ -2022,12 +2022,12 @@ function buildWhyThisDirectionPlain(winner: NdsScoredCandidate | undefined, runn
     10
   );
   if (!runnerUp) {
-    return `This direction is stronger because it stays with a real hinge — ${winnerAnchor} — instead of a broad theme.`;
+    return `This direction is strongest because it stays with a real hinge — ${winnerAnchor} — and gives a reader a clearer judgment story than a broad theme would.`;
   }
   const margin = winner.scores.total_score - runnerUp.scores.total_score;
   const comparative = margin >= 0.08
     ? 'It gives you a clearer turning point and stronger evidence than the other options.'
-    : 'It still edges out the other options because the hinge is more concrete and easier to write.';
+    : 'It remains the best option because the hinge is more concrete and more believable on the page.';
   return `${comparative} Build from ${winnerAnchor} so the draft starts in a scene, not a summary.`;
 }
 
@@ -2578,6 +2578,88 @@ function extractOutcomeAnchor(
   return afterState.split(/\s+/).slice(0, maxWords).join(' ').toLowerCase();
 }
 
+function sentenceCase(text: string): string {
+  if (!text) return text;
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function buildAdmissionsSignalFromWinner(
+  winnerSeed: RuntimeCandidateSeed,
+  shiftAnchor: string,
+  outcomeAnchor: string
+): string {
+  const line = `${winnerSeed.direction_line} ${winnerSeed.direction_summary} ${winnerSeed.core_tension}`.toLowerCase();
+
+  if (/experiment|research|science fair|competition|methodology|method/.test(line)) {
+    return `intellectual seriousness that shows up as method revision, not just resilience language. An admissions reader can see the student rework how they think in ${shiftAnchor}, with the proof landing in ${outcomeAnchor}.`;
+  }
+
+  if (/team|alone|robotics/.test(line)) {
+    return `leadership that becomes more useful to other people once the student stops centering their own competence. That change is visible in ${shiftAnchor}, which makes the recommendation more persuasive than an accomplishment recap.`;
+  }
+
+  if (winnerSeed.kind === 'system_redesign' || /redesign|system|workflow|process|tracker|architecture/.test(line)) {
+    return `the student can diagnose a failing structure and redesign it instead of just working harder, which reads as unusually strong judgment under pressure. The proof is in ${outcomeAnchor}.`;
+  }
+
+  if (winnerSeed.kind === 'delegation_distributed_responsibility' || /delegat|handoff|shared ownership|bottleneck/.test(line)) {
+    return 'leadership that scales through trust and distribution, not control. That gives the recommendation real authority rather than a generic captain story.';
+  }
+
+  if (winnerSeed.kind === 'relationship_or_listening' || /listen|patient|person in front|relationship|care/.test(line)) {
+    return `judgment that gets more humane and precise once another person is actually taken seriously. A reader can see that change in ${shiftAnchor}.`;
+  }
+
+  if (winnerSeed.kind === 'pattern_breaking' || /pattern|habit|stopped repeating/.test(line)) {
+    return 'a student who can interrupt an unhelpful instinct on purpose, which is more differentiated than simply sounding determined.';
+  }
+
+  if (winnerSeed.kind === 'identity_transformation' || /identity|self-concept|becoming|voice/.test(line)) {
+    return 'self-awareness tied to action, not abstract introspection. That makes the growth believable to an admissions reader.';
+  }
+
+  if (/argument|conflict|debate/.test(line)) {
+    return 'the ability to stay effective under disagreement by changing how they use their intelligence, which reads as mature judgment rather than performative confidence.';
+  }
+
+  if (/tutor|tutoring|explanation|teaching|peer tutoring/.test(line)) {
+    return 'someone who revises their method when another person is not actually being reached, which is a stronger applicant signal than simply sounding helpful.';
+  }
+
+  return 'a student whose judgment changes in a visible way and holds under pressure, which gives the essay differentiated applicant value instead of a familiar trait summary.';
+}
+
+function buildContrastFocus(
+  winnerSeed: RuntimeCandidateSeed,
+  sceneAnchor: string,
+  shiftAnchor: string,
+  outcomeAnchor: string
+): string {
+  const line = `${winnerSeed.direction_line} ${winnerSeed.direction_summary}`.toLowerCase();
+
+  if (/listen|patient|person in front|relationship|care/.test(line)) {
+    return `the student stop performing help and actually listen in ${sceneAnchor}, with the change holding in ${outcomeAnchor}`;
+  }
+
+  if (/redesign|system|workflow|process|tracker|architecture/.test(line)) {
+    return `the student move from patching symptoms to redesigning the structure, starting at ${shiftAnchor}`;
+  }
+
+  if (/delegat|handoff|shared ownership|bottleneck/.test(line)) {
+    return 'the student stop being the bottleneck and build trust through shared ownership';
+  }
+
+  if (/argument|conflict|debate/.test(line)) {
+    return `the moment being right stops being enough and judgment changes the room in ${shiftAnchor}`;
+  }
+
+  if (/tutor|student|explanation|teaching/.test(line)) {
+    return 'the student revise what help looks like instead of repeating the same explanation';
+  }
+
+  return `the judgment shift in ${shiftAnchor}, not just the setup around ${sceneAnchor}`;
+}
+
 /**
  * Builds four explanation fields that are lexically grounded in the winning
  * candidate's evidence spans.  Each field = base frame sentence + an
@@ -2638,6 +2720,8 @@ function buildEvidenceConstrainedExplanation(
     winnerSeed.after_state,
     12
   );
+  const beforeAnchor = extractConcreteAnchor(winnerSeed.before_state, 10);
+  const afterAnchor = extractConcreteAnchor(winnerSeed.after_state, 10);
   // direction_summary opens with the student's own story words — best vocab source
   const directionAnchor = winnerSeed.direction_summary
     .split(/\s+/)
@@ -2658,6 +2742,18 @@ function buildEvidenceConstrainedExplanation(
               ? 'listening and relational attention'
               : winnerSeed.kind;
 
+  const admissionsSignal = buildAdmissionsSignalFromWinner(
+    winnerSeed,
+    shiftAnchor,
+    outcomeAnchor
+  );
+  const contrastFocus = buildContrastFocus(
+    winnerSeed,
+    sceneAnchor,
+    shiftAnchor,
+    outcomeAnchor
+  );
+
   if (options.restraintMode) {
     const conditionalLead =
       options.routeDecision === 'ask_question_before_showing' || options.confidenceBand === 'low'
@@ -2671,29 +2767,26 @@ function buildEvidenceConstrainedExplanation(
         `The current evidence most clearly supports this shift: ${shiftAnchor}. ` +
         `Additional detail may still change the winner.`,
       what_it_reveals_about_the_student:
-        `The visible movement is from "${extractConcreteAnchor(winnerSeed.before_state, 10)}" ` +
-        `to "${extractConcreteAnchor(winnerSeed.after_state, 10)}" with limited but usable support: ${outcomeAnchor}.`,
+        `The visible movement is from "${beforeAnchor}" ` +
+        `to "${afterAnchor}" with limited but usable support: ${outcomeAnchor}.`,
       why_it_beats_the_obvious_angle:
         `Compared with a generic framing (${frame.obviousAngle}), this option remains closer to the concrete text: ${directionAnchor}.`,
     };
   }
 
   return {
-    // Explanation stabilization: rely on selected-candidate state + evidence
-    // anchors first; keep frame text only as lightweight context.
     core_claim:
-      `${frame.coreClaim} The strongest center is ${axisLabel}, grounded in a concrete event: ${sceneAnchor}. ` +
-      `This interpretation is consistent with the selected direction: ${winnerSeed.direction_line}`,
+      `${sentenceCase(frame.coreClaim)} For an admissions reader, the strongest version is the judgment shift inside ${sceneAnchor}, not the activity on its own. ` +
+      `${sentenceCase(admissionsSignal)} The clearest essay center is ${winnerSeed.direction_line.toLowerCase()}.`,
     why_this_is_the_real_story:
-      `${frame.realStory} The key shift is explicit in the evidence: ${shiftAnchor}. ` +
-      `That keeps the essay focused on the same axis rather than retelling context.` ,
+      `${frame.realStory} The real turn happens at ${shiftAnchor}. ` +
+      `Once the draft pivots there, it becomes a decision story instead of background about ${frame.obviousAngle}.`,
     what_it_reveals_about_the_student:
-      `It reveals how the student changed from "${extractConcreteAnchor(winnerSeed.before_state, 10)}" ` +
-      `to "${extractConcreteAnchor(winnerSeed.after_state, 10)}", with visible consequence: ${outcomeAnchor}. ` +
-      `The specific reveal in this case is ${extractConcreteAnchor(winnerSeed.direction_summary, 12)}.`,
+      `This lets a reader see ${admissionsSignal} The movement from "${beforeAnchor}" ` +
+      `to "${afterAnchor}" is visible in ${outcomeAnchor}.`,
     why_it_beats_the_obvious_angle:
-      `A generic framing (${frame.obviousAngle}) would flatten the story. ` +
-      `The evidence points to ${directionAnchor}, which is more specific and faithful to the axis.` ,
+      `The obvious version would mostly emphasize ${frame.obviousAngle} and leave the reader with a familiar trait claim. ` +
+      `This version is stronger because it lets the reader watch ${contrastFocus}; that makes the recommendation more differentiated and easier to trust.`,
   };
 }
 

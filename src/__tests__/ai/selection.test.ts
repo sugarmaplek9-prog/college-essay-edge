@@ -53,18 +53,21 @@ function makeSuccessArtifact(overrides: Partial<AiArtifact> = {}): AiArtifact {
       status: 'success',
       best_direction: {
         id: 'direction_1',
-        title: 'The robotics competition',
-        summary: 'Strong direction',
-        why_it_wins: 'Concrete arc',
-        main_risk: 'Surface risk',
+        angle_title: 'The robotics competition',
+        core_claim: 'The strongest version is the moment the student stopped trying to solve everything alone and made trust visible.',
+        why_this_is_the_real_story: 'The real story is the shift in judgment after the team breakdown, not the competition result itself.',
+        what_it_reveals_about_the_student: 'This lets a reader see leadership that scales through trust instead of control.',
+        why_it_beats_the_obvious_angle: 'The obvious version would just recap technical success; this one lets the reader watch a more credible leadership shift.',
+        main_risk_if_written_poorly: 'Surface risk',
         next_move: 'Write the shift',
       },
       alternatives: [
         {
           id: 'direction_2',
-          title: 'Volunteering',
-          why_it_loses: 'Less specific',
-          risk: 'Too broad',
+          angle_title: 'Volunteering',
+          what_this_angle_would_focus_on: 'The service setting instead of the turning point',
+          why_it_is_weaker: 'Less specific',
+          failure_mode: 'Too broad',
         },
       ],
       evidence_anchors: [
