@@ -1,0 +1,811 @@
+{
+  "run_id": "eval_nds_RHC-034_1777250889009",
+  "case_id": "RHC-034",
+  "system": "nds_internal",
+  "provider_classification": "deterministic_stub",
+  "readiness_state": "ready",
+  "execution_mode": "standard",
+  "validator_decision": "accept",
+  "artifact_status": "success",
+  "artifact_payload": {
+    "status": "success",
+    "best_direction": {
+      "id": "direction_1",
+      "angle_title": "When constraint forced a different way forward",
+      "core_claim": "The strongest version stays with the exact situation where execution had to become judgment rather than simple performance. The strongest evidence sits in The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+      "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+      "what_it_reveals_about_the_student": "It reveals a student whose competence becomes convincing because it changes how they respond in a real situation. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+      "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to The draft connects a Chipotle moment, family sacrifice, productivity pressure, which is more specific, more draftable, and easier to trust on first read.",
+      "main_risk_if_written_poorly": "If the draft treats the constraint as generic hardship, it will miss the choice that changed how the student moved through it.",
+      "next_move": "Start with The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my. Then show the alternative response that changed Working from a more specific and accountable understanding of what mattered. Keep the essay on adaptation under constraint, not generic resilience."
+    },
+    "recommended_direction": "Start with the moment The draft connects a Chipotle moment, family sacrifice, productivity pressure changed what you did next.",
+    "why_this_direction": "It gives you a clearer turning point and stronger evidence than the other options. Build from The draft connects a Chipotle moment, family sacrifice, productivity pressure so the draft starts in a scene, not a summary.",
+    "alternatives": [
+      {
+        "id": "direction_2",
+        "angle_title": "Competence proof angle",
+        "what_this_angle_would_focus_on": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+        "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+        "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+      },
+      {
+        "id": "direction_3",
+        "angle_title": "Service / responsibility angle",
+        "what_this_angle_would_focus_on": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+        "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+        "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+      }
+    ],
+    "evidence_anchors": [
+      {
+        "label": "Evidence 1",
+        "source_type": "story_entry",
+        "source_id": "RHC-034_story_1",
+        "excerpt": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my",
+        "source_index": 0,
+        "anchor_type": "scene_detail",
+        "hinge_relevance_score": 1,
+        "support_role": "supports_selected"
+      },
+      {
+        "label": "Evidence 2",
+        "source_type": "story_entry",
+        "source_id": "RHC-034_story_1",
+        "excerpt": "I drafted an essay around a cow drawn on my whiteboard",
+        "source_index": 1,
+        "anchor_type": "phrase_fragment",
+        "hinge_relevance_score": 0.2,
+        "support_role": "supports_selected"
+      }
+    ],
+    "rejected_direction_rationale": "Rejected direction_1 because redundant with stronger candidate.",
+    "generation_metadata": {
+      "raw_note_count": 5,
+      "anchor_candidates_extracted": [
+        {
+          "text": "I drafted an essay around a cow drawn on my whiteboard",
+          "source_id": "RHC-034_story_1",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 0
+        },
+        {
+          "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my",
+          "source_id": "RHC-034_story_2",
+          "source_type": "story_entry",
+          "anchor_type": "scene_detail",
+          "source_index": 1
+        },
+        {
+          "text": "The metaphor feels memorable, but I am not sure the logic fully",
+          "source_id": "RHC-034_story_3",
+          "source_type": "story_entry",
+          "anchor_type": "phrase_fragment",
+          "source_index": 2
+        },
+        {
+          "text": "The product should respond like a revision coach, not like a topic-picker",
+          "source_id": "RHC-034_story_4",
+          "source_type": "story_entry",
+          "anchor_type": "person_or_relationship",
+          "source_index": 3
+        },
+        {
+          "text": "Draft exists but appears thin",
+          "source_id": "RHC-034_draft",
+          "source_type": "essay_draft_version",
+          "anchor_type": "phrase_fragment",
+          "source_index": 0
+        }
+      ],
+      "hinge_candidates_extracted": [
+        {
+          "text": "I drafted an essay around a cow drawn on my whiteboard to think about",
+          "source_id": "RHC-034_story_1",
+          "source_type": "story_entry",
+          "source_index": 0,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort",
+          "source_id": "RHC-034_story_2",
+          "source_type": "story_entry",
+          "source_index": 1,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "The metaphor feels memorable, but I am not sure the logic fully holds together",
+          "source_id": "RHC-034_story_3",
+          "source_type": "story_entry",
+          "source_index": 2,
+          "hinge_relevance_score": 1
+        },
+        {
+          "text": "The product should respond like a revision coach, not like a topic-picker",
+          "source_id": "RHC-034_story_4",
+          "source_type": "story_entry",
+          "source_index": 3,
+          "hinge_relevance_score": 1
+        }
+      ],
+      "candidate_scores_by_dimension": [
+        {
+          "candidate_id": "direction_2",
+          "direction_line": "Start with the moment The draft connects a Chipotle moment, family sacrifice, productivity pressure changed what you did next.",
+          "source_grounding": 1,
+          "anchor_retention": 1,
+          "narrative_hinge_clarity": 1,
+          "draftability": 0.75,
+          "individualization": 0.74,
+          "non_repeatability": 1,
+          "coaching_usefulness": 1,
+          "abstraction_penalty": 0,
+          "total_score": 0.82
+        },
+        {
+          "candidate_id": "direction_3",
+          "direction_line": "Start with the moment The metaphor feels memorable, but I am not sure the logic changed what you did next.",
+          "source_grounding": 1,
+          "anchor_retention": 1,
+          "narrative_hinge_clarity": 1,
+          "draftability": 0.75,
+          "individualization": 0.43,
+          "non_repeatability": 1,
+          "coaching_usefulness": 1,
+          "abstraction_penalty": 0,
+          "total_score": 0.68
+        }
+      ]
+    },
+    "depth_signals": {
+      "detected_tension": "The tension is between what happened and what it actually changed in you.",
+      "detected_shift": null,
+      "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+      "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+    },
+    "recovery_question": null,
+    "selected_candidate_id": "direction_2",
+    "confidence_band": "low",
+    "route_decision": "ask_question_before_showing",
+    "score_summary": {
+      "top_score": 0.82,
+      "runner_up_score": 0.68,
+      "score_margin": 0.14
+    },
+    "candidates": [
+      {
+        "candidate_id": "direction_2",
+        "direction_line": "Start with the moment The draft connects a Chipotle moment, family sacrifice, productivity pressure changed what you did next.",
+        "direction_summary": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+        "core_tension": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+        "before_state": "Operating from the obvious first version of the situation.",
+        "after_state": "Working from a more specific and accountable understanding of what mattered.",
+        "evidence_spans": [
+          {
+            "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize",
+            "start_char": 0,
+            "end_char": 144
+          },
+          {
+            "text": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+            "start_char": 0,
+            "end_char": 104
+          }
+        ],
+        "why_strong": "This candidate has surface clarity and practical evidence of capability.",
+        "risk_if_chosen": "This can flatten into an accomplishment summary with limited tension.",
+        "clarifying_question_if_uncertain": "What specific moment shows that your competence alone was not enough?",
+        "scores": {
+          "student_specificity": 0.74,
+          "evidence_grounding": 1,
+          "non_genericity": 0.78,
+          "buildability": 0.75,
+          "distinctness": 0.8,
+          "scene_strength": 1,
+          "reflective_potential": 0.51,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.82
+        },
+        "validator_flags": {
+          "has_banned_abstraction": false,
+          "is_too_generic": false,
+          "has_source_anchor": true,
+          "has_narrative_hinge": true,
+          "is_coaching_instruction": true,
+          "repeatable_direction_risk": false,
+          "passes_direction_rule_lock": true,
+          "has_clear_evidence": true,
+          "is_distinct_from_others": true,
+          "meta_label_reject": false,
+          "meta_label_penalty": false,
+          "meta_label_reason": null,
+          "axis_presence": "missing",
+          "degraded_input_mode": false,
+          "fallback_contaminated": false,
+          "candidate_duplication_risk": "low",
+          "candidate_support_density": "medium",
+          "family_confidence": "weak",
+          "passes_minimum_quality": true
+        },
+        "rank": 1,
+        "selected": true,
+        "axis_family": "unclassified",
+        "total_score": 0.82,
+        "why_this_direction": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+        "selected_evidence": [
+          {
+            "quote": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize",
+            "note": "evidence_span_0_144"
+          },
+          {
+            "quote": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+            "note": "evidence_span_0_104"
+          }
+        ]
+      },
+      {
+        "candidate_id": "direction_3",
+        "direction_line": "Start with the moment The metaphor feels memorable, but I am not sure the logic changed what you did next.",
+        "direction_summary": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+        "core_tension": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+        "before_state": "Operating from the obvious first version of the situation.",
+        "after_state": "Working from a more specific and accountable understanding of what mattered.",
+        "evidence_spans": [
+          {
+            "text": "The metaphor feels memorable, but I am not sure the logic fully holds together yet",
+            "start_char": 0,
+            "end_char": 82
+          },
+          {
+            "text": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+            "start_char": 0,
+            "end_char": 104
+          }
+        ],
+        "why_strong": "This candidate has moral seriousness and evidence of value-driven decision making.",
+        "risk_if_chosen": "This can drift into values language without a vivid hinge moment.",
+        "clarifying_question_if_uncertain": "Which exact moment made you realize another person was affected differently than you expected?",
+        "scores": {
+          "student_specificity": 0.43,
+          "evidence_grounding": 1,
+          "non_genericity": 0.45,
+          "buildability": 0.75,
+          "distinctness": 0.8,
+          "scene_strength": 0.76,
+          "reflective_potential": 0.39,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.68
+        },
+        "validator_flags": {
+          "has_banned_abstraction": false,
+          "is_too_generic": false,
+          "has_source_anchor": true,
+          "has_narrative_hinge": true,
+          "is_coaching_instruction": true,
+          "repeatable_direction_risk": false,
+          "passes_direction_rule_lock": true,
+          "has_clear_evidence": true,
+          "is_distinct_from_others": true,
+          "meta_label_reject": false,
+          "meta_label_penalty": false,
+          "meta_label_reason": null,
+          "axis_presence": "missing",
+          "degraded_input_mode": false,
+          "fallback_contaminated": false,
+          "candidate_duplication_risk": "low",
+          "candidate_support_density": "medium",
+          "family_confidence": "weak",
+          "passes_minimum_quality": true
+        },
+        "rank": 2,
+        "selected": false,
+        "axis_family": "unclassified",
+        "total_score": 0.68,
+        "why_this_direction": "Alternative direction with lower support than selected winner on unclassified.",
+        "selected_evidence": [
+          {
+            "quote": "The metaphor feels memorable, but I am not sure the logic fully holds together yet",
+            "note": "evidence_span_0_82"
+          },
+          {
+            "quote": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+            "note": "evidence_span_0_104"
+          }
+        ]
+      }
+    ],
+    "rejected_candidates": [
+      {
+        "candidate_id": "direction_1",
+        "direction_line": "Start with the moment I drafted an essay around a cow drawn on my whiteboard changed what you did next.",
+        "rejection_reasons": [
+          "redundant_with_stronger_candidate"
+        ],
+        "rejected_direction_rationale": "direction_1 rejected: redundant with stronger candidate."
+      },
+      {
+        "candidate_id": "direction_4",
+        "direction_line": "Start with the moment I drafted an essay around a cow drawn on my whiteboard changed what you did next.",
+        "rejection_reasons": [
+          "generic_angle",
+          "redundant_with_stronger_candidate"
+        ],
+        "rejected_direction_rationale": "direction_4 rejected: generic angle."
+      }
+    ],
+    "clarifying_question": {
+      "question_text": "What specific moment shows that your competence alone was not enough?",
+      "linked_candidate_id": "direction_2",
+      "question_reason": "clarify_shift"
+    },
+    "scoring_debug": {
+      "generated_candidate_count": 4,
+      "surviving_candidate_count": 2,
+      "selected_candidate_id": "direction_2",
+      "candidate_rankings": [
+        {
+          "candidate_id": "direction_2",
+          "total_score": 0.82,
+          "rank": 1
+        },
+        {
+          "candidate_id": "direction_3",
+          "total_score": 0.68,
+          "rank": 2
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "direction_2",
+          "direction_line": "Start with the moment The draft connects a Chipotle moment, family sacrifice, productivity pressure changed what you did next.",
+          "direction_summary": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+          "core_tension": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+          "before_state": "Operating from the obvious first version of the situation.",
+          "after_state": "Working from a more specific and accountable understanding of what mattered.",
+          "evidence_spans": [
+            {
+              "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize",
+              "start_char": 0,
+              "end_char": 144
+            },
+            {
+              "text": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+              "start_char": 0,
+              "end_char": 104
+            }
+          ],
+          "why_strong": "This candidate has surface clarity and practical evidence of capability.",
+          "risk_if_chosen": "This can flatten into an accomplishment summary with limited tension.",
+          "clarifying_question_if_uncertain": "What specific moment shows that your competence alone was not enough?",
+          "scores": {
+            "student_specificity": 0.74,
+            "evidence_grounding": 1,
+            "non_genericity": 0.78,
+            "buildability": 0.75,
+            "distinctness": 0.8,
+            "scene_strength": 1,
+            "reflective_potential": 0.51,
+            "explanation_coherence": 0.95,
+            "clarification_need": 0.15,
+            "total_score": 0.82
+          },
+          "validator_flags": {
+            "has_banned_abstraction": false,
+            "is_too_generic": false,
+            "has_source_anchor": true,
+            "has_narrative_hinge": true,
+            "is_coaching_instruction": true,
+            "repeatable_direction_risk": false,
+            "passes_direction_rule_lock": true,
+            "has_clear_evidence": true,
+            "is_distinct_from_others": true,
+            "meta_label_reject": false,
+            "meta_label_penalty": false,
+            "meta_label_reason": null,
+            "axis_presence": "missing",
+            "degraded_input_mode": false,
+            "fallback_contaminated": false,
+            "candidate_duplication_risk": "low",
+            "candidate_support_density": "medium",
+            "family_confidence": "weak",
+            "passes_minimum_quality": true
+          },
+          "rank": 1,
+          "selected": true
+        },
+        {
+          "candidate_id": "direction_3",
+          "direction_line": "Start with the moment The metaphor feels memorable, but I am not sure the logic changed what you did next.",
+          "direction_summary": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+          "core_tension": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+          "before_state": "Operating from the obvious first version of the situation.",
+          "after_state": "Working from a more specific and accountable understanding of what mattered.",
+          "evidence_spans": [
+            {
+              "text": "The metaphor feels memorable, but I am not sure the logic fully holds together yet",
+              "start_char": 0,
+              "end_char": 82
+            },
+            {
+              "text": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value",
+              "start_char": 0,
+              "end_char": 104
+            }
+          ],
+          "why_strong": "This candidate has moral seriousness and evidence of value-driven decision making.",
+          "risk_if_chosen": "This can drift into values language without a vivid hinge moment.",
+          "clarifying_question_if_uncertain": "Which exact moment made you realize another person was affected differently than you expected?",
+          "scores": {
+            "student_specificity": 0.43,
+            "evidence_grounding": 1,
+            "non_genericity": 0.45,
+            "buildability": 0.75,
+            "distinctness": 0.8,
+            "scene_strength": 0.76,
+            "reflective_potential": 0.39,
+            "explanation_coherence": 0.95,
+            "clarification_need": 0.15,
+            "total_score": 0.68
+          },
+          "validator_flags": {
+            "has_banned_abstraction": false,
+            "is_too_generic": false,
+            "has_source_anchor": true,
+            "has_narrative_hinge": true,
+            "is_coaching_instruction": true,
+            "repeatable_direction_risk": false,
+            "passes_direction_rule_lock": true,
+            "has_clear_evidence": true,
+            "is_distinct_from_others": true,
+            "meta_label_reject": false,
+            "meta_label_penalty": false,
+            "meta_label_reason": null,
+            "axis_presence": "missing",
+            "degraded_input_mode": false,
+            "fallback_contaminated": false,
+            "candidate_duplication_risk": "low",
+            "candidate_support_density": "medium",
+            "family_confidence": "weak",
+            "passes_minimum_quality": true
+          },
+          "rank": 2,
+          "selected": false
+        }
+      ],
+      "rejected_candidates": [
+        {
+          "candidate_id": "direction_1",
+          "direction_line": "Start with the moment I drafted an essay around a cow drawn on my whiteboard changed what you did next.",
+          "rejection_reasons": [
+            "redundant_with_stronger_candidate"
+          ],
+          "rejected_direction_rationale": "direction_1 rejected: redundant with stronger candidate."
+        },
+        {
+          "candidate_id": "direction_4",
+          "direction_line": "Start with the moment I drafted an essay around a cow drawn on my whiteboard changed what you did next.",
+          "rejection_reasons": [
+            "generic_angle",
+            "redundant_with_stronger_candidate"
+          ],
+          "rejected_direction_rationale": "direction_4 rejected: generic angle."
+        }
+      ],
+      "score_summary": {
+        "top_score": 0.82,
+        "runner_up_score": 0.68,
+        "score_margin": 0.14
+      },
+      "confidence_band": "low",
+      "route_decision": "ask_question_before_showing",
+      "selected_axis_family": "unclassified",
+      "semantic_anchors": {
+        "core_event": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort",
+        "core_shift": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my",
+        "story_axis": "competence",
+        "before_state": "Operating from the obvious first version of the situation",
+        "after_state": "Working from a more specific and accountable understanding of what mattered",
+        "evidence_anchors": [
+          "The draft connects a Chipotle moment, family sacrifice, productivity pressure",
+          "I drafted an essay around a cow drawn on my"
+        ]
+      },
+      "clarification_reason": "clarify_shift",
+      "clarification_specificity": "strong",
+      "clarification_targets_actual_ambiguity": true,
+      "trust_mode": "standard",
+      "output_assertiveness": "low",
+      "direction_line_confidence_fit": "borderline",
+      "explanation_restraint_mode": false,
+      "generation_metadata": {
+        "raw_note_count": 5,
+        "anchor_candidates_extracted": [
+          {
+            "text": "I drafted an essay around a cow drawn on my whiteboard",
+            "source_id": "RHC-034_story_1",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 0
+          },
+          {
+            "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my",
+            "source_id": "RHC-034_story_2",
+            "source_type": "story_entry",
+            "anchor_type": "scene_detail",
+            "source_index": 1
+          },
+          {
+            "text": "The metaphor feels memorable, but I am not sure the logic fully",
+            "source_id": "RHC-034_story_3",
+            "source_type": "story_entry",
+            "anchor_type": "phrase_fragment",
+            "source_index": 2
+          },
+          {
+            "text": "The product should respond like a revision coach, not like a topic-picker",
+            "source_id": "RHC-034_story_4",
+            "source_type": "story_entry",
+            "anchor_type": "person_or_relationship",
+            "source_index": 3
+          },
+          {
+            "text": "Draft exists but appears thin",
+            "source_id": "RHC-034_draft",
+            "source_type": "essay_draft_version",
+            "anchor_type": "phrase_fragment",
+            "source_index": 0
+          }
+        ],
+        "hinge_candidates_extracted": [
+          {
+            "text": "I drafted an essay around a cow drawn on my whiteboard to think about",
+            "source_id": "RHC-034_story_1",
+            "source_type": "story_entry",
+            "source_index": 0,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort",
+            "source_id": "RHC-034_story_2",
+            "source_type": "story_entry",
+            "source_index": 1,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "The metaphor feels memorable, but I am not sure the logic fully holds together",
+            "source_id": "RHC-034_story_3",
+            "source_type": "story_entry",
+            "source_index": 2,
+            "hinge_relevance_score": 1
+          },
+          {
+            "text": "The product should respond like a revision coach, not like a topic-picker",
+            "source_id": "RHC-034_story_4",
+            "source_type": "story_entry",
+            "source_index": 3,
+            "hinge_relevance_score": 1
+          }
+        ],
+        "candidate_scores_by_dimension": [
+          {
+            "candidate_id": "direction_2",
+            "direction_line": "Start with the moment The draft connects a Chipotle moment, family sacrifice, productivity pressure changed what you did next.",
+            "source_grounding": 1,
+            "anchor_retention": 1,
+            "narrative_hinge_clarity": 1,
+            "draftability": 0.75,
+            "individualization": 0.74,
+            "non_repeatability": 1,
+            "coaching_usefulness": 1,
+            "abstraction_penalty": 0,
+            "total_score": 0.82
+          },
+          {
+            "candidate_id": "direction_3",
+            "direction_line": "Start with the moment The metaphor feels memorable, but I am not sure the logic changed what you did next.",
+            "source_grounding": 1,
+            "anchor_retention": 1,
+            "narrative_hinge_clarity": 1,
+            "draftability": 0.75,
+            "individualization": 0.43,
+            "non_repeatability": 1,
+            "coaching_usefulness": 1,
+            "abstraction_penalty": 0,
+            "total_score": 0.68
+          }
+        ]
+      },
+      "shift_risk_flags": {
+        "adult_shaped": false,
+        "polished_empty": false,
+        "cultural_indirect": true,
+        "contradiction": false,
+        "low_signal": false
+      },
+      "shift_confidence_compressed": true,
+      "polished_emptiness_skepticism_activated": false,
+      "cultural_style_support_activated": false,
+      "contradiction_sensitive_clarification_activated": false,
+      "weak_note_recovery_mode_activated": false,
+      "generic_fallback_suppression_activated": false,
+      "indirect_hinge_candidates_detected": [],
+      "hinge_sentence_count": 0,
+      "hinge_support_activated": false,
+      "false_premium_candidate_flag": false,
+      "premium_tone_without_support": false,
+      "false_premium_suppression_activated": false,
+      "careful_but_unhelpful_risk": true,
+      "useful_caution_mode_activated": false,
+      "flat_line_repair_activated": false,
+      "class_repair_track_activations": {
+        "track_a_parent_polished_guard": false,
+        "track_b_cultural_support": false,
+        "track_c_contradiction_calibration": false,
+        "track_d_weak_note_recovery": false,
+        "track_e_messy_dump_recovery": false,
+        "track_f_achievement_thin_handling": false
+      },
+      "selected_vs_runner_up_scores": {
+        "selected": {
+          "student_specificity": 0.74,
+          "evidence_grounding": 1,
+          "non_genericity": 0.78,
+          "buildability": 0.75,
+          "distinctness": 0.8,
+          "scene_strength": 1,
+          "reflective_potential": 0.51,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.82
+        },
+        "runner_up": {
+          "student_specificity": 0.43,
+          "evidence_grounding": 1,
+          "non_genericity": 0.45,
+          "buildability": 0.75,
+          "distinctness": 0.8,
+          "scene_strength": 0.76,
+          "reflective_potential": 0.39,
+          "explanation_coherence": 0.95,
+          "clarification_need": 0.15,
+          "total_score": 0.68
+        }
+      }
+    }
+  },
+  "trace": {
+    "context_pack": {
+      "module": "narrative_direction_selection",
+      "subject": {
+        "entity_type": "essay_project",
+        "entity_id": "072_rhc-034"
+      },
+      "student_core": {
+        "name": "Eval RHC-034",
+        "grade_level": "Grade 12",
+        "intended_majors": [],
+        "core_interests": [
+          "reflection",
+          "writing",
+          "direction-finding"
+        ],
+        "identity_notes": []
+      },
+      "story_signals": [
+        {
+          "source_id": "RHC-034_story_1",
+          "source_type": "story_entry",
+          "event_summary": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value.",
+          "change_signal": "I drafted an essay around a cow drawn on my whiteboard to think about Indian and American ideas of value.",
+          "evidence_strength": "low",
+          "recency_rank": 1,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-034_story_2",
+          "source_type": "story_entry",
+          "event_summary": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+          "change_signal": "The draft connects a Chipotle moment, family sacrifice, productivity pressure, and my discomfort with treating myself like something to optimize.",
+          "evidence_strength": "low",
+          "recency_rank": 2,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-034_story_3",
+          "source_type": "story_entry",
+          "event_summary": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+          "change_signal": "The metaphor feels memorable, but I am not sure the logic fully holds together yet.",
+          "evidence_strength": "low",
+          "recency_rank": 3,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        },
+        {
+          "source_id": "RHC-034_story_4",
+          "source_type": "story_entry",
+          "event_summary": "The product should respond like a revision coach, not like a topic-picker.",
+          "change_signal": "The product should respond like a revision coach, not like a topic-picker.",
+          "evidence_strength": "low",
+          "recency_rank": 4,
+          "narrative_signal": {
+            "pattern": "unknown",
+            "pattern_confidence": "low",
+            "tension_type": "unknown",
+            "feedback_present": false,
+            "pivot_present": false,
+            "behavior_change_present": false,
+            "impact_on_others_present": false
+          },
+          "domain_signal": {
+            "situational_domain": "other",
+            "likely_human_stakes": "Whether the student can show a real internal shift with observable consequences for other people.",
+            "interpretive_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+          }
+        }
+      ],
+      "draft_signals": [
+        {
+          "source_id": "RHC-034_draft",
+          "source_type": "essay_draft_version",
+          "signal_summary": "Draft exists but appears thin.",
+          "strength": "low",
+          "authorship_signal": {
+            "contamination_risk": "low",
+            "student_scene_evidence": "absent",
+            "weighting_decision": "usable_with_caution"
+          }
+        }
+      ],
+      "school_signals": [],
+      "context_gaps": [],
+      "assembler_meta": {
+        "story_signal_count": 4,
+        "draft_signal_count": 1,
+        "school_signal_count": 0,
+        "used_current_draft": true
+      }
+    },
+    "warnings": []
+  }
+}

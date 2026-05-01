@@ -1,0 +1,114 @@
+{
+  "totals": {
+    "total_cases_run": 15,
+    "total_scored_cases": 15,
+    "nds_better_percent": 100
+  },
+  "overall_dimension_summary": [
+    {
+      "dimension": "divergence_quality",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "conviction_quality",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "evidence_grounding",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "next_step_usefulness",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "substitution_risk",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "student_dignity_tone",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    },
+    {
+      "dimension": "product_sharpness",
+      "nds_avg": 5,
+      "baseline_avg": 2,
+      "delta": 3
+    }
+  ],
+  "difficulty_segment_summary": [
+    {
+      "difficulty": "weak",
+      "case_count": 0,
+      "nds_better_percent": 0
+    },
+    {
+      "difficulty": "medium",
+      "case_count": 3,
+      "nds_better_percent": 100
+    },
+    {
+      "difficulty": "strong",
+      "case_count": 12,
+      "nds_better_percent": 100
+    }
+  ],
+  "red_team_summary": [
+    {
+      "bucket": "stale_draft_contamination_risk",
+      "case_count": 0,
+      "nds_better_percent": 0,
+      "avg_score_delta": 0
+    },
+    {
+      "bucket": "parent_advisor_contamination_risk",
+      "case_count": 0,
+      "nds_better_percent": 0,
+      "avg_score_delta": 0
+    },
+    {
+      "bucket": "conflicting_evidence",
+      "case_count": 2,
+      "nds_better_percent": 100,
+      "avg_score_delta": 3
+    },
+    {
+      "bucket": "thin_school_or_generic_padding_risk",
+      "case_count": 15,
+      "nds_better_percent": 100,
+      "avg_score_delta": 3
+    },
+    {
+      "bucket": "resume_list_input",
+      "case_count": 0,
+      "nds_better_percent": 0,
+      "avg_score_delta": 0
+    },
+    {
+      "bucket": "fake_confidence_temptation_cases",
+      "case_count": 2,
+      "nds_better_percent": 100,
+      "avg_score_delta": 3
+    }
+  ],
+  "failure_summary": {
+    "nds_needs_more_input_cases": 0,
+    "baseline_needs_more_input_cases": 0,
+    "structural_normalization_failures": 0,
+    "scoring_missingness": 0,
+    "ambiguous_reviewer_outcomes": 0
+  },
+  "generated_at": "2026-04-27T00:48:09.058Z"
+}

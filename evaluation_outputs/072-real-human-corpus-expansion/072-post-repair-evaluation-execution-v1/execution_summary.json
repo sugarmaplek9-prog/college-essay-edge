@@ -1,0 +1,21 @@
+{
+  "frozen_sentinel_status": "REPAIR_PASS",
+  "holdout_nds_better_percent": 100,
+  "future_split_nds_better_percent": 100,
+  "combined_unseen_nds_better_percent": 100,
+  "blind_packet_case_count": 10,
+  "blind_packet_holdout_case_ids": [
+    "RHC-026",
+    "RHC-027",
+    "RHC-028",
+    "RHC-029",
+    "RHC-030"
+  ],
+  "blind_packet_future_split_case_ids": [
+    "RHC-001",
+    "RHC-002",
+    "RHC-003",
+    "RHC-004",
+    "RHC-005"
+  ]
+}

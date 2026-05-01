@@ -1,0 +1,44 @@
+{
+  "case_id": "RHC-014",
+  "system": "nds_internal",
+  "status": "success",
+  "best_direction": {
+    "angle_title": "When the story became about self-definition, not just accomplishment",
+    "core_claim": "The strongest version shows the moment responsibility stopped being a slogan and became a concrete obligation to other people. The strongest evidence sits in This is not really about the microwave itself; it is about the way, which keeps the direction anchored to the student's actual material instead of a reusable summary.",
+    "why_this_is_the_real_story": "Most of what led up to the correction is context. The essay is the correction itself — and the one moment after it that shows the change was real. The key turn is visible in This is not really about the microwave itself; it is about the way. That keeps the essay on the lived hinge, instead of retelling background or broad traits.",
+    "what_it_reveals_about_the_student": "It reveals a student who treats responsibility as a concrete choice with visible consequences for other people. The before-and-after movement is from \"Operating from the obvious first version of the situation\" to \"Working from a more specific and accountable understanding of what,\" and the consequence shows up in Working from a more specific and accountable understanding of what mattered.",
+    "why_it_beats_the_obvious_angle": "A generic framing (general leadership/growth framing) would flatten the story. The evidence points to This is not really about the microwave itself; it is, which is more specific, more draftable, and easier to trust on first read.",
+    "main_risk_if_written_poorly": "If the draft stays at the level of broad self-description, it will lose the moment or image that makes the shift in self-understanding believable.",
+    "next_move": "Open on This is not really about the microwave itself; it is about. Then show how that moment clarified Working from a more specific and accountable understanding of what mattered. Keep the draft on self-definition and inner logic rather than turning it into a generic accomplishment recap."
+  },
+  "alternatives": [
+    {
+      "angle_title": "Competence proof angle",
+      "what_this_angle_would_focus_on": "I want to use it as a way to talk about doing the small jobs nobody notices but everybody benefits from.",
+      "why_it_is_weaker": "It can show capability, but it underweights internal change and essay-level tension.",
+      "failure_mode": "Can collapse into an activity summary without a deeper interpretive claim."
+    },
+    {
+      "angle_title": "Service / responsibility angle",
+      "what_this_angle_would_focus_on": "This is not really about the microwave itself; it is about the way I keep taking support roles and making shared spaces function.",
+      "why_it_is_weaker": "It carries moral seriousness, but the self-revision arc is less sharply evidenced than the winner.",
+      "failure_mode": "Can become broad values prose if the turning moment is not dramatized."
+    }
+  ],
+  "evidence_anchors": [
+    "Evidence 1",
+    "Evidence 2"
+  ],
+  "depth_signals": {
+    "detected_tension": "The tension is between what happened and what it actually changed in you.",
+    "detected_shift": null,
+    "obvious_but_weaker_angle": "Obvious but weaker angle: general leadership/growth framing.",
+    "essay_opportunity": "Frame the essay around the strongest evidence-backed internal revision and its outward impact."
+  },
+  "recovery_question": null,
+  "meta": {
+    "clear_winner_present": true,
+    "alternative_count": 2,
+    "evidence_anchor_count": 2
+  }
+}

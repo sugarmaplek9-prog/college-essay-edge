@@ -1,0 +1,182 @@
+[
+  {
+    "case_id": "RHC-026",
+    "label": "Public student-help post — choosing between father/alcoholism and chronic migraine topics",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "split",
+      "between",
+      "writing",
+      "absent",
+      "father",
+      "alcoholism",
+      "which",
+      "actually",
+      "instead",
+      "material"
+    ],
+    "source_overlap_count": 10
+  },
+  {
+    "case_id": "RHC-027",
+    "label": "Public student-help post — four-topic Common App shortlist",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "identifying",
+      "which",
+      "option",
+      "actual",
+      "personal",
+      "traction",
+      "instead",
+      "surface"
+    ],
+    "source_overlap_count": 8
+  },
+  {
+    "case_id": "RHC-028",
+    "label": "Public student-help post — jazz versus classical music topic fragment",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "changed",
+      "judging",
+      "whether",
+      "personal",
+      "engine",
+      "actual"
+    ],
+    "source_overlap_count": 6
+  },
+  {
+    "case_id": "RHC-029",
+    "label": "Public student-help post — ceramics metaphor and family relationship brainstorm",
+    "angle_title": "When redesigning the system mattered more than working harder",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "process",
+      "finished",
+      "language",
+      "structure"
+    ],
+    "source_overlap_count": 4
+  },
+  {
+    "case_id": "RHC-030",
+    "label": "Public student-help post — grief, medicine, and place-memory brainstorm",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "rough",
+      "ideas",
+      "sister's",
+      "death",
+      "medicine",
+      "which"
+    ],
+    "source_overlap_count": 6
+  },
+  {
+    "case_id": "RHC-031",
+    "label": "Public student-help post — high-risk versus safer topic comparison",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "comparing",
+      "high-risk",
+      "high-reward",
+      "topic",
+      "against",
+      "safer",
+      "option",
+      "which",
+      "itself"
+    ],
+    "source_overlap_count": 9
+  },
+  {
+    "case_id": "RHC-032",
+    "label": "Public student-help post — GPA context and essay framing without excuse language",
+    "angle_title": "When the student changed how the work could move",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "understand",
+      "growth",
+      "worried",
+      "shaping",
+      "essays",
+      "sound"
+    ],
+    "source_overlap_count": 6
+  },
+  {
+    "case_id": "RHC-033",
+    "label": "Public student-help post — interdisciplinary art/science and chronic-issue brainstorm",
+    "angle_title": "When the story became about self-definition, not just accomplishment",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "shift",
+      "situation",
+      "other",
+      "possible",
+      "routes",
+      "include",
+      "coding",
+      "visible",
+      "self-presentation",
+      "changes",
+      "chronic",
+      "reveals"
+    ],
+    "source_overlap_count": 12
+  },
+  {
+    "case_id": "RHC-034",
+    "label": "Public student-help post — cow metaphor draft about identity and productivity",
+    "angle_title": "When constraint forced a different way forward",
+    "has_correction_template": false,
+    "has_meta_instructional_leak": false,
+    "has_generic_next_move_suffix": false,
+    "has_dangling_fragment": false,
+    "source_overlap_tokens": [
+      "draft",
+      "connects",
+      "chipotle",
+      "moment",
+      "family",
+      "sacrifice",
+      "productivity",
+      "pressure",
+      "discomfort",
+      "product",
+      "respond"
+    ],
+    "source_overlap_count": 11
+  }
+]

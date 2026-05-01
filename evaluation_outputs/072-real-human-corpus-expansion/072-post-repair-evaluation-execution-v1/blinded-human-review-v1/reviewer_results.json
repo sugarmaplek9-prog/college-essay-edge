@@ -1,0 +1,97 @@
+{
+  "reviewed_at": "2026-04-27T01:05:00Z",
+  "review_mode": "blinded_human_review",
+  "packet_manifest_path": "evaluation_outputs/072-real-human-corpus-expansion/072-post-repair-evaluation-execution-v1/blinded-human-review-v1/packet_manifest.json",
+  "decode_path": "evaluation_outputs/072-real-human-corpus-expansion/072-post-repair-evaluation-execution-v1/blinded-human-review-v1/protected/reviewer_blind_decode.json",
+  "decisions": [
+    {
+      "case_id": "RHC-026",
+      "preferred_output": "A",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "Still overcommits instead of clarifying, but it grounds itself in the student's actual material and is more useful than the generic baseline."
+    },
+    {
+      "case_id": "RHC-027",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "clearly better",
+      "note": "More credible and materially better grounded than the empty shortlist baseline."
+    },
+    {
+      "case_id": "RHC-028",
+      "preferred_output": "A",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "Direction is still templated, but it at least engages the actual music-topic logic instead of offering a generic placeholder." 
+    },
+    {
+      "case_id": "RHC-029",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "clearly better",
+      "note": "The ceramics-and-dad thread is identifiable and draftable; the baseline provides no real selection help."
+    },
+    {
+      "case_id": "RHC-030",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "It remains pattern-heavy and overconfident, but it is still more anchored and useful than the generic baseline." 
+    },
+    {
+      "case_id": "RHC-001",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "Anchors to the student's actual books / moving / queerness material, though the frame still reads templated." 
+    },
+    {
+      "case_id": "RHC-002",
+      "preferred_output": "A",
+      "decoded_preference": "nds_internal",
+      "strength_band": "clearly better",
+      "note": "Uses the cicada image concretely and gives a real path into the essay rather than a generic transition answer."
+    },
+    {
+      "case_id": "RHC-003",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "clearly better",
+      "note": "Grounds the output in the donor-family texture and rejects the abstract tolerance baseline."
+    },
+    {
+      "case_id": "RHC-004",
+      "preferred_output": "A",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "Not fully aligned to the identity/place prompt, but still meaningfully more specific and draftable than the baseline placeholder."
+    },
+    {
+      "case_id": "RHC-005",
+      "preferred_output": "B",
+      "decoded_preference": "nds_internal",
+      "strength_band": "somewhat better",
+      "note": "Scenario language drifts, but it still captures the audience-need correction better than the generic performance baseline."
+    }
+  ],
+  "totals": {
+    "cases_reviewed": 10,
+    "nds_preferred": 10,
+    "baseline_preferred": 0,
+    "tie": 0,
+    "invalid": 0,
+    "clearly_better": 4,
+    "somewhat_better": 6
+  },
+  "reviewer_takeaways": [
+    "NDS was preferred on every blinded case in the packet.",
+    "The strongest gains came from anchoring the direction to student-specific material instead of generic personal-statement advice.",
+    "Several wins remained only somewhat-better because the repaired system still falls into cross-case motif drift and overconfident framing on some unseen cases."
+  ],
+  "caution_flags": [
+    "clarification-expected cases can still receive overcommitted direction outputs",
+    "some winning outputs reuse abstract repair motifs that do not cleanly match the scenario",
+    "the durable advantage is real, but not yet clean enough for a strong-advantage proof claim"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "run_label": "072-post-repair-evaluation-execution-v1",
+  "classification": "NDS_MODEST_ADVANTAGE",
+  "strength_recommendation": "approaching NDS_STRONG_ADVANTAGE",
+  "confidence": "medium-high",
+  "public_proof_claim_authorized": false,
+  "reasoning": {
+    "frozen_sentinel_status": "REPAIR_PASS",
+    "combined_unseen_nds_better_percent": 100,
+    "blind_review_nds_preferred": 10,
+    "blind_review_baseline_preferred": 0,
+    "blind_review_ties": 0,
+    "blind_review_invalid": 0,
+    "why_not_strong_yet": [
+      "multiple blind-review wins are only somewhat-better rather than clearly-better",
+      "some unseen wins still show motif drift or scenario mismatch even when they beat baseline",
+      "the evidence supports durable advantage and movement toward stronger status, but not a clean strong-advantage claim yet"
+    ]
+  }
+}

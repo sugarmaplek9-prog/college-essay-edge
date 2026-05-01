@@ -1,0 +1,9 @@
+{
+  "case_count": 9,
+  "correction_template_count": 0,
+  "meta_instructional_leak_count": 0,
+  "generic_next_move_suffix_count": 0,
+  "dangling_fragment_count": 0,
+  "low_specificity_case_count": 0,
+  "average_source_overlap": 8
+}
