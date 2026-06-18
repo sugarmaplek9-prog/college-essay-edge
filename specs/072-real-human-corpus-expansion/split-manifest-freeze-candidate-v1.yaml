@@ -1,0 +1,38 @@
+manifest_version: 1
+program_slug: 072-real-human-corpus-expansion
+phase: future_split_freeze_candidate_review
+freeze_status: candidate_not_frozen
+candidate_rule: "Founder approval via GitHub PR is required before any freeze or blind execution."
+candidate_size: 15
+bucket_counts:
+  visible: 6
+  blind: 9
+  quarantine: 0
+current_posture:
+  candidate_status: review_only
+  blind_status: not_run
+  founder_approval_required: true
+  active_frozen_manifest_unchanged: true
+case_assignments:
+  visible:
+    - NSB-FS-008
+    - NSB-FS-017
+    - NSB-FS-018
+    - NSB-FS-019
+    - NSB-FS-023
+    - NSB-FS-024
+  blind:
+    - NSB-FS-005
+    - NSB-FS-006
+    - NSB-FS-013
+    - NSB-FS-014
+    - NSB-FS-015
+    - NSB-FS-016
+    - NSB-FS-020
+    - NSB-FS-021
+    - NSB-FS-022
+  quarantine: []
+notes:
+  - "This draft candidate manifest does not overwrite the active frozen split manifest."
+  - "No blind evaluation has been run for this candidate set."
+  - "Freeze authority is reserved for explicit founder approval on the GitHub PR."
